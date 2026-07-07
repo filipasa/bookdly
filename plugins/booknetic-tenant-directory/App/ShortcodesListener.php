@@ -4816,6 +4816,9 @@ class ShortcodesListener
                             if (id === 'bkntc_input_email_clone' || id === 'bkntc_input_phone_clone' || id === 'bkntc_input_name_clone') {
                                 return;
                             }
+                            if (cloneInput.attr('type') === 'file') {
+                                return;
+                            }
                             if (cloneInput.is(':checkbox')) {
                                 nativeInput.prop('checked', cloneInput.prop('checked')).trigger('change');
                             } else if (cloneInput.is(':radio')) {
