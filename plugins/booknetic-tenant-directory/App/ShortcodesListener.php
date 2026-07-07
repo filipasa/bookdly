@@ -4755,6 +4755,82 @@ class ShortcodesListener
                     goToWizardStep(5);
                 });
                 
+                // Real-time synchronization of cloned inputs to native inputs to avoid race conditions
+                $(document).on('input change', '#bkntc_custom_info_wrapper input, #bkntc_custom_info_wrapper select, #bkntc_custom_info_wrapper textarea', function() {
+                    var cloneInput = $(this);
+                    var id = cloneInput.attr('id');
+                    var infoWrapper = $('#bkntc_custom_info_wrapper');
+                    var nativeWrapper = $('.booknetic_appointment_container_body [data-step-id="information"]');
+                    
+                    // 1. Sync core fields
+                    if (id === 'bkntc_input_name_clone') {
+                        var nameParts = cloneInput.val().trim().split(/\s+/);
+                        var firstName = nameParts[0] || '';
+                        var lastName = nameParts.slice(1).join(' ') || '.';
+                        var nativeName = nativeWrapper.find('#bkntc_input_name');
+                        if (nativeName.length) {
+                            nativeName.val(firstName).trigger('change');
+                            if (nativeName[0]) nativeName[0].dispatchEvent(new Event('input', { bubbles: true }));
+                        }
+                        var nativeSurname = nativeWrapper.find('#bkntc_input_surname');
+                        if (nativeSurname.length) {
+                            nativeSurname.val(lastName).trigger('change');
+                            if (nativeSurname[0]) nativeSurname[0].dispatchEvent(new Event('input', { bubbles: true }));
+                        }
+                        return;
+                    }
+                    if (id === 'bkntc_input_email_clone') {
+                        var nativeEmail = nativeWrapper.find('#bkntc_input_email');
+                        if (nativeEmail.length) {
+                            nativeEmail.val(cloneInput.val()).trigger('change');
+                            if (nativeEmail[0]) nativeEmail[0].dispatchEvent(new Event('input', { bubbles: true }));
+                        }
+                        return;
+                    }
+                    if (id === 'bkntc_input_phone_clone') {
+                        var phoneVal = cloneInput.val() ? cloneInput.val().trim() : '';
+                        var nativePhoneVal = phoneVal;
+                        if (phoneVal && !phoneVal.startsWith('+')) {
+                            if (phoneVal.startsWith('0')) {
+                                phoneVal = phoneVal.substring(1);
+                            }
+                            nativePhoneVal = '+44' + phoneVal;
+                        }
+                        var nativePhone = nativeWrapper.find('#bkntc_input_phone');
+                        if (nativePhone.length) {
+                            var itiInstance = nativePhone.data('iti');
+                            if (itiInstance) {
+                                itiInstance.setNumber(nativePhoneVal);
+                            } else {
+                                nativePhone.val(nativePhoneVal).trigger('change');
+                            }
+                            if (nativePhone[0]) nativePhone[0].dispatchEvent(new Event('input', { bubbles: true }));
+                        }
+                        return;
+                    }
+                    
+                    // 2. Sync custom fields by relative DOM order index matching
+                    var cloneInputs = infoWrapper.find('input, select, textarea');
+                    var nativeInputs = nativeWrapper.find('input, select, textarea');
+                    var index = cloneInputs.index(cloneInput);
+                    
+                    if (index > -1) {
+                        var nativeInput = nativeInputs.eq(index);
+                        if (nativeInput.length) {
+                            if (cloneInput.attr('type') === 'file') {
+                                return;
+                            }
+                            if (cloneInput.is(':checkbox')) {
+                                nativeInput.prop('checked', cloneInput.prop('checked')).trigger('change');
+                            } else if (cloneInput.is(':radio')) {
+                                nativeInput.prop('checked', cloneInput.prop('checked')).trigger('change');
+                            } else {
+                                nativeInput.val(cloneInput.val()).trigger('change');
+                            }
+                        }
+                    }
+                });
+
                 $('#bkntc_next_step_5').on('click', function() {
                     // Copy values from cloned inputs back to native hidden inputs before validating
                     var infoWrapper = $('#bkntc_custom_info_wrapper');
