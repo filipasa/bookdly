@@ -1,0 +1,147 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Booknetic SV\n"
+"POT-Creation-Date: 2023-06-12 11:10+0400\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.2.2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: bkntc__\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: app/Frontend/assets/js/datepicker.min.js\n"
+"X-Poedit-SearchPathExcluded-1: app/Frontend/assets/js/intlTelInput.min.js\n"
+"X-Poedit-SearchPathExcluded-2: app/Frontend/assets/js/jquery.nicescroll.min."
+"js\n"
+"X-Poedit-SearchPathExcluded-3: app/Frontend/assets/js/utilsIntlTelInput.js\n"
+
+#: App/Backend/Ajax.php:23
+msgid "Something went wrong."
+msgstr ""
+
+#: App/Backend/view/connect/connect_register_settings.php:20
+msgid "Activation pending"
+msgstr ""
+
+#: App/Backend/view/connect/connect_register_settings.php:21
+msgid "Your account is under review"
+msgstr ""
+
+#: App/Backend/view/connect/connect_register_settings.php:23
+msgid "Please complete these verifications below to activate your account"
+msgstr ""
+
+#: App/Backend/view/connect/connect_register_settings.php:31
+msgid "Continue verifying"
+msgstr ""
+
+#: App/Backend/view/connect/connect_settings.php:20
+msgid "Verified"
+msgstr ""
+
+#: App/Backend/view/connect/connect_settings.php:22
+#: App/Backend/view/connect/connect_setup_settings.php:22
+msgid "Platform fee"
+msgstr ""
+
+#: App/Backend/view/connect/connect_settings_error.php:13
+msgid "Something went wrong..."
+msgstr ""
+
+#: App/Backend/view/connect/connect_settings_error.php:14
+msgid "Please contact your vendor provider."
+msgstr ""
+
+#: App/Backend/view/connect/connect_setup_settings.php:20
+msgid "Not activated"
+msgstr ""
+
+#: App/Backend/view/connect/connect_setup_settings.php:21
+msgid "Setup your platform"
+msgstr ""
+
+#: App/Backend/view/connect/connect_setup_settings.php:23
+msgid "Click the button to start the registration process for Stripe Connect"
+msgstr ""
+
+#: App/Backend/view/connect/connect_setup_settings.php:24
+msgid "By clicking the register button you agree to our"
+msgstr ""
+
+#: App/Backend/view/connect/connect_setup_settings.php:24
+msgid "terms and services"
+msgstr ""
+
+#: App/Backend/view/connect/connect_setup_settings.php:25
+msgid "Register"
+msgstr ""
+
+#: App/Backend/view/modal/connect_settings_saas.php:17
+#: App/Backend/view/settings.php:10
+msgid "Publishable key"
+msgstr ""
+
+#: App/Backend/view/modal/connect_settings_saas.php:22
+#: App/Backend/view/settings.php:15
+msgid "Secret key"
+msgstr ""
+
+#: App/Backend/view/modal/connect_settings_saas.php:27
+msgid "Platform Fee"
+msgstr ""
+
+#: App/Backend/view/modal/connect_settings_saas.php:32
+msgid "Charge as"
+msgstr ""
+
+#: App/Backend/view/modal/connect_settings_saas.php:40
+msgid "Terms and Conditions Page URL"
+msgstr ""
+
+#: App/Listener.php:22
+msgid "Please, fill all fields to enable Stripe payment gateway!"
+msgstr ""
+
+#: App/Listener.php:42
+msgid "Fee cannot be less than 0"
+msgstr ""
+
+#: App/Listener.php:47
+msgid "Fee cannot be higher than 100%"
+msgstr ""
+
+#: App/Listener.php:61
+msgid "Please, fill all fields to enable Stripe Connect payment gateway!"
+msgstr ""
+
+#: App/Stripe.php:28 App/StripeConnectGateway.php:33
+msgid "Credit Card"
+msgstr ""
+
+#: App/Stripe.php:149 App/Stripe.php:179 App/Stripe.php:253
+msgid "Payment failed:"
+msgstr ""
+
+#: App/StripeAddon.php:29
+msgid "Stripe integration"
+msgstr ""
+
+#: App/StripeAddon.php:34
+msgid "Stripe settings"
+msgstr ""
+
+#: App/StripeAddon.php:113
+msgid "Stripe Connect integration"
+msgstr ""
+
+#: App/StripeAddon.php:118
+msgid "Stripe Connect settings"
+msgstr ""
+
+#: App/StripeConnectGateway.php:182 App/StripeConnectGateway.php:231
+msgid "Couldn't create a payment!"
+msgstr ""

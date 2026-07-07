@@ -1,0 +1,19 @@
+#login_google_account{
+    background: white !important;
+    padding: 0 10px !important;
+    border:none !important;
+    border: 1px solid #ced4da !important;
+    cursor: pointer;
+}
+
+#login_google_account .login_google_account_container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color:#8F9CA7 !important;
+}
+
+#login_google_account .login_google_account_container img{
+    height: 30px;
+    margin-right:  10px ;
+}

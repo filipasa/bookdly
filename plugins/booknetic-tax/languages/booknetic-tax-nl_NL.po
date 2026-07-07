@@ -1,0 +1,624 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: test\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-12-23 11:30+0400\n"
+"PO-Revision-Date: 2022-12-23 11:30+0400\n"
+"Last-Translator: \n"
+"Language-Team: Nederlands\n"
+"Language: nl_NL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.2\n"
+"X-Poedit-Basepath: ../app\n"
+"X-Poedit-KeywordsList: bkntc__\n"
+"X-Loco-Version: 2.4.6; wp-5.6\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: Frontend/assets/js/datepicker.min.js\n"
+"X-Poedit-SearchPathExcluded-1: Frontend/assets/js/intlTelInput.min.js\n"
+"X-Poedit-SearchPathExcluded-2: Frontend/assets/js/jquery.nicescroll.min."
+"js\n"
+"X-Poedit-SearchPathExcluded-3: Frontend/assets/js/utilsIntlTelInput.js\n"
+
+#: Backend/Ajax.php:76
+#, fuzzy
+#| msgid "Confirm Details"
+msgid "Tax Details"
+msgstr "Bevestig details"
+
+#: Backend/Ajax.php:109
+#, fuzzy
+#| msgid "Please select start date"
+msgid "Please fill tax name"
+msgstr "Please select start date"
+
+#: Backend/Ajax.php:114
+msgid "Invalid tax type"
+msgstr ""
+
+#: Backend/Ajax.php:119
+msgid "Tax amount must be non-negative"
+msgstr ""
+
+#: Backend/Controller.php:22 TaxAddon.php:36
+msgid "Edit"
+msgstr ""
+
+#: Backend/Controller.php:26 TaxAddon.php:37
+msgid "Delete"
+msgstr ""
+
+#: Backend/Controller.php:33 TaxAddon.php:74
+msgid "Taxes"
+msgstr ""
+
+#: Backend/Controller.php:34
+msgid "NEW TAX"
+msgstr ""
+
+#: Backend/Controller.php:36
+msgid "ID"
+msgstr ""
+
+#: Backend/Controller.php:37
+msgid "NAME"
+msgstr ""
+
+#: Backend/Controller.php:39
+msgid "AMOUNT"
+msgstr ""
+
+#: Backend/Controller.php:54
+msgid "LOCATIONS"
+msgstr ""
+
+#: Backend/Controller.php:58
+#, fuzzy
+#| msgid "Select location"
+msgid "All locations"
+msgstr "Selecteer een locatie"
+
+#: Backend/Controller.php:73
+msgid "STATUS"
+msgstr ""
+
+#: Backend/Controller.php:75 Backend/view/modal/add_new.php:42
+msgid "Enabled"
+msgstr ""
+
+#: Backend/Controller.php:75
+msgid "Disabled"
+msgstr ""
+
+#: Backend/view/modal/add_new.php:15
+msgid "Edit Tax"
+msgstr ""
+
+#: Backend/view/modal/add_new.php:15
+msgid "New Tax"
+msgstr ""
+
+#: Backend/view/modal/add_new.php:45
+msgid "CANCEL"
+msgstr ""
+
+#: Backend/view/modal/add_new.php:46
+msgid "SAVE"
+msgstr ""
+
+#: Backend/view/modal/add_new.php:46
+msgid "CREATE"
+msgstr ""
+
+#: Backend/view/tab/tax_add_new_details.php:15
+msgid "Name"
+msgstr "Naam"
+
+#: Backend/view/tab/tax_add_new_details.php:19
+msgid "Amount"
+msgstr ""
+
+#: Backend/view/tab/tax_add_new_details.php:32
+#, fuzzy
+#| msgid "Location"
+msgid "Locations filter"
+msgstr "Locatie"
+
+#: Backend/view/tab/tax_add_new_details.php:46
+msgid "Services filter"
+msgstr ""
+
+#: Backend/view/tab/tax_section.php:12
+msgid "Hide \"Price does not include taxes\" on the services step"
+msgstr ""
+
+#: Backend/view/tab/tax_section.php:13
+msgid ""
+"If you enable this option, it allows to show \"Price does not include taxes"
+"\" on the services and extra services steps."
+msgstr ""
+
+#: Listener.php:72
+#, fuzzy
+#| msgid "Full amount"
+msgid "Total tax amount"
+msgstr "Full amount"
+
+#: Listener.php:78
+msgid "Total tax amount of recurring appointments"
+msgstr ""
+
+#: Listener.php:88 TaxAddon.php:34
+msgid "Tax"
+msgstr ""
+
+#: Listener.php:94
+msgid "Tax (recurring)"
+msgstr ""
+
+#: Listener.php:178
+msgid "* Price does not include taxes"
+msgstr ""
+
+#: TaxAddon.php:27
+#, fuzzy
+#| msgid "Full amount"
+msgid "Tax module"
+msgstr "Full amount"
+
+#: TaxAddon.php:35
+msgid "Add new"
+msgstr ""
+
+#~ msgid "Please fill in all required fields correctly!"
+#~ msgstr "Please fill in all required fields correctly!"
+
+#~ msgid "Staff"
+#~ msgstr "Medewerker"
+
+#~ msgid "Service"
+#~ msgstr "Diensten"
+
+#~ msgid "Service Extras"
+#~ msgstr "Service Extras"
+
+#~ msgid "Date & Time"
+#~ msgstr "Datum & Tijd"
+
+#~ msgid "Information"
+#~ msgstr "Informatie"
+
+#~ msgid "Confirmation"
+#~ msgstr "Bevestiging"
+
+#~ msgid "Have any questions?"
+#~ msgstr "Pc/Langsbrengen"
+
+#~ msgid "Select service"
+#~ msgstr "Selecteer dienst"
+
+#~ msgid "BACK"
+#~ msgstr "TERUG"
+
+#~ msgid "NEXT STEP"
+#~ msgstr "DE VOLGENDE"
+
+#, php-format
+#~ msgid "Minimum length of \"%s\" field is %d!"
+#~ msgstr "Minimum length of \"%s\" field is %d!"
+
+#, php-format
+#~ msgid "Maximum length of \"%s\" field is %d!"
+#~ msgstr "Maximum length of \"%s\" field is %d!"
+
+#~ msgid "File extension is not allowed!"
+#~ msgstr "File extension is not allowed!"
+
+#~ msgid "DATE"
+#~ msgstr "DATE"
+
+#~ msgid "Days of week"
+#~ msgstr "Days of week"
+
+#~ msgid "Mon"
+#~ msgstr "Mon"
+
+#~ msgid "Tue"
+#~ msgstr "Tue"
+
+#~ msgid "Wed"
+#~ msgstr "Wed"
+
+#~ msgid "Thu"
+#~ msgstr "Thu"
+
+#~ msgid "Fri"
+#~ msgstr "Fri"
+
+#~ msgid "Sat"
+#~ msgstr "Sat"
+
+#~ msgid "Sun"
+#~ msgstr "Sun"
+
+#~ msgid "Monday"
+#~ msgstr "Monday"
+
+#~ msgid "Tuesday"
+#~ msgstr "Tuesday"
+
+#~ msgid "Wednesday"
+#~ msgstr "Wednesday"
+
+#~ msgid "Thursday"
+#~ msgstr "Thursday"
+
+#~ msgid "Friday"
+#~ msgstr "Friday"
+
+#~ msgid "Saturday"
+#~ msgstr "Saturday"
+
+#~ msgid "Sunday"
+#~ msgstr "Sunday"
+
+#~ msgid "Every"
+#~ msgstr "Every"
+
+#~ msgid "DAYS"
+#~ msgstr "DAYS"
+
+#~ msgid "Time"
+#~ msgstr "Tijd"
+
+#~ msgid "On"
+#~ msgstr "On"
+
+#~ msgid "Specific day"
+#~ msgstr "Specific day"
+
+#~ msgid "First"
+#~ msgstr "First"
+
+#~ msgid "Second"
+#~ msgstr "Second"
+
+#~ msgid "Third"
+#~ msgstr "Third"
+
+#~ msgid "Fourth"
+#~ msgstr "Fourth"
+
+#~ msgid "Last"
+#~ msgstr "Last"
+
+#~ msgid "Start date"
+#~ msgstr "Start date"
+
+#~ msgid "End date"
+#~ msgstr "End date"
+
+#~ msgid "Times"
+#~ msgstr "Times"
+
+#~ msgid "Select..."
+#~ msgstr "Select..."
+
+#~ msgid "TIME"
+#~ msgstr "TIME"
+
+#, fuzzy
+#~| msgid "START NEW BOOKING"
+#~ msgid "START MEETING"
+#~ msgstr "BEGIN EEN NIEUWE BOEKING"
+
+#~ msgid "EDIT"
+#~ msgstr "EDIT"
+
+#~ msgid "Discount"
+#~ msgstr "Discount"
+
+#~ msgid "January"
+#~ msgstr "January"
+
+#~ msgid "February"
+#~ msgstr "February"
+
+#~ msgid "March"
+#~ msgstr "March"
+
+#~ msgid "April"
+#~ msgstr "April"
+
+#~ msgid "May"
+#~ msgstr "May"
+
+#~ msgid "June"
+#~ msgstr "June"
+
+#~ msgid "July"
+#~ msgstr "July"
+
+#~ msgid "August"
+#~ msgstr "August"
+
+#~ msgid "September"
+#~ msgstr "September"
+
+#~ msgid "October"
+#~ msgstr "October"
+
+#~ msgid "November"
+#~ msgstr "November"
+
+#~ msgid "December"
+#~ msgstr "December"
+
+#, fuzzy
+#~| msgid "Start date"
+#~ msgid "Starting guide"
+#~ msgstr "Start date"
+
+#, fuzzy
+#~| msgid "Select location"
+#~ msgid "Create location"
+#~ msgstr "Selecteer een locatie"
+
+#, fuzzy
+#~| msgid "Select staff"
+#~ msgid "Create staff"
+#~ msgstr "Selecteer personeel"
+
+#, fuzzy
+#~| msgid "Select service"
+#~ msgid "Create service"
+#~ msgstr "Selecteer dienst"
+
+#, fuzzy
+#~| msgid "Select date"
+#~ msgid "Select payment method"
+#~ msgstr "Selecteer Datum"
+
+#~ msgid "Credit card"
+#~ msgstr "Credit card"
+
+#, fuzzy
+#~| msgid "Please select service"
+#~ msgid "Please select WordPress user!"
+#~ msgstr "Selecteer een service"
+
+#~ msgid "Email"
+#~ msgstr "Email"
+
+#~ msgid "Phone"
+#~ msgstr "Telefoon"
+
+#, fuzzy
+#~| msgid "Location"
+#~ msgid "Notifications"
+#~ msgstr "Locatie"
+
+#, fuzzy
+#~| msgid "Credit card"
+#~ msgid "Giftcards"
+#~ msgstr "Credit card"
+
+#, fuzzy
+#~| msgid "Credit card"
+#~ msgid "Add Giftcard"
+#~ msgstr "Credit card"
+
+#, fuzzy
+#~| msgid "Select date"
+#~ msgid "Select Type"
+#~ msgstr "Selecteer Datum"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgid "Tab Name"
+#~ msgstr "Naam"
+
+#, fuzzy
+#~| msgid "Select date"
+#~ msgid "Select Language"
+#~ msgstr "Selecteer Datum"
+
+#, fuzzy
+#~| msgid "Select service"
+#~ msgid "Select Service"
+#~ msgstr "Selecteer dienst"
+
+#, fuzzy
+#~| msgid "Select staff"
+#~ msgid "Select Staff"
+#~ msgstr "Selecteer personeel"
+
+#, fuzzy
+#~| msgid "Select location"
+#~ msgid "Select Location"
+#~ msgstr "Selecteer een locatie"
+
+#~ msgid "Daily"
+#~ msgstr "Daily"
+
+#~ msgid "Deposit"
+#~ msgstr "Deposit"
+
+#~ msgid "Paypal"
+#~ msgstr "Paypal"
+
+#~ msgid "Any staff"
+#~ msgstr "Any staff"
+
+#~ msgid "Select an available staff"
+#~ msgstr "Select an available staff"
+
+#~ msgid "Add coupon"
+#~ msgstr "Add coupon"
+
+#~ msgid "Please select location."
+#~ msgstr "Selecteer een locatie."
+
+#~ msgid "Please select staff."
+#~ msgstr "Please select staff."
+
+#~ msgid "Please select service"
+#~ msgstr "Selecteer een service"
+
+#~ msgid "Please select week day(s)"
+#~ msgstr "Please select week day(s)"
+
+#~ msgid "Please select week day(s) and time(s) correctly"
+#~ msgstr "Please select week day(s) and time(s) correctly"
+
+#~ msgid "Please select end date"
+#~ msgstr "Please select end date"
+
+#~ msgid "Please select date."
+#~ msgstr "Please select date."
+
+#~ msgid "Please select time."
+#~ msgstr "Selecteer een tijd."
+
+#~ msgid "Please select an available time"
+#~ msgstr "Please select an available time"
+
+#~ msgid "Please enter a valid email address!"
+#~ msgstr "Please enter a valid email address!"
+
+#~ msgid "Please enter a valid phone number!"
+#~ msgstr "Please enter a valid phone number!"
+
+#~ msgid "CONFIRM BOOKING"
+#~ msgstr "BEVESTIG DE BOEKING"
+
+#~ msgid "There is no any Location for select."
+#~ msgstr "There is no any Location for select."
+
+#~ msgid "Staff not found. Please go back and select a different option."
+#~ msgstr "Staff not found. Please go back and select a different option."
+
+#~ msgid "Service not found. Please go back and select a different option."
+#~ msgstr "Service not found. Please go back and select a different option."
+
+#~ msgid "There isn't any available staff for the selected date/time."
+#~ msgstr "There isn&#039;t any available staff for the selected date/time."
+
+#~ msgid ""
+#~ "Extras not found in this service. You can select other service or click "
+#~ "the <span class=\"booknetic_text_primary\">\"Next step\"</span> button."
+#~ msgstr ""
+#~ "Extras not found in this service. You can select other service or click "
+#~ "the <span class=\"booknetic_text_primary\">\"Next step\"</span> button."
+
+#~ msgid "w"
+#~ msgstr "w"
+
+#~ msgid "d"
+#~ msgstr "d"
+
+#~ msgid "h"
+#~ msgstr "h"
+
+#~ msgid "m"
+#~ msgstr "m"
+
+#~ msgid "s"
+#~ msgstr "s"
+
+#~ msgid "Finish"
+#~ msgstr "Einde"
+
+#, fuzzy
+#~| msgid "Time"
+#~ msgid "Timezone"
+#~ msgstr "Tijd"
+
+#, fuzzy
+#~| msgid "Location"
+#~ msgid "Location ID"
+#~ msgstr "Locatie"
+
+#, fuzzy
+#~| msgid "Confirmation"
+#~ msgid "Skip the Confirmation step"
+#~ msgstr "Bevestiging"
+
+#, fuzzy
+#~| msgid "There is no any Location for select."
+#~ msgid "There is no Location to match your request."
+#~ msgstr "There is no any Location for select."
+
+#, fuzzy
+#~| msgid "Please select date."
+#~ msgid "Please select payment method!"
+#~ msgstr "Please select date."
+
+#~ msgid "Thank you for your request!"
+#~ msgstr "Dankjewel voor je aanvraag!"
+
+#~ msgid "Your confirmation number:"
+#~ msgstr "Uw bevestigingsnummer:"
+
+#~ msgid "ADD TO GOOGLE CALENDAR"
+#~ msgstr "TOEVOEGEN AAN GOOGLE AGENDA"
+
+#~ msgid "START NEW BOOKING"
+#~ msgstr "BEGIN EEN NIEUWE BOEKING"
+
+#~ msgid "FINISH BOOKING"
+#~ msgstr "EINDE BOEKING"
+
+#, fuzzy
+#~| msgid "Add coupon"
+#~ msgid "Coupon"
+#~ msgstr "Add coupon"
+
+#~ msgid "OK"
+#~ msgstr "OK"
+
+#, fuzzy
+#~| msgid "Credit card"
+#~ msgid "Giftcard"
+#~ msgstr "Credit card"
+
+#~ msgid "Total price"
+#~ msgstr "Totale prijs"
+
+#~ msgid "Full amount"
+#~ msgstr "Full amount"
+
+#~ msgid "Select date"
+#~ msgstr "Selecteer Datum"
+
+#~ msgid "Surname"
+#~ msgstr "Achternaam"
+
+#, fuzzy
+#~| msgid "Please enter a valid phone number!"
+#~ msgid "Please enter the purchase code!"
+#~ msgstr "Please enter a valid phone number!"
+
+#~ msgid "Select staff"
+#~ msgstr "Selecteer personeel"
+
+#~ msgid "Select service extras"
+#~ msgstr "Select service extras"
+
+#~ msgid "Fill information"
+#~ msgstr "Vul informatie in"
+
+#~ msgid "Select Date & Time"
+#~ msgstr "Selecteer Datum en tijd"
+
+#, fuzzy
+#~| msgid "Second"
+#~ msgid "second"
+#~ msgstr "Second"
+
+#, fuzzy
+#~| msgid "Second"
+#~ msgid "seconds"
+#~ msgstr "Second"

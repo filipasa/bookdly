@@ -1,0 +1,705 @@
+#choose_plan_window
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #F3F7FA;
+    z-index: 1100;
+    overflow: auto;
+    display: none;
+}
+.close_choose_plan_window_btn
+{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    padding: 10px;
+}
+.choose_plan_title
+{
+    height: 48px;
+    color: #232B34;
+    font-size: 34px;
+    font-weight: 600;
+    line-height: 51px;
+    text-align: center;
+    margin-top: 80px;
+}
+.choose_plan_subtitle
+{
+    height: 30px;
+    color: #6B7886;
+    font-size: 14px;
+    line-height: 30px;
+    text-align: center;
+}
+.choose_plan_payment_cycle
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+.payment_cycle
+{
+    color: #8B9196;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.payment_cycle.active_payment_cycle
+{
+    color: #232B34;
+}
+
+.payment_cycle_swicher
+{
+    position: relative;
+    width: 47px;
+    height: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select: none;
+}
+.payment_cycle_swicher_checkbox
+{
+    display: none !important;
+}
+.payment_cycle_swicher_label
+{
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    height: 22px;
+    padding: 0;
+    line-height: 20px;
+    border-radius: 30px;
+    background-color: #FFF;
+    transition: background-color 0.3s ease-in;
+    box-shadow: 0 0 20px 0 rgba(107,120,134,0.1);
+}
+.payment_cycle_swicher_label:before
+{
+    content: "";
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin: -4px 0;
+    background: #A9DA70;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 18px;
+    border-radius: 14px;
+    transition: all 0.3s ease-in 0s;
+}
+
+.payment_cycle_swicher_checkbox:checked + .payment_cycle_swicher_label .payment_cycle_swicher_inner
+{
+    margin-left: 0;
+}
+.payment_cycle_swicher_checkbox:checked + .payment_cycle_swicher_label:before
+{
+    right: 0;
+}
+
+.plans_area
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 50px;
+    padding: 0 20px;
+}
+.plan_card
+{
+    position: relative;
+    width: 320px;
+    margin: 15px;
+    background: #FFFFFF;
+    border: 2px solid #E2E8F0;
+    border-radius: 16px;
+    padding: 40px 36px 120px;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    font-family: 'Inter', -apple-system, sans-serif;
+}
+.plan_card:hover
+{
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+.plan_card.featured_card, .plan_card:has(.plan_ribbon) {
+    border-color: #5B6BF8;
+    background: linear-gradient(180deg, #f0f4ff 0%, #fff 30%);
+    box-shadow: 0 20px 25px -5px rgba(91,107,248,0.1), 0 10px 10px -5px rgba(91,107,248,0.04);
+}
+.plan_title
+{
+    margin-top: 0;
+    height: auto;
+    color: #5B6BF8;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    text-align: center;
+    margin-bottom: 12px;
+}
+.plan_price
+{
+    margin-top: 20px;
+    height: auto;
+    width: 100%;
+    color: #0F1117;
+    font-size: 46px;
+    font-weight: 800;
+    text-align: center;
+    line-height: 1;
+    margin-bottom: 4px;
+}
+.plan_subtitle
+{
+    height: auto;
+    color: #6B7280;
+    font-size: 13px;
+    text-align: center;
+    margin-bottom: 24px;
+}
+.plan_subtitle_discount_line
+{
+    color: #5B6BF8;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+.plan_description
+{
+    margin-top: 0;
+    border-top: none;
+    padding: 0;
+    text-align: center;
+    color: #4B5563;
+    font-size: 14px;
+    line-height: 1.6;
+}
+.plan_footer
+{
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    padding: 0 36px;
+}
+.choose_plan_btn
+{
+    width: 100% !important;
+    height: 48px !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    font-size: 15px !important;
+    border: 0 !important;
+    transition: all 0.2s ease !important;
+    color: #FFF !important;
+}
+.choose_plan_btn:hover
+{
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(91,107,248,0.2);
+}
+.plan_ribbon
+{
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    width: auto;
+    height: auto;
+    background: linear-gradient(135deg, #5B6BF8, #8B5CF6);
+    color: #FFFFFF;
+    white-space: nowrap;
+    border-radius: 9999px;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+    padding: 5px 16px;
+    line-height: 1.2;
+}
+.plan_ribbon:after, .plan_ribbon > div:before
+{
+    display: none;
+}
+.plan_ribbon > div {
+    display: inline-block;
+}
+
+
+
+#choose_payment_method_window
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #F3F7FA;
+    z-index: 1101;
+    overflow: auto;
+    display: none;
+}
+.close_choose_payment_method_window_btn
+{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    padding: 10px;
+}
+.choose_payment_method_back_btn
+{
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    padding: 10px;
+    color: #232B34;
+    font-size: 14px;
+}
+.choose_payment_method_back_btn > img
+{
+    transform: rotate(180deg);
+    margin-right: 5px;
+}
+.choose_payment_method_title
+{
+    height: 48px;
+    color: #232B34;
+    font-size: 34px;
+    font-weight: 600;
+    line-height: 51px;
+    text-align: center;
+    margin-top: 80px;
+}
+.choose_payment_method_subtitle
+{
+    height: 30px;
+    color: #6B7886;
+    font-size: 14px;
+    line-height: 30px;
+    text-align: center;
+}
+.payment_methods_area
+{
+    margin-top: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.payment_method_card
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    width: 270px;
+    margin: 10px;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 20px 0 rgba(107,120,134,0.1);
+    cursor: pointer;
+}
+.payment_method_card img
+{
+    max-height: 60px;
+}
+.payment_method_card_subtitle
+{
+    color: #676EED;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 42px;
+    margin-top: 18px;
+}
+.paypal_img
+{
+    height: 52px;
+    width: 204px;
+}
+
+#payment_succeeded_popup
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1101;
+    background: rgba(0, 0, 10, 0.4);
+}
+.payment_succeeded_popup_body
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    height: 726px;
+    width: 840px;
+    border-radius: 2px;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 40px 0 rgba(0,0,0,0.1);
+}
+.payment_succeeded_img
+{
+    margin-top: 50px;
+    text-align: center;
+}
+.payment_succeeded_title
+{
+    color: #050634;
+    font-size: 48px;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 30px;
+}
+.payment_succeeded_subtitle
+{
+    color: #6B7886;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 10px;
+}
+.payment_succeeded_footer
+{
+    margin-top: 50px;
+    text-align: center;
+}
+.payment_succeeded_footer > button
+{
+    height: 60px;
+    width: 200px;
+}
+
+
+#payment_canceled_popup, #payment_pending_popup
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1101;
+    background: rgba(0, 0, 10, 0.4);
+}
+.payment_canceled_popup_body, .payment_pending_popup_body
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    height: 726px;
+    width: 840px;
+    border-radius: 2px;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 40px 0 rgba(0,0,0,0.1);
+}
+.payment_canceled_img, .payment_pending_img
+{
+    margin-top: 50px;
+    text-align: center;
+}
+
+.payment_pending_img > img {
+    width: 400px;
+}
+
+.payment_canceled_title, .payment_pending_title
+{
+    color: #050634;
+    font-size: 48px;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 30px;
+}
+.payment_canceled_subtitle, .payment_pending_subtitle
+{
+    color: #6B7886;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 10px;
+}
+.payment_canceled_footer, .payment_pending_footer
+{
+    margin-top: 50px;
+    text-align: center;
+}
+.payment_canceled_footer > button, .payment_pending_footer > button
+{
+    height: 60px;
+    width: 200px;
+}
+
+.annual-badge {
+    top: -25px;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    line-height: 16px;
+    color: #fff;
+    text-wrap: nowrap;
+}
+
+@media only screen and (max-width: 1000px)
+{
+    .m_header_alert > div
+    {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .m_header_alert button
+    {
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    .payment_succeeded_popup_body, .payment_canceled_popup_body, .payment_pending_popup_body
+    {
+        width: 100%;
+        height: 100%;
+    }
+
+    .payment_succeeded_img > img, .payment_canceled_img > img, .payment_pending_img > img
+    {
+        width: calc(100% - 50px);
+        margin-top: 50px;
+    }
+    .payment_succeeded_title, .payment_canceled_title, .payment_pending_title, .choose_payment_method_title, .choose_plan_title
+    {
+        font-size: 24px;
+    }
+    .payment_succeeded_subtitle, .payment_canceled_subtitle, .payment_pending_subtitle, .choose_payment_method_subtitle, .choose_plan_subtitle
+    {
+        font-size: 14px;
+    }
+    .payment_methods_area
+    {
+        flex-direction: column;
+    }
+}
+
+/* ==========================================================================
+   MODERN BILLING CARD GRID REDESIGN (COMPACT STYLES)
+   ========================================================================== */
+
+.billing_grid_container {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 20px !important;
+    margin-top: 15px !important; /* Space below the moved title header */
+    margin-bottom: 40px !important; /* Space between cards and table list */
+    font-family: 'Poppins', sans-serif !important;
+    max-width: 960px !important; /* Smaller width container so cards fit nicely */
+    padding-left: 40px !important; /* Shift container to the right to align with titles */
+    padding-right: 40px !important;
+}
+
+.billing_grid_container ~ .data_table_search_panel {
+    margin-top: 10px !important;
+}
+
+/* Card Common Styling - Compact */
+.billing_card_summary, .billing_card_payment {
+    background: #FFFFFF !important;
+    border: 1px solid #E5E7EB !important;
+    border-radius: 8px !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04) !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.billing_card_header {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 12px 18px !important; /* Reduced padding */
+    border-bottom: 1px solid #F3F4F6 !important;
+}
+
+.billing_card_title {
+    font-size: 14px !important; /* Smaller title font */
+    font-weight: 600 !important;
+    color: #111827 !important;
+}
+
+.billing_card_actions {
+    display: flex !important;
+    gap: 8px !important;
+}
+
+/* Buttons */
+.btn_upgrade_billing {
+    background: #5B6BF8 !important;
+    color: #FFFFFF !important;
+    border: none !important;
+    padding: 6px 12px !important; /* Smaller button padding */
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    border-radius: 4px !important;
+    cursor: pointer !important;
+    transition: background 0.15s ease !important;
+}
+
+.btn_upgrade_billing:hover {
+    background: #4758F5 !important;
+}
+
+.btn_cancel_subscription {
+    background: #FFFFFF !important;
+    color: #ef4444 !important;
+    border: 1px solid #fee2e2 !important;
+    padding: 6px 12px !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    border-radius: 4px !important;
+    cursor: pointer !important;
+    transition: all 0.15s ease !important;
+}
+
+.btn_cancel_subscription:hover {
+    background: #fef2f2 !important;
+    border-color: #fca5a5 !important;
+}
+
+/* Plan Card Body - Compact */
+.billing_card_body_plan {
+    padding: 16px 18px !important; /* Reduced padding */
+    display: flex !important;
+    justify-content: space-between !important;
+    flex-grow: 1 !important;
+}
+
+.plan_detail_col {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 3px !important; /* Reduced gap */
+}
+
+.plan_detail_label {
+    font-size: 10px !important;
+    font-weight: 600 !important;
+    color: #9CA3AF !important;
+    letter-spacing: 0.05em !important;
+}
+
+.plan_detail_val {
+    font-size: 16px !important; /* Smaller details text size */
+    font-weight: 600 !important;
+    color: #111827 !important;
+}
+
+/* Payment Card Body - Compact */
+.billing_card_body_payment {
+    padding: 16px 18px !important; /* Reduced padding */
+    flex-grow: 1 !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+.payment_method_pill {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+    border: 1px solid #F3F4F6 !important;
+    border-radius: 6px !important;
+    padding: 10px 14px !important; /* Reduced padding */
+    background: #FAFAFA !important;
+}
+
+.payment_method_left {
+    display: flex !important;
+    align-items: flex-start !important;
+}
+
+.mastercard_logo {
+    margin-right: 12px !important; /* Reduced margin */
+    flex-shrink: 0 !important;
+}
+
+.payment_card_info {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2px !important; /* Reduced gap */
+}
+
+.payment_card_brand {
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    color: #111827 !important;
+}
+
+.payment_card_digits {
+    font-size: 12px !important;
+    color: #4B5563 !important;
+    font-family: monospace !important;
+}
+
+.payment_card_expiry {
+    font-size: 11px !important;
+    color: #9CA3AF !important;
+}
+
+.payment_card_email {
+    font-size: 11px !important;
+    color: #6B7280 !important;
+    margin-top: 2px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+}
+
+.btn_change_payment {
+    background: #FFFFFF !important;
+    color: #4B5563 !important;
+    border: 1px solid #E5E7EB !important;
+    padding: 6px 12px !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    border-radius: 4px !important;
+    cursor: pointer !important;
+    transition: all 0.15s ease !important;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04) !important;
+}
+
+.btn_change_payment:hover {
+    background: #F9FAFB !important;
+    border-color: #D1D5DB !important;
+    color: #111827 !important;
+}
+
+/* Responsive grid for smaller screens */
+@media only screen and (max-width: 1024px) {
+    .billing_grid_container {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+}

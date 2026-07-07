@@ -1,0 +1,17 @@
+{
+	"autoload": {
+		"psr-4": {
+			"BookneticAddon\\Invoices\\": "App/"
+		}
+	},
+
+	"require" : {
+		"mpdf/mpdf": "^8.0"
+	},
+
+	"config": {
+		"platform": {
+			"php": "5.6"
+		}
+	}
+}

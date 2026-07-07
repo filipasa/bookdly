@@ -1,0 +1,101 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Booknetic SV\n"
+"POT-Creation-Date: 2022-08-01 16:25+0400\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.1\n"
+"X-Poedit-KeywordsList: bkntc__\n"
+"X-Poedit-Basepath: ../app\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: Frontend/assets/js/datepicker.min.js\n"
+"X-Poedit-SearchPathExcluded-1: Frontend/assets/js/intlTelInput.min.js\n"
+"X-Poedit-SearchPathExcluded-2: Frontend/assets/js/jquery.nicescroll.min.js\n"
+"X-Poedit-SearchPathExcluded-3: Frontend/assets/js/utilsIntlTelInput.js\n"
+
+#: Backend/view/index.php:16 ReportsAddon.php:27 ReportsAddon.php:48
+msgid "Reports"
+msgstr ""
+
+#: Backend/view/index.php:26
+msgid "Reports by the number of appointments"
+msgstr ""
+
+#: Backend/view/index.php:28 Backend/view/index.php:30
+#: Backend/view/index.php:83 Backend/view/index.php:85
+msgid "Daily"
+msgstr ""
+
+#: Backend/view/index.php:31 Backend/view/index.php:86
+msgid "Monthly"
+msgstr ""
+
+#: Backend/view/index.php:32 Backend/view/index.php:87
+msgid "Annualy"
+msgstr ""
+
+#: Backend/view/index.php:39 Backend/view/index.php:94
+msgid "Service filter"
+msgstr ""
+
+#: Backend/view/index.php:47 Backend/view/index.php:102
+msgid "Location filter"
+msgstr ""
+
+#: Backend/view/index.php:55 Backend/view/index.php:110
+msgid "Staff filter"
+msgstr ""
+
+#: Backend/view/index.php:63 Backend/view/index.php:118
+msgid "Status filter"
+msgstr ""
+
+#: Backend/view/index.php:81
+msgid "Reports by appointment earnings"
+msgstr ""
+
+#: Backend/view/index.php:138
+msgid "Most earning locations"
+msgstr ""
+
+#: Backend/view/index.php:140 Backend/view/index.php:142
+#: Backend/view/index.php:162 Backend/view/index.php:164
+msgid "This week"
+msgstr ""
+
+#: Backend/view/index.php:143 Backend/view/index.php:165
+msgid "Previous week"
+msgstr ""
+
+#: Backend/view/index.php:144 Backend/view/index.php:166
+msgid "This month"
+msgstr ""
+
+#: Backend/view/index.php:145 Backend/view/index.php:167
+msgid "Previous month"
+msgstr ""
+
+#: Backend/view/index.php:146 Backend/view/index.php:168
+msgid "This year"
+msgstr ""
+
+#: Backend/view/index.php:147 Backend/view/index.php:169
+msgid "Previous year"
+msgstr ""
+
+#: Backend/view/index.php:160
+msgid "Most earning staffs"
+msgstr ""
+
+#: ReportsAddon.php:22
+msgid "Reports module"
+msgstr ""
+
+#: ReportsAddon.php:31
+msgid "Appointment count"
+msgstr ""

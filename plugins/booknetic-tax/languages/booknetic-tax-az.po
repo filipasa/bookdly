@@ -1,0 +1,652 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: test\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-12-23 11:30+0400\n"
+"PO-Revision-Date: 2022-12-23 11:30+0400\n"
+"Last-Translator: Mark Velmiskin\n"
+"Language-Team: Azerbaijani\n"
+"Language: az\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.2\n"
+"X-Poedit-Basepath: ../app\n"
+"X-Poedit-KeywordsList: bkntc__\n"
+"X-Loco-Version: 2.5.2; wp-5.7.2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: Frontend/assets/js/datepicker.min.js\n"
+"X-Poedit-SearchPathExcluded-1: Frontend/assets/js/intlTelInput.min.js\n"
+"X-Poedit-SearchPathExcluded-2: Frontend/assets/js/jquery.nicescroll.min.js\n"
+"X-Poedit-SearchPathExcluded-3: Frontend/assets/js/utilsIntlTelInput.js\n"
+
+#: Backend/Ajax.php:76
+#, fuzzy
+#| msgid "Confirm Details"
+msgid "Tax Details"
+msgstr "Məlumatı təsdiqlə"
+
+#: Backend/Ajax.php:109
+#, fuzzy
+#| msgid "Please select start date"
+msgid "Please fill tax name"
+msgstr "Başlanğıc tarixi seçin"
+
+#: Backend/Ajax.php:114
+msgid "Invalid tax type"
+msgstr ""
+
+#: Backend/Ajax.php:119
+msgid "Tax amount must be non-negative"
+msgstr ""
+
+#: Backend/Controller.php:22 TaxAddon.php:36
+msgid "Edit"
+msgstr ""
+
+#: Backend/Controller.php:26 TaxAddon.php:37
+msgid "Delete"
+msgstr ""
+
+#: Backend/Controller.php:33 TaxAddon.php:74
+msgid "Taxes"
+msgstr ""
+
+#: Backend/Controller.php:34
+msgid "NEW TAX"
+msgstr ""
+
+#: Backend/Controller.php:36
+msgid "ID"
+msgstr ""
+
+#: Backend/Controller.php:37
+msgid "NAME"
+msgstr ""
+
+#: Backend/Controller.php:39
+msgid "AMOUNT"
+msgstr ""
+
+#: Backend/Controller.php:54
+msgid "LOCATIONS"
+msgstr ""
+
+#: Backend/Controller.php:58
+#, fuzzy
+#| msgid "Select location"
+msgid "All locations"
+msgstr "Məkan seçin"
+
+#: Backend/Controller.php:73
+msgid "STATUS"
+msgstr ""
+
+#: Backend/Controller.php:75 Backend/view/modal/add_new.php:42
+msgid "Enabled"
+msgstr ""
+
+#: Backend/Controller.php:75
+msgid "Disabled"
+msgstr ""
+
+#: Backend/view/modal/add_new.php:15
+msgid "Edit Tax"
+msgstr ""
+
+#: Backend/view/modal/add_new.php:15
+msgid "New Tax"
+msgstr ""
+
+#: Backend/view/modal/add_new.php:45
+msgid "CANCEL"
+msgstr ""
+
+#: Backend/view/modal/add_new.php:46
+msgid "SAVE"
+msgstr ""
+
+#: Backend/view/modal/add_new.php:46
+msgid "CREATE"
+msgstr ""
+
+#: Backend/view/tab/tax_add_new_details.php:15
+msgid "Name"
+msgstr "Ad"
+
+#: Backend/view/tab/tax_add_new_details.php:19
+msgid "Amount"
+msgstr ""
+
+#: Backend/view/tab/tax_add_new_details.php:32
+#, fuzzy
+#| msgid "Location"
+msgid "Locations filter"
+msgstr "Məkan"
+
+#: Backend/view/tab/tax_add_new_details.php:46
+msgid "Services filter"
+msgstr ""
+
+#: Backend/view/tab/tax_section.php:12
+msgid "Hide \"Price does not include taxes\" on the services step"
+msgstr ""
+
+#: Backend/view/tab/tax_section.php:13
+msgid ""
+"If you enable this option, it allows to show \"Price does not include taxes"
+"\" on the services and extra services steps."
+msgstr ""
+
+#: Listener.php:72
+#, fuzzy
+msgid "Total tax amount"
+msgstr "Full amount"
+
+#: Listener.php:78
+msgid "Total tax amount of recurring appointments"
+msgstr ""
+
+#: Listener.php:88 TaxAddon.php:34
+msgid "Tax"
+msgstr ""
+
+#: Listener.php:94
+msgid "Tax (recurring)"
+msgstr ""
+
+#: Listener.php:178
+msgid "* Price does not include taxes"
+msgstr ""
+
+#: TaxAddon.php:27
+#, fuzzy
+msgid "Tax module"
+msgstr "Full amount"
+
+#: TaxAddon.php:35
+msgid "Add new"
+msgstr ""
+
+#~ msgid "Please fill in all required fields correctly!"
+#~ msgstr "Lütfən bütün xanaları düzgün doldurun!"
+
+#~ msgid "Staff"
+#~ msgstr "Kadr"
+
+#~ msgid "Service"
+#~ msgstr "Xidmət"
+
+#~ msgid "Service Extras"
+#~ msgstr "Əlavə xidmət"
+
+#~ msgid "Date & Time"
+#~ msgstr "Tarix"
+
+#~ msgid "Information"
+#~ msgstr "Məlumat"
+
+#~ msgid "Confirmation"
+#~ msgstr "Təsdiqləmə"
+
+#~ msgid "Have any questions?"
+#~ msgstr "Sualınız var?"
+
+#~ msgid "Select service"
+#~ msgstr "Xidmət seçin"
+
+#~ msgid "BACK"
+#~ msgstr "GERİ"
+
+#~ msgid "NEXT STEP"
+#~ msgstr "DAVAM"
+
+#, php-format
+#~ msgid "\"%s\" can not be empty, because it's a required field!"
+#~ msgstr "\"%s\" boş ola bilməz, bu xananın doldurulması vacibdir!"
+
+#, php-format
+#~ msgid "Minimum length of \"%s\" field is %d!"
+#~ msgstr "Minimum length of \"%s\" field is %d!"
+
+#, php-format
+#~ msgid "Maximum length of \"%s\" field is %d!"
+#~ msgstr "Maximum length of \"%s\" field is %d!"
+
+#~ msgid "File extension is not allowed!"
+#~ msgstr "Fayl formatına icazə verilmir!"
+
+#~ msgid "DATE"
+#~ msgstr "TARİX"
+
+#~ msgid "Days of week"
+#~ msgstr "Həftənin Günləri"
+
+#~ msgid "Mon"
+#~ msgstr "B.e"
+
+#~ msgid "Tue"
+#~ msgstr "Ç.a"
+
+#~ msgid "Wed"
+#~ msgstr "Ç."
+
+#~ msgid "Thu"
+#~ msgstr "C.a"
+
+#~ msgid "Fri"
+#~ msgstr "C."
+
+#~ msgid "Sat"
+#~ msgstr "Ş."
+
+#~ msgid "Sun"
+#~ msgstr "B."
+
+#~ msgid "Monday"
+#~ msgstr "Bazar ertəsi"
+
+#~ msgid "Tuesday"
+#~ msgstr "Çərşənbə axşamı"
+
+#~ msgid "Wednesday"
+#~ msgstr "Çərşənbə"
+
+#~ msgid "Thursday"
+#~ msgstr "Cümə axşamı"
+
+#~ msgid "Friday"
+#~ msgstr "Cümə"
+
+#~ msgid "Saturday"
+#~ msgstr "Şənbə"
+
+#~ msgid "Sunday"
+#~ msgstr "Bazar"
+
+#~ msgid "Every"
+#~ msgstr "Hər"
+
+#~ msgid "DAYS"
+#~ msgstr "GÜNLƏR"
+
+#~ msgid "Time"
+#~ msgstr "Saat"
+
+#~ msgid "On"
+#~ msgstr "On"
+
+#~ msgid "Specific day"
+#~ msgstr "Xüsusi gün"
+
+#~ msgid "First"
+#~ msgstr "Birinci"
+
+#~ msgid "Second"
+#~ msgstr "İkinci"
+
+#~ msgid "Third"
+#~ msgstr "Üçüncü"
+
+#~ msgid "Fourth"
+#~ msgstr "Dördüncü"
+
+#~ msgid "Last"
+#~ msgstr "Sonuncu"
+
+#~ msgid "Start date"
+#~ msgstr "Başlanğıc vaxtı"
+
+#~ msgid "End date"
+#~ msgstr "Bitiş vaxtı"
+
+#~ msgid "Times"
+#~ msgstr "Dəfə"
+
+#~ msgid "Select..."
+#~ msgstr "Seçin..."
+
+#~ msgid "TIME"
+#~ msgstr "SAAT"
+
+#, fuzzy
+#~ msgid "START MEETING"
+#~ msgstr "START NEW BOOKING"
+
+#~ msgid "EDIT"
+#~ msgstr "DƏYİŞ"
+
+#~ msgid "Discount"
+#~ msgstr "Endirim"
+
+#~ msgid "January"
+#~ msgstr "Yanvar"
+
+#~ msgid "February"
+#~ msgstr "Fevral"
+
+#~ msgid "March"
+#~ msgstr "Mart"
+
+#~ msgid "April"
+#~ msgstr "Aprel"
+
+#~ msgid "May"
+#~ msgstr "May"
+
+#~ msgid "June"
+#~ msgstr "İyun"
+
+#~ msgid "July"
+#~ msgstr "İyul"
+
+#~ msgid "August"
+#~ msgstr "Avqust"
+
+#~ msgid "September"
+#~ msgstr "Sentyabr"
+
+#~ msgid "October"
+#~ msgstr "Oktyabr"
+
+#~ msgid "November"
+#~ msgstr "Noyabr"
+
+#~ msgid "December"
+#~ msgstr "Dekabr"
+
+#, fuzzy
+#~ msgid "Share your page "
+#~ msgstr "Başlama tarixi"
+
+#, fuzzy
+#~ msgid "Share your page"
+#~ msgstr "Başlama tarixi"
+
+#, fuzzy
+#~ msgid "Starting guide"
+#~ msgstr "Start date"
+
+#, fuzzy
+#~ msgid "Create location"
+#~ msgstr "Select location"
+
+#, fuzzy
+#~ msgid "Create staff"
+#~ msgstr "Select staff"
+
+#, fuzzy
+#~ msgid "Create service"
+#~ msgstr "Select service"
+
+#, fuzzy
+#~ msgid "Select payment method"
+#~ msgstr "Select date"
+
+#~ msgid "Credit card"
+#~ msgstr "Kartla ödəniş"
+
+#, fuzzy
+#~ msgid "The QR for your page"
+#~ msgstr "Başlama tarixi"
+
+#, fuzzy
+#~ msgid "Please select WordPress user!"
+#~ msgstr "Please select service"
+
+#, fuzzy
+#~ msgid "First name"
+#~ msgstr "Birinci"
+
+#, fuzzy
+#~ msgid "Last name"
+#~ msgstr "Sonuncu"
+
+#~ msgid "Email"
+#~ msgstr "E-poçt"
+
+#~ msgid "Phone"
+#~ msgstr "Telefon"
+
+#, fuzzy
+#~ msgid "Notifications"
+#~ msgstr "Location"
+
+#, fuzzy
+#~ msgid "Please type the giftcard code field!"
+#~ msgstr "Please enter a valid phone number!"
+
+#, fuzzy
+#~ msgid "Giftcards"
+#~ msgstr "Credit card"
+
+#, fuzzy
+#~ msgid "Add Giftcard"
+#~ msgstr "Credit card"
+
+#, fuzzy
+#~ msgid "PDF Name"
+#~ msgstr "Ad"
+
+#, fuzzy
+#~ msgid "Select Type"
+#~ msgstr "Select date"
+
+#, fuzzy
+#~ msgid "Tab Name"
+#~ msgstr "Ad"
+
+#, fuzzy
+#~ msgid "Select Language"
+#~ msgstr "Select date"
+
+#, fuzzy
+#~ msgid "Select Service"
+#~ msgstr "Select service"
+
+#, fuzzy
+#~ msgid "Select Staff"
+#~ msgstr "Select staff"
+
+#, fuzzy
+#~ msgid "Select Location"
+#~ msgstr "Select location"
+
+#~ msgid "Daily"
+#~ msgstr "Günlük"
+
+#~ msgid "Deposit"
+#~ msgstr "Depozit"
+
+#~ msgid "Local"
+#~ msgstr "Nağd ödəniş"
+
+#~ msgid "Paypal"
+#~ msgstr "Paypal"
+
+#~ msgid "Any staff"
+#~ msgstr "İstənilən kadr"
+
+#, fuzzy
+#~ msgid "Select an available staff"
+#~ msgstr "Uyğun kadrı seçin"
+
+#~ msgid "Add coupon"
+#~ msgstr "Kupon əlavə et"
+
+#~ msgid "Please select location."
+#~ msgstr "Lütfən məkanı seçin"
+
+#~ msgid "Please select staff."
+#~ msgstr "Lütfən kadrı seçin"
+
+#~ msgid "Please select service"
+#~ msgstr "Lütfən xidməti seçin"
+
+#~ msgid "Please select week day(s)"
+#~ msgstr "Lütfən həftənin günlərini seçin"
+
+#~ msgid "Please select week day(s) and time(s) correctly"
+#~ msgstr "Lütfən həftənin günlərini və tarixi düzgün seçin"
+
+#~ msgid "Please select end date"
+#~ msgstr "Bitiş tarixi seçin"
+
+#~ msgid "Please select date."
+#~ msgstr "Lütfən tarix seçin"
+
+#~ msgid "Please select time."
+#~ msgstr "Lütfən saatı seçin"
+
+#~ msgid "Please select an available time"
+#~ msgstr "Lütfən mövcud tarixi seçin"
+
+#~ msgid "Please enter a valid email address!"
+#~ msgstr "Lütfən düzgün e-poçt adresi daxil edin!"
+
+#~ msgid "Please enter a valid phone number!"
+#~ msgstr "Lütfən düzgün telefon nömrəsi daxil edin!"
+
+#~ msgid "CONFIRM BOOKING"
+#~ msgstr "TAMAMLA"
+
+#~ msgid "There is no any Location for select."
+#~ msgstr "Seçiləcək məkan tapılmadı."
+
+#~ msgid "Staff not found. Please go back and select a different option."
+#~ msgstr "Kadr tapılmadı. Lütfən geriyə qayıdın və düzgün seçim edin."
+
+#~ msgid "Service not found. Please go back and select a different option."
+#~ msgstr "Xidmət tapılmadı. Lütfən geriyə qayıdın və düzgün seçim edin."
+
+#~ msgid "There isn't any available staff for the selected date/time."
+#~ msgstr "Seçilən tarix/saat üçün uygun kadr yoxdur."
+
+#~ msgid ""
+#~ "Extras not found in this service. You can select other service or click "
+#~ "the <span class=\"booknetic_text_primary\">\"Next step\"</span> button."
+#~ msgstr ""
+#~ "Bu xidmət üçün əlavə xidmət tapılmadı. Başqa servis seçəbilər və ya <span "
+#~ "class=\"booknetic_text_primary\">\"DAVAM\"</span> edəbilərsiniz."
+
+#~ msgid "w"
+#~ msgstr "h"
+
+#~ msgid "d"
+#~ msgstr "g"
+
+#~ msgid "h"
+#~ msgstr "s"
+
+#~ msgid "m"
+#~ msgstr "a"
+
+#~ msgid "s"
+#~ msgstr "s"
+
+#, fuzzy
+#~ msgid "Confirmation number is invalid!"
+#~ msgstr "Sizin rezervasiya kodunuz:"
+
+#, fuzzy
+#~ msgid "Select file to restore"
+#~ msgstr "Extra xidmət seçimi"
+
+#~ msgid "Finish"
+#~ msgstr "Bitiş"
+
+#, fuzzy
+#~ msgid "Hide a confirmation number"
+#~ msgstr "Sizin rezervasiya kodunuz:"
+
+#, fuzzy
+#~ msgid "Starting confirmation number"
+#~ msgstr "Sizin rezervasiya kodunuz:"
+
+#, fuzzy
+#~ msgid "Timezone"
+#~ msgstr "Time"
+
+#, fuzzy
+#~| msgid "Location"
+#~ msgid "Location ID"
+#~ msgstr "Məkan"
+
+#, fuzzy
+#~ msgid "Skip the Confirmation step"
+#~ msgstr "Confirmation"
+
+#, fuzzy
+#~ msgid "Cart page"
+#~ msgstr "Başlama tarixi"
+
+#, fuzzy
+#~ msgid "There is no Location to match your request."
+#~ msgstr "There is no any Location for select."
+
+#, fuzzy
+#~ msgid "Please select payment method!"
+#~ msgstr "Please select date."
+
+#~ msgid "Thank you for your request!"
+#~ msgstr "Rezervasiyanız qeydə alındı"
+
+#~ msgid "Your confirmation number:"
+#~ msgstr "Təsdiqləmə nömrəniz:"
+
+#~ msgid "ADD TO GOOGLE CALENDAR"
+#~ msgstr "GOOGLE CALENDARA ƏLAVƏ ET"
+
+#~ msgid "START NEW BOOKING"
+#~ msgstr "YENİ REZERVASİYA"
+
+#~ msgid "FINISH BOOKING"
+#~ msgstr "TAMAMLA"
+
+#, fuzzy
+#~ msgid "Coupon"
+#~ msgstr "Add coupon"
+
+#~ msgid "OK"
+#~ msgstr "OK"
+
+#, fuzzy
+#~ msgid "Giftcard"
+#~ msgstr "Credit card"
+
+#~ msgid "Total price"
+#~ msgstr "Ümumi qiymət"
+
+#~ msgid "Full amount"
+#~ msgstr "Tam məbləğ"
+
+#~ msgid "Select date"
+#~ msgstr "Tarixi seçin"
+
+#~ msgid "Surname"
+#~ msgstr "Soyad"
+
+#, fuzzy
+#~ msgid "Please enter the purchase code!"
+#~ msgstr "Please enter a valid phone number!"
+
+#~ msgid "Select staff"
+#~ msgstr "Kadr seçin"
+
+#~ msgid "Select service extras"
+#~ msgstr "Əlavə xidmət seçin"
+
+#~ msgid "Fill information"
+#~ msgstr "Məlumatı doldurun"
+
+#~ msgid "Select Date & Time"
+#~ msgstr "Tarix və Saatı seçin"
+
+#, fuzzy
+#~ msgid "second"
+#~ msgstr "Second"
+
+#, fuzzy
+#~ msgid "seconds"
+#~ msgstr "Second"

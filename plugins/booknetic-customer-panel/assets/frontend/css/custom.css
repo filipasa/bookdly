@@ -1,0 +1,772 @@
+/* ============================================================
+   BOOKDLY CUSTOMER PANEL REDESIGN - Core CSS Framework
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap');
+
+:root{
+  --ink: #0B0B12; 
+  --violet: #6c70dc; 
+  --violet-deep: #2E2A66; 
+  --violet-tint: #F2F1FC;
+  --violet-line: rgba(108,112,220,0.28); 
+  --paper: #ffffff; 
+  --grey: #65636f; 
+  --grey-light: #9b99a6;
+  --grey-bg: #F7F7FA; 
+  --border: #E3E2F0; 
+  --success: #16a34a; 
+  --warning: #d97706; 
+  --danger: #dc2626;
+  --sidebar-w: 220px;
+}
+
+.booknetic-body * {
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  color: var(--ink);
+}
+
+/* ===== APP SHELL ===== */
+.cp2-shell {
+  min-height: 100vh;
+  background: var(--grey-bg);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== TOP BAR ===== */
+.cp2-topbar {
+  background: #fff;
+  border-bottom: 1px solid var(--border);
+  padding: 0 28px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  flex-shrink: 0;
+}
+.cp2-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.cp2-toptools {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.cp2-user-chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.cp2-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--violet-tint);
+  color: var(--violet-deep);
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ===== BODY & RAIL LAYOUT ===== */
+.cp2-body {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+
+/* Left Rail Navigation */
+.cp2-rail {
+  width: var(--sidebar-w);
+  background: #fff;
+  border-right: 1px solid var(--border);
+  flex-shrink: 0;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 64px;
+  height: calc(100vh - 64px);
+  overflow-y: auto;
+}
+.cp2-rail-section {
+  padding: 10px 22px 6px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  letter-spacing: .08em;
+  color: var(--grey-light);
+  text-transform: uppercase;
+}
+.cp2-rail-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 22px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--grey);
+  cursor: pointer;
+  border-left: 3px solid transparent;
+  background: transparent;
+  border-top: none;
+  border-bottom: none;
+  border-right: none;
+  width: 100%;
+  text-align: left;
+  transition: all 0.15s ease;
+}
+.cp2-rail-item:hover {
+  color: var(--ink);
+  background: var(--grey-bg);
+}
+.cp2-rail-item.active {
+  color: var(--violet-deep);
+  background: var(--violet-tint);
+  border-left-color: var(--violet);
+}
+.cp2-rail-icon {
+  width: 16px;
+  text-align: center;
+  flex-shrink: 0;
+  font-size: 14px;
+}
+
+/* Main Panel Wrapper */
+.cp2-main {
+  flex: 1;
+  min-width: 0;
+  overflow-x: hidden;
+  background: var(--grey-bg);
+}
+
+/* ===== HERO MODULE ===== */
+.cp2-hero {
+  background: var(--ink);
+  color: #fff;
+  padding: 32px 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cp2-hero * {
+  color: #fff !important;
+}
+.cp2-hero-greeting {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+}
+.cp2-hero-sub {
+  font-size: 13px;
+  color: rgba(255,255,255,0.55) !important;
+  margin-top: 4px;
+}
+.cp2-hero-cta {
+  background: var(--violet);
+  color: #fff !important;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: opacity 0.15s ease;
+}
+.cp2-hero-cta:hover {
+  opacity: 0.9;
+}
+
+.cp2-content {
+  padding: 32px 36px 80px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.15s ease;
+}
+.btn-primary {
+  background: var(--violet);
+  color: #fff !important;
+}
+.btn-primary:hover {
+  opacity: 0.9;
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--grey);
+  border: 1px solid var(--border);
+}
+.btn-ghost:hover {
+  background: var(--grey-bg);
+  color: var(--ink);
+}
+.btn-danger {
+  background: var(--danger);
+  color: #fff !important;
+}
+.btn-danger:hover {
+  opacity: 0.9;
+}
+.btn-sm {
+  padding: 6px 12px;
+  font-size: 12px;
+}
+
+/* ===== STAT CARDS ===== */
+.cp2-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 28px;
+}
+.cp2-stat-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 18px 20px;
+}
+.stat-label {
+  font-size: 11px;
+  font-family: 'IBM Plex Mono', monospace;
+  letter-spacing: .05em;
+  color: var(--grey-light);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.stat-value {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1;
+}
+.stat-sub {
+  font-size: 12px;
+  color: var(--grey-light);
+  margin-top: 5px;
+}
+
+/* ===== SECTIONS ===== */
+.cp2-section-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: var(--ink);
+}
+
+/* ===== APPOINTMENT CARD ===== */
+.cp2-appt-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 16px 18px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  transition: all 0.15s ease;
+}
+.cp2-appt-card:hover {
+  box-shadow: 0 4px 12px rgba(20,18,50,0.06);
+}
+.cp2-appt-date {
+  width: 54px;
+  height: 54px;
+  background: var(--violet-tint);
+  border-radius: 6px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.cp2-appt-date .m {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 8px;
+  color: var(--violet-deep);
+  text-transform: uppercase;
+}
+.cp2-appt-date .d {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--violet-deep);
+  line-height: 1.1;
+}
+.cp2-appt-info {
+  flex: 1;
+  min-width: 0;
+}
+.cp2-appt-service {
+  font-weight: 700;
+  font-size: 15px;
+}
+.cp2-appt-meta {
+  font-size: 12px;
+  color: var(--grey-light);
+  margin-top: 3px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.cp2-appt-meta span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.cp2-appt-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.cp2-appt-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ===== BADGES / STATUS CHIPS ===== */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.badge::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+  display: inline-block;
+  opacity: .7;
+}
+.badge-confirmed { background: #dcfce7; color: #16a34a; }
+.badge-pending { background: #fef9c3; color: #854d0e; }
+.badge-cancelled, .badge-unpaid { background: #fee2e2; color: #dc2626; }
+.badge-paid { background: #dcfce7; color: #16a34a; }
+.badge-partial { background: #fef3c7; color: #d97706; }
+
+/* ===== TABLES ===== */
+.cp2-table-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.cp2-history-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+.cp2-history-table th {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: var(--grey-light);
+  padding: 12px 16px;
+  border-bottom: 2px solid var(--border);
+  text-align: left;
+}
+.cp2-history-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  color: var(--ink);
+}
+.cp2-history-table tr:last-child td {
+  border-bottom: none;
+}
+.cp2-history-table tr:hover td {
+  background: #fafaff;
+}
+
+/* ===== TABS & SECTIONS ===== */
+.booknetic-cp-tab {
+  display: none;
+}
+.booknetic-cp-tab.show {
+  display: block;
+}
+
+/* ===== 2-COL PROFILE LAYOUT ===== */
+.cp2-pp-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.field label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink);
+}
+.field input, .field select {
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 13px;
+  background: #fff;
+  width: 100%;
+}
+.field input:focus, .field select:focus {
+  outline: none;
+  border-color: var(--violet);
+  box-shadow: 0 0 0 2px var(--violet-tint);
+}
+
+/* ===== EMPTY STATE ===== */
+.empty-state {
+  text-align: center;
+  padding: 48px 20px;
+  color: var(--grey-light);
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+.empty-state .e-icon {
+  font-size: 32px;
+  margin-bottom: 12px;
+  color: var(--grey-light);
+}
+.empty-state h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 16px;
+  color: var(--grey);
+  margin-bottom: 6px;
+}
+
+.separator {
+  height: 1px;
+  background: var(--border);
+  margin: 20px 0;
+}
+
+/* ===== MOBILE BOTTOM NAVIGATION ===== */
+.cp2-bottombar {
+  display: none;
+  background: #fff;
+  border-top: 1px solid var(--border);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  z-index: 1000;
+}
+.cp2-bb-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  color: var(--grey-light);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+.cp2-bb-item.active {
+  color: var(--violet);
+}
+.cp2-bb-icon {
+  font-size: 18px;
+}
+.cp2-bb-label {
+  font-size: 9px;
+  font-weight: 600;
+}
+
+/* ===== MOBILE CARDS PANEL ===== */
+.cp2-history-cards {
+  display: none;
+  flex-direction: column;
+  gap: 8px;
+}
+.cp2-history-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 14px 16px;
+  position: relative;
+}
+.cp2-history-card .svc {
+  font-size: 14px;
+  font-weight: 700;
+}
+.cp2-history-card .meta {
+  font-size: 11px;
+  color: var(--grey-light);
+  margin-top: 4px;
+}
+.cp2-history-card .amt {
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+/* ============================================================
+   RESPONSIVE DESIGN BREAKPOINTS
+   ============================================================ */
+
+/* --- Tablet Mode (below 992px) --- */
+@media (max-width: 992px) {
+  :root {
+    --sidebar-w: 0px;
+  }
+  .cp2-rail {
+    display: none; /* Hide left rail on tablet/mobile */
+  }
+  .cp2-stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .cp2-pp-grid {
+    grid-template-columns: 1fr; /* Stack profile forms on tablet/mobile */
+    gap: 24px;
+  }
+}
+
+/* --- Mobile Mode (below 768px) --- */
+@media (max-width: 768px) {
+  .cp2-topbar {
+    padding: 0 16px;
+  }
+  .cp2-hero {
+    padding: 24px 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .cp2-hero-cta {
+    display: none; /* Hide hero button on mobile (replaced by thumb Book New bottombar) */
+  }
+  .cp2-content {
+    padding: 20px 16px 80px;
+  }
+  .cp2-stats {
+    grid-template-columns: 1fr; /* Stack stats on mobile */
+    gap: 12px;
+  }
+  .cp2-appt-card {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 16px;
+    gap: 12px;
+  }
+  .cp2-appt-right {
+    width: 100%;
+    justify-content: space-between;
+    border-top: 1px solid var(--border);
+    padding-top: 12px;
+  }
+  .cp2-appt-actions {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  /* Show cards instead of table on mobile */
+  .cp2-table-card {
+    display: none;
+  }
+  .cp2-history-cards {
+    display: flex;
+  }
+  .cp2-bottombar {
+    display: flex;
+  }
+}
+
+/* Hide theme header and footer on the Customer Panel page (ID 172) */
+.page-id-172 #site-header,
+.page-id-172 #site-footer {
+    display: none !important;
+}
+
+/* Make content area take up the full screen viewport */
+.page-id-172 #primary.content-area,
+.page-id-172 #main.site-main {
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+}
+
+.page-id-172 #booknetic-customer-panel {
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: 100% !important;
+    min-height: 100vh !important;
+}
+
+.page-id-172 .booknetic-cp-container {
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    min-height: 100vh !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* ===== POPUP MODAL OVERLAYS ===== */
+.booknetic_hidden {
+    display: none !important;
+}
+.booknetic_popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(11, 11, 18, 0.45);
+    z-index: 10000;
+    backdrop-filter: blur(4px);
+    overflow-y: auto;
+}
+.booknetic_popup_body {
+    background: #fff;
+    border-radius: 8px;
+    width: calc(100% - 32px);
+    max-width: 440px;
+    margin: 100px auto;
+    padding: 28px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    text-align: center;
+}
+.booknetic_cp_cancel_icon, .booknetic_cp_reschedule_icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--violet-tint);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+}
+.booknetic_cp_cancel_icon img, .booknetic_cp_reschedule_icon img {
+    width: 20px;
+    height: 20px;
+}
+.booknetic_cancel_popup_body, .booknetic_reschedule_popup_body, .booknetic_change_status_popup_body, .booknetic_pay_now_popup_body {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 24px;
+    color: var(--ink);
+}
+.booknetic_reschedule_popup_footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+.booknetic_btn_secondary {
+    background: var(--grey-bg);
+    color: var(--grey);
+    border: 1px solid var(--border);
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.booknetic_btn_danger {
+    background: var(--violet);
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.booknetic_btn_danger.booknetic_delete_profile_popup_yes, .booknetic_btn_danger.booknetic_cancel_popup_yes {
+    background: var(--danger);
+}
+.form-group label {
+    display: block;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 13px;
+    background: #fff;
+}
+
+/* intlTelInput Phone Input Alignment Fixes */
+.iti {
+    position: relative !important;
+    display: block !important;
+    width: 100% !important;
+}
+.iti input {
+    padding-left: 90px !important;
+}
+.iti__country-container {
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    left: 0 !important;
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    z-index: 10 !important;
+}
+.iti__selected-country {
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    padding: 0 12px !important;
+    height: 100% !important;
+}
+.iti__a11y-text {
+    display: none !important;
+}
+.iti__country-list {
+    z-index: 99999 !important;
+}
+
+
+

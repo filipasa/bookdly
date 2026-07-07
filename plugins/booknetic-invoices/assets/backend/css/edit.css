@@ -1,0 +1,60 @@
+.fsn_shorttags_element
+{
+	font-size: 14px;
+	color: #9ba6af;
+	margin-top: 15px;
+	cursor: pointer;
+}
+.fsn_shorttags_element:hover
+{
+	color: #2f3338;
+}
+
+
+#invoice_body_rt .note-toolbar
+{
+	background: #FFF;
+	border-color: #e3eaf3 !important;
+}
+#invoice_body_rt .note-editor
+{
+	border-radius: 2px !important;
+	border-color: #e3eaf3 !important;
+}
+#invoice_body_rt .note-btn
+{
+	height: 31px;
+	border-color: #e3eaf3;
+	border-radius: 2px !important;
+	color: #292d32;
+}
+#invoice_body_rt .dropdown-toggle::after
+{
+	display: none;
+}
+#invoice_body_rt .note-modal-footer
+{
+	padding: 0px 30px;
+
+}
+#invoice_body_rt .note-form-group
+{
+	padding-bottom: 0 !important;
+}
+#invoice_body_rt label > input[type='checkbox']
+{
+	margin-right: 10px;
+}
+#invoice_body_rt .note-editor.fullscreen
+{
+	background: #FFF;
+}
+#invoice_body_rt .note-editor .note-toolbar .note-dropdown-menu
+{
+	min-width: 190px;
+}
+#invoice_body_rt .note-statusbar
+{
+	border-color: #e3eaf3;
+	background: #FFF;
+}

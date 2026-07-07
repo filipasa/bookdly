@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 162 35" width="162" height="35">
+  <defs>
+    <style>
+      .text-logo {
+        font-family: 'Outfit', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 26px;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+      }
+      .icon-bg {
+        fill: rgba(255, 255, 255, 0.15) !important;
+        stroke: #5B6BF8 !important;
+        stroke-width: 2.5 !important;
+      }
+      .icon-stroke-primary {
+        fill: none !important;
+        stroke: #5B6BF8 !important;
+        stroke-width: 2.5 !important;
+        stroke-linecap: round !important;
+      }
+      .icon-line {
+        fill: none !important;
+        stroke: #5B6BF8 !important;
+        stroke-width: 2 !important;
+      }
+      .icon-stroke-white {
+        fill: none !important;
+        stroke: #FFFFFF !important;
+        stroke-width: 2.5 !important;
+        stroke-linecap: round !important;
+        stroke-linejoin: round !important;
+      }
+    </style>
+  </defs>
+  <g transform="translate(0, 3.5)">
+    <rect class="icon-bg" x="2" y="4" width="22" height="22" rx="5"></rect>
+    <path class="icon-stroke-primary" d="M7 2v4M19 2v4"></path>
+    <path class="icon-line" d="M2 10h22"></path>
+    <path class="icon-stroke-white" d="M8 17l3 3 6-6"></path>
+  </g>
+  <text x="34" y="27" class="text-logo" fill="#FFFFFF">Book<tspan fill="#5B6BF8">dly</tspan></text>
+</svg>

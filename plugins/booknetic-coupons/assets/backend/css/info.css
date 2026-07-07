@@ -1,0 +1,4 @@
+#fs_data_table_div td[data-column="info"]
+{
+	cursor: pointer;
+}

@@ -1,0 +1,160 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Booknetic SV\n"
+"POT-Creation-Date: 2023-03-03 16:38+0400\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: bkntc__\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: app/Frontend/assets/js/datepicker.min.js\n"
+"X-Poedit-SearchPathExcluded-1: app/Frontend/assets/js/intlTelInput.min.js\n"
+"X-Poedit-SearchPathExcluded-2: app/Frontend/assets/js/jquery.nicescroll.min."
+"js\n"
+"X-Poedit-SearchPathExcluded-3: app/Frontend/assets/js/utilsIntlTelInput.js\n"
+
+#: App/Backend/Ajax.php:46 App/Backend/Ajax.php:51 App/Backend/Ajax.php:130
+msgid "Please fill in all required fields correctly!"
+msgstr ""
+
+#: App/Backend/view/modal/connect_zoom_settings.php:18
+#: App/Backend/view/modal/integrations_zoom_settings.php:34
+#: App/Backend/view/modal/saas_integrations_zoom_settings.php:21
+msgid "Integration with Zoom"
+msgstr ""
+
+#: App/Backend/view/modal/connect_zoom_settings.php:27
+#: App/Backend/view/modal/integrations_zoom_settings.php:76
+msgid "CLICK TO CONNECT ZOOM ACCOUNT"
+msgstr ""
+
+#: App/Backend/view/modal/connect_zoom_settings.php:31
+#: App/Backend/view/modal/integrations_zoom_settings.php:80
+#, php-format
+msgid "Zoom account ( %s ) has been connected successfully."
+msgstr ""
+
+#: App/Backend/view/modal/connect_zoom_settings.php:32
+#: App/Backend/view/modal/integrations_zoom_settings.php:81
+msgid "DISCONNECT"
+msgstr ""
+
+#: App/Backend/view/modal/integrations_zoom_settings.php:29
+#: App/Backend/view/modal/saas_integrations_zoom_settings.php:16
+msgid "SAVE CHANGES"
+msgstr ""
+
+#: App/Backend/view/modal/integrations_zoom_settings.php:44
+#: App/Backend/view/modal/saas_integrations_zoom_settings.php:31
+msgid "Disabled"
+msgstr ""
+
+#: App/Backend/view/modal/integrations_zoom_settings.php:48
+#: App/Backend/view/modal/saas_integrations_zoom_settings.php:35
+msgid "Enabled"
+msgstr ""
+
+#: App/Backend/view/modal/integrations_zoom_settings.php:58
+msgid "Account ID"
+msgstr ""
+
+#: App/Backend/view/modal/integrations_zoom_settings.php:63
+#: App/Backend/view/modal/saas_integrations_zoom_settings.php:61
+msgid "Client ID"
+msgstr ""
+
+#: App/Backend/view/modal/integrations_zoom_settings.php:68
+msgid "Client secret"
+msgstr ""
+
+#: App/Backend/view/modal/integrations_zoom_settings.php:91
+msgid "Meeting topic"
+msgstr ""
+
+#: App/Backend/view/modal/integrations_zoom_settings.php:96
+msgid "Meeting description"
+msgstr ""
+
+#: App/Backend/view/modal/integrations_zoom_settings.php:102
+msgid "Set random password for meetings"
+msgstr ""
+
+#: App/Backend/view/modal/saas_integrations_zoom_settings.php:45
+msgid "Integration method"
+msgstr ""
+
+#: App/Backend/view/modal/saas_integrations_zoom_settings.php:45
+msgid ""
+"OAuth method - in this method you need to build an OAuth Application on the "
+"Zoom App Marketplace. After building the App you need to submit it for "
+"review. Once you submit your app, Zoom will conduct a functional and "
+"security review of your app. On a successful review, your app will be "
+"published to the Zoom App Marketplace and the Tenants can connect their Zoom "
+"accounts.<br/><br/>JWT method - in this method each tenant need to create "
+"their personal JWT app and connect the Zoom account via the JWT app.<br/><br/"
+">Server to server Oauth - in this method each tenant need to create their "
+"personal Server-To-Server Oauth app and connect the Zoom account via the "
+"Server-To-Server Oauth app."
+msgstr ""
+
+#: App/Backend/view/modal/saas_integrations_zoom_settings.php:47
+msgid "OAuth method"
+msgstr ""
+
+#: App/Backend/view/modal/saas_integrations_zoom_settings.php:48
+msgid "Server to server oauth"
+msgstr ""
+
+#: App/Backend/view/modal/saas_integrations_zoom_settings.php:56
+msgid "Callback URI"
+msgstr ""
+
+#: App/Backend/view/modal/saas_integrations_zoom_settings.php:66
+msgid "Client Secret"
+msgstr ""
+
+#: App/Backend/view/tabs/zoom_fields.php:13
+msgid "Zoom user"
+msgstr ""
+
+#: App/Backend/view/tabs/zoom_fields_services.php:13
+msgid "Activate Zoom for the service"
+msgstr ""
+
+#: App/Integration/ZoomService.php:421
+msgid "An error occurred, please try again later"
+msgstr ""
+
+#: App/ZoomAddon.php:29
+msgid "Zoom integration"
+msgstr ""
+
+#: App/ZoomAddon.php:31
+msgid "Zoom settings"
+msgstr ""
+
+#: App/ZoomAddon.php:49
+msgid "Zoom meeting URL"
+msgstr ""
+
+#: App/ZoomAddon.php:55
+msgid "Zoom meeting start URL"
+msgstr ""
+
+#: App/ZoomAddon.php:61
+msgid "Zoom meeting password"
+msgstr ""
+
+#: App/ZoomAddon.php:102 App/ZoomAddon.php:117
+msgid "Zoom"
+msgstr ""
+
+#: App/ZoomAddon.php:202
+msgid "START MEETING"
+msgstr ""

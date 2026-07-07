@@ -1,0 +1,30 @@
+# Ignore uploads, cache, and other runtime files
+uploads/
+cache/
+blogs.dir/
+upgrade/
+upgrade-temp-backup/
+temp_extract_1781708149/
+*error_log
+*.log
+
+# Ignore heavy standard plugins to keep repo clean
+plugins/elementor/
+plugins/woocommerce/
+plugins/wp-file-manager/
+plugins/wpforms-lite/
+plugins/wp-mail-smtp/
+plugins/duplicate-page/
+plugins/file-manager-advanced/
+plugins/filebird/
+plugins/extendify/
+plugins/litespeed-cache/
+plugins/ionos-essentials/
+plugins/ionos-marketplace/
+plugins/one-time-login/
+
+# Ignore test helper scripts in wp-content/ root
+*.php
+!index.php
+!plugins/**
+!themes/**

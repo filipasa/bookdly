@@ -1,0 +1,711 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: test\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-03-03 16:34+0400\n"
+"PO-Revision-Date: 2023-03-03 16:34+0400\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.2\n"
+"X-Poedit-Basepath: ../app\n"
+"X-Poedit-KeywordsList: bkntc__\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: Frontend/assets/js/datepicker.min.js\n"
+"X-Poedit-SearchPathExcluded-1: Frontend/assets/js/intlTelInput.min.js\n"
+"X-Poedit-SearchPathExcluded-2: Frontend/assets/js/jquery.nicescroll.min.js\n"
+"X-Poedit-SearchPathExcluded-3: Frontend/assets/js/utilsIntlTelInput.js\n"
+
+#: Backend/view/modal/customer_panel_settings.php:16
+#: Backend/view/modal/customer_panel_settings_saas.php:15
+msgid "SAVE CHANGES"
+msgstr ""
+
+#: Backend/view/modal/customer_panel_settings.php:21
+msgid "Front-end panels"
+msgstr ""
+
+#: Backend/view/modal/customer_panel_settings.php:22
+#: Backend/view/modal/customer_panel_settings_saas.php:20
+#: CustomerPanelAddon.php:55 CustomerPanelAddon.php:71
+msgid "Customer Panel"
+msgstr ""
+
+#: Backend/view/modal/customer_panel_settings.php:32
+#: Backend/view/modal/customer_panel_settings_saas.php:30
+msgid "Disabled"
+msgstr ""
+
+#: Backend/view/modal/customer_panel_settings.php:36
+#: Backend/view/modal/customer_panel_settings_saas.php:34
+msgid "Enabled"
+msgstr ""
+
+#: Backend/view/modal/customer_panel_settings.php:47
+#: Backend/view/modal/customer_panel_settings_saas.php:43
+msgid "Page of Customer Panel"
+msgstr ""
+
+#: Backend/view/modal/customer_panel_settings.php:57
+msgid "Time restriction to change appointments"
+msgstr ""
+
+#: Backend/view/modal/customer_panel_settings.php:97
+msgid "Allow customers to change appointment status"
+msgstr ""
+
+#: Backend/view/modal/customer_panel_settings.php:105
+msgid "Customers can change appointment status to"
+msgstr ""
+
+#: Backend/view/modal/customer_panel_settings.php:122
+msgid "Allow customers to reschedule their appointments"
+msgstr ""
+
+#: Backend/view/modal/customer_panel_settings.php:131
+msgid "Customers can reschedule with these appointment statuses"
+msgstr ""
+
+#: Backend/view/modal/customer_panel_settings.php:144
+#: Backend/view/modal/customer_panel_settings_saas.php:54
+msgid "Allow customers to delete their account"
+msgstr ""
+
+#: Backend/view/modal/customer_panel_settings.php:155
+msgid "Hide the \"Pay now\" button on the Customer Panel"
+msgstr ""
+
+#: CustomerPanelAddon.php:36
+msgid "Customer Panel settings"
+msgstr ""
+
+#: CustomerPanelAddon.php:39
+msgid "Customer Panel URL"
+msgstr ""
+
+#: CustomerPanelAddon.php:72
+msgid "You can customize customer panel settings from here"
+msgstr ""
+
+#: CustomerPanelAddon.php:115
+msgid "Redirecting..."
+msgstr ""
+
+#: CustomerPanelAddon.php:127
+msgid "January"
+msgstr "January"
+
+#: CustomerPanelAddon.php:128
+msgid "February"
+msgstr "February"
+
+#: CustomerPanelAddon.php:129
+msgid "March"
+msgstr "March"
+
+#: CustomerPanelAddon.php:130
+msgid "April"
+msgstr "April"
+
+#: CustomerPanelAddon.php:131
+msgid "May"
+msgstr "May"
+
+#: CustomerPanelAddon.php:132
+msgid "June"
+msgstr "June"
+
+#: CustomerPanelAddon.php:133
+msgid "July"
+msgstr "July"
+
+#: CustomerPanelAddon.php:134
+msgid "August"
+msgstr "August"
+
+#: CustomerPanelAddon.php:135
+msgid "September"
+msgstr "September"
+
+#: CustomerPanelAddon.php:136
+msgid "October"
+msgstr "October"
+
+#: CustomerPanelAddon.php:137
+msgid "November"
+msgstr "November"
+
+#: CustomerPanelAddon.php:138
+msgid "December"
+msgstr "December"
+
+#: CustomerPanelAddon.php:141
+msgid "Mon"
+msgstr "Mon"
+
+#: CustomerPanelAddon.php:142
+msgid "Tue"
+msgstr "Tue"
+
+#: CustomerPanelAddon.php:143
+msgid "Wed"
+msgstr "Wed"
+
+#: CustomerPanelAddon.php:144
+msgid "Thu"
+msgstr "Thu"
+
+#: CustomerPanelAddon.php:145
+msgid "Fri"
+msgstr "Fri"
+
+#: CustomerPanelAddon.php:146
+msgid "Sat"
+msgstr "Sat"
+
+#: CustomerPanelAddon.php:147
+msgid "Sun"
+msgstr "Sun"
+
+#: CustomerPanelAddon.php:150
+msgid "Select..."
+msgstr "Select..."
+
+#: CustomerPanelAddon.php:151
+msgid "Searching..."
+msgstr ""
+
+#: Frontend/Ajax.php:40
+#, fuzzy
+#| msgid "Please fill in all required fields!"
+msgid "Please fill all required fields!"
+msgstr "Please fill in all required fields!"
+
+#: Frontend/Ajax.php:50
+msgid "Please enter a valid email address!"
+msgstr "Please enter a valid email address!"
+
+#: Frontend/Ajax.php:57
+msgid "This email address is already used by another customer."
+msgstr ""
+
+#: Frontend/Ajax.php:81
+msgid "Profile data was saved successfully"
+msgstr ""
+
+#: Frontend/Ajax.php:97
+msgid "Password does not match!"
+msgstr ""
+
+#: Frontend/Ajax.php:105
+msgid "Current password is wrong!"
+msgstr ""
+
+#: Frontend/Ajax.php:110
+msgid "Password was changed successfully"
+msgstr ""
+
+#: Frontend/Ajax.php:142
+msgid "Time format is wrong."
+msgstr ""
+
+#: Frontend/Ajax.php:147
+msgid "You can not change the date and time to past."
+msgstr ""
+
+#: Frontend/Ajax.php:173
+#, php-format
+msgid "Minimum time requirement prior to change the appointment date and time is %s"
+msgstr ""
+
+#: Frontend/Ajax.php:180
+#, php-format
+msgid "You cannot change the appointment less than %s in advance"
+msgstr ""
+
+#: Frontend/Ajax.php:185
+msgid "You have not changed the date and time."
+msgstr ""
+
+#: Frontend/Ajax.php:198
+msgid "Appointment was rescheduled successfully!"
+msgstr ""
+
+#: Frontend/Ajax.php:316
+msgid "Time limit to change appointment status expired"
+msgstr ""
+
+#: Frontend/Ajax.php:325
+msgid "Invalid appointment status"
+msgstr ""
+
+#: Frontend/Ajax.php:329
+msgid "Change current status before save"
+msgstr ""
+
+#: Frontend/Ajax.php:335
+#, php-format
+msgid "Appointment status changed to %s"
+msgstr ""
+
+#: Frontend/Ajax.php:379
+msgid "Invalid payment method"
+msgstr ""
+
+#: Frontend/view/appointments_list.php:44
+msgid "Reschedule"
+msgstr ""
+
+#: Frontend/view/appointments_list.php:47
+msgid "Change Status"
+msgstr ""
+
+#: Frontend/view/appointments_list.php:50
+msgid "Pay Now"
+msgstr ""
+
+#: Frontend/view/customer_panel.php:34
+msgid "LOGOUT"
+msgstr ""
+
+#: Frontend/view/customer_panel.php:46
+msgid "Appointments"
+msgstr ""
+
+#: Frontend/view/customer_panel.php:52
+msgid "Profile"
+msgstr ""
+
+#: Frontend/view/customer_panel.php:58
+msgid "Change password"
+msgstr ""
+
+#: Frontend/view/customer_panel.php:68
+msgid "ID"
+msgstr ""
+
+#: Frontend/view/customer_panel.php:70
+msgid "Company"
+msgstr ""
+
+#: Frontend/view/customer_panel.php:72
+msgid "SERVICE"
+msgstr ""
+
+#: Frontend/view/customer_panel.php:73
+msgid "STAFF"
+msgstr ""
+
+#: Frontend/view/customer_panel.php:74
+msgid "APPOINTMENT DATE"
+msgstr ""
+
+#: Frontend/view/customer_panel.php:75
+msgid "PRICE"
+msgstr ""
+
+#: Frontend/view/customer_panel.php:76
+msgid "DURATION"
+msgstr ""
+
+#: Frontend/view/customer_panel.php:77
+msgid "STATUS"
+msgstr ""
+
+#: Frontend/view/customer_panel.php:91
+msgid "Name"
+msgstr "Name"
+
+#: Frontend/view/customer_panel.php:97
+msgid "Surname"
+msgstr "Surname"
+
+#: Frontend/view/customer_panel.php:103
+msgid "Email"
+msgstr "Email"
+
+#: Frontend/view/customer_panel.php:109
+msgid "Phone"
+msgstr "Phone"
+
+#: Frontend/view/customer_panel.php:115
+msgid "Date of birth"
+msgstr ""
+
+#: Frontend/view/customer_panel.php:120
+msgid "Gender"
+msgstr ""
+
+#: Frontend/view/customer_panel.php:122
+msgid "Male"
+msgstr ""
+
+#: Frontend/view/customer_panel.php:123
+msgid "Female"
+msgstr ""
+
+#: Frontend/view/customer_panel.php:131 Frontend/view/customer_panel.php:247
+msgid "SAVE"
+msgstr ""
+
+#: Frontend/view/customer_panel.php:135
+msgid "DELETE MY PROFILE"
+msgstr ""
+
+#: Frontend/view/customer_panel.php:146
+msgid "Current password"
+msgstr ""
+
+#: Frontend/view/customer_panel.php:152
+msgid "New password"
+msgstr ""
+
+#: Frontend/view/customer_panel.php:159
+msgid "Repeat new password"
+msgstr ""
+
+#: Frontend/view/customer_panel.php:169
+msgid "CHANGE PASSWORD"
+msgstr ""
+
+#: Frontend/view/customer_panel.php:184
+msgid "Are you sure you want to delete your profile?"
+msgstr ""
+
+#: Frontend/view/customer_panel.php:187 Frontend/view/customer_panel.php:202
+msgid "NO"
+msgstr ""
+
+#: Frontend/view/customer_panel.php:188 Frontend/view/customer_panel.php:203
+msgid "YES"
+msgstr ""
+
+#: Frontend/view/customer_panel.php:199
+msgid "Are you sure you want to change appointment status to?"
+msgstr ""
+
+#: Frontend/view/customer_panel.php:216
+msgid "Date"
+msgstr ""
+
+#: Frontend/view/customer_panel.php:220
+msgid "Time"
+msgstr "Time"
+
+#: Frontend/view/customer_panel.php:226 Frontend/view/customer_panel.php:246
+#: Frontend/view/customer_panel.php:264
+msgid "CANCEL"
+msgstr ""
+
+#: Frontend/view/customer_panel.php:227
+msgid "RESCHEDULE"
+msgstr ""
+
+#: Frontend/view/customer_panel.php:240
+#, fuzzy
+msgid "Select Status"
+msgstr "Select staff"
+
+#: Frontend/view/customer_panel.php:258
+msgid "Select Payment Gateway"
+msgstr ""
+
+#: Frontend/view/customer_panel.php:265
+msgid "Pay"
+msgstr ""
+
+#: Integrations/Divi/includes/modules/CustomerPanel/CustomerPanel.php:16
+msgid "Booknetic Customer Panel"
+msgstr ""
+
+#: Listener.php:21
+msgid "Customer panel URL"
+msgstr ""
+
+#~ msgid "Please fill in all required fields correctly!"
+#~ msgstr "Please fill in all required fields correctly!"
+
+#~ msgid "Location"
+#~ msgstr "Location"
+
+#~ msgid "Staff"
+#~ msgstr "Staff"
+
+#~ msgid "Service"
+#~ msgstr "Services"
+
+#~ msgid "Service Extras"
+#~ msgstr "Service Extras"
+
+#~ msgid "Date & Time"
+#~ msgstr "Date & Time"
+
+#~ msgid "Information"
+#~ msgstr "Information"
+
+#~ msgid "Confirmation"
+#~ msgstr "Confirmation"
+
+#~ msgid "Select service"
+#~ msgstr "Select service"
+
+#~ msgid "BACK"
+#~ msgstr "BACK"
+
+#~ msgid "NEXT STEP"
+#~ msgstr "NEXT STEP"
+
+#, php-format
+#~ msgid "Minimum length of \"%s\" field is %d!"
+#~ msgstr "Minimum length of \"%s\" field is %d!"
+
+#, php-format
+#~ msgid "Maximum length of \"%s\" field is %d!"
+#~ msgstr "Maximum length of \"%s\" field is %d!"
+
+#~ msgid "File extension is not allowed!"
+#~ msgstr "File extension is not allowed!"
+
+#~ msgid "DATE"
+#~ msgstr "DATE"
+
+#~ msgid "Days of week"
+#~ msgstr "Days of week"
+
+#~ msgid "Monday"
+#~ msgstr "Monday"
+
+#~ msgid "Tuesday"
+#~ msgstr "Tuesday"
+
+#~ msgid "Wednesday"
+#~ msgstr "Wednesday"
+
+#~ msgid "Thursday"
+#~ msgstr "Thursday"
+
+#~ msgid "Friday"
+#~ msgstr "Friday"
+
+#~ msgid "Saturday"
+#~ msgstr "Saturday"
+
+#~ msgid "Sunday"
+#~ msgstr "Sunday"
+
+#~ msgid "Every"
+#~ msgstr "Every"
+
+#~ msgid "DAYS"
+#~ msgstr "DAYS"
+
+#~ msgid "On"
+#~ msgstr "On"
+
+#~ msgid "Specific day"
+#~ msgstr "Specific day"
+
+#~ msgid "First"
+#~ msgstr "First"
+
+#~ msgid "Second"
+#~ msgstr "Second"
+
+#~ msgid "Third"
+#~ msgstr "Third"
+
+#~ msgid "Fourth"
+#~ msgstr "Fourth"
+
+#~ msgid "Last"
+#~ msgstr "Last"
+
+#~ msgid "Start date"
+#~ msgstr "Start date"
+
+#~ msgid "End date"
+#~ msgstr "End date"
+
+#~ msgid "Times"
+#~ msgstr "Times"
+
+#~ msgid "TIME"
+#~ msgstr "TIME"
+
+#~ msgid "EDIT"
+#~ msgstr "EDIT"
+
+#~ msgid "Discount"
+#~ msgstr "Discount"
+
+#, fuzzy
+#~ msgid "Tax amount"
+#~ msgstr "Full amount"
+
+#, fuzzy
+#~ msgid "Select Type"
+#~ msgstr "Select date"
+
+#, fuzzy
+#~ msgid "Tab Name"
+#~ msgstr "Name"
+
+#, fuzzy
+#~ msgid "Select Language"
+#~ msgstr "Select date"
+
+#, fuzzy
+#~ msgid "Select Service"
+#~ msgstr "Select service"
+
+#, fuzzy
+#~ msgid "Select Location"
+#~ msgstr "Select location"
+
+#~ msgid "Daily"
+#~ msgstr "Daily"
+
+#~ msgid "Deposit"
+#~ msgstr "Deposit"
+
+#~ msgid "Local"
+#~ msgstr "Local"
+
+#~ msgid "Any staff"
+#~ msgstr "Any staff"
+
+#~ msgid "Select an available staff"
+#~ msgstr "Please select an available time"
+
+#~ msgid "Add coupon"
+#~ msgstr "Add coupon"
+
+#~ msgid "Please select location."
+#~ msgstr "Please select location."
+
+#~ msgid "Please select staff."
+#~ msgstr "Please select staff."
+
+#~ msgid "Please select service"
+#~ msgstr "Please select service"
+
+#~ msgid "Please select week day(s)"
+#~ msgstr "Please select week day(s)"
+
+#~ msgid "Please select week day(s) and time(s) correctly"
+#~ msgstr "Please select week day(s) and time(s) correctly"
+
+#~ msgid "Please select start date"
+#~ msgstr "Please select start date"
+
+#~ msgid "Please select end date"
+#~ msgstr "Please select end date"
+
+#~ msgid "Please select date."
+#~ msgstr "Please select date."
+
+#~ msgid "Please select time."
+#~ msgstr "Please select time."
+
+#~ msgid "Please select an available time"
+#~ msgstr "Please select an available time"
+
+#~ msgid "Please enter a valid phone number!"
+#~ msgstr "Please enter a valid phone number!"
+
+#~ msgid "CONFIRM BOOKING"
+#~ msgstr "CONFIRM BOOKING"
+
+#~ msgid "There is no any Location for select."
+#~ msgstr "There is no any Location for select."
+
+#~ msgid "Staff not found. Please go back and select a different option."
+#~ msgstr "Staff not found. Please go back and select a different option."
+
+#~ msgid "Service not found. Please go back and select a different option."
+#~ msgstr "Service not found. Please go back and select a different option."
+
+#~ msgid "There isn't any available staff for the selected date/time."
+#~ msgstr "There isn&#039;t any available staff for the selected date/time."
+
+#~ msgid "Extras not found in this service. You can select other service or click the <span class=\"booknetic_text_primary\">\"Next step\"</span> button."
+#~ msgstr "Extras not found in this service. You can select other service or click the <span class=\"booknetic_text_primary\">\"Next step\"</span> button."
+
+#~ msgid "w"
+#~ msgstr "w"
+
+#~ msgid "d"
+#~ msgstr "d"
+
+#~ msgid "h"
+#~ msgstr "h"
+
+#~ msgid "m"
+#~ msgstr "m"
+
+#~ msgid "s"
+#~ msgstr "s"
+
+#~ msgid "Finish"
+#~ msgstr "Finish"
+
+#, fuzzy
+#~ msgid "Location ID"
+#~ msgstr "Location"
+
+#~ msgid "Thank you for your request!"
+#~ msgstr "Thank you for your request!"
+
+#~ msgid "Your confirmation number:"
+#~ msgstr "Your confirmation number:"
+
+#~ msgid "ADD TO GOOGLE CALENDAR"
+#~ msgstr "ADD TO GOOGLE CALENDAR"
+
+#~ msgid "START NEW BOOKING"
+#~ msgstr "START NEW BOOKING"
+
+#~ msgid "FINISH BOOKING"
+#~ msgstr "FINISH BOOKING"
+
+#~ msgid "OK"
+#~ msgstr "OK"
+
+#~ msgid "Total price"
+#~ msgstr "Total price"
+
+#~ msgid "Full amount"
+#~ msgstr "Full amount"
+
+#~ msgid "Select date"
+#~ msgstr "Select date"
+
+#~ msgid "Select staff"
+#~ msgstr "Select staff"
+
+#~ msgid "Select location"
+#~ msgstr "Select location"
+
+#~ msgid "Select service extras"
+#~ msgstr "Select service extras"
+
+#~ msgid "Fill information"
+#~ msgstr "Fill information"
+
+#~ msgid "Select Date & Time"
+#~ msgstr "Select Date & Time"
+
+#~ msgid "Confirm Details"
+#~ msgstr "Confirm Details"
+
+#, fuzzy
+#~ msgid "second"
+#~ msgstr "Second"
+
+#, fuzzy
+#~ msgid "seconds"
+#~ msgstr "Second"

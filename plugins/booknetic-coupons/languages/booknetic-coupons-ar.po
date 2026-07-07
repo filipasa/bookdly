@@ -1,0 +1,625 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: test\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-27 18:16+0400\n"
+"PO-Revision-Date: 2023-06-27 18:16+0400\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.2.2\n"
+"X-Poedit-Basepath: ../app\n"
+"X-Poedit-KeywordsList: bkntc__\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: Frontend/assets/js/datepicker.min.js\n"
+"X-Poedit-SearchPathExcluded-1: Frontend/assets/js/intlTelInput.min.js\n"
+"X-Poedit-SearchPathExcluded-2: Frontend/assets/js/jquery.nicescroll.min.js\n"
+"X-Poedit-SearchPathExcluded-3: Frontend/assets/js/utilsIntlTelInput.js\n"
+
+#: Backend/Ajax.php:74
+#, fuzzy
+#| msgid "Confirm Details"
+msgid "Coupon Details"
+msgstr "تأكيد الحجز"
+
+#: Backend/Ajax.php:104
+msgid "Discount cannot be negative number!"
+msgstr ""
+
+#: Backend/Ajax.php:111
+msgid "Discount percent should be more than 0%!"
+msgstr ""
+
+#: Backend/Ajax.php:116
+msgid "Discount percent count cannot be more than 100%!"
+msgstr ""
+
+#: Backend/Ajax.php:138
+msgid "Please type the coupon code field!"
+msgstr ""
+
+#: Backend/Ajax.php:147
+msgid "Coupon with same code is already exists!"
+msgstr ""
+
+#: Backend/Ajax.php:281
+msgid "Usage History Details"
+msgstr ""
+
+#: Backend/Controller.php:23 CouponsAddon.php:30 CouponsAddon.php:38
+#: CouponsAddon.php:60 CouponsAddon.php:75 CouponsAddon.php:80
+#: CouponsAddon.php:85
+msgid "Coupons"
+msgstr ""
+
+#: Backend/Controller.php:24 Backend/view/modal/add_new.php:44
+msgid "ADD COUPON"
+msgstr ""
+
+#: Backend/Controller.php:26 CouponsAddon.php:40
+msgid "Edit"
+msgstr ""
+
+#: Backend/Controller.php:30 CouponsAddon.php:41
+msgid "Delete"
+msgstr ""
+
+#: Backend/Controller.php:38
+msgid "№"
+msgstr ""
+
+#: Backend/Controller.php:39
+msgid "CODE"
+msgstr ""
+
+#: Backend/Controller.php:40
+msgid "DISCOUNT"
+msgstr ""
+
+#: Backend/Controller.php:44
+msgid "USAGE LIMIT"
+msgstr ""
+
+#: Backend/Controller.php:45
+msgid "Times Used"
+msgstr ""
+
+#: Backend/Controller.php:50
+msgid "STATUS"
+msgstr ""
+
+#: Backend/Controller.php:54
+msgid "Inactive"
+msgstr ""
+
+#: Backend/Controller.php:58 Backend/Controller.php:68
+msgid "Expired"
+msgstr ""
+
+#: Backend/Controller.php:64
+msgid "Active"
+msgstr ""
+
+#: Backend/Controller.php:75
+msgid "USAGE HISTORY"
+msgstr ""
+
+#: Backend/view/modal/add_new.php:18
+#, fuzzy
+#| msgid "Add coupon"
+msgid "Edit Coupon"
+msgstr "إضافة قسيمة"
+
+#: Backend/view/modal/add_new.php:18
+msgid "Add Coupon"
+msgstr ""
+
+#: Backend/view/modal/add_new.php:43
+msgid "CANCEL"
+msgstr ""
+
+#: Backend/view/modal/add_new.php:44
+msgid "Save"
+msgstr ""
+
+#: Backend/view/modal/coupons_usage_history.php:15
+msgid "Usage history"
+msgstr ""
+
+#: Backend/view/modal/coupons_usage_history.php:37
+msgid "CLOSE"
+msgstr ""
+
+#: Backend/view/modal/edit_tab.php:13
+msgid "- none -"
+msgstr ""
+
+#: Backend/view/tabs/appointment_add_edit_modal.php:14
+msgid "No coupons found"
+msgstr ""
+
+#: Backend/view/tabs/appointment_info_modal.php:14
+msgid "Coupon code"
+msgstr ""
+
+#: Backend/view/tabs/appointment_info_modal.php:15
+#: Backend/view/tabs/coupons_add_new_details.php:22
+msgid "Discount"
+msgstr "الخصم"
+
+#: Backend/view/tabs/coupon_section.php:10
+msgid "Hide coupon section"
+msgstr ""
+
+#: Backend/view/tabs/coupons_add_new_details.php:18
+msgid "Code"
+msgstr ""
+
+#: Backend/view/tabs/coupons_add_new_details.php:35
+msgid "Applies date from"
+msgstr ""
+
+#: Backend/view/tabs/coupons_add_new_details.php:36
+#: Backend/view/tabs/coupons_add_new_details.php:40
+msgid "Life time"
+msgstr ""
+
+#: Backend/view/tabs/coupons_add_new_details.php:39
+msgid "Applies date to"
+msgstr ""
+
+#: Backend/view/tabs/coupons_add_new_details.php:46
+msgid "Usage limit"
+msgstr ""
+
+#: Backend/view/tabs/coupons_add_new_details.php:47
+msgid "No limit"
+msgstr ""
+
+#: Backend/view/tabs/coupons_add_new_details.php:50
+msgid "Once per"
+msgstr ""
+
+#: Backend/view/tabs/coupons_add_new_details.php:50
+msgid ""
+"Customer - Each customer can use the coupon only once. <br> Booking - Coupon "
+"will be applied only to a single appointment"
+msgstr ""
+
+#: Backend/view/tabs/coupons_add_new_details.php:52
+msgid "Customer"
+msgstr ""
+
+#: Backend/view/tabs/coupons_add_new_details.php:53
+msgid "Booking"
+msgstr ""
+
+#: Backend/view/tabs/coupons_add_new_details.php:60
+msgid "Services filter"
+msgstr ""
+
+#: Backend/view/tabs/coupons_add_new_details.php:74
+msgid "Staff filter"
+msgstr ""
+
+#: Backend/view/tabs/coupons_usage_history_details.php:14
+msgid "Coupon is not used yet!"
+msgstr ""
+
+#: Backend/view/tabs/coupons_usage_history_details.php:25
+msgid "CUSTOMER"
+msgstr ""
+
+#: Backend/view/tabs/coupons_usage_history_details.php:26
+msgid "USED AMOUNT"
+msgstr ""
+
+#: Backend/view/tabs/coupons_usage_history_details.php:27
+msgid "SERVICE"
+msgstr ""
+
+#: Backend/view/tabs/coupons_usage_history_details.php:28
+msgid "DATE"
+msgstr "التاريخ"
+
+#: Backend/view/tabs/coupons_usage_history_details.php:29
+msgid "INFO"
+msgstr ""
+
+#: CouponsAddon.php:39
+msgid "Add New"
+msgstr ""
+
+#: CouponsAddon.php:42
+msgid "Coupons tab"
+msgstr ""
+
+#: CouponsAddon.php:100 CouponsAddon.php:105 CouponsAddon.php:133
+#, fuzzy
+#| msgid "Add coupon"
+msgid "Coupon"
+msgstr "إضافة قسيمة"
+
+#: CouponsAddon.php:134
+msgid "OK"
+msgstr "حسناً"
+
+#: CouponsAddon.php:144
+msgid "Coupon Code"
+msgstr ""
+
+#: Frontend/Ajax.php:32
+msgid "Coupon not found!"
+msgstr ""
+
+#~ msgid "Please fill in all required fields correctly!"
+#~ msgstr "الرجاء تعبئة جميع الحقول الإلزامية"
+
+#~ msgid "Location"
+#~ msgstr "موقع الخدمة"
+
+#~ msgid "Staff"
+#~ msgstr "المستشار"
+
+#~ msgid "Service"
+#~ msgstr "الخدمات"
+
+#~ msgid "Service Extras"
+#~ msgstr "خدمات إضافية"
+
+#~ msgid "Date & Time"
+#~ msgstr "الوقت و التاريخ"
+
+#~ msgid "Information"
+#~ msgstr "معلومات"
+
+#~ msgid "Confirmation"
+#~ msgstr "تأكيد الحجز"
+
+#~ msgid "Have any questions?"
+#~ msgstr "هل لديك استفسار"
+
+#~ msgid "Select service"
+#~ msgstr "اختر خدمة"
+
+#~ msgid "BACK"
+#~ msgstr "العودة"
+
+#~ msgid "NEXT STEP"
+#~ msgstr "التالي"
+
+#, php-format
+#~ msgid "Minimum length of \"%s\" field is %d!"
+#~ msgstr "Minimum length of \"%s\" field is %d!"
+
+#, php-format
+#~ msgid "Maximum length of \"%s\" field is %d!"
+#~ msgstr "Maximum length of \"%s\" field is %d!"
+
+#~ msgid "File extension is not allowed!"
+#~ msgstr "امتداد الملف غير مسموح"
+
+#~ msgid "Days of week"
+#~ msgstr "أيام الأسبوع"
+
+#~ msgid "Mon"
+#~ msgstr "الإثنين"
+
+#~ msgid "Tue"
+#~ msgstr "الثلاثاء"
+
+#~ msgid "Wed"
+#~ msgstr "الإربعاء"
+
+#~ msgid "Thu"
+#~ msgstr "الخميس"
+
+#~ msgid "Fri"
+#~ msgstr "الجمعة"
+
+#~ msgid "Sat"
+#~ msgstr "السبت"
+
+#~ msgid "Sun"
+#~ msgstr "الأحد"
+
+#~ msgid "Monday"
+#~ msgstr "الإثنين"
+
+#~ msgid "Tuesday"
+#~ msgstr "الثلاثاء"
+
+#~ msgid "Wednesday"
+#~ msgstr "الأربعاء"
+
+#~ msgid "Thursday"
+#~ msgstr "الخميس"
+
+#~ msgid "Friday"
+#~ msgstr "الجمعة"
+
+#~ msgid "Saturday"
+#~ msgstr "السبت"
+
+#~ msgid "Sunday"
+#~ msgstr "الإحد"
+
+#~ msgid "Every"
+#~ msgstr "كل"
+
+#~ msgid "DAYS"
+#~ msgstr "الإيام"
+
+#~ msgid "Time"
+#~ msgstr "الوقت"
+
+#~ msgid "On"
+#~ msgstr "في"
+
+#~ msgid "Specific day"
+#~ msgstr "يوم محدد"
+
+#~ msgid "First"
+#~ msgstr "الأول"
+
+#~ msgid "Second"
+#~ msgstr "الثاني"
+
+#~ msgid "Third"
+#~ msgstr "الثالث"
+
+#~ msgid "Fourth"
+#~ msgstr "الرابع"
+
+#~ msgid "Last"
+#~ msgstr "الأخير"
+
+#~ msgid "Start date"
+#~ msgstr "تاريخ الإنتهاء"
+
+#~ msgid "End date"
+#~ msgstr "تاريخ البدء"
+
+#~ msgid "Times"
+#~ msgstr "الأوقات"
+
+#~ msgid "Select..."
+#~ msgstr "إختيار..."
+
+#~ msgid "TIME"
+#~ msgstr "الوقت"
+
+#~ msgid "EDIT"
+#~ msgstr "تحرير"
+
+#, fuzzy
+#~| msgid "Full amount"
+#~ msgid "Tax amount"
+#~ msgstr "Full amount"
+
+#~ msgid "January"
+#~ msgstr "يناير"
+
+#~ msgid "February"
+#~ msgstr "فبراير"
+
+#~ msgid "March"
+#~ msgstr "مارس"
+
+#~ msgid "April"
+#~ msgstr "إبريل"
+
+#~ msgid "May"
+#~ msgstr "مايو"
+
+#~ msgid "June"
+#~ msgstr "يونيو"
+
+#~ msgid "July"
+#~ msgstr "يوليو"
+
+#~ msgid "August"
+#~ msgstr "أغسطس"
+
+#~ msgid "September"
+#~ msgstr "سبتمبر"
+
+#~ msgid "October"
+#~ msgstr "أكتوبر"
+
+#~ msgid "November"
+#~ msgstr "نوفمبر"
+
+#~ msgid "December"
+#~ msgstr "ديسمبر"
+
+#~ msgid "Email"
+#~ msgstr "البريد الإلكتروني"
+
+#~ msgid "Phone"
+#~ msgstr "رقم الجوال"
+
+#, fuzzy
+#~| msgid "Select date"
+#~ msgid "Select Type"
+#~ msgstr "اختر الوقت"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgid "Tab Name"
+#~ msgstr "الاسم"
+
+#, fuzzy
+#~| msgid "Select date"
+#~ msgid "Select Language"
+#~ msgstr "اختر الوقت"
+
+#, fuzzy
+#~| msgid "Select service"
+#~ msgid "Select Service"
+#~ msgstr "اختر خدمة"
+
+#, fuzzy
+#~| msgid "Select staff"
+#~ msgid "Select Staff"
+#~ msgstr "اختر مستشار"
+
+#, fuzzy
+#~| msgid "Select location"
+#~ msgid "Select Location"
+#~ msgstr "Select location"
+
+#~ msgid "Daily"
+#~ msgstr "يومي"
+
+#~ msgid "Name"
+#~ msgstr "الاسم"
+
+#~ msgid "Deposit"
+#~ msgstr "Deposit"
+
+#~ msgid "Local"
+#~ msgstr "التحويل"
+
+#~ msgid "Any staff"
+#~ msgstr "أي مستشار"
+
+#~ msgid "Select an available staff"
+#~ msgstr "اختر المستشار"
+
+#~ msgid "Please select location."
+#~ msgstr "الرجاء اختيار موقع"
+
+#~ msgid "Please select staff."
+#~ msgstr "الرجاء اختيار مستشار"
+
+#~ msgid "Please select service"
+#~ msgstr "الرجاء اختيار الخدمة"
+
+#~ msgid "Please select week day(s)"
+#~ msgstr "الرجاء اختيار يوم"
+
+#~ msgid "Please select week day(s) and time(s) correctly"
+#~ msgstr "الرجاء اختيار يوم و وقت"
+
+#~ msgid "Please select start date"
+#~ msgstr "الرجاء اختيار تاريخ البدء"
+
+#~ msgid "Please select end date"
+#~ msgstr "الرجاء اختيار تاريخ الانتهاء"
+
+#~ msgid "Please select date."
+#~ msgstr "الرجاء اختيار يوم"
+
+#~ msgid "Please select time."
+#~ msgstr "الرجاء اختيار وقت"
+
+#~ msgid "Please select an available time"
+#~ msgstr "الرجاء اختيار وقت من الأوقات المتاحة"
+
+#~ msgid "Please enter a valid email address!"
+#~ msgstr "الرجاء إدخال بريد الكتروني صحيح"
+
+#~ msgid "Please enter a valid phone number!"
+#~ msgstr "الرجاء إدخال رقم جوال صحيح"
+
+#~ msgid "CONFIRM BOOKING"
+#~ msgstr "تأكيد الحجز"
+
+#~ msgid "There is no any Location for select."
+#~ msgstr "There is no any Location for select."
+
+#~ msgid "Staff not found. Please go back and select a different option."
+#~ msgstr "Staff not found. Please go back and select a different option."
+
+#~ msgid "Service not found. Please go back and select a different option."
+#~ msgstr "Service not found. Please go back and select a different option."
+
+#~ msgid "There isn't any available staff for the selected date/time."
+#~ msgstr "There isn&#039;t any available staff for the selected date/time."
+
+#~ msgid ""
+#~ "Extras not found in this service. You can select other service or click "
+#~ "the <span class=\"booknetic_text_primary\">\"Next step\"</span> button."
+#~ msgstr ""
+#~ "Extras not found in this service. You can select other service or click "
+#~ "the <span class=\"booknetic_text_primary\">\"Next step\"</span> button."
+
+#~ msgid "w"
+#~ msgstr "أسبوع"
+
+#~ msgid "d"
+#~ msgstr "يوم"
+
+#~ msgid "h"
+#~ msgstr "ساعة"
+
+#~ msgid "m"
+#~ msgstr "دقيقة"
+
+#~ msgid "s"
+#~ msgstr "ثانية"
+
+#~ msgid "Finish"
+#~ msgstr "النهاية"
+
+#, fuzzy
+#~| msgid "Location"
+#~ msgid "Location ID"
+#~ msgstr "موقع الخدمة"
+
+#~ msgid "Thank you for your request!"
+#~ msgstr "شكراً لحجزك معنا"
+
+#~ msgid "Your confirmation number:"
+#~ msgstr "رقم الحجز:"
+
+#~ msgid "ADD TO GOOGLE CALENDAR"
+#~ msgstr "إضافة إلى قوقل كالندر"
+
+#~ msgid "START NEW BOOKING"
+#~ msgstr "حجز جديد"
+
+#~ msgid "FINISH BOOKING"
+#~ msgstr "إنهاء الحجز"
+
+#~ msgid "Total price"
+#~ msgstr "الإجمالي"
+
+#~ msgid "Full amount"
+#~ msgstr "Full amount"
+
+#~ msgid "Select date"
+#~ msgstr "اختر الوقت"
+
+#~ msgid "Surname"
+#~ msgstr "اسم العائلة"
+
+#~ msgid "Select staff"
+#~ msgstr "اختر مستشار"
+
+#~ msgid "Select location"
+#~ msgstr "Select location"
+
+#~ msgid "Select service extras"
+#~ msgstr "اختر الخدمات الإضافية"
+
+#~ msgid "Fill information"
+#~ msgstr "معلومات"
+
+#~ msgid "Select Date & Time"
+#~ msgstr "اختر الوقت و التاريخ"
+
+#, fuzzy
+#~| msgid "Second"
+#~ msgid "second"
+#~ msgstr "الثاني"
+
+#, fuzzy
+#~| msgid "Second"
+#~ msgid "seconds"
+#~ msgstr "الثاني"

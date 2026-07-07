@@ -1,0 +1,18 @@
+.booknetic_zoom_btn {
+    height: 36px !important;
+    width: 36px !important;
+    border-radius: 5px !important;
+    background-color: rgba(32,120,250,0.15) !important;
+    color: #2D8CFF !important;
+    font-size: 17px;
+    text-align: center !important;
+    outline: none !important;
+    cursor: pointer;
+}
+
+
+.booknetic_zoom_btn:hover
+{
+    background-color: #2D8CFF !important;
+    color: #FFFFFF !important;
+}

@@ -1,0 +1,250 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Booknetic SV\n"
+"POT-Creation-Date: 2023-06-27 18:15+0400\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.2.2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: bkntc__\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: app/Frontend/assets/js/datepicker.min.js\n"
+"X-Poedit-SearchPathExcluded-1: app/Frontend/assets/js/intlTelInput.min.js\n"
+"X-Poedit-SearchPathExcluded-2: app/Frontend/assets/js/jquery.nicescroll.min."
+"js\n"
+"X-Poedit-SearchPathExcluded-3: app/Frontend/assets/js/utilsIntlTelInput.js\n"
+
+#: App/Backend/Ajax.php:74
+msgid "Coupon Details"
+msgstr ""
+
+#: App/Backend/Ajax.php:104
+msgid "Discount cannot be negative number!"
+msgstr ""
+
+#: App/Backend/Ajax.php:111
+msgid "Discount percent should be more than 0%!"
+msgstr ""
+
+#: App/Backend/Ajax.php:116
+msgid "Discount percent count cannot be more than 100%!"
+msgstr ""
+
+#: App/Backend/Ajax.php:138
+msgid "Please type the coupon code field!"
+msgstr ""
+
+#: App/Backend/Ajax.php:147
+msgid "Coupon with same code is already exists!"
+msgstr ""
+
+#: App/Backend/Ajax.php:281
+msgid "Usage History Details"
+msgstr ""
+
+#: App/Backend/Controller.php:23 App/CouponsAddon.php:30
+#: App/CouponsAddon.php:38 App/CouponsAddon.php:60 App/CouponsAddon.php:75
+#: App/CouponsAddon.php:80 App/CouponsAddon.php:85
+msgid "Coupons"
+msgstr ""
+
+#: App/Backend/Controller.php:24 App/Backend/view/modal/add_new.php:44
+msgid "ADD COUPON"
+msgstr ""
+
+#: App/Backend/Controller.php:26 App/CouponsAddon.php:40
+msgid "Edit"
+msgstr ""
+
+#: App/Backend/Controller.php:30 App/CouponsAddon.php:41
+msgid "Delete"
+msgstr ""
+
+#: App/Backend/Controller.php:38
+msgid "№"
+msgstr ""
+
+#: App/Backend/Controller.php:39
+msgid "CODE"
+msgstr ""
+
+#: App/Backend/Controller.php:40
+msgid "DISCOUNT"
+msgstr ""
+
+#: App/Backend/Controller.php:44
+msgid "USAGE LIMIT"
+msgstr ""
+
+#: App/Backend/Controller.php:45
+msgid "Times Used"
+msgstr ""
+
+#: App/Backend/Controller.php:50
+msgid "STATUS"
+msgstr ""
+
+#: App/Backend/Controller.php:54
+msgid "Inactive"
+msgstr ""
+
+#: App/Backend/Controller.php:58 App/Backend/Controller.php:68
+msgid "Expired"
+msgstr ""
+
+#: App/Backend/Controller.php:64
+msgid "Active"
+msgstr ""
+
+#: App/Backend/Controller.php:75
+msgid "USAGE HISTORY"
+msgstr ""
+
+#: App/Backend/view/modal/add_new.php:18
+msgid "Edit Coupon"
+msgstr ""
+
+#: App/Backend/view/modal/add_new.php:18
+msgid "Add Coupon"
+msgstr ""
+
+#: App/Backend/view/modal/add_new.php:43
+msgid "CANCEL"
+msgstr ""
+
+#: App/Backend/view/modal/add_new.php:44
+msgid "Save"
+msgstr ""
+
+#: App/Backend/view/modal/coupons_usage_history.php:15
+msgid "Usage history"
+msgstr ""
+
+#: App/Backend/view/modal/coupons_usage_history.php:37
+msgid "CLOSE"
+msgstr ""
+
+#: App/Backend/view/modal/edit_tab.php:13
+msgid "- none -"
+msgstr ""
+
+#: App/Backend/view/tabs/appointment_add_edit_modal.php:14
+msgid "No coupons found"
+msgstr ""
+
+#: App/Backend/view/tabs/appointment_info_modal.php:14
+msgid "Coupon code"
+msgstr ""
+
+#: App/Backend/view/tabs/appointment_info_modal.php:15
+#: App/Backend/view/tabs/coupons_add_new_details.php:22
+msgid "Discount"
+msgstr ""
+
+#: App/Backend/view/tabs/coupon_section.php:10
+msgid "Hide coupon section"
+msgstr ""
+
+#: App/Backend/view/tabs/coupons_add_new_details.php:18
+msgid "Code"
+msgstr ""
+
+#: App/Backend/view/tabs/coupons_add_new_details.php:35
+msgid "Applies date from"
+msgstr ""
+
+#: App/Backend/view/tabs/coupons_add_new_details.php:36
+#: App/Backend/view/tabs/coupons_add_new_details.php:40
+msgid "Life time"
+msgstr ""
+
+#: App/Backend/view/tabs/coupons_add_new_details.php:39
+msgid "Applies date to"
+msgstr ""
+
+#: App/Backend/view/tabs/coupons_add_new_details.php:46
+msgid "Usage limit"
+msgstr ""
+
+#: App/Backend/view/tabs/coupons_add_new_details.php:47
+msgid "No limit"
+msgstr ""
+
+#: App/Backend/view/tabs/coupons_add_new_details.php:50
+msgid "Once per"
+msgstr ""
+
+#: App/Backend/view/tabs/coupons_add_new_details.php:50
+msgid ""
+"Customer - Each customer can use the coupon only once. <br> Booking - Coupon "
+"will be applied only to a single appointment"
+msgstr ""
+
+#: App/Backend/view/tabs/coupons_add_new_details.php:52
+msgid "Customer"
+msgstr ""
+
+#: App/Backend/view/tabs/coupons_add_new_details.php:53
+msgid "Booking"
+msgstr ""
+
+#: App/Backend/view/tabs/coupons_add_new_details.php:60
+msgid "Services filter"
+msgstr ""
+
+#: App/Backend/view/tabs/coupons_add_new_details.php:74
+msgid "Staff filter"
+msgstr ""
+
+#: App/Backend/view/tabs/coupons_usage_history_details.php:14
+msgid "Coupon is not used yet!"
+msgstr ""
+
+#: App/Backend/view/tabs/coupons_usage_history_details.php:25
+msgid "CUSTOMER"
+msgstr ""
+
+#: App/Backend/view/tabs/coupons_usage_history_details.php:26
+msgid "USED AMOUNT"
+msgstr ""
+
+#: App/Backend/view/tabs/coupons_usage_history_details.php:27
+msgid "SERVICE"
+msgstr ""
+
+#: App/Backend/view/tabs/coupons_usage_history_details.php:28
+msgid "DATE"
+msgstr ""
+
+#: App/Backend/view/tabs/coupons_usage_history_details.php:29
+msgid "INFO"
+msgstr ""
+
+#: App/CouponsAddon.php:39
+msgid "Add New"
+msgstr ""
+
+#: App/CouponsAddon.php:42
+msgid "Coupons tab"
+msgstr ""
+
+#: App/CouponsAddon.php:100 App/CouponsAddon.php:105 App/CouponsAddon.php:133
+msgid "Coupon"
+msgstr ""
+
+#: App/CouponsAddon.php:134
+msgid "OK"
+msgstr ""
+
+#: App/CouponsAddon.php:144
+msgid "Coupon Code"
+msgstr ""
+
+#: App/Frontend/Ajax.php:32
+msgid "Coupon not found!"
+msgstr ""

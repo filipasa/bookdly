@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" width="28" height="28">
+  <defs>
+    <style>
+      .icon-bg {
+        fill: #EEF0FE !important;
+        stroke: #5B6BF8 !important;
+        stroke-width: 2.5 !important;
+      }
+      .icon-stroke {
+        fill: none !important;
+        stroke: #5B6BF8 !important;
+        stroke-width: 2.5 !important;
+        stroke-linecap: round !important;
+        stroke-linejoin: round !important;
+      }
+      .icon-line {
+        fill: none !important;
+        stroke: #5B6BF8 !important;
+        stroke-width: 2 !important;
+      }
+    </style>
+  </defs>
+  <rect class="icon-bg" x="2" y="4" width="22" height="22" rx="5"></rect>
+  <path class="icon-stroke" d="M7 2v4M19 2v4"></path>
+  <path class="icon-line" d="M2 10h22"></path>
+  <path class="icon-stroke" d="M8 17l3 3 6-6"></path>
+</svg>

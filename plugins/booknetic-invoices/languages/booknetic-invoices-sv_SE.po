@@ -1,0 +1,87 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Booknetic SV\n"
+"POT-Creation-Date: 2023-06-27 18:19+0400\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.2.2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: bkntc__\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: app/Frontend/assets/js/datepicker.min.js\n"
+"X-Poedit-SearchPathExcluded-1: app/Frontend/assets/js/intlTelInput.min.js\n"
+"X-Poedit-SearchPathExcluded-2: app/Frontend/assets/js/jquery.nicescroll.min."
+"js\n"
+"X-Poedit-SearchPathExcluded-3: app/Frontend/assets/js/utilsIntlTelInput.js\n"
+
+#: App/Backend/Ajax.php:23
+msgid "Please fill in all required fields correctly!"
+msgstr ""
+
+#: App/Backend/Controller.php:38 App/InvoicesAddon.php:32
+msgid "Edit"
+msgstr ""
+
+#: App/Backend/Controller.php:42 App/InvoicesAddon.php:33
+msgid "Delete"
+msgstr ""
+
+#: App/Backend/Controller.php:49 App/Backend/view/edit_invoice.php:27
+#: App/Backend/view/tabs/appointment_info_fields.php:19
+#: App/InvoicesAddon.php:25 App/InvoicesAddon.php:30 App/InvoicesAddon.php:51
+#: App/InvoicesAddon.php:60
+msgid "Invoices"
+msgstr ""
+
+#: App/Backend/Controller.php:50
+msgid "ADD INVOICE"
+msgstr ""
+
+#: App/Backend/Controller.php:53
+msgid "№"
+msgstr ""
+
+#: App/Backend/Controller.php:54
+msgid "NAME"
+msgstr ""
+
+#: App/Backend/view/edit_invoice.php:29
+msgid "SAVE CHANGES"
+msgstr ""
+
+#: App/Backend/view/edit_invoice.php:30
+msgid "SAVE & DOWNLOAD PREVIEW"
+msgstr ""
+
+#: App/Backend/view/edit_invoice.php:40
+msgid "INVOICE"
+msgstr ""
+
+#: App/Backend/view/edit_invoice.php:45 App/Backend/view/edit_invoice.php:47
+msgid "PDF Name"
+msgstr ""
+
+#: App/Backend/view/edit_invoice.php:57
+msgid "Content"
+msgstr ""
+
+#: App/Backend/view/tabs/appointment_info_fields.php:11
+msgid "No invoices found"
+msgstr ""
+
+#: App/InvoicesAddon.php:31
+msgid "Add new"
+msgstr ""
+
+#: App/InvoicesAddon.php:34
+msgid "Invoices Tab"
+msgstr ""
+
+#: App/Listener.php:22 App/Listener.php:27
+msgid "Invoice"
+msgstr ""

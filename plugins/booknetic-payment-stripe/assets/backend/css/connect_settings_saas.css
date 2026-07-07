@@ -1,0 +1,75 @@
+/*.enable_disable_row > .form-group*/
+/*{*/
+/*    margin-bottom: 0 !important;*/
+/*}*/
+
+/*.enable_disable_row*/
+/*{*/
+/*    padding-top: 30px;*/
+/*    padding-bottom: 20px;*/
+/*    box-shadow: 0 15px 15px -5px rgba(0, 0, 0, 0.05);*/
+/*    margin: -15px -25px 40px;*/
+/*    padding-left: 20px;*/
+/*}*/
+
+.connected_tenants
+{
+    margin: 0 30px 30px 30px;
+}
+
+.connected_tenants_title_text
+{
+    padding-top: unset;
+    width:100% !important;
+    height: 51px;
+}
+
+.connected_tenants_body
+{
+    margin:40px 0 40px 0;
+    width: 100%;
+}
+
+.connected_tenants_header
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+.connected_tenants_list_wrapper
+{
+    display:flex;
+    justify-content: space-between;
+}
+
+.connected_tenants_list_inner
+{
+    display: flex;
+    vertical-align: middle;
+    align-items:center
+}
+
+.connected_tenants_checkbox
+{
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.connected_tenants_status
+{
+    background-color: #fd9b782b;
+    color: #fb3e6e;
+    border-radius: 4px;
+    padding: 0 10px 0 10px;
+    height: 26px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.connected_tenants_status.complete
+{
+    background-color: #ddf7e2 !important;
+    color: #54c16a !important;
+}

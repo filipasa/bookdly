@@ -1,0 +1,158 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Booknetic SV\n"
+"POT-Creation-Date: 2022-12-23 11:29+0400\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: bkntc__\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: app/Frontend/assets/js/datepicker.min.js\n"
+"X-Poedit-SearchPathExcluded-1: app/Frontend/assets/js/intlTelInput.min.js\n"
+"X-Poedit-SearchPathExcluded-2: app/Frontend/assets/js/jquery.nicescroll.min."
+"js\n"
+"X-Poedit-SearchPathExcluded-3: app/Frontend/assets/js/utilsIntlTelInput.js\n"
+
+#: App/Backend/Ajax.php:76
+msgid "Tax Details"
+msgstr ""
+
+#: App/Backend/Ajax.php:109
+msgid "Please fill tax name"
+msgstr ""
+
+#: App/Backend/Ajax.php:114
+msgid "Invalid tax type"
+msgstr ""
+
+#: App/Backend/Ajax.php:119
+msgid "Tax amount must be non-negative"
+msgstr ""
+
+#: App/Backend/Controller.php:22 App/TaxAddon.php:36
+msgid "Edit"
+msgstr ""
+
+#: App/Backend/Controller.php:26 App/TaxAddon.php:37
+msgid "Delete"
+msgstr ""
+
+#: App/Backend/Controller.php:33 App/TaxAddon.php:74
+msgid "Taxes"
+msgstr ""
+
+#: App/Backend/Controller.php:34
+msgid "NEW TAX"
+msgstr ""
+
+#: App/Backend/Controller.php:36
+msgid "ID"
+msgstr ""
+
+#: App/Backend/Controller.php:37
+msgid "NAME"
+msgstr ""
+
+#: App/Backend/Controller.php:39
+msgid "AMOUNT"
+msgstr ""
+
+#: App/Backend/Controller.php:54
+msgid "LOCATIONS"
+msgstr ""
+
+#: App/Backend/Controller.php:58
+msgid "All locations"
+msgstr ""
+
+#: App/Backend/Controller.php:73
+msgid "STATUS"
+msgstr ""
+
+#: App/Backend/Controller.php:75 App/Backend/view/modal/add_new.php:42
+msgid "Enabled"
+msgstr ""
+
+#: App/Backend/Controller.php:75
+msgid "Disabled"
+msgstr ""
+
+#: App/Backend/view/modal/add_new.php:15
+msgid "Edit Tax"
+msgstr ""
+
+#: App/Backend/view/modal/add_new.php:15
+msgid "New Tax"
+msgstr ""
+
+#: App/Backend/view/modal/add_new.php:45
+msgid "CANCEL"
+msgstr ""
+
+#: App/Backend/view/modal/add_new.php:46
+msgid "SAVE"
+msgstr ""
+
+#: App/Backend/view/modal/add_new.php:46
+msgid "CREATE"
+msgstr ""
+
+#: App/Backend/view/tab/tax_add_new_details.php:15
+msgid "Name"
+msgstr ""
+
+#: App/Backend/view/tab/tax_add_new_details.php:19
+msgid "Amount"
+msgstr ""
+
+#: App/Backend/view/tab/tax_add_new_details.php:32
+msgid "Locations filter"
+msgstr ""
+
+#: App/Backend/view/tab/tax_add_new_details.php:46
+msgid "Services filter"
+msgstr ""
+
+#: App/Backend/view/tab/tax_section.php:12
+msgid "Hide \"Price does not include taxes\" on the services step"
+msgstr ""
+
+#: App/Backend/view/tab/tax_section.php:13
+msgid ""
+"If you enable this option, it allows to show \"Price does not include taxes"
+"\" on the services and extra services steps."
+msgstr ""
+
+#: App/Listener.php:72
+msgid "Total tax amount"
+msgstr ""
+
+#: App/Listener.php:78
+msgid "Total tax amount of recurring appointments"
+msgstr ""
+
+#: App/Listener.php:88 App/TaxAddon.php:34
+msgid "Tax"
+msgstr ""
+
+#: App/Listener.php:94
+msgid "Tax (recurring)"
+msgstr ""
+
+#: App/Listener.php:178
+msgid "* Price does not include taxes"
+msgstr ""
+
+#: App/TaxAddon.php:27
+msgid "Tax module"
+msgstr ""
+
+#: App/TaxAddon.php:35
+msgid "Add new"
+msgstr ""

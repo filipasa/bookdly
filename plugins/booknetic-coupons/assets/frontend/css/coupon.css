@@ -1,0 +1,66 @@
+.booknetic-coupons-add {
+    background-color: transparent !important;
+    color: #2078FA !important;
+    font-weight: 400 !important;
+    text-decoration: underline !important;
+}
+
+.booknetic-coupons-input-container {
+    display: none;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 2px !important;
+    border: 1px solid #e3eaf3 !important;
+    -webkit-border-radius: 2px !important;
+    -moz-border-radius: 2px !important;
+    border-radius: 2px !important;
+}
+
+.booknetic-coupons-ok-btn {
+    font-weight: 600 !important;
+    font-size: 12px !important;
+    padding: 2px 8px !important;
+    outline: none !important;
+    cursor: pointer !important;
+    text-decoration: none !important;
+    -webkit-border-radius: 2px !important;
+    -moz-border-radius: 2px !important;
+    border-radius: 2px !important;
+    background-color: #4fbf65 !important;
+    color: #fff !important;
+}
+
+.booknetic-coupons-input-container > input[type="text"] {
+    width: 128px !important;
+    border: 0 !important;
+    color: #828f9a !important;
+    padding: 0 6px !important;
+    outline: 0 !important;
+}
+
+.booknetic-coupons-remove-btn {
+    display: none;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    outline: none !important;
+    cursor: pointer !important;
+    text-decoration: none !important;
+    -webkit-border-radius: 2px !important;
+    -moz-border-radius: 2px !important;
+    border-radius: 2px !important;
+    color: #fb3e6e !important;
+    margin-left: 8px;
+}
+
+.booknetic-coupons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+}
+.booknetic-coupons-code{
+    background-color: transparent !important;
+    color: #2078FA !important;
+    font-weight: 400 !important;
+    text-decoration: none !important;
+}

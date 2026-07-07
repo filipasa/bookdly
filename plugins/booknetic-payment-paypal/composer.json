@@ -1,0 +1,17 @@
+{
+	"require": {
+		"paypal/rest-api-sdk-php": "*"
+	},
+
+	"autoload": {
+		"psr-4": {
+			"BookneticAddon\\PaypalPaymentGateway\\": "App/"
+		}
+	},
+
+	"config": {
+		"platform": {
+			"php": "5.6"
+		}
+	}
+}

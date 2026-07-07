@@ -1,0 +1,888 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: test\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-27 18:21+0400\n"
+"PO-Revision-Date: 2023-06-27 18:21+0400\n"
+"Last-Translator: Mark Velmiskin\n"
+"Language-Team: Azerbaijani\n"
+"Language: az\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.2.2\n"
+"X-Poedit-Basepath: ../app\n"
+"X-Poedit-KeywordsList: bkntc__\n"
+"X-Loco-Version: 2.5.2; wp-5.7.2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: Frontend/assets/js/datepicker.min.js\n"
+"X-Poedit-SearchPathExcluded-1: Frontend/assets/js/intlTelInput.min.js\n"
+"X-Poedit-SearchPathExcluded-2: Frontend/assets/js/jquery.nicescroll.min.js\n"
+"X-Poedit-SearchPathExcluded-3: Frontend/assets/js/utilsIntlTelInput.js\n"
+
+#: Backend/Ajax.php:40 Backend/Ajax.php:48 Helpers/CheckConditions.php:41
+#: Helpers/CheckConditions.php:48 Listener.php:69 Listener.php:79
+#: Listener.php:103 Listener.php:110
+msgid "Please fill in all required fields correctly!"
+msgstr "Lütfən bütün xanaları düzgün doldurun!"
+
+#: Backend/Controller.php:22 Backend/Controller.php:46 CustomFormsAddon.php:40
+msgid "Edit"
+msgstr ""
+
+#: Backend/Controller.php:25 CustomFormsAddon.php:41
+msgid "Delete"
+msgstr ""
+
+#: Backend/Controller.php:27
+msgid "Custom forms"
+msgstr ""
+
+#: Backend/Controller.php:28
+msgid "CREATE NEW FORM"
+msgstr ""
+
+#: Backend/Controller.php:32
+msgid "NAME"
+msgstr ""
+
+#: Backend/Controller.php:33
+msgid "ELEMENTS"
+msgstr ""
+
+#: Backend/Controller.php:37
+msgid "CONDITIONS"
+msgstr ""
+
+#: Backend/view/edit_form.php:36
+msgid "Customize"
+msgstr ""
+
+#: Backend/view/edit_form.php:40
+msgid "Form name"
+msgstr ""
+
+#: Backend/view/edit_form.php:55
+msgid "SAVE FORM"
+msgstr ""
+
+#: Backend/view/edit_form.php:56
+msgid "FORM CONDITIONS"
+msgstr ""
+
+#: Backend/view/edit_form.php:67
+msgid "Elements"
+msgstr ""
+
+#: Backend/view/edit_form.php:74 Backend/view/edit_form.php:199
+msgid "Label"
+msgstr ""
+
+#: Backend/view/edit_form.php:79
+msgid "Text input"
+msgstr ""
+
+#: Backend/view/edit_form.php:84
+msgid "Textarea"
+msgstr ""
+
+#: Backend/view/edit_form.php:89
+msgid "Number input"
+msgstr ""
+
+#: Backend/view/edit_form.php:94
+msgid "Date input"
+msgstr ""
+
+#: Backend/view/edit_form.php:99
+msgid "Time input"
+msgstr ""
+
+#: Backend/view/edit_form.php:104
+msgid "Select"
+msgstr ""
+
+#: Backend/view/edit_form.php:109
+msgid "Check-box"
+msgstr ""
+
+#: Backend/view/edit_form.php:114
+msgid "Radio buttons"
+msgstr ""
+
+#: Backend/view/edit_form.php:119
+msgid "File"
+msgstr ""
+
+#: Backend/view/edit_form.php:124
+msgid "Link"
+msgstr ""
+
+#: Backend/view/edit_form.php:129
+msgid "Email"
+msgstr "E-poçt"
+
+#: Backend/view/edit_form.php:134
+msgid "Phone"
+msgstr "Telefon"
+
+#: Backend/view/edit_form.php:145
+msgid "Form"
+msgstr ""
+
+#: Backend/view/edit_form.php:194
+msgid "Options"
+msgstr ""
+
+#: Backend/view/edit_form.php:200
+msgid "Max: 255 symbol"
+msgstr ""
+
+#: Backend/view/edit_form.php:206
+msgid "Placeholder"
+msgstr ""
+
+#: Backend/view/edit_form.php:207 Backend/view/edit_form.php:280
+msgid "Max: 200 symbol"
+msgstr ""
+
+#: Backend/view/edit_form.php:213
+msgid "Width"
+msgstr ""
+
+#: Backend/view/edit_form.php:234
+msgid "Visibility"
+msgstr ""
+
+#: Backend/view/edit_form.php:245
+msgid "Min length"
+msgstr ""
+
+#: Backend/view/edit_form.php:249
+msgid "Max length"
+msgstr ""
+
+#: Backend/view/edit_form.php:256
+msgid "Help text"
+msgstr ""
+
+#: Backend/view/edit_form.php:257
+msgid "Max: 500 symbol"
+msgstr ""
+
+#: Backend/view/edit_form.php:263
+msgid "Allowed file formats"
+msgstr ""
+
+#: Backend/view/edit_form.php:272
+msgid "Is required"
+msgstr ""
+
+#: Backend/view/edit_form.php:279
+msgid "URL"
+msgstr ""
+
+#: Backend/view/edit_form.php:287
+msgid "Choices"
+msgstr ""
+
+#: Backend/view/edit_form.php:289
+msgid "Add new"
+msgstr ""
+
+#: Backend/view/modal/custom_form.php:13
+#: Backend/view/tabs/appointment_info_fields.php:12
+msgid "No custom fields found"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:17
+msgid "Form conditions"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:25
+msgid "CONDITION"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:26
+#, fuzzy
+#| msgid "Confirmation"
+msgid "New Condition"
+msgstr "Təsdiqləmə"
+
+#: Backend/view/modal/set_conditions.php:34
+msgid "When"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:44
+msgid "AND"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:45
+msgid "OR"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:52
+#: Backend/view/modal/set_conditions.php:123
+msgid "Field"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:58
+#: Backend/view/modal/set_conditions.php:84
+#: Backend/view/modal/set_conditions.php:127
+msgid "Value"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:59
+msgid "Length"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:60
+msgid "File size (KB)"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:64
+msgid "Operator"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:72
+msgid "is empty"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:73
+msgid "is not empty"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:74
+msgid "contains"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:75
+msgid "does not contains"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:76
+msgid "regex"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:77
+msgid "starts with"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:78
+msgid "does not starts with"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:79
+msgid "ends with"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:80
+msgid "does not ends with"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:96
+msgid "NEW CONDITION"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:102
+msgid "Do"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:111
+msgid "Action"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:113
+msgid "Show"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:114
+msgid "Hide"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:115
+msgid "Hide only for Customers"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:116
+msgid "Disable"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:117
+msgid "Enable"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:118
+msgid "Set value"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:119
+msgid "Throw error"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:128
+msgid "Error message"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:140
+msgid "NEW ACTION"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:149
+msgid "CLOSE"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:150
+msgid "SAVE"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:154
+msgid "Service"
+msgstr "Xidmət"
+
+#: Backend/view/modal/set_conditions.php:155
+msgid "Staff"
+msgstr "Kadr"
+
+#: Backend/view/modal/set_conditions.php:156
+msgid "Location"
+msgstr "Məkan"
+
+#: CustomFormsAddon.php:28 CustomFormsAddon.php:38 CustomFormsAddon.php:70
+msgid "Custom Forms"
+msgstr ""
+
+#: CustomFormsAddon.php:39
+msgid "Add New"
+msgstr ""
+
+#: CustomFormsAddon.php:42
+msgid "Custom Forms Tab"
+msgstr ""
+
+#: CustomFormsAddon.php:50
+msgid "Select services...(empty for all services)"
+msgstr ""
+
+#: CustomFormsAddon.php:51
+msgid "Changes has been saved!"
+msgstr ""
+
+#: CustomFormsAddon.php:88 CustomFormsAddon.php:93 CustomFormsAddon.php:99
+msgid "Custom fields"
+msgstr ""
+
+#: CustomFormsAddon.php:120 Listener.php:118 Listener.php:383
+#, php-format
+msgid "Minimum length of \"%s\" field is %d!"
+msgstr "Minimum length of \"%s\" field is %d!"
+
+#: CustomFormsAddon.php:121 Listener.php:123 Listener.php:388
+#, php-format
+msgid "Maximum length of \"%s\" field is %d!"
+msgstr "Maximum length of \"%s\" field is %d!"
+
+#: Helpers/FormElements.php:160 Helpers/FormElements.php:204
+msgid "Choice 1"
+msgstr ""
+
+#: Helpers/FormElements.php:167 Helpers/FormElements.php:211
+msgid "Choice 2"
+msgstr ""
+
+#: Helpers/FormElements.php:242
+msgid "BROWSE"
+msgstr ""
+
+#: Listener.php:95
+#, php-format
+msgid "File extension '.%s' is not allowed!"
+msgstr ""
+
+#: Listener.php:319 Listener.php:337 Listener.php:433
+#, php-format
+msgid "%s can not be empty, because it's a required field!"
+msgstr ""
+
+#: Listener.php:348 Listener.php:356 Listener.php:397 Listener.php:409
+msgid "Please fill custom fields form correctly!"
+msgstr ""
+
+#: Listener.php:363 Listener.php:416
+msgid "Selected custom field not found!"
+msgstr ""
+
+#: Listener.php:375
+#, php-format
+msgid "\"%s\" can not be empty, because it's a required field!"
+msgstr "\"%s\" boş ola bilməz, bu xananın doldurulması vacibdir!"
+
+#: Listener.php:441
+msgid "File extension is not allowed!"
+msgstr "Fayl formatına icazə verilmir!"
+
+#: Listener.php:617 Listener.php:626 Listener.php:633
+msgid "Custom field"
+msgstr ""
+
+#~ msgid "Service Extras"
+#~ msgstr "Əlavə xidmət"
+
+#~ msgid "Date & Time"
+#~ msgstr "Tarix"
+
+#~ msgid "Information"
+#~ msgstr "Məlumat"
+
+#~ msgid "Have any questions?"
+#~ msgstr "Sualınız var?"
+
+#~ msgid "Select service"
+#~ msgstr "Xidmət seçin"
+
+#~ msgid "BACK"
+#~ msgstr "GERİ"
+
+#~ msgid "NEXT STEP"
+#~ msgstr "DAVAM"
+
+#~ msgid "DATE"
+#~ msgstr "TARİX"
+
+#~ msgid "Days of week"
+#~ msgstr "Həftənin Günləri"
+
+#~ msgid "Mon"
+#~ msgstr "B.e"
+
+#~ msgid "Tue"
+#~ msgstr "Ç.a"
+
+#~ msgid "Wed"
+#~ msgstr "Ç."
+
+#~ msgid "Thu"
+#~ msgstr "C.a"
+
+#~ msgid "Fri"
+#~ msgstr "C."
+
+#~ msgid "Sat"
+#~ msgstr "Ş."
+
+#~ msgid "Sun"
+#~ msgstr "B."
+
+#~ msgid "Monday"
+#~ msgstr "Bazar ertəsi"
+
+#~ msgid "Tuesday"
+#~ msgstr "Çərşənbə axşamı"
+
+#~ msgid "Wednesday"
+#~ msgstr "Çərşənbə"
+
+#~ msgid "Thursday"
+#~ msgstr "Cümə axşamı"
+
+#~ msgid "Friday"
+#~ msgstr "Cümə"
+
+#~ msgid "Saturday"
+#~ msgstr "Şənbə"
+
+#~ msgid "Sunday"
+#~ msgstr "Bazar"
+
+#~ msgid "Every"
+#~ msgstr "Hər"
+
+#~ msgid "DAYS"
+#~ msgstr "GÜNLƏR"
+
+#~ msgid "Time"
+#~ msgstr "Saat"
+
+#~ msgid "On"
+#~ msgstr "On"
+
+#~ msgid "Specific day"
+#~ msgstr "Xüsusi gün"
+
+#~ msgid "First"
+#~ msgstr "Birinci"
+
+#~ msgid "Second"
+#~ msgstr "İkinci"
+
+#~ msgid "Third"
+#~ msgstr "Üçüncü"
+
+#~ msgid "Fourth"
+#~ msgstr "Dördüncü"
+
+#~ msgid "Last"
+#~ msgstr "Sonuncu"
+
+#~ msgid "Start date"
+#~ msgstr "Başlanğıc vaxtı"
+
+#~ msgid "End date"
+#~ msgstr "Bitiş vaxtı"
+
+#~ msgid "Times"
+#~ msgstr "Dəfə"
+
+#~ msgid "Select..."
+#~ msgstr "Seçin..."
+
+#~ msgid "TIME"
+#~ msgstr "SAAT"
+
+#, fuzzy
+#~ msgid "START MEETING"
+#~ msgstr "START NEW BOOKING"
+
+#~ msgid "EDIT"
+#~ msgstr "DƏYİŞ"
+
+#~ msgid "Discount"
+#~ msgstr "Endirim"
+
+#, fuzzy
+#~ msgid "Tax amount"
+#~ msgstr "Full amount"
+
+#~ msgid "January"
+#~ msgstr "Yanvar"
+
+#~ msgid "February"
+#~ msgstr "Fevral"
+
+#~ msgid "March"
+#~ msgstr "Mart"
+
+#~ msgid "April"
+#~ msgstr "Aprel"
+
+#~ msgid "May"
+#~ msgstr "May"
+
+#~ msgid "June"
+#~ msgstr "İyun"
+
+#~ msgid "July"
+#~ msgstr "İyul"
+
+#~ msgid "August"
+#~ msgstr "Avqust"
+
+#~ msgid "September"
+#~ msgstr "Sentyabr"
+
+#~ msgid "October"
+#~ msgstr "Oktyabr"
+
+#~ msgid "November"
+#~ msgstr "Noyabr"
+
+#~ msgid "December"
+#~ msgstr "Dekabr"
+
+#, fuzzy
+#~ msgid "Share your page "
+#~ msgstr "Başlama tarixi"
+
+#, fuzzy
+#~ msgid "Share your page"
+#~ msgstr "Başlama tarixi"
+
+#, fuzzy
+#~ msgid "Starting guide"
+#~ msgstr "Start date"
+
+#, fuzzy
+#~ msgid "Create location"
+#~ msgstr "Select location"
+
+#, fuzzy
+#~ msgid "Create staff"
+#~ msgstr "Select staff"
+
+#, fuzzy
+#~ msgid "Create service"
+#~ msgstr "Select service"
+
+#, fuzzy
+#~ msgid "Select payment method"
+#~ msgstr "Select date"
+
+#~ msgid "Credit card"
+#~ msgstr "Kartla ödəniş"
+
+#, fuzzy
+#~ msgid "The QR for your page"
+#~ msgstr "Başlama tarixi"
+
+#, fuzzy
+#~ msgid "Please select WordPress user!"
+#~ msgstr "Please select service"
+
+#, fuzzy
+#~ msgid "First name"
+#~ msgstr "Birinci"
+
+#, fuzzy
+#~ msgid "Last name"
+#~ msgstr "Sonuncu"
+
+#, fuzzy
+#~ msgid "Notifications"
+#~ msgstr "Location"
+
+#, fuzzy
+#~ msgid "Please type the giftcard code field!"
+#~ msgstr "Please enter a valid phone number!"
+
+#, fuzzy
+#~ msgid "Giftcards"
+#~ msgstr "Credit card"
+
+#, fuzzy
+#~ msgid "Add Giftcard"
+#~ msgstr "Credit card"
+
+#, fuzzy
+#~ msgid "PDF Name"
+#~ msgstr "Ad"
+
+#, fuzzy
+#~ msgid "Select Type"
+#~ msgstr "Select date"
+
+#, fuzzy
+#~ msgid "Tab Name"
+#~ msgstr "Ad"
+
+#, fuzzy
+#~ msgid "Select Language"
+#~ msgstr "Select date"
+
+#, fuzzy
+#~ msgid "Select Service"
+#~ msgstr "Select service"
+
+#, fuzzy
+#~ msgid "Select Staff"
+#~ msgstr "Select staff"
+
+#, fuzzy
+#~ msgid "Select Location"
+#~ msgstr "Select location"
+
+#~ msgid "Daily"
+#~ msgstr "Günlük"
+
+#~ msgid "Name"
+#~ msgstr "Ad"
+
+#~ msgid "Deposit"
+#~ msgstr "Depozit"
+
+#~ msgid "Local"
+#~ msgstr "Nağd ödəniş"
+
+#~ msgid "Paypal"
+#~ msgstr "Paypal"
+
+#~ msgid "Any staff"
+#~ msgstr "İstənilən kadr"
+
+#, fuzzy
+#~ msgid "Select an available staff"
+#~ msgstr "Uyğun kadrı seçin"
+
+#~ msgid "Add coupon"
+#~ msgstr "Kupon əlavə et"
+
+#~ msgid "Please select location."
+#~ msgstr "Lütfən məkanı seçin"
+
+#~ msgid "Please select staff."
+#~ msgstr "Lütfən kadrı seçin"
+
+#~ msgid "Please select service"
+#~ msgstr "Lütfən xidməti seçin"
+
+#~ msgid "Please select week day(s)"
+#~ msgstr "Lütfən həftənin günlərini seçin"
+
+#~ msgid "Please select week day(s) and time(s) correctly"
+#~ msgstr "Lütfən həftənin günlərini və tarixi düzgün seçin"
+
+#~ msgid "Please select start date"
+#~ msgstr "Başlanğıc tarixi seçin"
+
+#~ msgid "Please select end date"
+#~ msgstr "Bitiş tarixi seçin"
+
+#~ msgid "Please select date."
+#~ msgstr "Lütfən tarix seçin"
+
+#~ msgid "Please select time."
+#~ msgstr "Lütfən saatı seçin"
+
+#~ msgid "Please select an available time"
+#~ msgstr "Lütfən mövcud tarixi seçin"
+
+#~ msgid "Please enter a valid email address!"
+#~ msgstr "Lütfən düzgün e-poçt adresi daxil edin!"
+
+#~ msgid "Please enter a valid phone number!"
+#~ msgstr "Lütfən düzgün telefon nömrəsi daxil edin!"
+
+#~ msgid "CONFIRM BOOKING"
+#~ msgstr "TAMAMLA"
+
+#~ msgid "There is no any Location for select."
+#~ msgstr "Seçiləcək məkan tapılmadı."
+
+#~ msgid "Staff not found. Please go back and select a different option."
+#~ msgstr "Kadr tapılmadı. Lütfən geriyə qayıdın və düzgün seçim edin."
+
+#~ msgid "Service not found. Please go back and select a different option."
+#~ msgstr "Xidmət tapılmadı. Lütfən geriyə qayıdın və düzgün seçim edin."
+
+#~ msgid "There isn't any available staff for the selected date/time."
+#~ msgstr "Seçilən tarix/saat üçün uygun kadr yoxdur."
+
+#~ msgid "Extras not found in this service. You can select other service or click the <span class=\"booknetic_text_primary\">\"Next step\"</span> button."
+#~ msgstr "Bu xidmət üçün əlavə xidmət tapılmadı. Başqa servis seçəbilər və ya <span class=\"booknetic_text_primary\">\"DAVAM\"</span> edəbilərsiniz."
+
+#~ msgid "w"
+#~ msgstr "h"
+
+#~ msgid "d"
+#~ msgstr "g"
+
+#~ msgid "h"
+#~ msgstr "s"
+
+#~ msgid "m"
+#~ msgstr "a"
+
+#~ msgid "s"
+#~ msgstr "s"
+
+#, fuzzy
+#~ msgid "Confirmation number is invalid!"
+#~ msgstr "Sizin rezervasiya kodunuz:"
+
+#, fuzzy
+#~ msgid "Select file to restore"
+#~ msgstr "Extra xidmət seçimi"
+
+#~ msgid "Finish"
+#~ msgstr "Bitiş"
+
+#, fuzzy
+#~ msgid "Hide a confirmation number"
+#~ msgstr "Sizin rezervasiya kodunuz:"
+
+#, fuzzy
+#~ msgid "Starting confirmation number"
+#~ msgstr "Sizin rezervasiya kodunuz:"
+
+#, fuzzy
+#~ msgid "Timezone"
+#~ msgstr "Time"
+
+#, fuzzy
+#~| msgid "Location"
+#~ msgid "Location ID"
+#~ msgstr "Məkan"
+
+#, fuzzy
+#~ msgid "Skip the Confirmation step"
+#~ msgstr "Confirmation"
+
+#, fuzzy
+#~ msgid "Cart page"
+#~ msgstr "Başlama tarixi"
+
+#, fuzzy
+#~ msgid "There is no Location to match your request."
+#~ msgstr "There is no any Location for select."
+
+#, fuzzy
+#~ msgid "Please select payment method!"
+#~ msgstr "Please select date."
+
+#~ msgid "Thank you for your request!"
+#~ msgstr "Rezervasiyanız qeydə alındı"
+
+#~ msgid "Your confirmation number:"
+#~ msgstr "Təsdiqləmə nömrəniz:"
+
+#~ msgid "ADD TO GOOGLE CALENDAR"
+#~ msgstr "GOOGLE CALENDARA ƏLAVƏ ET"
+
+#~ msgid "START NEW BOOKING"
+#~ msgstr "YENİ REZERVASİYA"
+
+#~ msgid "FINISH BOOKING"
+#~ msgstr "TAMAMLA"
+
+#, fuzzy
+#~ msgid "Coupon"
+#~ msgstr "Add coupon"
+
+#~ msgid "OK"
+#~ msgstr "OK"
+
+#, fuzzy
+#~ msgid "Giftcard"
+#~ msgstr "Credit card"
+
+#~ msgid "Total price"
+#~ msgstr "Ümumi qiymət"
+
+#~ msgid "Full amount"
+#~ msgstr "Tam məbləğ"
+
+#~ msgid "Select date"
+#~ msgstr "Tarixi seçin"
+
+#~ msgid "Surname"
+#~ msgstr "Soyad"
+
+#, fuzzy
+#~ msgid "Please enter the purchase code!"
+#~ msgstr "Please enter a valid phone number!"
+
+#~ msgid "Select staff"
+#~ msgstr "Kadr seçin"
+
+#~ msgid "Select location"
+#~ msgstr "Məkan seçin"
+
+#~ msgid "Select service extras"
+#~ msgstr "Əlavə xidmət seçin"
+
+#~ msgid "Fill information"
+#~ msgstr "Məlumatı doldurun"
+
+#~ msgid "Select Date & Time"
+#~ msgstr "Tarix və Saatı seçin"
+
+#~ msgid "Confirm Details"
+#~ msgstr "Məlumatı təsdiqlə"
+
+#, fuzzy
+#~ msgid "second"
+#~ msgstr "Second"
+
+#, fuzzy
+#~ msgid "seconds"
+#~ msgstr "Second"

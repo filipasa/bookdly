@@ -1,0 +1,550 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: test\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-12-23 11:30+0400\n"
+"PO-Revision-Date: 2022-12-23 11:30+0400\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.2\n"
+"X-Poedit-Basepath: ../app\n"
+"X-Poedit-KeywordsList: bkntc__\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: Frontend/assets/js/datepicker.min.js\n"
+"X-Poedit-SearchPathExcluded-1: Frontend/assets/js/intlTelInput.min.js\n"
+"X-Poedit-SearchPathExcluded-2: Frontend/assets/js/jquery.nicescroll.min."
+"js\n"
+"X-Poedit-SearchPathExcluded-3: Frontend/assets/js/utilsIntlTelInput.js\n"
+
+#: Backend/Ajax.php:76
+#, fuzzy
+#| msgid "Confirm Details"
+msgid "Tax Details"
+msgstr "Potwierdzenie"
+
+#: Backend/Ajax.php:109
+#, fuzzy
+#| msgid "Please select start date"
+msgid "Please fill tax name"
+msgstr "Wybierz datę początkową."
+
+#: Backend/Ajax.php:114
+msgid "Invalid tax type"
+msgstr ""
+
+#: Backend/Ajax.php:119
+msgid "Tax amount must be non-negative"
+msgstr ""
+
+#: Backend/Controller.php:22 TaxAddon.php:36
+msgid "Edit"
+msgstr ""
+
+#: Backend/Controller.php:26 TaxAddon.php:37
+msgid "Delete"
+msgstr ""
+
+#: Backend/Controller.php:33 TaxAddon.php:74
+msgid "Taxes"
+msgstr ""
+
+#: Backend/Controller.php:34
+msgid "NEW TAX"
+msgstr ""
+
+#: Backend/Controller.php:36
+msgid "ID"
+msgstr ""
+
+#: Backend/Controller.php:37
+msgid "NAME"
+msgstr ""
+
+#: Backend/Controller.php:39
+msgid "AMOUNT"
+msgstr ""
+
+#: Backend/Controller.php:54
+msgid "LOCATIONS"
+msgstr ""
+
+#: Backend/Controller.php:58
+#, fuzzy
+#| msgid "Select location"
+msgid "All locations"
+msgstr "Wybierz lokalizację"
+
+#: Backend/Controller.php:73
+msgid "STATUS"
+msgstr ""
+
+#: Backend/Controller.php:75 Backend/view/modal/add_new.php:42
+msgid "Enabled"
+msgstr ""
+
+#: Backend/Controller.php:75
+msgid "Disabled"
+msgstr ""
+
+#: Backend/view/modal/add_new.php:15
+msgid "Edit Tax"
+msgstr ""
+
+#: Backend/view/modal/add_new.php:15
+msgid "New Tax"
+msgstr ""
+
+#: Backend/view/modal/add_new.php:45
+msgid "CANCEL"
+msgstr ""
+
+#: Backend/view/modal/add_new.php:46
+msgid "SAVE"
+msgstr ""
+
+#: Backend/view/modal/add_new.php:46
+msgid "CREATE"
+msgstr ""
+
+#: Backend/view/tab/tax_add_new_details.php:15
+msgid "Name"
+msgstr "Imię"
+
+#: Backend/view/tab/tax_add_new_details.php:19
+msgid "Amount"
+msgstr ""
+
+#: Backend/view/tab/tax_add_new_details.php:32
+#, fuzzy
+#| msgid "Location"
+msgid "Locations filter"
+msgstr "Lokalizacja"
+
+#: Backend/view/tab/tax_add_new_details.php:46
+msgid "Services filter"
+msgstr ""
+
+#: Backend/view/tab/tax_section.php:12
+msgid "Hide \"Price does not include taxes\" on the services step"
+msgstr ""
+
+#: Backend/view/tab/tax_section.php:13
+msgid ""
+"If you enable this option, it allows to show \"Price does not include taxes"
+"\" on the services and extra services steps."
+msgstr ""
+
+#: Listener.php:72
+#, fuzzy
+#| msgid "Full amount"
+msgid "Total tax amount"
+msgstr "Full amount"
+
+#: Listener.php:78
+msgid "Total tax amount of recurring appointments"
+msgstr ""
+
+#: Listener.php:88 TaxAddon.php:34
+msgid "Tax"
+msgstr ""
+
+#: Listener.php:94
+msgid "Tax (recurring)"
+msgstr ""
+
+#: Listener.php:178
+msgid "* Price does not include taxes"
+msgstr ""
+
+#: TaxAddon.php:27
+#, fuzzy
+#| msgid "Full amount"
+msgid "Tax module"
+msgstr "Full amount"
+
+#: TaxAddon.php:35
+msgid "Add new"
+msgstr ""
+
+#~ msgid "Please fill in all required fields correctly!"
+#~ msgstr "Wypełnij wszystkie wymagane pola!"
+
+#~ msgid "Staff"
+#~ msgstr "Dietetyk"
+
+#~ msgid "Service"
+#~ msgstr "Usługa"
+
+#~ msgid "Service Extras"
+#~ msgstr "Dodatkowe Usługi"
+
+#~ msgid "Date & Time"
+#~ msgstr "Termin Wizyty"
+
+#~ msgid "Information"
+#~ msgstr "Dane Pacjenta"
+
+#~ msgid "Confirmation"
+#~ msgstr "Potwierdzenie"
+
+#~ msgid "Have any questions?"
+#~ msgstr "Pytania?"
+
+#~ msgid "Select service"
+#~ msgstr "Wybierz usługę"
+
+#~ msgid "BACK"
+#~ msgstr "Wstecz"
+
+#~ msgid "NEXT STEP"
+#~ msgstr "DALEJ"
+
+#, php-format
+#~ msgid "Minimum length of \"%s\" field is %d!"
+#~ msgstr "Minimum length of \"%s\" field is %d!"
+
+#, php-format
+#~ msgid "Maximum length of \"%s\" field is %d!"
+#~ msgstr "Maximum length of \"%s\" field is %d!"
+
+#~ msgid "File extension is not allowed!"
+#~ msgstr "File extension is not allowed!"
+
+#~ msgid "DATE"
+#~ msgstr "DATA"
+
+#~ msgid "Days of week"
+#~ msgstr "Days of week"
+
+#~ msgid "Mon"
+#~ msgstr "Pon"
+
+#~ msgid "Tue"
+#~ msgstr "Wt"
+
+#~ msgid "Wed"
+#~ msgstr "Śr"
+
+#~ msgid "Thu"
+#~ msgstr "Czw"
+
+#~ msgid "Fri"
+#~ msgstr "Pią"
+
+#~ msgid "Sat"
+#~ msgstr "Sob"
+
+#~ msgid "Sun"
+#~ msgstr "Nie"
+
+#~ msgid "Monday"
+#~ msgstr "Poniedziałek"
+
+#~ msgid "Tuesday"
+#~ msgstr "Wtorek"
+
+#~ msgid "Wednesday"
+#~ msgstr "Środa"
+
+#~ msgid "Thursday"
+#~ msgstr "Czwartek"
+
+#~ msgid "Friday"
+#~ msgstr "Piątek"
+
+#~ msgid "Saturday"
+#~ msgstr "Sobota"
+
+#~ msgid "Sunday"
+#~ msgstr "Niedziela"
+
+#~ msgid "Every"
+#~ msgstr "Every"
+
+#~ msgid "DAYS"
+#~ msgstr "DAYS"
+
+#~ msgid "Time"
+#~ msgstr "Godzina"
+
+#~ msgid "On"
+#~ msgstr "On"
+
+#~ msgid "Specific day"
+#~ msgstr "Specific day"
+
+#~ msgid "First"
+#~ msgstr "First"
+
+#~ msgid "Second"
+#~ msgstr "Second"
+
+#~ msgid "Third"
+#~ msgstr "Third"
+
+#~ msgid "Fourth"
+#~ msgstr "Fourth"
+
+#~ msgid "Last"
+#~ msgstr "Last"
+
+#~ msgid "Start date"
+#~ msgstr "Start date"
+
+#~ msgid "End date"
+#~ msgstr "End date"
+
+#~ msgid "Times"
+#~ msgstr "Times"
+
+#~ msgid "Select..."
+#~ msgstr "Wybierz..."
+
+#~ msgid "TIME"
+#~ msgstr "GODZINA"
+
+#~ msgid "EDIT"
+#~ msgstr "EDYTUJ"
+
+#~ msgid "Discount"
+#~ msgstr "Zniżka"
+
+#~ msgid "January"
+#~ msgstr "Styczeń"
+
+#~ msgid "February"
+#~ msgstr "Luty"
+
+#~ msgid "March"
+#~ msgstr "Marzec"
+
+#~ msgid "April"
+#~ msgstr "Kwiecień"
+
+#~ msgid "May"
+#~ msgstr "Maj"
+
+#~ msgid "June"
+#~ msgstr "Czerwiec"
+
+#~ msgid "July"
+#~ msgstr "Lipiec"
+
+#~ msgid "August"
+#~ msgstr "Sierpień"
+
+#~ msgid "September"
+#~ msgstr "Wrzesień"
+
+#~ msgid "October"
+#~ msgstr "Październik"
+
+#~ msgid "November"
+#~ msgstr "Listopad"
+
+#~ msgid "December"
+#~ msgstr "Grudzień"
+
+#~ msgid "Email"
+#~ msgstr "Email"
+
+#~ msgid "Phone"
+#~ msgstr "Telefon"
+
+#, fuzzy
+#~| msgid "Select date"
+#~ msgid "Select Type"
+#~ msgstr "Wybierz godzinę"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgid "Tab Name"
+#~ msgstr "Imię"
+
+#, fuzzy
+#~| msgid "Select date"
+#~ msgid "Select Language"
+#~ msgstr "Wybierz godzinę"
+
+#, fuzzy
+#~| msgid "Select service"
+#~ msgid "Select Service"
+#~ msgstr "Wybierz usługę"
+
+#, fuzzy
+#~| msgid "Select staff"
+#~ msgid "Select Staff"
+#~ msgstr "Wybierz dietetyka"
+
+#, fuzzy
+#~| msgid "Select location"
+#~ msgid "Select Location"
+#~ msgstr "Wybierz lokalizację"
+
+#~ msgid "Daily"
+#~ msgstr "Daily"
+
+#~ msgid "Deposit"
+#~ msgstr "Deposit"
+
+#~ msgid "Local"
+#~ msgstr "Płatność na miejscu"
+
+#~ msgid "Any staff"
+#~ msgstr "Dowolny dietetyk"
+
+#~ msgid "Select an available staff"
+#~ msgstr "Wybierz dostępnego dietetyka"
+
+#~ msgid "Add coupon"
+#~ msgstr "Dodaj kupon"
+
+#~ msgid "Please select location."
+#~ msgstr "Wybierz lokalizację."
+
+#~ msgid "Please select staff."
+#~ msgstr "Wybierz dietetyka."
+
+#~ msgid "Please select service"
+#~ msgstr "Wybierz usługę."
+
+#~ msgid "Please select week day(s)"
+#~ msgstr "Wybierz dzień tygodnia."
+
+#~ msgid "Please select week day(s) and time(s) correctly"
+#~ msgstr "Wybierz dzień tygodnia i godzinę."
+
+#~ msgid "Please select end date"
+#~ msgstr "Wybierz datę końcową."
+
+#~ msgid "Please select date."
+#~ msgstr "Wybierz datę."
+
+#~ msgid "Please select time."
+#~ msgstr "Wybierz godzinę."
+
+#~ msgid "Please select an available time"
+#~ msgstr "Wybierz dostępną godzinę."
+
+#~ msgid "Please enter a valid email address!"
+#~ msgstr "Wpisz prawidłowy adres email."
+
+#~ msgid "Please enter a valid phone number!"
+#~ msgstr "Wpisz prawidłowy numer telefonu."
+
+#~ msgid "CONFIRM BOOKING"
+#~ msgstr "POTWIERDŹ REZERWACJĘ"
+
+#~ msgid "There is no any Location for select."
+#~ msgstr "There is no any Location for select."
+
+#~ msgid "Staff not found. Please go back and select a different option."
+#~ msgstr "Staff not found. Please go back and select a different option."
+
+#~ msgid "Service not found. Please go back and select a different option."
+#~ msgstr "Service not found. Please go back and select a different option."
+
+#~ msgid "There isn't any available staff for the selected date/time."
+#~ msgstr "There isn&#039;t any available staff for the selected date/time."
+
+#~ msgid ""
+#~ "Extras not found in this service. You can select other service or click "
+#~ "the <span class=\"booknetic_text_primary\">\"Next step\"</span> button."
+#~ msgstr ""
+#~ "Extras not found in this service. You can select other service or click "
+#~ "the <span class=\"booknetic_text_primary\">\"Next step\"</span> button."
+
+#~ msgid "w"
+#~ msgstr "tyg."
+
+#~ msgid "d"
+#~ msgstr "dnia"
+
+#~ msgid "h"
+#~ msgstr "-godz."
+
+#~ msgid "m"
+#~ msgstr "-min."
+
+#~ msgid "s"
+#~ msgstr "sek."
+
+#~ msgid "Finish"
+#~ msgstr "Koniec"
+
+#, fuzzy
+#~| msgid "Time"
+#~ msgid "Timezone"
+#~ msgstr "Godzina"
+
+#, fuzzy
+#~| msgid "Location"
+#~ msgid "Location ID"
+#~ msgstr "Lokalizacja"
+
+#, fuzzy
+#~| msgid "Confirmation"
+#~ msgid "Skip the Confirmation step"
+#~ msgstr "Potwierdzenie"
+
+#~ msgid "Thank you for your request!"
+#~ msgstr "Dziękujemy za zgłoszenie!"
+
+#~ msgid "Your confirmation number:"
+#~ msgstr "Twój numer rezerwacji wizyty"
+
+#~ msgid "ADD TO GOOGLE CALENDAR"
+#~ msgstr "DODAJ DO KALENDARZA GOOGLE"
+
+#~ msgid "START NEW BOOKING"
+#~ msgstr "KOLEJNA REZERWACJA"
+
+#~ msgid "FINISH BOOKING"
+#~ msgstr "ZAKOŃCZ"
+
+#, fuzzy
+#~| msgid "Add coupon"
+#~ msgid "Coupon"
+#~ msgstr "Dodaj kupon"
+
+#~ msgid "OK"
+#~ msgstr "OK"
+
+#~ msgid "Total price"
+#~ msgstr "Razem"
+
+#~ msgid "Full amount"
+#~ msgstr "Full amount"
+
+#~ msgid "Select date"
+#~ msgstr "Wybierz godzinę"
+
+#~ msgid "Surname"
+#~ msgstr "Nazwisko"
+
+#~ msgid "Select staff"
+#~ msgstr "Wybierz dietetyka"
+
+#~ msgid "Select service extras"
+#~ msgstr "Select service extras"
+
+#~ msgid "Fill information"
+#~ msgstr "Twoje dane"
+
+#~ msgid "Select Date & Time"
+#~ msgstr "Wybierz termin"
+
+#, fuzzy
+#~| msgid "Second"
+#~ msgid "second"
+#~ msgstr "Second"
+
+#, fuzzy
+#~| msgid "Second"
+#~ msgid "seconds"
+#~ msgstr "Second"

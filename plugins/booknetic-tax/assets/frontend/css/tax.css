@@ -1,0 +1,35 @@
+
+.bkntc_tax_excluded{
+    font-size: 12px;
+    color:#828F9A;
+    font-style: italic;
+}
+
+.bkntc_tax_excluded.bkntc_tax_top{
+    position: absolute;
+    top: 0;
+    right: 0;
+    line-height: 25px;
+}
+
+.bkntc_tax_excluded.bkntc_tax_top.accordion{
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -10px;
+    margin-bottom: 5px;
+}
+
+.bkntc_tax_excluded.bkntc_tax_bottom{
+    display: block;
+    text-align: right;
+}
+
+@media only screen and ( max-width: 992px ) {
+    .bkntc_tax_excluded.bkntc_tax_top, .bkntc_tax_excluded.bkntc_tax_top.accordion {
+        position: relative;
+        text-align: center;
+        display: block;
+        margin-bottom: 10px;
+    }
+}

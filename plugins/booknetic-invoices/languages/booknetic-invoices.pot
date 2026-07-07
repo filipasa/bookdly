@@ -1,0 +1,88 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: test\n"
+"POT-Creation-Date: 2023-07-14 16:01+0400\n"
+"PO-Revision-Date: 2020-02-23 21:08+0400\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.3.2\n"
+"X-Poedit-Basepath: ../app\n"
+"X-Poedit-KeywordsList: bkntc__\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: Frontend/assets/js/datepicker.min.js\n"
+"X-Poedit-SearchPathExcluded-1: Frontend/assets/js/intlTelInput.min.js\n"
+"X-Poedit-SearchPathExcluded-2: Frontend/assets/js/jquery.nicescroll.min.js\n"
+"X-Poedit-SearchPathExcluded-3: Frontend/assets/js/utilsIntlTelInput.js\n"
+
+#: Backend/Ajax.php:23
+msgid "Please fill in all required fields correctly!"
+msgstr ""
+
+#: Backend/Controller.php:38 InvoicesAddon.php:33
+msgid "Edit"
+msgstr ""
+
+#: Backend/Controller.php:42 InvoicesAddon.php:34
+msgid "Delete"
+msgstr ""
+
+#: Backend/Controller.php:49 Backend/view/edit_invoice.php:27
+#: Backend/view/tabs/appointment_info_fields.php:19 InvoicesAddon.php:26
+#: InvoicesAddon.php:31 InvoicesAddon.php:59 InvoicesAddon.php:68
+#: Listener.php:101
+msgid "Invoices"
+msgstr ""
+
+#: Backend/Controller.php:50
+msgid "ADD INVOICE"
+msgstr ""
+
+#: Backend/Controller.php:53
+msgid "№"
+msgstr ""
+
+#: Backend/Controller.php:54
+msgid "NAME"
+msgstr ""
+
+#: Backend/view/edit_invoice.php:29
+msgid "SAVE CHANGES"
+msgstr ""
+
+#: Backend/view/edit_invoice.php:30
+msgid "SAVE & DOWNLOAD PREVIEW"
+msgstr ""
+
+#: Backend/view/edit_invoice.php:40
+msgid "INVOICE"
+msgstr ""
+
+#: Backend/view/edit_invoice.php:45 Backend/view/edit_invoice.php:47
+msgid "PDF Name"
+msgstr ""
+
+#: Backend/view/edit_invoice.php:57
+msgid "Content"
+msgstr ""
+
+#: Backend/view/tabs/appointment_info_fields.php:11
+msgid "No invoices found"
+msgstr ""
+
+#: InvoicesAddon.php:32
+msgid "Add new"
+msgstr ""
+
+#: InvoicesAddon.php:35
+msgid "Invoices Tab"
+msgstr ""
+
+#: Listener.php:23 Listener.php:28
+msgid "Invoice"
+msgstr ""

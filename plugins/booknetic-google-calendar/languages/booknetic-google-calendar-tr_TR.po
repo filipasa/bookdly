@@ -1,0 +1,488 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: test\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-09-16 19:12+0400\n"
+"PO-Revision-Date: 2022-09-16 19:12+0400\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.1\n"
+"X-Poedit-Basepath: ../app\n"
+"X-Poedit-KeywordsList: bkntc__\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: Frontend/assets/js/datepicker.min.js\n"
+"X-Poedit-SearchPathExcluded-1: Frontend/assets/js/intlTelInput.min.js\n"
+"X-Poedit-SearchPathExcluded-2: Frontend/assets/js/jquery.nicescroll.min.js\n"
+"X-Poedit-SearchPathExcluded-3: Frontend/assets/js/utilsIntlTelInput.js\n"
+
+#: Backend/Ajax.php:134
+msgid "Firstly click the login button!"
+msgstr ""
+
+#: Backend/view/modal/google_calendar_settings.php:35
+msgid "SAVE CHANGES"
+msgstr ""
+
+#: Backend/view/modal/google_calendar_settings.php:40
+#: Backend/view/tabs/google_calendar_fields.php:17 GoogleCalendarAddon.php:73
+#: GoogleCalendarAddon.php:97
+msgid "Google calendar"
+msgstr ""
+
+#: Backend/view/modal/google_calendar_settings.php:50
+msgid "Disabled"
+msgstr ""
+
+#: Backend/view/modal/google_calendar_settings.php:54
+msgid "Enabled"
+msgstr ""
+
+#: Backend/view/modal/google_calendar_settings.php:63
+msgid "Redirect URI"
+msgstr ""
+
+#: Backend/view/modal/google_calendar_settings.php:70
+msgid "Client ID"
+msgstr ""
+
+#: Backend/view/modal/google_calendar_settings.php:74
+msgid "Client Secret"
+msgstr ""
+
+#: Backend/view/modal/google_calendar_settings.php:81
+msgid "Event title"
+msgstr ""
+
+#: Backend/view/modal/google_calendar_settings.php:88
+msgid "Event description"
+msgstr ""
+
+#: Backend/view/modal/google_calendar_settings.php:95
+msgid "Sync method for busy slots from Google Calendar"
+msgstr ""
+
+#: Backend/view/modal/google_calendar_settings.php:95
+msgid ""
+"1. Live sync;<br/>If you have a few staff, this method would be more "
+"convenient for you. When your customers are booking, the plugin will connect "
+"to the google calendar and sync busy slots in real-time.<br/>2. Background "
+"sync;<br/>For this method, first, you must configure the Cron jobs ( <a "
+"href='https://www.booknetic.com/documentation/cron-job' target='_blank'>How "
+"to?</a> ). The shorter you set the Cron jobs interval, the more accuracy you "
+"will get. This method is usually designed for businesses with a large number "
+"of employees and using the \"Any Staff\" option. Because in this case, when "
+"your customer selects Any staff option, it might take more than 30-60 "
+"seconds to sync all Staff busy slots with Google calendar. By choosing this "
+"method, the plugin Cron Jobs will connect to the Google Calendars in the "
+"background at the interval you set up and will store the busy slots of all "
+"your employees in your local databases. During booking, it will read the "
+"information directly from your database. Errors in this method are "
+"inevitable. For example, if you configure your cron jobs to run every 15 "
+"minutes, the busy slot you add to your Google calendar will be stored in the "
+"plugin's local database every 15 minutes. That is, within these 15 minutes, "
+"someone can book an appointment in that time slot. Therefore, the shorter "
+"you configure the Cron jobs, the less likely there will be errors."
+msgstr ""
+
+#: Backend/view/modal/google_calendar_settings.php:97
+msgid "Live sync"
+msgstr ""
+
+#: Backend/view/modal/google_calendar_settings.php:98
+msgid "Background sync"
+msgstr ""
+
+#: Backend/view/modal/google_calendar_settings.php:99
+msgid "Don't sync busy slots"
+msgstr ""
+
+#: Backend/view/modal/google_calendar_settings.php:103
+msgid "Since what date do events in Google calendar sync?"
+msgstr ""
+
+#: Backend/view/modal/google_calendar_settings.php:105
+msgid "Events up to 1 month"
+msgstr ""
+
+#: Backend/view/modal/google_calendar_settings.php:106
+msgid "Events up to 2 month"
+msgstr ""
+
+#: Backend/view/modal/google_calendar_settings.php:107
+msgid "Events up to 3 month"
+msgstr ""
+
+#: Backend/view/modal/google_calendar_settings.php:115
+msgid "Add customers as attendees in your calendar events"
+msgstr ""
+
+#: Backend/view/modal/google_calendar_settings.php:124
+msgid "Send email invitations to attendees by Google"
+msgstr ""
+
+#: Backend/view/modal/google_calendar_settings.php:136
+msgid "Customers can see other attendees"
+msgstr ""
+
+#: Backend/view/modal/google_calendar_settings.php:147
+msgid "Which appointments should be appear on Google Calendar?"
+msgstr ""
+
+#: GoogleCalendarAddon.php:30
+msgid "Google Calendar integration"
+msgstr ""
+
+#: GoogleCalendarAddon.php:31
+msgid "Google Calendar settings"
+msgstr ""
+
+#~ msgid "Please fill in all required fields correctly!"
+#~ msgstr "Lütfen gerekli tüm alanları doğru bir şekilde doldurun!"
+
+#~ msgid "Location"
+#~ msgstr "Konum"
+
+#~ msgid "Staff"
+#~ msgstr "Personel"
+
+#~ msgid "Service"
+#~ msgstr "Hizmet"
+
+#~ msgid "Service Extras"
+#~ msgstr "Ek hizmet"
+
+#~ msgid "Date & Time"
+#~ msgstr "Tarih ve Saat"
+
+#~ msgid "Information"
+#~ msgstr "Bilgi"
+
+#~ msgid "Confirmation"
+#~ msgstr "Onay"
+
+#~ msgid "Have any questions?"
+#~ msgstr "Bir sorunuz mu var?"
+
+#~ msgid "Select service"
+#~ msgstr "Hizmet seçin"
+
+#~ msgid "BACK"
+#~ msgstr "GERİ"
+
+#~ msgid "NEXT STEP"
+#~ msgstr "İLERİ"
+
+#, php-format
+#~ msgid "Minimum length of \"%s\" field is %d!"
+#~ msgstr "Minimum length of \"%s\" field is %d!"
+
+#, php-format
+#~ msgid "Maximum length of \"%s\" field is %d!"
+#~ msgstr "Maximum length of \"%s\" field is %d!"
+
+#~ msgid "File extension is not allowed!"
+#~ msgstr "Dosya formatına izin verilmiyor!"
+
+#~ msgid "DATE"
+#~ msgstr "TARİH"
+
+#~ msgid "Days of week"
+#~ msgstr "Haftanın günleri"
+
+#~ msgid "Mon"
+#~ msgstr "Pt"
+
+#~ msgid "Tue"
+#~ msgstr "Sa"
+
+#~ msgid "Wed"
+#~ msgstr "Ça"
+
+#~ msgid "Thu"
+#~ msgstr "Pe"
+
+#~ msgid "Fri"
+#~ msgstr "Cu"
+
+#~ msgid "Sat"
+#~ msgstr "Ct"
+
+#~ msgid "Sun"
+#~ msgstr "Pz"
+
+#~ msgid "Monday"
+#~ msgstr "Pazaretsi"
+
+#~ msgid "Tuesday"
+#~ msgstr "Salı"
+
+#~ msgid "Wednesday"
+#~ msgstr "Çarşamna"
+
+#~ msgid "Thursday"
+#~ msgstr "Perşembe"
+
+#~ msgid "Friday"
+#~ msgstr "Cuma"
+
+#~ msgid "Saturday"
+#~ msgstr "Cumartesi"
+
+#~ msgid "Sunday"
+#~ msgstr "Pazar"
+
+#~ msgid "Every"
+#~ msgstr "Her"
+
+#~ msgid "DAYS"
+#~ msgstr "GÜNLER"
+
+#~ msgid "Time"
+#~ msgstr "Zaman"
+
+#~ msgid "On"
+#~ msgstr "On"
+
+#~ msgid "Specific day"
+#~ msgstr "Belirli gün"
+
+#~ msgid "First"
+#~ msgstr "İlk"
+
+#~ msgid "Second"
+#~ msgstr "İkinci"
+
+#~ msgid "Third"
+#~ msgstr "Üçüncü"
+
+#~ msgid "Fourth"
+#~ msgstr "Dördüncü"
+
+#~ msgid "Last"
+#~ msgstr "Son"
+
+#~ msgid "Start date"
+#~ msgstr "Başlama tarihi"
+
+#~ msgid "End date"
+#~ msgstr "Bitiş tarihi"
+
+#~ msgid "Times"
+#~ msgstr "Defa"
+
+#~ msgid "Select..."
+#~ msgstr "Seçin..."
+
+#~ msgid "TIME"
+#~ msgstr "SAAT"
+
+#~ msgid "EDIT"
+#~ msgstr "DÜZENLE"
+
+#~ msgid "Discount"
+#~ msgstr "İndirim"
+
+#~ msgid "January"
+#~ msgstr "Ocak"
+
+#~ msgid "February"
+#~ msgstr "Şubat"
+
+#~ msgid "March"
+#~ msgstr "Mart"
+
+#~ msgid "April"
+#~ msgstr "Nisan"
+
+#~ msgid "May"
+#~ msgstr "Mayıs"
+
+#~ msgid "June"
+#~ msgstr "Haziran"
+
+#~ msgid "July"
+#~ msgstr "Temmuz"
+
+#~ msgid "August"
+#~ msgstr "Ağustos"
+
+#~ msgid "September"
+#~ msgstr "Eylül"
+
+#~ msgid "October"
+#~ msgstr "Ekim"
+
+#~ msgid "November"
+#~ msgstr "Kasım"
+
+#~ msgid "December"
+#~ msgstr "Aralık"
+
+#~ msgid "Credit card"
+#~ msgstr "Kredi Kartı"
+
+#~ msgid "Email"
+#~ msgstr "E-posta"
+
+#~ msgid "Phone"
+#~ msgstr "Telefon"
+
+#~ msgid "Daily"
+#~ msgstr "Günlük"
+
+#~ msgid "Name"
+#~ msgstr "İsim"
+
+#~ msgid "Deposit"
+#~ msgstr "Depozito"
+
+#~ msgid "Local"
+#~ msgstr "Nakit ödeme"
+
+#~ msgid "Paypal"
+#~ msgstr "Paypal"
+
+#~ msgid "Any staff"
+#~ msgstr "Herhangi Personel"
+
+#~ msgid "Select an available staff"
+#~ msgstr "Uygun olan personeli seçin"
+
+#~ msgid "Add coupon"
+#~ msgstr "Kupon ekle"
+
+#~ msgid "Please select location."
+#~ msgstr "Lütfen konum seçin."
+
+#~ msgid "Please select staff."
+#~ msgstr "Lütfen personel seçin."
+
+#~ msgid "Please select service"
+#~ msgstr "Lütfen hizmet seçin."
+
+#~ msgid "Please select week day(s)"
+#~ msgstr "Lütfen haftanın günlerini seçin"
+
+#~ msgid "Please select week day(s) and time(s) correctly"
+#~ msgstr "Lütfen haftanın günlerini ve saati doğru seçin"
+
+#~ msgid "Please select start date"
+#~ msgstr "Lütfen başlangıç tarihi seçin"
+
+#~ msgid "Please select end date"
+#~ msgstr "Lütfen bitiş tarihi seçin"
+
+#~ msgid "Please select date."
+#~ msgstr "Lütfen tarih seçin."
+
+#~ msgid "Please select time."
+#~ msgstr "Lütfen saati seçin."
+
+#~ msgid "Please select an available time"
+#~ msgstr "Lütfen uygun zamanı seçin."
+
+#~ msgid "Please enter a valid email address!"
+#~ msgstr "Lütfen doğru e-posta adresi yazınız."
+
+#~ msgid "Please enter a valid phone number!"
+#~ msgstr "Lütfen doğru telefon numarası yazınız."
+
+#~ msgid "CONFIRM BOOKING"
+#~ msgstr "REZERVASYONU BİTİR"
+
+#~ msgid "There is no any Location for select."
+#~ msgstr "Seçilecek bir konum bulunamadı."
+
+#~ msgid "Staff not found. Please go back and select a different option."
+#~ msgstr ""
+#~ "Personel bulunamadı. Lütfen geri dönün ve farklı bir seçenek belirleyin."
+
+#~ msgid "Service not found. Please go back and select a different option."
+#~ msgstr ""
+#~ "Hizmet bulunamadı. Lütfen geri dönün ve farklı bir seçenek belirleyin."
+
+#~ msgid "There isn't any available staff for the selected date/time."
+#~ msgstr "Seçilen tarih/saat için uygun personel bulunamadı."
+
+#~ msgid ""
+#~ "Extras not found in this service. You can select other service or click "
+#~ "the <span class=\"booknetic_text_primary\">\"Next step\"</span> button."
+#~ msgstr ""
+#~ "Bu hizmetde ek hizmet mevcut değil. Başka bir hizmet seçebilir ve ya "
+#~ "<span class=\"booknetic_text_primary\">\"İLERİ\"</span> yapabilirsiniz."
+
+#~ msgid "w"
+#~ msgstr "h"
+
+#~ msgid "d"
+#~ msgstr "g"
+
+#~ msgid "h"
+#~ msgstr "s"
+
+#~ msgid "m"
+#~ msgstr "a"
+
+#~ msgid "s"
+#~ msgstr "s"
+
+#~ msgid "Finish"
+#~ msgstr "Bitiş"
+
+#, fuzzy
+#~| msgid "Location"
+#~ msgid "Location ID"
+#~ msgstr "Konum"
+
+#~ msgid "Thank you for your request!"
+#~ msgstr "Rezervasyon başarıyla tamamlandı"
+
+#~ msgid "Your confirmation number:"
+#~ msgstr "Sizin onay kodunuz:"
+
+#~ msgid "ADD TO GOOGLE CALENDAR"
+#~ msgstr "GOOGLE TAKVİMİNE EKLE"
+
+#~ msgid "START NEW BOOKING"
+#~ msgstr "YENİ REZERVASYON"
+
+#~ msgid "FINISH BOOKING"
+#~ msgstr "TAMAMLA"
+
+#~ msgid "OK"
+#~ msgstr "OK"
+
+#~ msgid "Total price"
+#~ msgstr "Toplam ücret"
+
+#~ msgid "Full amount"
+#~ msgstr "Tam miktar"
+
+#~ msgid "Select date"
+#~ msgstr "Saati seç"
+
+#~ msgid "Surname"
+#~ msgstr "Soyad"
+
+#~ msgid "Select staff"
+#~ msgstr "Personel seçin"
+
+#~ msgid "Select location"
+#~ msgstr "Konum seçin"
+
+#~ msgid "Select service extras"
+#~ msgstr "Ek hizmet seçin"
+
+#~ msgid "Fill information"
+#~ msgstr "Bilgileri doldurun"
+
+#~ msgid "Select Date & Time"
+#~ msgstr "Tarih ve Saati seçin"
+
+#~ msgid "Confirm Details"
+#~ msgstr "Ayrıntıları Onayla"

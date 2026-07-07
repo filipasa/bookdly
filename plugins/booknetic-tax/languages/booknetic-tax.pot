@@ -1,0 +1,157 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: test\n"
+"POT-Creation-Date: 2023-08-10 17:08+0400\n"
+"PO-Revision-Date: 2020-02-23 21:08+0400\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.3.2\n"
+"X-Poedit-Basepath: ../app\n"
+"X-Poedit-KeywordsList: bkntc__\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: Frontend/assets/js/datepicker.min.js\n"
+"X-Poedit-SearchPathExcluded-1: Frontend/assets/js/intlTelInput.min.js\n"
+"X-Poedit-SearchPathExcluded-2: Frontend/assets/js/jquery.nicescroll.min.js\n"
+"X-Poedit-SearchPathExcluded-3: Frontend/assets/js/utilsIntlTelInput.js\n"
+
+#: Backend/Ajax.php:76
+msgid "Tax Details"
+msgstr ""
+
+#: Backend/Ajax.php:109
+msgid "Please fill tax name"
+msgstr ""
+
+#: Backend/Ajax.php:114
+msgid "Invalid tax type"
+msgstr ""
+
+#: Backend/Ajax.php:119
+msgid "Tax amount must be non-negative"
+msgstr ""
+
+#: Backend/Controller.php:22 TaxAddon.php:37
+msgid "Edit"
+msgstr ""
+
+#: Backend/Controller.php:26 TaxAddon.php:38
+msgid "Delete"
+msgstr ""
+
+#: Backend/Controller.php:33 Listener.php:239 TaxAddon.php:85
+msgid "Taxes"
+msgstr ""
+
+#: Backend/Controller.php:34
+msgid "NEW TAX"
+msgstr ""
+
+#: Backend/Controller.php:36
+msgid "ID"
+msgstr ""
+
+#: Backend/Controller.php:37
+msgid "NAME"
+msgstr ""
+
+#: Backend/Controller.php:39
+msgid "AMOUNT"
+msgstr ""
+
+#: Backend/Controller.php:54
+msgid "LOCATIONS"
+msgstr ""
+
+#: Backend/Controller.php:58
+msgid "All locations"
+msgstr ""
+
+#: Backend/Controller.php:73
+msgid "STATUS"
+msgstr ""
+
+#: Backend/Controller.php:75 Backend/view/modal/add_new.php:42
+msgid "Enabled"
+msgstr ""
+
+#: Backend/Controller.php:75
+msgid "Disabled"
+msgstr ""
+
+#: Backend/view/modal/add_new.php:15
+msgid "Edit Tax"
+msgstr ""
+
+#: Backend/view/modal/add_new.php:15
+msgid "New Tax"
+msgstr ""
+
+#: Backend/view/modal/add_new.php:45
+msgid "CANCEL"
+msgstr ""
+
+#: Backend/view/modal/add_new.php:46
+msgid "SAVE"
+msgstr ""
+
+#: Backend/view/modal/add_new.php:46
+msgid "CREATE"
+msgstr ""
+
+#: Backend/view/tab/tax_add_new_details.php:15
+msgid "Name"
+msgstr ""
+
+#: Backend/view/tab/tax_add_new_details.php:19
+msgid "Amount"
+msgstr ""
+
+#: Backend/view/tab/tax_add_new_details.php:32
+msgid "Locations filter"
+msgstr ""
+
+#: Backend/view/tab/tax_add_new_details.php:46
+msgid "Services filter"
+msgstr ""
+
+#: Backend/view/tab/tax_section.php:12
+msgid "Hide \"Price does not include taxes\" on the services step"
+msgstr ""
+
+#: Backend/view/tab/tax_section.php:13
+msgid "If you enable this option, it allows to show \"Price does not include taxes\" on the services and extra services steps."
+msgstr ""
+
+#: Listener.php:75
+msgid "Total tax amount"
+msgstr ""
+
+#: Listener.php:81
+msgid "Total tax amount of recurring appointments"
+msgstr ""
+
+#: Listener.php:91 TaxAddon.php:35
+msgid "Tax"
+msgstr ""
+
+#: Listener.php:97
+msgid "Tax (recurring)"
+msgstr ""
+
+#: Listener.php:181
+msgid "* Price does not include taxes"
+msgstr ""
+
+#: TaxAddon.php:28
+msgid "Tax module"
+msgstr ""
+
+#: TaxAddon.php:36
+msgid "Add new"
+msgstr ""

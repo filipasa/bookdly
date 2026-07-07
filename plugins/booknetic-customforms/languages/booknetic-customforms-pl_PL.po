@@ -1,0 +1,788 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: test\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-27 18:20+0400\n"
+"PO-Revision-Date: 2023-06-27 18:20+0400\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.2.2\n"
+"X-Poedit-Basepath: ../app\n"
+"X-Poedit-KeywordsList: bkntc__\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: Frontend/assets/js/datepicker.min.js\n"
+"X-Poedit-SearchPathExcluded-1: Frontend/assets/js/intlTelInput.min.js\n"
+"X-Poedit-SearchPathExcluded-2: Frontend/assets/js/jquery.nicescroll.min.js\n"
+"X-Poedit-SearchPathExcluded-3: Frontend/assets/js/utilsIntlTelInput.js\n"
+
+#: Backend/Ajax.php:40 Backend/Ajax.php:48 Helpers/CheckConditions.php:41
+#: Helpers/CheckConditions.php:48 Listener.php:69 Listener.php:79
+#: Listener.php:103 Listener.php:110
+msgid "Please fill in all required fields correctly!"
+msgstr "Wypełnij wszystkie wymagane pola!"
+
+#: Backend/Controller.php:22 Backend/Controller.php:46 CustomFormsAddon.php:40
+msgid "Edit"
+msgstr ""
+
+#: Backend/Controller.php:25 CustomFormsAddon.php:41
+msgid "Delete"
+msgstr ""
+
+#: Backend/Controller.php:27
+msgid "Custom forms"
+msgstr ""
+
+#: Backend/Controller.php:28
+msgid "CREATE NEW FORM"
+msgstr ""
+
+#: Backend/Controller.php:32
+msgid "NAME"
+msgstr ""
+
+#: Backend/Controller.php:33
+msgid "ELEMENTS"
+msgstr ""
+
+#: Backend/Controller.php:37
+msgid "CONDITIONS"
+msgstr ""
+
+#: Backend/view/edit_form.php:36
+msgid "Customize"
+msgstr ""
+
+#: Backend/view/edit_form.php:40
+msgid "Form name"
+msgstr ""
+
+#: Backend/view/edit_form.php:55
+msgid "SAVE FORM"
+msgstr ""
+
+#: Backend/view/edit_form.php:56
+msgid "FORM CONDITIONS"
+msgstr ""
+
+#: Backend/view/edit_form.php:67
+msgid "Elements"
+msgstr ""
+
+#: Backend/view/edit_form.php:74 Backend/view/edit_form.php:199
+msgid "Label"
+msgstr ""
+
+#: Backend/view/edit_form.php:79
+msgid "Text input"
+msgstr ""
+
+#: Backend/view/edit_form.php:84
+msgid "Textarea"
+msgstr ""
+
+#: Backend/view/edit_form.php:89
+msgid "Number input"
+msgstr ""
+
+#: Backend/view/edit_form.php:94
+msgid "Date input"
+msgstr ""
+
+#: Backend/view/edit_form.php:99
+msgid "Time input"
+msgstr ""
+
+#: Backend/view/edit_form.php:104
+msgid "Select"
+msgstr ""
+
+#: Backend/view/edit_form.php:109
+msgid "Check-box"
+msgstr ""
+
+#: Backend/view/edit_form.php:114
+msgid "Radio buttons"
+msgstr ""
+
+#: Backend/view/edit_form.php:119
+msgid "File"
+msgstr ""
+
+#: Backend/view/edit_form.php:124
+msgid "Link"
+msgstr ""
+
+#: Backend/view/edit_form.php:129
+msgid "Email"
+msgstr "Email"
+
+#: Backend/view/edit_form.php:134
+msgid "Phone"
+msgstr "Telefon"
+
+#: Backend/view/edit_form.php:145
+msgid "Form"
+msgstr ""
+
+#: Backend/view/edit_form.php:194
+msgid "Options"
+msgstr ""
+
+#: Backend/view/edit_form.php:200
+msgid "Max: 255 symbol"
+msgstr ""
+
+#: Backend/view/edit_form.php:206
+msgid "Placeholder"
+msgstr ""
+
+#: Backend/view/edit_form.php:207 Backend/view/edit_form.php:280
+msgid "Max: 200 symbol"
+msgstr ""
+
+#: Backend/view/edit_form.php:213
+msgid "Width"
+msgstr ""
+
+#: Backend/view/edit_form.php:234
+msgid "Visibility"
+msgstr ""
+
+#: Backend/view/edit_form.php:245
+msgid "Min length"
+msgstr ""
+
+#: Backend/view/edit_form.php:249
+msgid "Max length"
+msgstr ""
+
+#: Backend/view/edit_form.php:256
+msgid "Help text"
+msgstr ""
+
+#: Backend/view/edit_form.php:257
+msgid "Max: 500 symbol"
+msgstr ""
+
+#: Backend/view/edit_form.php:263
+msgid "Allowed file formats"
+msgstr ""
+
+#: Backend/view/edit_form.php:272
+msgid "Is required"
+msgstr ""
+
+#: Backend/view/edit_form.php:279
+msgid "URL"
+msgstr ""
+
+#: Backend/view/edit_form.php:287
+msgid "Choices"
+msgstr ""
+
+#: Backend/view/edit_form.php:289
+msgid "Add new"
+msgstr ""
+
+#: Backend/view/modal/custom_form.php:13
+#: Backend/view/tabs/appointment_info_fields.php:12
+msgid "No custom fields found"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:17
+msgid "Form conditions"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:25
+msgid "CONDITION"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:26
+#, fuzzy
+#| msgid "Confirmation"
+msgid "New Condition"
+msgstr "Potwierdzenie"
+
+#: Backend/view/modal/set_conditions.php:34
+msgid "When"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:44
+msgid "AND"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:45
+msgid "OR"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:52
+#: Backend/view/modal/set_conditions.php:123
+msgid "Field"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:58
+#: Backend/view/modal/set_conditions.php:84
+#: Backend/view/modal/set_conditions.php:127
+msgid "Value"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:59
+msgid "Length"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:60
+msgid "File size (KB)"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:64
+msgid "Operator"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:72
+msgid "is empty"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:73
+msgid "is not empty"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:74
+msgid "contains"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:75
+msgid "does not contains"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:76
+msgid "regex"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:77
+msgid "starts with"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:78
+msgid "does not starts with"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:79
+msgid "ends with"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:80
+msgid "does not ends with"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:96
+msgid "NEW CONDITION"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:102
+msgid "Do"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:111
+msgid "Action"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:113
+msgid "Show"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:114
+msgid "Hide"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:115
+msgid "Hide only for Customers"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:116
+msgid "Disable"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:117
+msgid "Enable"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:118
+msgid "Set value"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:119
+msgid "Throw error"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:128
+msgid "Error message"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:140
+msgid "NEW ACTION"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:149
+msgid "CLOSE"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:150
+msgid "SAVE"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:154
+msgid "Service"
+msgstr "Usługa"
+
+#: Backend/view/modal/set_conditions.php:155
+msgid "Staff"
+msgstr "Dietetyk"
+
+#: Backend/view/modal/set_conditions.php:156
+msgid "Location"
+msgstr "Lokalizacja"
+
+#: CustomFormsAddon.php:28 CustomFormsAddon.php:38 CustomFormsAddon.php:70
+msgid "Custom Forms"
+msgstr ""
+
+#: CustomFormsAddon.php:39
+msgid "Add New"
+msgstr ""
+
+#: CustomFormsAddon.php:42
+msgid "Custom Forms Tab"
+msgstr ""
+
+#: CustomFormsAddon.php:50
+msgid "Select services...(empty for all services)"
+msgstr ""
+
+#: CustomFormsAddon.php:51
+msgid "Changes has been saved!"
+msgstr ""
+
+#: CustomFormsAddon.php:88 CustomFormsAddon.php:93 CustomFormsAddon.php:99
+msgid "Custom fields"
+msgstr ""
+
+#: CustomFormsAddon.php:120 Listener.php:118 Listener.php:383
+#, php-format
+msgid "Minimum length of \"%s\" field is %d!"
+msgstr "Minimum length of \"%s\" field is %d!"
+
+#: CustomFormsAddon.php:121 Listener.php:123 Listener.php:388
+#, php-format
+msgid "Maximum length of \"%s\" field is %d!"
+msgstr "Maximum length of \"%s\" field is %d!"
+
+#: Helpers/FormElements.php:160 Helpers/FormElements.php:204
+msgid "Choice 1"
+msgstr ""
+
+#: Helpers/FormElements.php:167 Helpers/FormElements.php:211
+msgid "Choice 2"
+msgstr ""
+
+#: Helpers/FormElements.php:242
+msgid "BROWSE"
+msgstr ""
+
+#: Listener.php:95
+#, php-format
+msgid "File extension '.%s' is not allowed!"
+msgstr ""
+
+#: Listener.php:319 Listener.php:337 Listener.php:433
+#, php-format
+msgid "%s can not be empty, because it's a required field!"
+msgstr ""
+
+#: Listener.php:348 Listener.php:356 Listener.php:397 Listener.php:409
+msgid "Please fill custom fields form correctly!"
+msgstr ""
+
+#: Listener.php:363 Listener.php:416
+msgid "Selected custom field not found!"
+msgstr ""
+
+#: Listener.php:375
+#, php-format
+msgid "\"%s\" can not be empty, because it's a required field!"
+msgstr ""
+
+#: Listener.php:441
+msgid "File extension is not allowed!"
+msgstr "File extension is not allowed!"
+
+#: Listener.php:617 Listener.php:626 Listener.php:633
+msgid "Custom field"
+msgstr ""
+
+#~ msgid "Service Extras"
+#~ msgstr "Dodatkowe Usługi"
+
+#~ msgid "Date & Time"
+#~ msgstr "Termin Wizyty"
+
+#~ msgid "Information"
+#~ msgstr "Dane Pacjenta"
+
+#~ msgid "Have any questions?"
+#~ msgstr "Pytania?"
+
+#~ msgid "Select service"
+#~ msgstr "Wybierz usługę"
+
+#~ msgid "BACK"
+#~ msgstr "Wstecz"
+
+#~ msgid "NEXT STEP"
+#~ msgstr "DALEJ"
+
+#~ msgid "DATE"
+#~ msgstr "DATA"
+
+#~ msgid "Days of week"
+#~ msgstr "Days of week"
+
+#~ msgid "Mon"
+#~ msgstr "Pon"
+
+#~ msgid "Tue"
+#~ msgstr "Wt"
+
+#~ msgid "Wed"
+#~ msgstr "Śr"
+
+#~ msgid "Thu"
+#~ msgstr "Czw"
+
+#~ msgid "Fri"
+#~ msgstr "Pią"
+
+#~ msgid "Sat"
+#~ msgstr "Sob"
+
+#~ msgid "Sun"
+#~ msgstr "Nie"
+
+#~ msgid "Monday"
+#~ msgstr "Poniedziałek"
+
+#~ msgid "Tuesday"
+#~ msgstr "Wtorek"
+
+#~ msgid "Wednesday"
+#~ msgstr "Środa"
+
+#~ msgid "Thursday"
+#~ msgstr "Czwartek"
+
+#~ msgid "Friday"
+#~ msgstr "Piątek"
+
+#~ msgid "Saturday"
+#~ msgstr "Sobota"
+
+#~ msgid "Sunday"
+#~ msgstr "Niedziela"
+
+#~ msgid "Every"
+#~ msgstr "Every"
+
+#~ msgid "DAYS"
+#~ msgstr "DAYS"
+
+#~ msgid "Time"
+#~ msgstr "Godzina"
+
+#~ msgid "On"
+#~ msgstr "On"
+
+#~ msgid "Specific day"
+#~ msgstr "Specific day"
+
+#~ msgid "First"
+#~ msgstr "First"
+
+#~ msgid "Second"
+#~ msgstr "Second"
+
+#~ msgid "Third"
+#~ msgstr "Third"
+
+#~ msgid "Fourth"
+#~ msgstr "Fourth"
+
+#~ msgid "Last"
+#~ msgstr "Last"
+
+#~ msgid "Start date"
+#~ msgstr "Start date"
+
+#~ msgid "End date"
+#~ msgstr "End date"
+
+#~ msgid "Times"
+#~ msgstr "Times"
+
+#~ msgid "Select..."
+#~ msgstr "Wybierz..."
+
+#~ msgid "TIME"
+#~ msgstr "GODZINA"
+
+#~ msgid "EDIT"
+#~ msgstr "EDYTUJ"
+
+#~ msgid "Discount"
+#~ msgstr "Zniżka"
+
+#, fuzzy
+#~| msgid "Full amount"
+#~ msgid "Tax amount"
+#~ msgstr "Full amount"
+
+#~ msgid "January"
+#~ msgstr "Styczeń"
+
+#~ msgid "February"
+#~ msgstr "Luty"
+
+#~ msgid "March"
+#~ msgstr "Marzec"
+
+#~ msgid "April"
+#~ msgstr "Kwiecień"
+
+#~ msgid "May"
+#~ msgstr "Maj"
+
+#~ msgid "June"
+#~ msgstr "Czerwiec"
+
+#~ msgid "July"
+#~ msgstr "Lipiec"
+
+#~ msgid "August"
+#~ msgstr "Sierpień"
+
+#~ msgid "September"
+#~ msgstr "Wrzesień"
+
+#~ msgid "October"
+#~ msgstr "Październik"
+
+#~ msgid "November"
+#~ msgstr "Listopad"
+
+#~ msgid "December"
+#~ msgstr "Grudzień"
+
+#, fuzzy
+#~| msgid "Select date"
+#~ msgid "Select Type"
+#~ msgstr "Wybierz godzinę"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgid "Tab Name"
+#~ msgstr "Imię"
+
+#, fuzzy
+#~| msgid "Select date"
+#~ msgid "Select Language"
+#~ msgstr "Wybierz godzinę"
+
+#, fuzzy
+#~| msgid "Select service"
+#~ msgid "Select Service"
+#~ msgstr "Wybierz usługę"
+
+#, fuzzy
+#~| msgid "Select staff"
+#~ msgid "Select Staff"
+#~ msgstr "Wybierz dietetyka"
+
+#, fuzzy
+#~| msgid "Select location"
+#~ msgid "Select Location"
+#~ msgstr "Wybierz lokalizację"
+
+#~ msgid "Daily"
+#~ msgstr "Daily"
+
+#~ msgid "Name"
+#~ msgstr "Imię"
+
+#~ msgid "Deposit"
+#~ msgstr "Deposit"
+
+#~ msgid "Local"
+#~ msgstr "Płatność na miejscu"
+
+#~ msgid "Any staff"
+#~ msgstr "Dowolny dietetyk"
+
+#~ msgid "Select an available staff"
+#~ msgstr "Wybierz dostępnego dietetyka"
+
+#~ msgid "Add coupon"
+#~ msgstr "Dodaj kupon"
+
+#~ msgid "Please select location."
+#~ msgstr "Wybierz lokalizację."
+
+#~ msgid "Please select staff."
+#~ msgstr "Wybierz dietetyka."
+
+#~ msgid "Please select service"
+#~ msgstr "Wybierz usługę."
+
+#~ msgid "Please select week day(s)"
+#~ msgstr "Wybierz dzień tygodnia."
+
+#~ msgid "Please select week day(s) and time(s) correctly"
+#~ msgstr "Wybierz dzień tygodnia i godzinę."
+
+#~ msgid "Please select start date"
+#~ msgstr "Wybierz datę początkową."
+
+#~ msgid "Please select end date"
+#~ msgstr "Wybierz datę końcową."
+
+#~ msgid "Please select date."
+#~ msgstr "Wybierz datę."
+
+#~ msgid "Please select time."
+#~ msgstr "Wybierz godzinę."
+
+#~ msgid "Please select an available time"
+#~ msgstr "Wybierz dostępną godzinę."
+
+#~ msgid "Please enter a valid email address!"
+#~ msgstr "Wpisz prawidłowy adres email."
+
+#~ msgid "Please enter a valid phone number!"
+#~ msgstr "Wpisz prawidłowy numer telefonu."
+
+#~ msgid "CONFIRM BOOKING"
+#~ msgstr "POTWIERDŹ REZERWACJĘ"
+
+#~ msgid "There is no any Location for select."
+#~ msgstr "There is no any Location for select."
+
+#~ msgid "Staff not found. Please go back and select a different option."
+#~ msgstr "Staff not found. Please go back and select a different option."
+
+#~ msgid "Service not found. Please go back and select a different option."
+#~ msgstr "Service not found. Please go back and select a different option."
+
+#~ msgid "There isn't any available staff for the selected date/time."
+#~ msgstr "There isn&#039;t any available staff for the selected date/time."
+
+#~ msgid "Extras not found in this service. You can select other service or click the <span class=\"booknetic_text_primary\">\"Next step\"</span> button."
+#~ msgstr "Extras not found in this service. You can select other service or click the <span class=\"booknetic_text_primary\">\"Next step\"</span> button."
+
+#~ msgid "w"
+#~ msgstr "tyg."
+
+#~ msgid "d"
+#~ msgstr "dnia"
+
+#~ msgid "h"
+#~ msgstr "-godz."
+
+#~ msgid "m"
+#~ msgstr "-min."
+
+#~ msgid "s"
+#~ msgstr "sek."
+
+#~ msgid "Finish"
+#~ msgstr "Koniec"
+
+#, fuzzy
+#~| msgid "Time"
+#~ msgid "Timezone"
+#~ msgstr "Godzina"
+
+#, fuzzy
+#~| msgid "Location"
+#~ msgid "Location ID"
+#~ msgstr "Lokalizacja"
+
+#, fuzzy
+#~| msgid "Confirmation"
+#~ msgid "Skip the Confirmation step"
+#~ msgstr "Potwierdzenie"
+
+#~ msgid "Thank you for your request!"
+#~ msgstr "Dziękujemy za zgłoszenie!"
+
+#~ msgid "Your confirmation number:"
+#~ msgstr "Twój numer rezerwacji wizyty"
+
+#~ msgid "ADD TO GOOGLE CALENDAR"
+#~ msgstr "DODAJ DO KALENDARZA GOOGLE"
+
+#~ msgid "START NEW BOOKING"
+#~ msgstr "KOLEJNA REZERWACJA"
+
+#~ msgid "FINISH BOOKING"
+#~ msgstr "ZAKOŃCZ"
+
+#, fuzzy
+#~| msgid "Add coupon"
+#~ msgid "Coupon"
+#~ msgstr "Dodaj kupon"
+
+#~ msgid "OK"
+#~ msgstr "OK"
+
+#~ msgid "Total price"
+#~ msgstr "Razem"
+
+#~ msgid "Full amount"
+#~ msgstr "Full amount"
+
+#~ msgid "Select date"
+#~ msgstr "Wybierz godzinę"
+
+#~ msgid "Surname"
+#~ msgstr "Nazwisko"
+
+#~ msgid "Select staff"
+#~ msgstr "Wybierz dietetyka"
+
+#~ msgid "Select location"
+#~ msgstr "Wybierz lokalizację"
+
+#~ msgid "Select service extras"
+#~ msgstr "Select service extras"
+
+#~ msgid "Fill information"
+#~ msgstr "Twoje dane"
+
+#~ msgid "Select Date & Time"
+#~ msgstr "Wybierz termin"
+
+#~ msgid "Confirm Details"
+#~ msgstr "Potwierdzenie"
+
+#, fuzzy
+#~| msgid "Second"
+#~ msgid "second"
+#~ msgstr "Second"
+
+#, fuzzy
+#~| msgid "Second"
+#~ msgid "seconds"
+#~ msgstr "Second"

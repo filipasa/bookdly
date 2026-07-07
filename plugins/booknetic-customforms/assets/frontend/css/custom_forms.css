@@ -1,0 +1,11 @@
+.custom-form-link {
+    font-size: 14px !important;
+    text-align: left !important;
+    color: #2d92ff !important;
+    text-decoration: underline !important;
+    cursor: pointer !important;
+}
+
+.custom-form-link:hover {
+    color: #0061ca !important;
+}

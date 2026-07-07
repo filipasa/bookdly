@@ -1,0 +1,64 @@
+<footer id="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+
+      <!-- Brand -->
+      <div class="footer-brand">
+        <a href="<?php echo home_url('/'); ?>" class="nav-logo">
+          <img src="https://bookdly.co.uk/wp-content/uploads/booknetic/base/BannerGraphic-white.png" alt="Bookdly" style="height: 35px; width: auto; display: block;">
+        </a>
+        <p>The smarter way to manage bookings, appointments, and your entire schedule — all in one place.</p>
+        <div class="footer-socials">
+          <button class="social-btn" title="Twitter/X">𝕏</button>
+          <button class="social-btn" title="Instagram">IG</button>
+          <button class="social-btn" title="LinkedIn">in</button>
+          <button class="social-btn" title="Facebook">f</button>
+        </div>
+      </div>
+
+      <!-- Product -->
+      <div class="footer-col">
+        <h4>Product</h4>
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#">Integrations</a>
+        <a href="#">Changelog</a>
+        <a href="#">API Docs</a>
+      </div>
+
+      <!-- Company -->
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#">About us</a>
+        <a href="#">Blog</a>
+        <a href="#">Careers</a>
+        <a href="#">Press</a>
+        <a href="#">Contact</a>
+      </div>
+
+      <!-- Support -->
+      <div class="footer-col">
+        <h4>Support</h4>
+        <a href="#">Help Centre</a>
+        <a href="#">Status</a>
+        <a href="#">Security</a>
+        <a href="#">GDPR</a>
+        <a href="#">Affiliates</a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© <?php echo date('Y'); ?> Bookdly. All rights reserved.</span>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookie Settings</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<?php wp_footer(); ?>
+</body>
+</html>

@@ -1,0 +1,92 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Booknetic SV\n"
+"POT-Creation-Date: 2022-08-01 16:36+0400\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: bkntc__\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: app/Frontend/assets/js/datepicker.min.js\n"
+"X-Poedit-SearchPathExcluded-1: app/Frontend/assets/js/intlTelInput.min.js\n"
+"X-Poedit-SearchPathExcluded-2: app/Frontend/assets/js/jquery.nicescroll.min."
+"js\n"
+"X-Poedit-SearchPathExcluded-3: app/Frontend/assets/js/utilsIntlTelInput.js\n"
+
+#: App/Backend/view/whatsapp_settings.php:14
+msgid "SAVE CHANGES"
+msgstr ""
+
+#: App/Backend/view/whatsapp_settings.php:19
+msgid "WhatsApp Twilio settings"
+msgstr ""
+
+#: App/Backend/view/whatsapp_settings.php:25
+msgid "Account SID"
+msgstr ""
+
+#: App/Backend/view/whatsapp_settings.php:32
+msgid "Auth Token"
+msgstr ""
+
+#: App/Backend/view/whatsapp_settings.php:39
+msgid "Sender phone number for WhatsApp"
+msgstr ""
+
+#: App/Backend/view/workflow_action_edit.php:29
+msgid "Edit action"
+msgstr ""
+
+#: App/Backend/view/workflow_action_edit.php:39
+msgid "To"
+msgstr ""
+
+#: App/Backend/view/workflow_action_edit.php:50
+msgid "Message"
+msgstr ""
+
+#: App/Backend/view/workflow_action_edit.php:63
+msgid "Enabled"
+msgstr ""
+
+#: App/Backend/view/workflow_action_edit.php:66
+msgid "CANCEL"
+msgstr ""
+
+#: App/Backend/view/workflow_action_edit.php:67
+msgid "SAVE & TEST"
+msgstr ""
+
+#: App/Backend/view/workflow_action_edit.php:68
+msgid "SAVE"
+msgstr ""
+
+#: App/TwilioWhatsappAddon.php:24
+msgid "Twilio WhatsApp integration"
+msgstr ""
+
+#: App/TwilioWhatsappAddon.php:29
+msgid "Twilio WhatsApp settings"
+msgstr ""
+
+#: App/TwilioWhatsappAddon.php:30
+msgid "Allowed maximum WhatsApp messages [Twilio]"
+msgstr ""
+
+#: App/TwilioWhatsappAddon.php:50 App/TwilioWhatsappAddon.php:84
+msgid "WhatsApp Twilio"
+msgstr ""
+
+#: App/TwilioWhatsappAddon.php:62
+msgid "Twilio Whatsapp"
+msgstr ""
+
+#: App/TwilioWhatsappWorkflowDriver.php:22
+msgid "Send WhatsApp message via Twilio"
+msgstr ""

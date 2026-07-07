@@ -1,0 +1,13 @@
+{
+	"autoload": {
+		"psr-4": {
+			"BookneticAddon\\Tax\\": "App/"
+		}
+	},
+
+	"config": {
+		"platform": {
+			"php": "5.6"
+		}
+	}
+}

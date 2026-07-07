@@ -1,0 +1,489 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: test\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-08-01 16:25+0400\n"
+"PO-Revision-Date: 2022-08-01 16:25+0400\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.1\n"
+"X-Poedit-Basepath: ../app\n"
+"X-Poedit-KeywordsList: bkntc__\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: Frontend/assets/js/datepicker.min.js\n"
+"X-Poedit-SearchPathExcluded-1: Frontend/assets/js/intlTelInput.min.js\n"
+"X-Poedit-SearchPathExcluded-2: Frontend/assets/js/jquery.nicescroll.min.js\n"
+"X-Poedit-SearchPathExcluded-3: Frontend/assets/js/utilsIntlTelInput.js\n"
+
+#: Backend/view/index.php:16 ReportsAddon.php:27 ReportsAddon.php:48
+msgid "Reports"
+msgstr ""
+
+#: Backend/view/index.php:26
+msgid "Reports by the number of appointments"
+msgstr ""
+
+#: Backend/view/index.php:28 Backend/view/index.php:30
+#: Backend/view/index.php:83 Backend/view/index.php:85
+msgid "Daily"
+msgstr "Daily"
+
+#: Backend/view/index.php:31 Backend/view/index.php:86
+msgid "Monthly"
+msgstr ""
+
+#: Backend/view/index.php:32 Backend/view/index.php:87
+msgid "Annualy"
+msgstr ""
+
+#: Backend/view/index.php:39 Backend/view/index.php:94
+msgid "Service filter"
+msgstr ""
+
+#: Backend/view/index.php:47 Backend/view/index.php:102
+msgid "Location filter"
+msgstr ""
+
+#: Backend/view/index.php:55 Backend/view/index.php:110
+msgid "Staff filter"
+msgstr ""
+
+#: Backend/view/index.php:63 Backend/view/index.php:118
+msgid "Status filter"
+msgstr ""
+
+#: Backend/view/index.php:81
+msgid "Reports by appointment earnings"
+msgstr ""
+
+#: Backend/view/index.php:138
+msgid "Most earning locations"
+msgstr ""
+
+#: Backend/view/index.php:140 Backend/view/index.php:142
+#: Backend/view/index.php:162 Backend/view/index.php:164
+msgid "This week"
+msgstr ""
+
+#: Backend/view/index.php:143 Backend/view/index.php:165
+msgid "Previous week"
+msgstr ""
+
+#: Backend/view/index.php:144 Backend/view/index.php:166
+msgid "This month"
+msgstr ""
+
+#: Backend/view/index.php:145 Backend/view/index.php:167
+msgid "Previous month"
+msgstr ""
+
+#: Backend/view/index.php:146 Backend/view/index.php:168
+msgid "This year"
+msgstr ""
+
+#: Backend/view/index.php:147 Backend/view/index.php:169
+msgid "Previous year"
+msgstr ""
+
+#: Backend/view/index.php:160
+msgid "Most earning staffs"
+msgstr ""
+
+#: ReportsAddon.php:22
+msgid "Reports module"
+msgstr ""
+
+#: ReportsAddon.php:31
+msgid "Appointment count"
+msgstr ""
+
+#~ msgid "Please fill in all required fields correctly!"
+#~ msgstr "Wypełnij wszystkie wymagane pola!"
+
+#~ msgid "Location"
+#~ msgstr "Lokalizacja"
+
+#~ msgid "Staff"
+#~ msgstr "Dietetyk"
+
+#~ msgid "Service"
+#~ msgstr "Usługa"
+
+#~ msgid "Service Extras"
+#~ msgstr "Dodatkowe Usługi"
+
+#~ msgid "Date & Time"
+#~ msgstr "Termin Wizyty"
+
+#~ msgid "Information"
+#~ msgstr "Dane Pacjenta"
+
+#~ msgid "Confirmation"
+#~ msgstr "Potwierdzenie"
+
+#~ msgid "Have any questions?"
+#~ msgstr "Pytania?"
+
+#~ msgid "Select service"
+#~ msgstr "Wybierz usługę"
+
+#~ msgid "BACK"
+#~ msgstr "Wstecz"
+
+#~ msgid "NEXT STEP"
+#~ msgstr "DALEJ"
+
+#, php-format
+#~ msgid "Minimum length of \"%s\" field is %d!"
+#~ msgstr "Minimum length of \"%s\" field is %d!"
+
+#, php-format
+#~ msgid "Maximum length of \"%s\" field is %d!"
+#~ msgstr "Maximum length of \"%s\" field is %d!"
+
+#~ msgid "File extension is not allowed!"
+#~ msgstr "File extension is not allowed!"
+
+#~ msgid "DATE"
+#~ msgstr "DATA"
+
+#~ msgid "Days of week"
+#~ msgstr "Days of week"
+
+#~ msgid "Mon"
+#~ msgstr "Pon"
+
+#~ msgid "Tue"
+#~ msgstr "Wt"
+
+#~ msgid "Wed"
+#~ msgstr "Śr"
+
+#~ msgid "Thu"
+#~ msgstr "Czw"
+
+#~ msgid "Fri"
+#~ msgstr "Pią"
+
+#~ msgid "Sat"
+#~ msgstr "Sob"
+
+#~ msgid "Sun"
+#~ msgstr "Nie"
+
+#~ msgid "Monday"
+#~ msgstr "Poniedziałek"
+
+#~ msgid "Tuesday"
+#~ msgstr "Wtorek"
+
+#~ msgid "Wednesday"
+#~ msgstr "Środa"
+
+#~ msgid "Thursday"
+#~ msgstr "Czwartek"
+
+#~ msgid "Friday"
+#~ msgstr "Piątek"
+
+#~ msgid "Saturday"
+#~ msgstr "Sobota"
+
+#~ msgid "Sunday"
+#~ msgstr "Niedziela"
+
+#~ msgid "Every"
+#~ msgstr "Every"
+
+#~ msgid "DAYS"
+#~ msgstr "DAYS"
+
+#~ msgid "Time"
+#~ msgstr "Godzina"
+
+#~ msgid "On"
+#~ msgstr "On"
+
+#~ msgid "Specific day"
+#~ msgstr "Specific day"
+
+#~ msgid "First"
+#~ msgstr "First"
+
+#~ msgid "Second"
+#~ msgstr "Second"
+
+#~ msgid "Third"
+#~ msgstr "Third"
+
+#~ msgid "Fourth"
+#~ msgstr "Fourth"
+
+#~ msgid "Last"
+#~ msgstr "Last"
+
+#~ msgid "Start date"
+#~ msgstr "Start date"
+
+#~ msgid "End date"
+#~ msgstr "End date"
+
+#~ msgid "Times"
+#~ msgstr "Times"
+
+#~ msgid "Select..."
+#~ msgstr "Wybierz..."
+
+#~ msgid "TIME"
+#~ msgstr "GODZINA"
+
+#~ msgid "EDIT"
+#~ msgstr "EDYTUJ"
+
+#~ msgid "Discount"
+#~ msgstr "Zniżka"
+
+#, fuzzy
+#~| msgid "Full amount"
+#~ msgid "Tax amount"
+#~ msgstr "Full amount"
+
+#~ msgid "January"
+#~ msgstr "Styczeń"
+
+#~ msgid "February"
+#~ msgstr "Luty"
+
+#~ msgid "March"
+#~ msgstr "Marzec"
+
+#~ msgid "April"
+#~ msgstr "Kwiecień"
+
+#~ msgid "May"
+#~ msgstr "Maj"
+
+#~ msgid "June"
+#~ msgstr "Czerwiec"
+
+#~ msgid "July"
+#~ msgstr "Lipiec"
+
+#~ msgid "August"
+#~ msgstr "Sierpień"
+
+#~ msgid "September"
+#~ msgstr "Wrzesień"
+
+#~ msgid "October"
+#~ msgstr "Październik"
+
+#~ msgid "November"
+#~ msgstr "Listopad"
+
+#~ msgid "December"
+#~ msgstr "Grudzień"
+
+#~ msgid "Email"
+#~ msgstr "Email"
+
+#~ msgid "Phone"
+#~ msgstr "Telefon"
+
+#, fuzzy
+#~| msgid "Select date"
+#~ msgid "Select Type"
+#~ msgstr "Wybierz godzinę"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgid "Tab Name"
+#~ msgstr "Imię"
+
+#, fuzzy
+#~| msgid "Select date"
+#~ msgid "Select Language"
+#~ msgstr "Wybierz godzinę"
+
+#, fuzzy
+#~| msgid "Select service"
+#~ msgid "Select Service"
+#~ msgstr "Wybierz usługę"
+
+#, fuzzy
+#~| msgid "Select staff"
+#~ msgid "Select Staff"
+#~ msgstr "Wybierz dietetyka"
+
+#, fuzzy
+#~| msgid "Select location"
+#~ msgid "Select Location"
+#~ msgstr "Wybierz lokalizację"
+
+#~ msgid "Name"
+#~ msgstr "Imię"
+
+#~ msgid "Deposit"
+#~ msgstr "Deposit"
+
+#~ msgid "Local"
+#~ msgstr "Płatność na miejscu"
+
+#~ msgid "Any staff"
+#~ msgstr "Dowolny dietetyk"
+
+#~ msgid "Select an available staff"
+#~ msgstr "Wybierz dostępnego dietetyka"
+
+#~ msgid "Add coupon"
+#~ msgstr "Dodaj kupon"
+
+#~ msgid "Please select location."
+#~ msgstr "Wybierz lokalizację."
+
+#~ msgid "Please select staff."
+#~ msgstr "Wybierz dietetyka."
+
+#~ msgid "Please select service"
+#~ msgstr "Wybierz usługę."
+
+#~ msgid "Please select week day(s)"
+#~ msgstr "Wybierz dzień tygodnia."
+
+#~ msgid "Please select week day(s) and time(s) correctly"
+#~ msgstr "Wybierz dzień tygodnia i godzinę."
+
+#~ msgid "Please select start date"
+#~ msgstr "Wybierz datę początkową."
+
+#~ msgid "Please select end date"
+#~ msgstr "Wybierz datę końcową."
+
+#~ msgid "Please select date."
+#~ msgstr "Wybierz datę."
+
+#~ msgid "Please select time."
+#~ msgstr "Wybierz godzinę."
+
+#~ msgid "Please select an available time"
+#~ msgstr "Wybierz dostępną godzinę."
+
+#~ msgid "Please enter a valid email address!"
+#~ msgstr "Wpisz prawidłowy adres email."
+
+#~ msgid "Please enter a valid phone number!"
+#~ msgstr "Wpisz prawidłowy numer telefonu."
+
+#~ msgid "CONFIRM BOOKING"
+#~ msgstr "POTWIERDŹ REZERWACJĘ"
+
+#~ msgid "There is no any Location for select."
+#~ msgstr "There is no any Location for select."
+
+#~ msgid "Staff not found. Please go back and select a different option."
+#~ msgstr "Staff not found. Please go back and select a different option."
+
+#~ msgid "Service not found. Please go back and select a different option."
+#~ msgstr "Service not found. Please go back and select a different option."
+
+#~ msgid "There isn't any available staff for the selected date/time."
+#~ msgstr "There isn&#039;t any available staff for the selected date/time."
+
+#~ msgid "Extras not found in this service. You can select other service or click the <span class=\"booknetic_text_primary\">\"Next step\"</span> button."
+#~ msgstr "Extras not found in this service. You can select other service or click the <span class=\"booknetic_text_primary\">\"Next step\"</span> button."
+
+#~ msgid "w"
+#~ msgstr "tyg."
+
+#~ msgid "d"
+#~ msgstr "dnia"
+
+#~ msgid "h"
+#~ msgstr "-godz."
+
+#~ msgid "m"
+#~ msgstr "-min."
+
+#~ msgid "s"
+#~ msgstr "sek."
+
+#~ msgid "Finish"
+#~ msgstr "Koniec"
+
+#, fuzzy
+#~| msgid "Time"
+#~ msgid "Timezone"
+#~ msgstr "Godzina"
+
+#, fuzzy
+#~| msgid "Confirmation"
+#~ msgid "Skip the Confirmation step"
+#~ msgstr "Potwierdzenie"
+
+#~ msgid "Thank you for your request!"
+#~ msgstr "Dziękujemy za zgłoszenie!"
+
+#~ msgid "Your confirmation number:"
+#~ msgstr "Twój numer rezerwacji wizyty"
+
+#~ msgid "ADD TO GOOGLE CALENDAR"
+#~ msgstr "DODAJ DO KALENDARZA GOOGLE"
+
+#~ msgid "START NEW BOOKING"
+#~ msgstr "KOLEJNA REZERWACJA"
+
+#~ msgid "FINISH BOOKING"
+#~ msgstr "ZAKOŃCZ"
+
+#, fuzzy
+#~| msgid "Add coupon"
+#~ msgid "Coupon"
+#~ msgstr "Dodaj kupon"
+
+#~ msgid "OK"
+#~ msgstr "OK"
+
+#~ msgid "Total price"
+#~ msgstr "Razem"
+
+#~ msgid "Full amount"
+#~ msgstr "Full amount"
+
+#~ msgid "Select date"
+#~ msgstr "Wybierz godzinę"
+
+#~ msgid "Surname"
+#~ msgstr "Nazwisko"
+
+#~ msgid "Select staff"
+#~ msgstr "Wybierz dietetyka"
+
+#~ msgid "Select location"
+#~ msgstr "Wybierz lokalizację"
+
+#~ msgid "Select service extras"
+#~ msgstr "Select service extras"
+
+#~ msgid "Fill information"
+#~ msgstr "Twoje dane"
+
+#~ msgid "Select Date & Time"
+#~ msgstr "Wybierz termin"
+
+#~ msgid "Confirm Details"
+#~ msgstr "Potwierdzenie"
+
+#, fuzzy
+#~| msgid "Second"
+#~ msgid "second"
+#~ msgstr "Second"
+
+#, fuzzy
+#~| msgid "Second"
+#~ msgid "seconds"
+#~ msgstr "Second"

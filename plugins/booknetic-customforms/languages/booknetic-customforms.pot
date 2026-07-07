@@ -1,0 +1,424 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: test\n"
+"POT-Creation-Date: 2023-08-10 17:00+0400\n"
+"PO-Revision-Date: 2020-02-23 21:08+0400\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.3.2\n"
+"X-Poedit-Basepath: ../app\n"
+"X-Poedit-KeywordsList: bkntc__\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: Frontend/assets/js/datepicker.min.js\n"
+"X-Poedit-SearchPathExcluded-1: Frontend/assets/js/intlTelInput.min.js\n"
+"X-Poedit-SearchPathExcluded-2: Frontend/assets/js/jquery.nicescroll.min.js\n"
+"X-Poedit-SearchPathExcluded-3: Frontend/assets/js/utilsIntlTelInput.js\n"
+
+#: Backend/Ajax.php:40 Backend/Ajax.php:48 Helpers/CheckConditions.php:41
+#: Helpers/CheckConditions.php:48 Listener.php:69 Listener.php:79
+#: Listener.php:103 Listener.php:110
+msgid "Please fill in all required fields correctly!"
+msgstr ""
+
+#: Backend/Controller.php:22 Backend/Controller.php:46 CustomFormsAddon.php:42
+msgid "Edit"
+msgstr ""
+
+#: Backend/Controller.php:25 CustomFormsAddon.php:43
+msgid "Delete"
+msgstr ""
+
+#: Backend/Controller.php:27
+msgid "Custom forms"
+msgstr ""
+
+#: Backend/Controller.php:28
+msgid "CREATE NEW FORM"
+msgstr ""
+
+#: Backend/Controller.php:32
+msgid "NAME"
+msgstr ""
+
+#: Backend/Controller.php:33
+msgid "ELEMENTS"
+msgstr ""
+
+#: Backend/Controller.php:37
+msgid "CONDITIONS"
+msgstr ""
+
+#: Backend/view/edit_form.php:36
+msgid "Customize"
+msgstr ""
+
+#: Backend/view/edit_form.php:40
+msgid "Form name"
+msgstr ""
+
+#: Backend/view/edit_form.php:55
+msgid "SAVE FORM"
+msgstr ""
+
+#: Backend/view/edit_form.php:56
+msgid "FORM CONDITIONS"
+msgstr ""
+
+#: Backend/view/edit_form.php:67
+msgid "Elements"
+msgstr ""
+
+#: Backend/view/edit_form.php:74 Backend/view/edit_form.php:199
+msgid "Label"
+msgstr ""
+
+#: Backend/view/edit_form.php:79
+msgid "Text input"
+msgstr ""
+
+#: Backend/view/edit_form.php:84
+msgid "Textarea"
+msgstr ""
+
+#: Backend/view/edit_form.php:89
+msgid "Number input"
+msgstr ""
+
+#: Backend/view/edit_form.php:94
+msgid "Date input"
+msgstr ""
+
+#: Backend/view/edit_form.php:99
+msgid "Time input"
+msgstr ""
+
+#: Backend/view/edit_form.php:104
+msgid "Select"
+msgstr ""
+
+#: Backend/view/edit_form.php:109
+msgid "Check-box"
+msgstr ""
+
+#: Backend/view/edit_form.php:114
+msgid "Radio buttons"
+msgstr ""
+
+#: Backend/view/edit_form.php:119
+msgid "File"
+msgstr ""
+
+#: Backend/view/edit_form.php:124
+msgid "Link"
+msgstr ""
+
+#: Backend/view/edit_form.php:129
+msgid "Email"
+msgstr ""
+
+#: Backend/view/edit_form.php:134
+msgid "Phone"
+msgstr ""
+
+#: Backend/view/edit_form.php:145
+msgid "Form"
+msgstr ""
+
+#: Backend/view/edit_form.php:194
+msgid "Options"
+msgstr ""
+
+#: Backend/view/edit_form.php:200
+msgid "Max: 255 symbol"
+msgstr ""
+
+#: Backend/view/edit_form.php:206
+msgid "Placeholder"
+msgstr ""
+
+#: Backend/view/edit_form.php:207 Backend/view/edit_form.php:280
+msgid "Max: 200 symbol"
+msgstr ""
+
+#: Backend/view/edit_form.php:213
+msgid "Width"
+msgstr ""
+
+#: Backend/view/edit_form.php:234
+msgid "Visibility"
+msgstr ""
+
+#: Backend/view/edit_form.php:245
+msgid "Min length"
+msgstr ""
+
+#: Backend/view/edit_form.php:249
+msgid "Max length"
+msgstr ""
+
+#: Backend/view/edit_form.php:256
+msgid "Help text"
+msgstr ""
+
+#: Backend/view/edit_form.php:257
+msgid "Max: 500 symbol"
+msgstr ""
+
+#: Backend/view/edit_form.php:263
+msgid "Allowed file formats"
+msgstr ""
+
+#: Backend/view/edit_form.php:272
+msgid "Is required"
+msgstr ""
+
+#: Backend/view/edit_form.php:279
+msgid "URL"
+msgstr ""
+
+#: Backend/view/edit_form.php:287
+msgid "Choices"
+msgstr ""
+
+#: Backend/view/edit_form.php:289
+msgid "Add new"
+msgstr ""
+
+#: Backend/view/modal/custom_form.php:13
+#: Backend/view/tabs/appointment_info_fields.php:12
+msgid "No custom fields found"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:17
+msgid "Form conditions"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:25
+msgid "CONDITION"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:26
+msgid "New Condition"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:34
+msgid "When"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:44
+msgid "AND"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:45
+msgid "OR"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:52
+#: Backend/view/modal/set_conditions.php:123
+msgid "Field"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:58
+#: Backend/view/modal/set_conditions.php:84
+#: Backend/view/modal/set_conditions.php:127
+msgid "Value"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:59
+msgid "Length"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:60
+msgid "File size (KB)"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:64
+msgid "Operator"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:72
+msgid "is empty"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:73
+msgid "is not empty"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:74
+msgid "contains"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:75
+msgid "does not contains"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:76
+msgid "regex"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:77
+msgid "starts with"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:78
+msgid "does not starts with"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:79
+msgid "ends with"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:80
+msgid "does not ends with"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:96
+msgid "NEW CONDITION"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:102
+msgid "Do"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:111
+msgid "Action"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:113
+msgid "Show"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:114
+msgid "Hide"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:115
+msgid "Hide only for Customers"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:116
+msgid "Disable"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:117
+msgid "Enable"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:118
+msgid "Set value"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:119
+msgid "Throw error"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:128
+msgid "Error message"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:140
+msgid "NEW ACTION"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:149
+msgid "CLOSE"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:150
+msgid "SAVE"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:154
+msgid "Service"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:155
+msgid "Staff"
+msgstr ""
+
+#: Backend/view/modal/set_conditions.php:156
+msgid "Location"
+msgstr ""
+
+#: CustomFormsAddon.php:30 CustomFormsAddon.php:40 CustomFormsAddon.php:72
+msgid "Custom Forms"
+msgstr ""
+
+#: CustomFormsAddon.php:41
+msgid "Add New"
+msgstr ""
+
+#: CustomFormsAddon.php:44
+msgid "Custom Forms Tab"
+msgstr ""
+
+#: CustomFormsAddon.php:52
+msgid "Select services...(empty for all services)"
+msgstr ""
+
+#: CustomFormsAddon.php:53
+msgid "Changes has been saved!"
+msgstr ""
+
+#: CustomFormsAddon.php:90 CustomFormsAddon.php:95 CustomFormsAddon.php:101
+msgid "Custom fields"
+msgstr ""
+
+#: CustomFormsAddon.php:123 Listener.php:118 Listener.php:385
+#, php-format
+msgid "Minimum length of \"%s\" field is %d!"
+msgstr ""
+
+#: CustomFormsAddon.php:124 Listener.php:123 Listener.php:390
+#, php-format
+msgid "Maximum length of \"%s\" field is %d!"
+msgstr ""
+
+#: Helpers/FormElements.php:170 Helpers/FormElements.php:214
+msgid "Choice 1"
+msgstr ""
+
+#: Helpers/FormElements.php:177 Helpers/FormElements.php:221
+msgid "Choice 2"
+msgstr ""
+
+#: Helpers/FormElements.php:252
+msgid "BROWSE"
+msgstr ""
+
+#: Listener.php:95
+#, php-format
+msgid "File extension '.%s' is not allowed!"
+msgstr ""
+
+#: Listener.php:321 Listener.php:339 Listener.php:435
+#, php-format
+msgid "%s can not be empty, because it's a required field!"
+msgstr ""
+
+#: Listener.php:350 Listener.php:358 Listener.php:399 Listener.php:411
+msgid "Please fill custom fields form correctly!"
+msgstr ""
+
+#: Listener.php:365 Listener.php:418
+msgid "Selected custom field not found!"
+msgstr ""
+
+#: Listener.php:377
+#, php-format
+msgid "\"%s\" can not be empty, because it's a required field!"
+msgstr ""
+
+#: Listener.php:443
+msgid "File extension is not allowed!"
+msgstr ""
+
+#: Listener.php:619 Listener.php:628 Listener.php:635
+msgid "Custom field"
+msgstr ""

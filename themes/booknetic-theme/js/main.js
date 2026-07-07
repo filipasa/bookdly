@@ -1,0 +1,348 @@
+/* ============================================================
+   BOOKDLY THEME — MAIN JS
+   ============================================================ */
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  /* ----------------------------------------------------------
+     1. STICKY HEADER
+  ---------------------------------------------------------- */
+  const header = document.getElementById('site-header');
+  if (header) {
+    const isFrontPage = !header.classList.contains('inner-page-header');
+    const onScroll = () => {
+      if (isFrontPage) {
+        header.classList.toggle('scrolled', window.scrollY > 20);
+      } else {
+        header.classList.add('scrolled');
+      }
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+
+  /* ----------------------------------------------------------
+     2. MOBILE NAV TOGGLE & OVERLAY
+  ---------------------------------------------------------- */
+  const toggle = document.getElementById('nav-toggle');
+  const navLinks = document.getElementById('nav-links');
+
+  // Create overlay element
+  let overlay = document.getElementById('nav-overlay');
+  if (!overlay) {
+    overlay = document.createElement('div');
+    overlay.id = 'nav-overlay';
+    overlay.className = 'nav-overlay';
+    document.body.appendChild(overlay);
+  }
+
+  const closeMenu = () => {
+    navLinks.classList.remove('open');
+    if (header) header.classList.remove('nav-open');
+    if (toggle) toggle.setAttribute('aria-expanded', 'false');
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+    
+    // Reset toggle button bars animation
+    if (toggle) {
+      const bars = toggle.querySelectorAll('span');
+      bars.forEach(b => { b.style.transform = ''; b.style.opacity = ''; });
+    }
+  };
+
+  if (toggle && navLinks) {
+    toggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      if (header) {
+        header.classList.toggle('nav-open', open);
+      }
+      toggle.setAttribute('aria-expanded', open);
+      overlay.classList.toggle('open', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+      
+      // Dynamic CTA cloning for mobile
+      if (open && header && !navLinks.querySelector('.mobile-cta-added')) {
+        const mobileCtaWrap = document.createElement('div');
+        mobileCtaWrap.className = 'mobile-cta-added';
+        mobileCtaWrap.style.display = 'flex';
+        mobileCtaWrap.style.flexDirection = 'column';
+        mobileCtaWrap.style.gap = '12px';
+        mobileCtaWrap.style.marginTop = '16px';
+        mobileCtaWrap.style.borderTop = '1px solid #f1f0fa';
+        mobileCtaWrap.style.paddingTop = '20px';
+        mobileCtaWrap.style.width = '100%';
+
+        const originalLogin = header.querySelector('.nav-login');
+        if (originalLogin) {
+          const loginClone = originalLogin.cloneNode(true);
+          loginClone.style.textAlign = 'center';
+          loginClone.style.padding = '12px';
+          loginClone.style.border = '1px solid var(--violet-line)';
+          loginClone.style.borderRadius = '2px';
+          loginClone.style.fontWeight = '600';
+          loginClone.style.display = 'block';
+          loginClone.style.color = 'var(--violet)';
+          mobileCtaWrap.appendChild(loginClone);
+        }
+
+        const originalStart = header.querySelector('.btn-primary');
+        if (originalStart) {
+          const startClone = originalStart.cloneNode(true);
+          startClone.style.width = '100%';
+          startClone.style.boxSizing = 'border-box';
+          startClone.style.display = 'inline-flex';
+          startClone.style.justifyContent = 'center';
+          startClone.style.alignItems = 'center';
+          startClone.style.color = '#ffffff'; // Force text color to white
+          mobileCtaWrap.appendChild(startClone);
+        }
+
+        navLinks.appendChild(mobileCtaWrap);
+      }
+
+      // Animate bars
+      const bars = toggle.querySelectorAll('span');
+      if (open) {
+        bars[0].style.transform = 'translateY(7px) rotate(45deg)';
+        bars[1].style.opacity = '0';
+        bars[2].style.transform = 'translateY(-7px) rotate(-45deg)';
+      } else {
+        bars.forEach(b => { b.style.transform = ''; b.style.opacity = ''; });
+      }
+    });
+
+    // Close when tapping outside the menu (on the overlay)
+    overlay.addEventListener('click', closeMenu);
+
+    // Close nav on link click
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', closeMenu);
+    });
+  }
+
+  /* ----------------------------------------------------------
+     3. SMOOTH SCROLL for anchor links
+  ---------------------------------------------------------- */
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const href = a.getAttribute('href');
+      if (!href || href === '#') return; // guard: skip bare hash links
+      const target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        const offset = 80;
+        const top = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    });
+  });
+
+  /* ----------------------------------------------------------
+     4. SCROLL REVEAL
+  ---------------------------------------------------------- */
+  const reveals = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    reveals.forEach(el => observer.observe(el));
+  } else {
+    reveals.forEach(el => el.classList.add('visible'));
+  }
+
+  /* ----------------------------------------------------------
+     5. PRICING TOGGLE (monthly / annual)
+  ---------------------------------------------------------- */
+  const billingCheck = document.getElementById('billing-check');
+  const priceAmounts = document.querySelectorAll('.price-amount');
+
+  if (billingCheck) {
+    billingCheck.addEventListener('change', () => {
+      const isAnnual = billingCheck.checked;
+      priceAmounts.forEach(el => {
+        const val = isAnnual ? el.dataset.annual : el.dataset.monthly;
+        const periodEl = el.nextElementSibling;
+        // Animate the number change
+        el.style.transform = 'translateY(-4px)';
+        el.style.opacity = '0';
+        setTimeout(() => {
+          el.textContent = val;
+          if (periodEl && periodEl.classList.contains('price-period')) {
+            periodEl.textContent = isAnnual ? '/yr' : '/mo';
+          }
+          el.style.transform = '';
+          el.style.opacity = '';
+          el.style.transition = 'all 0.25s ease';
+        }, 180);
+      });
+
+      // Update signup URLs based on billing cycle
+      const cards = document.querySelectorAll('.pricing-card');
+      cards.forEach(card => {
+        const link = card.querySelector('a[href*="sign-up"]') || card.querySelector('a[href*="/sign-up/"]');
+        if (link) {
+          try {
+            let url = new URL(link.href);
+            url.searchParams.set('billing_cycle', isAnnual ? 'annual' : 'monthly');
+            link.href = url.toString();
+          } catch(e) {}
+        }
+      });
+    });
+  }
+
+  /* ----------------------------------------------------------
+     6. ACTIVE NAV LINK on scroll
+  ---------------------------------------------------------- */
+  const sections = document.querySelectorAll('section[id]');
+  const navAnchors = document.querySelectorAll('.nav-links a');
+
+  const highlightNav = () => {
+    let current = '';
+    sections.forEach(sec => {
+      if (window.scrollY >= sec.offsetTop - 120) current = sec.id;
+    });
+    navAnchors.forEach(a => {
+      a.style.color = '';
+      a.style.background = '';
+      if (a.getAttribute('href') === '#' + current) {
+        a.style.color = 'var(--primary)';
+        a.style.background = 'var(--primary-light)';
+      }
+    });
+  };
+  window.addEventListener('scroll', highlightNav, { passive: true });
+
+  /* ----------------------------------------------------------
+     7. BOOKNETIC AUTH PAGES NORMALIZATION (PLACEHOLDERS & LABELS)
+  ---------------------------------------------------------- */
+  const enhanceAuthFields = () => {
+    // 1. Sign In / Customer Sign In
+    const loginHeader = document.querySelector('.bookneticsaas_login .bookneticsaas_header, .booknetic_signin .booknetic_header');
+    if (loginHeader && loginHeader.textContent !== 'Welcome back') {
+      loginHeader.textContent = 'Welcome back';
+      let lede = loginHeader.nextElementSibling;
+      if (!lede || !lede.classList.contains('lede')) {
+        lede = document.createElement('p');
+        lede.className = 'lede';
+        lede.textContent = 'Log in to manage your bookings, staff, and payments.';
+        lede.style.color = 'var(--grey)';
+        lede.style.fontSize = '15px';
+        lede.style.marginBottom = '32px';
+        lede.style.textAlign = 'left';
+        lede.style.fontFamily = "'Inter', sans-serif";
+        loginHeader.after(lede);
+      }
+    }
+
+    const loginEmailInput = document.getElementById('bookneticsaas_email') || document.querySelector('.bookneticsaas_form_element input[name="email"]');
+    if (loginEmailInput && !loginEmailInput.placeholder) {
+      loginEmailInput.placeholder = 'you@business.com';
+      // Change label from "Username or Email Address" to "Email address"
+      const label = loginEmailInput.closest('.bookneticsaas_form_element').querySelector('label');
+      if (label) label.textContent = 'Email address';
+    }
+
+    const loginPasswordInput = document.getElementById('bookneticsaas_password') || document.querySelector('.bookneticsaas_form_element input[name="password"]');
+    if (loginPasswordInput && !loginPasswordInput.placeholder) {
+      loginPasswordInput.placeholder = '••••••••';
+    }
+
+    // 2. Sign Up / Customer Sign Up
+    const signupHeader = document.querySelector('.bookneticsaas_signup .bookneticsaas_header') || document.querySelector('.booknetic_signup .booknetic_header');
+    if (signupHeader && signupHeader.textContent !== 'Start your free trial') {
+      signupHeader.textContent = 'Start your free trial';
+      let lede = signupHeader.nextElementSibling;
+      if (!lede || !lede.classList.contains('lede')) {
+        lede = document.createElement('p');
+        lede.className = 'lede';
+        lede.textContent = 'No commitment. Cancel anytime.';
+        lede.style.color = 'var(--grey)';
+        lede.style.fontSize = '15px';
+        lede.style.marginBottom = '32px';
+        lede.style.textAlign = 'left';
+        lede.style.fontFamily = "'Inter', sans-serif";
+        signupHeader.after(lede);
+      }
+    }
+
+    const signupNameInput = document.getElementById('bookneticsaas_name') || document.querySelector('.bookneticsaas_form_element input[name="name"]');
+    if (signupNameInput && !signupNameInput.placeholder) {
+      signupNameInput.placeholder = 'Jane Doe';
+    }
+
+    const signupBusinessNameInput = document.getElementById('bookneticsaas_business_name') || document.querySelector('.bookneticsaas_form_element input[name="business_name"]');
+    if (signupBusinessNameInput && !signupBusinessNameInput.placeholder) {
+      signupBusinessNameInput.placeholder = 'Bloom Hair Studio';
+      const label = signupBusinessNameInput.closest('.bookneticsaas_form_element').querySelector('label');
+      if (label) label.textContent = 'Business name';
+    }
+
+    const signupEmailInput = document.querySelector('.bookneticsaas_signup input[name="email"]') || document.querySelector('.booknetic_signup input[name="email"]') || document.querySelector('#bookneticsaas_email_register');
+    if (signupEmailInput && !signupEmailInput.placeholder) {
+      signupEmailInput.placeholder = 'you@business.com';
+    }
+
+    const signupPasswordInput = document.querySelector('.bookneticsaas_signup input[name="password"]') || document.querySelector('.booknetic_signup input[name="password"]') || document.querySelector('#bookneticsaas_password_register');
+    if (signupPasswordInput && !signupPasswordInput.placeholder) {
+      signupPasswordInput.placeholder = 'At least 8 characters';
+    }
+
+    // 3. Forgot Password / Customer Forgot Password
+    const forgotHeader = document.querySelector('div.bookneticsaas_forgot_password .bookneticsaas_header, .booknetic_forgot_password .booknetic_header, #bookneticSaaSForgotPasswordElementorContainer .bookneticsaas_header');
+    if (forgotHeader && forgotHeader.textContent !== 'Forgot your password?') {
+      forgotHeader.textContent = 'Forgot your password?';
+      let lede = forgotHeader.nextElementSibling;
+      if (!lede || !lede.classList.contains('lede')) {
+        lede = document.createElement('p');
+        lede.className = 'lede';
+        lede.textContent = "No worries — enter your email and we'll send a reset link.";
+        lede.style.color = 'var(--grey)';
+        lede.style.fontSize = '15px';
+        lede.style.marginBottom = '32px';
+        lede.style.textAlign = 'left';
+        lede.style.fontFamily = "'Inter', sans-serif";
+        forgotHeader.after(lede);
+      }
+    }
+
+    const forgotEmailInput = document.querySelector('.bookneticsaas_forgot_password input[name="email"]') || document.querySelector('.booknetic_forgot_password input[name="email"]') || document.querySelector('#bookneticsaas_email_forgot');
+    if (forgotEmailInput && !forgotEmailInput.placeholder) {
+      forgotEmailInput.placeholder = 'you@business.com';
+    }
+  };
+
+  // Run immediately and poll to handle dynamic AJAX loading by Booknetic
+  enhanceAuthFields();
+  let pollCount = 0;
+  const authInterval = setInterval(() => {
+    enhanceAuthFields();
+    pollCount++;
+    if (pollCount > 30) clearInterval(authInterval);
+  }, 100);
+
+  /* ----------------------------------------------------------
+     8. FAQ ACCORDION TOGGLE
+  ---------------------------------------------------------- */
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(item => {
+    const q = item.querySelector('.faq-q');
+    if (q) {
+      q.addEventListener('click', () => {
+        const isOpen = item.classList.contains('open');
+        faqItems.forEach(i => i.classList.remove('open'));
+        if (!isOpen) {
+          item.classList.add('open');
+        }
+      });
+    }
+  });
+
+});
+

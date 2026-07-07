@@ -1,0 +1,644 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: test\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-27 18:15+0400\n"
+"PO-Revision-Date: 2023-06-27 18:15+0400\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.2.2\n"
+"X-Poedit-Basepath: ../app\n"
+"X-Poedit-KeywordsList: bkntc__\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: Frontend/assets/js/datepicker.min.js\n"
+"X-Poedit-SearchPathExcluded-1: Frontend/assets/js/intlTelInput.min.js\n"
+"X-Poedit-SearchPathExcluded-2: Frontend/assets/js/jquery.nicescroll.min.js\n"
+"X-Poedit-SearchPathExcluded-3: Frontend/assets/js/utilsIntlTelInput.js\n"
+
+#: Backend/Ajax.php:74
+#, fuzzy
+#| msgid "Confirm Details"
+msgid "Coupon Details"
+msgstr "Potwierdzenie"
+
+#: Backend/Ajax.php:104
+msgid "Discount cannot be negative number!"
+msgstr ""
+
+#: Backend/Ajax.php:111
+msgid "Discount percent should be more than 0%!"
+msgstr ""
+
+#: Backend/Ajax.php:116
+msgid "Discount percent count cannot be more than 100%!"
+msgstr ""
+
+#: Backend/Ajax.php:138
+msgid "Please type the coupon code field!"
+msgstr ""
+
+#: Backend/Ajax.php:147
+msgid "Coupon with same code is already exists!"
+msgstr ""
+
+#: Backend/Ajax.php:281
+msgid "Usage History Details"
+msgstr ""
+
+#: Backend/Controller.php:23 CouponsAddon.php:30 CouponsAddon.php:38
+#: CouponsAddon.php:60 CouponsAddon.php:75 CouponsAddon.php:80
+#: CouponsAddon.php:85
+msgid "Coupons"
+msgstr ""
+
+#: Backend/Controller.php:24 Backend/view/modal/add_new.php:44
+msgid "ADD COUPON"
+msgstr ""
+
+#: Backend/Controller.php:26 CouponsAddon.php:40
+msgid "Edit"
+msgstr ""
+
+#: Backend/Controller.php:30 CouponsAddon.php:41
+msgid "Delete"
+msgstr ""
+
+#: Backend/Controller.php:38
+msgid "№"
+msgstr ""
+
+#: Backend/Controller.php:39
+msgid "CODE"
+msgstr ""
+
+#: Backend/Controller.php:40
+msgid "DISCOUNT"
+msgstr ""
+
+#: Backend/Controller.php:44
+msgid "USAGE LIMIT"
+msgstr ""
+
+#: Backend/Controller.php:45
+msgid "Times Used"
+msgstr ""
+
+#: Backend/Controller.php:50
+msgid "STATUS"
+msgstr ""
+
+#: Backend/Controller.php:54
+msgid "Inactive"
+msgstr ""
+
+#: Backend/Controller.php:58 Backend/Controller.php:68
+msgid "Expired"
+msgstr ""
+
+#: Backend/Controller.php:64
+msgid "Active"
+msgstr ""
+
+#: Backend/Controller.php:75
+msgid "USAGE HISTORY"
+msgstr ""
+
+#: Backend/view/modal/add_new.php:18
+#, fuzzy
+#| msgid "Add coupon"
+msgid "Edit Coupon"
+msgstr "Dodaj kupon"
+
+#: Backend/view/modal/add_new.php:18
+msgid "Add Coupon"
+msgstr ""
+
+#: Backend/view/modal/add_new.php:43
+msgid "CANCEL"
+msgstr ""
+
+#: Backend/view/modal/add_new.php:44
+msgid "Save"
+msgstr ""
+
+#: Backend/view/modal/coupons_usage_history.php:15
+msgid "Usage history"
+msgstr ""
+
+#: Backend/view/modal/coupons_usage_history.php:37
+msgid "CLOSE"
+msgstr ""
+
+#: Backend/view/modal/edit_tab.php:13
+msgid "- none -"
+msgstr ""
+
+#: Backend/view/tabs/appointment_add_edit_modal.php:14
+msgid "No coupons found"
+msgstr ""
+
+#: Backend/view/tabs/appointment_info_modal.php:14
+#, fuzzy
+#| msgid "Add coupon"
+msgid "Coupon code"
+msgstr "Dodaj kupon"
+
+#: Backend/view/tabs/appointment_info_modal.php:15
+#: Backend/view/tabs/coupons_add_new_details.php:22
+msgid "Discount"
+msgstr "Zniżka"
+
+#: Backend/view/tabs/coupon_section.php:10
+msgid "Hide coupon section"
+msgstr ""
+
+#: Backend/view/tabs/coupons_add_new_details.php:18
+msgid "Code"
+msgstr ""
+
+#: Backend/view/tabs/coupons_add_new_details.php:35
+msgid "Applies date from"
+msgstr ""
+
+#: Backend/view/tabs/coupons_add_new_details.php:36
+#: Backend/view/tabs/coupons_add_new_details.php:40
+msgid "Life time"
+msgstr ""
+
+#: Backend/view/tabs/coupons_add_new_details.php:39
+msgid "Applies date to"
+msgstr ""
+
+#: Backend/view/tabs/coupons_add_new_details.php:46
+msgid "Usage limit"
+msgstr ""
+
+#: Backend/view/tabs/coupons_add_new_details.php:47
+msgid "No limit"
+msgstr ""
+
+#: Backend/view/tabs/coupons_add_new_details.php:50
+msgid "Once per"
+msgstr ""
+
+#: Backend/view/tabs/coupons_add_new_details.php:50
+msgid ""
+"Customer - Each customer can use the coupon only once. <br> Booking - Coupon "
+"will be applied only to a single appointment"
+msgstr ""
+
+#: Backend/view/tabs/coupons_add_new_details.php:52
+msgid "Customer"
+msgstr ""
+
+#: Backend/view/tabs/coupons_add_new_details.php:53
+msgid "Booking"
+msgstr ""
+
+#: Backend/view/tabs/coupons_add_new_details.php:60
+msgid "Services filter"
+msgstr ""
+
+#: Backend/view/tabs/coupons_add_new_details.php:74
+msgid "Staff filter"
+msgstr ""
+
+#: Backend/view/tabs/coupons_usage_history_details.php:14
+msgid "Coupon is not used yet!"
+msgstr ""
+
+#: Backend/view/tabs/coupons_usage_history_details.php:25
+msgid "CUSTOMER"
+msgstr ""
+
+#: Backend/view/tabs/coupons_usage_history_details.php:26
+msgid "USED AMOUNT"
+msgstr ""
+
+#: Backend/view/tabs/coupons_usage_history_details.php:27
+msgid "SERVICE"
+msgstr ""
+
+#: Backend/view/tabs/coupons_usage_history_details.php:28
+msgid "DATE"
+msgstr "DATA"
+
+#: Backend/view/tabs/coupons_usage_history_details.php:29
+msgid "INFO"
+msgstr ""
+
+#: CouponsAddon.php:39
+msgid "Add New"
+msgstr ""
+
+#: CouponsAddon.php:42
+#, fuzzy
+#| msgid "Add coupon"
+msgid "Coupons tab"
+msgstr "Dodaj kupon"
+
+#: CouponsAddon.php:100 CouponsAddon.php:105 CouponsAddon.php:133
+#, fuzzy
+#| msgid "Add coupon"
+msgid "Coupon"
+msgstr "Dodaj kupon"
+
+#: CouponsAddon.php:134
+msgid "OK"
+msgstr "OK"
+
+#: CouponsAddon.php:144
+#, fuzzy
+#| msgid "Add coupon"
+msgid "Coupon Code"
+msgstr "Dodaj kupon"
+
+#: Frontend/Ajax.php:32
+msgid "Coupon not found!"
+msgstr ""
+
+#~ msgid "Please fill in all required fields correctly!"
+#~ msgstr "Wypełnij wszystkie wymagane pola!"
+
+#~ msgid "Location"
+#~ msgstr "Lokalizacja"
+
+#~ msgid "Staff"
+#~ msgstr "Dietetyk"
+
+#~ msgid "Service"
+#~ msgstr "Usługa"
+
+#~ msgid "Service Extras"
+#~ msgstr "Dodatkowe Usługi"
+
+#~ msgid "Date & Time"
+#~ msgstr "Termin Wizyty"
+
+#~ msgid "Information"
+#~ msgstr "Dane Pacjenta"
+
+#~ msgid "Confirmation"
+#~ msgstr "Potwierdzenie"
+
+#~ msgid "Have any questions?"
+#~ msgstr "Pytania?"
+
+#~ msgid "Select service"
+#~ msgstr "Wybierz usługę"
+
+#~ msgid "BACK"
+#~ msgstr "Wstecz"
+
+#~ msgid "NEXT STEP"
+#~ msgstr "DALEJ"
+
+#, php-format
+#~ msgid "Minimum length of \"%s\" field is %d!"
+#~ msgstr "Minimum length of \"%s\" field is %d!"
+
+#, php-format
+#~ msgid "Maximum length of \"%s\" field is %d!"
+#~ msgstr "Maximum length of \"%s\" field is %d!"
+
+#~ msgid "File extension is not allowed!"
+#~ msgstr "File extension is not allowed!"
+
+#~ msgid "Days of week"
+#~ msgstr "Days of week"
+
+#~ msgid "Mon"
+#~ msgstr "Pon"
+
+#~ msgid "Tue"
+#~ msgstr "Wt"
+
+#~ msgid "Wed"
+#~ msgstr "Śr"
+
+#~ msgid "Thu"
+#~ msgstr "Czw"
+
+#~ msgid "Fri"
+#~ msgstr "Pią"
+
+#~ msgid "Sat"
+#~ msgstr "Sob"
+
+#~ msgid "Sun"
+#~ msgstr "Nie"
+
+#~ msgid "Monday"
+#~ msgstr "Poniedziałek"
+
+#~ msgid "Tuesday"
+#~ msgstr "Wtorek"
+
+#~ msgid "Wednesday"
+#~ msgstr "Środa"
+
+#~ msgid "Thursday"
+#~ msgstr "Czwartek"
+
+#~ msgid "Friday"
+#~ msgstr "Piątek"
+
+#~ msgid "Saturday"
+#~ msgstr "Sobota"
+
+#~ msgid "Sunday"
+#~ msgstr "Niedziela"
+
+#~ msgid "Every"
+#~ msgstr "Every"
+
+#~ msgid "DAYS"
+#~ msgstr "DAYS"
+
+#~ msgid "Time"
+#~ msgstr "Godzina"
+
+#~ msgid "On"
+#~ msgstr "On"
+
+#~ msgid "Specific day"
+#~ msgstr "Specific day"
+
+#~ msgid "First"
+#~ msgstr "First"
+
+#~ msgid "Second"
+#~ msgstr "Second"
+
+#~ msgid "Third"
+#~ msgstr "Third"
+
+#~ msgid "Fourth"
+#~ msgstr "Fourth"
+
+#~ msgid "Last"
+#~ msgstr "Last"
+
+#~ msgid "Start date"
+#~ msgstr "Start date"
+
+#~ msgid "End date"
+#~ msgstr "End date"
+
+#~ msgid "Times"
+#~ msgstr "Times"
+
+#~ msgid "Select..."
+#~ msgstr "Wybierz..."
+
+#~ msgid "TIME"
+#~ msgstr "GODZINA"
+
+#~ msgid "EDIT"
+#~ msgstr "EDYTUJ"
+
+#, fuzzy
+#~| msgid "Full amount"
+#~ msgid "Tax amount"
+#~ msgstr "Full amount"
+
+#~ msgid "January"
+#~ msgstr "Styczeń"
+
+#~ msgid "February"
+#~ msgstr "Luty"
+
+#~ msgid "March"
+#~ msgstr "Marzec"
+
+#~ msgid "April"
+#~ msgstr "Kwiecień"
+
+#~ msgid "May"
+#~ msgstr "Maj"
+
+#~ msgid "June"
+#~ msgstr "Czerwiec"
+
+#~ msgid "July"
+#~ msgstr "Lipiec"
+
+#~ msgid "August"
+#~ msgstr "Sierpień"
+
+#~ msgid "September"
+#~ msgstr "Wrzesień"
+
+#~ msgid "October"
+#~ msgstr "Październik"
+
+#~ msgid "November"
+#~ msgstr "Listopad"
+
+#~ msgid "December"
+#~ msgstr "Grudzień"
+
+#~ msgid "Email"
+#~ msgstr "Email"
+
+#~ msgid "Phone"
+#~ msgstr "Telefon"
+
+#, fuzzy
+#~| msgid "Select date"
+#~ msgid "Select Type"
+#~ msgstr "Wybierz godzinę"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgid "Tab Name"
+#~ msgstr "Imię"
+
+#, fuzzy
+#~| msgid "Select date"
+#~ msgid "Select Language"
+#~ msgstr "Wybierz godzinę"
+
+#, fuzzy
+#~| msgid "Select service"
+#~ msgid "Select Service"
+#~ msgstr "Wybierz usługę"
+
+#, fuzzy
+#~| msgid "Select staff"
+#~ msgid "Select Staff"
+#~ msgstr "Wybierz dietetyka"
+
+#, fuzzy
+#~| msgid "Select location"
+#~ msgid "Select Location"
+#~ msgstr "Wybierz lokalizację"
+
+#~ msgid "Daily"
+#~ msgstr "Daily"
+
+#~ msgid "Name"
+#~ msgstr "Imię"
+
+#~ msgid "Deposit"
+#~ msgstr "Deposit"
+
+#~ msgid "Local"
+#~ msgstr "Płatność na miejscu"
+
+#~ msgid "Any staff"
+#~ msgstr "Dowolny dietetyk"
+
+#~ msgid "Select an available staff"
+#~ msgstr "Wybierz dostępnego dietetyka"
+
+#~ msgid "Add coupon"
+#~ msgstr "Dodaj kupon"
+
+#~ msgid "Please select location."
+#~ msgstr "Wybierz lokalizację."
+
+#~ msgid "Please select staff."
+#~ msgstr "Wybierz dietetyka."
+
+#~ msgid "Please select service"
+#~ msgstr "Wybierz usługę."
+
+#~ msgid "Please select week day(s)"
+#~ msgstr "Wybierz dzień tygodnia."
+
+#~ msgid "Please select week day(s) and time(s) correctly"
+#~ msgstr "Wybierz dzień tygodnia i godzinę."
+
+#~ msgid "Please select start date"
+#~ msgstr "Wybierz datę początkową."
+
+#~ msgid "Please select end date"
+#~ msgstr "Wybierz datę końcową."
+
+#~ msgid "Please select date."
+#~ msgstr "Wybierz datę."
+
+#~ msgid "Please select time."
+#~ msgstr "Wybierz godzinę."
+
+#~ msgid "Please select an available time"
+#~ msgstr "Wybierz dostępną godzinę."
+
+#~ msgid "Please enter a valid email address!"
+#~ msgstr "Wpisz prawidłowy adres email."
+
+#~ msgid "Please enter a valid phone number!"
+#~ msgstr "Wpisz prawidłowy numer telefonu."
+
+#~ msgid "CONFIRM BOOKING"
+#~ msgstr "POTWIERDŹ REZERWACJĘ"
+
+#~ msgid "There is no any Location for select."
+#~ msgstr "There is no any Location for select."
+
+#~ msgid "Staff not found. Please go back and select a different option."
+#~ msgstr "Staff not found. Please go back and select a different option."
+
+#~ msgid "Service not found. Please go back and select a different option."
+#~ msgstr "Service not found. Please go back and select a different option."
+
+#~ msgid "There isn't any available staff for the selected date/time."
+#~ msgstr "There isn&#039;t any available staff for the selected date/time."
+
+#~ msgid ""
+#~ "Extras not found in this service. You can select other service or click "
+#~ "the <span class=\"booknetic_text_primary\">\"Next step\"</span> button."
+#~ msgstr ""
+#~ "Extras not found in this service. You can select other service or click "
+#~ "the <span class=\"booknetic_text_primary\">\"Next step\"</span> button."
+
+#~ msgid "w"
+#~ msgstr "tyg."
+
+#~ msgid "d"
+#~ msgstr "dnia"
+
+#~ msgid "h"
+#~ msgstr "-godz."
+
+#~ msgid "m"
+#~ msgstr "-min."
+
+#~ msgid "s"
+#~ msgstr "sek."
+
+#~ msgid "Finish"
+#~ msgstr "Koniec"
+
+#, fuzzy
+#~| msgid "Time"
+#~ msgid "Timezone"
+#~ msgstr "Godzina"
+
+#, fuzzy
+#~| msgid "Location"
+#~ msgid "Location ID"
+#~ msgstr "Lokalizacja"
+
+#, fuzzy
+#~| msgid "Confirmation"
+#~ msgid "Skip the Confirmation step"
+#~ msgstr "Potwierdzenie"
+
+#~ msgid "Thank you for your request!"
+#~ msgstr "Dziękujemy za zgłoszenie!"
+
+#~ msgid "Your confirmation number:"
+#~ msgstr "Twój numer rezerwacji wizyty"
+
+#~ msgid "ADD TO GOOGLE CALENDAR"
+#~ msgstr "DODAJ DO KALENDARZA GOOGLE"
+
+#~ msgid "START NEW BOOKING"
+#~ msgstr "KOLEJNA REZERWACJA"
+
+#~ msgid "FINISH BOOKING"
+#~ msgstr "ZAKOŃCZ"
+
+#~ msgid "Total price"
+#~ msgstr "Razem"
+
+#~ msgid "Full amount"
+#~ msgstr "Full amount"
+
+#~ msgid "Select date"
+#~ msgstr "Wybierz godzinę"
+
+#~ msgid "Surname"
+#~ msgstr "Nazwisko"
+
+#~ msgid "Select staff"
+#~ msgstr "Wybierz dietetyka"
+
+#~ msgid "Select location"
+#~ msgstr "Wybierz lokalizację"
+
+#~ msgid "Select service extras"
+#~ msgstr "Select service extras"
+
+#~ msgid "Fill information"
+#~ msgstr "Twoje dane"
+
+#~ msgid "Select Date & Time"
+#~ msgstr "Wybierz termin"
+
+#, fuzzy
+#~| msgid "Second"
+#~ msgid "second"
+#~ msgstr "Second"
+
+#, fuzzy
+#~| msgid "Second"
+#~ msgid "seconds"
+#~ msgstr "Second"
