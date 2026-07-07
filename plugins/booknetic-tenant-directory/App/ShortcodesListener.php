@@ -4805,6 +4805,27 @@ class ShortcodesListener
                         nativePhone.val(nativePhoneVal).trigger('change');
                     }
                     
+                    // Copy all inputs from clone wrapper back to native wrapper by relative index to sync custom fields
+                    var cloneInputs = infoWrapper.find('input, select, textarea');
+                    var nativeInputs = nativeWrapper.find('input, select, textarea');
+                    cloneInputs.each(function(index) {
+                        var cloneInput = $(this);
+                        var nativeInput = nativeInputs.eq(index);
+                        if (nativeInput.length) {
+                            var id = cloneInput.attr('id');
+                            if (id === 'bkntc_input_email_clone' || id === 'bkntc_input_phone_clone' || id === 'bkntc_input_name_clone') {
+                                return;
+                            }
+                            if (cloneInput.is(':checkbox')) {
+                                nativeInput.prop('checked', cloneInput.prop('checked')).trigger('change');
+                            } else if (cloneInput.is(':radio')) {
+                                nativeInput.prop('checked', cloneInput.prop('checked')).trigger('change');
+                            } else {
+                                nativeInput.val(cloneInput.val()).trigger('change');
+                            }
+                        }
+                    });
+                    
                     // Trigger native input events so validation fires
                     nativeEmail[0].dispatchEvent(new Event('input', { bubbles: true }));
                     nativePhone[0].dispatchEvent(new Event('input', { bubbles: true }));
