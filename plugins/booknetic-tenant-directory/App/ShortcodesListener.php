@@ -4829,6 +4829,78 @@ class ShortcodesListener
                         }
                     });
                     
+                    // Populate custom_fields for ALL cart items before validation
+                    if (window.capturedBookneticInstance && window.capturedBookneticInstance.cartArr) {
+                        var cart = window.capturedBookneticInstance.cartArr;
+                        var infoForms = infoWrapper.find('.booknetic_custom_form');
+                        
+                        infoForms.each(function(index) {
+                            var formEl = $(this);
+                            var customFields = {};
+                            
+                            formEl.find("[data-input-id][type!='checkbox'][type!='radio'], [data-input-id][type='checkbox']:checked, [data-input-id][type='radio']:checked").each(function() {
+                                var inputId = $(this).data('input-id');
+                                var inputVal = $(this).val() || '';
+                                
+                                if (inputVal != '' && $(this).data('isdatepicker')) {
+                                    inputVal = inputVal.replace(/\s+/g, '');
+                                    inputVal = window.capturedBookneticInstance.convertDate(inputVal, window.capturedBookneticInstance.datePickerFormat(), 'Y-m-d');
+                                }
+                                
+                                if ($(this).attr('type') == 'file') {
+                                    if ($(this).attr('multiple') !== undefined || $(this).data('type') === 'file_multiple') {
+                                        var files = (window.capturedBookneticInstance.stagedCustomFiles && window.capturedBookneticInstance.stagedCustomFiles[inputId]) ? window.capturedBookneticInstance.stagedCustomFiles[inputId] : [];
+                                        if (files.length > 0) {
+                                            var fileList = [];
+                                            for (var f = 0; f < files.length; f++) {
+                                                var uniqueId = Math.random().toString(36).substring(2, 9);
+                                                if (window.capturedBookneticInstance.customFiles === undefined) {
+                                                    window.capturedBookneticInstance.customFiles = [];
+                                                }
+                                                window.capturedBookneticInstance.customFiles.push({
+                                                    id: uniqueId,
+                                                    file: files[f]
+                                                });
+                                                fileList.push({
+                                                    id: uniqueId,
+                                                    name: files[f].name
+                                                });
+                                            }
+                                            customFields[inputId] = {
+                                                multiple: true,
+                                                files: fileList
+                                            };
+                                        }
+                                    } else if ($(this)[0].files[0]) {
+                                        var uniqueId = Math.random().toString(36).substring(2, 9);
+                                        if (window.capturedBookneticInstance.customFiles === undefined) {
+                                            window.capturedBookneticInstance.customFiles = [];
+                                        }
+                                        window.capturedBookneticInstance.customFiles.push({
+                                            id: uniqueId,
+                                            file: $(this)[0].files[0]
+                                        });
+                                        customFields[inputId] = {
+                                            id: uniqueId,
+                                            name: $(this)[0].files[0].name
+                                        };
+                                    }
+                                } else {
+                                    if (customFields[inputId] === undefined) {
+                                        customFields[inputId] = inputVal;
+                                    } else {
+                                        customFields[inputId] += ',' + inputVal;
+                                    }
+                                }
+                            });
+                            
+                            if (cart[index]) {
+                                cart[index]['custom_fields'] = customFields;
+                                console.log('[Wizard Multi-Service] Serialized custom_fields for cart item ' + index + ':', customFields);
+                            }
+                        });
+                    }
+                    
                     // Trigger native input events so validation fires
                     nativeEmail[0].dispatchEvent(new Event('input', { bubbles: true }));
                     nativePhone[0].dispatchEvent(new Event('input', { bubbles: true }));
