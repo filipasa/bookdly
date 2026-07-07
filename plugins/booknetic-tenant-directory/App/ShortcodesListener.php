@@ -3793,10 +3793,22 @@ class ShortcodesListener
                     bookneticHooks.addAction('booking_panel_loaded', function(bookneticObj) {
                         window.capturedBookneticInstance = bookneticObj;
                         console.log('[Wizard Capture] Primary Capture successful:', bookneticObj);
+                        bookneticObj.toast = function(title) {
+                            if (title === false) return;
+                            console.warn('[Wizard Native Toast]:', title);
+                            var decodedMsg = bookneticObj.htmlspecialchars_decode(title, 'ENT_QUOTES');
+                            showWarningToast(decodedMsg);
+                        };
                     });
                     bookneticHooks.addAction('loaded_step', function(bookneticObj, stepId) {
                         window.capturedBookneticInstance = bookneticObj;
                         console.log('[Wizard Capture] Step loaded capture successful:', stepId, bookneticObj);
+                        bookneticObj.toast = function(title) {
+                            if (title === false) return;
+                            console.warn('[Wizard Native Toast]:', title);
+                            var decodedMsg = bookneticObj.htmlspecialchars_decode(title, 'ENT_QUOTES');
+                            showWarningToast(decodedMsg);
+                        };
                         
                         if (stepId === 'location' && hasSingleLocation) {
                             var firstLocationCard = $('.bkntc-wizard-location-card').first();
