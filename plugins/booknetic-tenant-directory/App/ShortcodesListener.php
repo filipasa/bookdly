@@ -5001,6 +5001,27 @@ class ShortcodesListener
                     console.log('[Wizard Info Submit] Copied values back to native fields, waiting for validation to update...');
 
                     setTimeout(function() {
+                        if (window.capturedBookneticInstance && window.capturedBookneticInstance.cartArr) {
+                            var cart = window.capturedBookneticInstance.cartArr;
+                            if (cart.length > 1) {
+                                var firstItem = cart[0];
+                                var locId = firstItem.location;
+                                var staffId = firstItem.staff;
+                                var selectedDate = firstItem.date;
+                                var selectedTime = firstItem.time;
+                                var customerId = firstItem.customer_id;
+                                
+                                for (var i = 1; i < cart.length; i++) {
+                                    cart[i].location = locId;
+                                    cart[i].staff = staffId;
+                                    cart[i].date = selectedDate;
+                                    cart[i].time = selectedTime;
+                                    cart[i].customer_id = customerId;
+                                }
+                                console.log('[Wizard Multi-Service] Final sync of location, staff, date, time, customer_id to all items:', cart);
+                            }
+                        }
+                        
                         if (window.capturedBookneticInstance && window.capturedBookneticInstance.stepManager) {
                             window.capturedBookneticInstance.stepManager.goForward();
                         } else {
