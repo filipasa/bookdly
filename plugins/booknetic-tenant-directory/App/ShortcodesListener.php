@@ -3790,6 +3790,48 @@ class ShortcodesListener
                 
                 // Intercept the native booknetic object via hooks
                 if (window.bookneticHooks) {
+                    bookneticHooks.addFilter('appointment_ajax_data', function(formData, bookneticObj) {
+                        try {
+                            var cartStr = formData.get('cart');
+                            if (cartStr) {
+                                var cart = JSON.parse(cartStr);
+                                if (cart && cart.length > 1) {
+                                    var firstItem = cart[0];
+                                    var locId = firstItem.location;
+                                    var staffId = firstItem.staff;
+                                    var selectedDate = firstItem.date;
+                                    var selectedTime = firstItem.time;
+                                    var customerId = firstItem.customer_id;
+                                    var customerData = firstItem.customer_data;
+                                    var broughtPeople = firstItem.brought_people_count;
+                                    var locCat = firstItem.location_category;
+                                    
+                                    for (var i = 1; i < cart.length; i++) {
+                                        cart[i].location = locId;
+                                        cart[i].location_category = locCat;
+                                        cart[i].staff = staffId;
+                                        cart[i].date = selectedDate;
+                                        cart[i].time = selectedTime;
+                                        cart[i].brought_people_count = broughtPeople;
+                                        cart[i].customer_id = customerId;
+                                        cart[i].customer_data = customerData;
+                                        
+                                        if (firstItem.recurring_start_date) cart[i].recurring_start_date = firstItem.recurring_start_date;
+                                        if (firstItem.recurring_end_date) cart[i].recurring_end_date = firstItem.recurring_end_date;
+                                        if (firstItem.recurring_times) cart[i].recurring_times = firstItem.recurring_times;
+                                        if (firstItem.appointments) cart[i].appointments = firstItem.appointments;
+                                    }
+                                    
+                                    formData.set('cart', JSON.stringify(cart));
+                                    console.log('[Wizard Filter Hook] Synchronized cart payload for AJAX request:', cart);
+                                }
+                            }
+                        } catch (e) {
+                            console.error('[Wizard Filter Hook Error]:', e);
+                        }
+                        return formData;
+                    });
+                    
                     bookneticHooks.addAction('booking_panel_loaded', function(bookneticObj) {
                         window.capturedBookneticInstance = bookneticObj;
                         console.log('[Wizard Capture] Primary Capture successful:', bookneticObj);
