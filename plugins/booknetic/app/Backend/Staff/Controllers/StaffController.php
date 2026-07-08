@@ -32,6 +32,19 @@ class StaffController extends \BookneticApp\Providers\Core\Controller
     {
         Capabilities::must('staff');
 
+        // Intercept DataTable actions manually since we bypass DataTableUI
+        if (Post::has('fs-data-table-action')) {
+            $action = Post::string('fs-data-table-action');
+            $ids = Post::array('ids', 'int');
+            if ($action === 'delete') {
+                return $this->delete_staff();
+            }
+            if ($action === 'duplicate') {
+                $this->duplicate($ids);
+                return $this->response(true);
+            }
+        }
+
         $edit = Helper::_get('edit', '0', 'int');
 
         add_filter('bkntc_localization', function ($localization) {

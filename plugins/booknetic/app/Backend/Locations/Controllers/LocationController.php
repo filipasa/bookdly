@@ -35,6 +35,28 @@ class LocationController extends Controller
     {
         Capabilities::must('locations');
 
+        // Intercept DataTable actions manually since we bypass DataTableUI
+        if (Post::has('fs-data-table-action')) {
+            $action = Post::string('fs-data-table-action');
+            $ids = Post::array('ids', 'int');
+            if ($action === 'delete') {
+                $this->_delete($ids);
+                return $this->response(true);
+            }
+            if ($action === 'duplicate') {
+                $this->duplicate($ids);
+                return $this->response(true);
+            }
+            if ($action === 'enable') {
+                $this->enable($ids);
+                return $this->response(true);
+            }
+            if ($action === 'disable') {
+                $this->disable($ids);
+                return $this->response(true);
+            }
+        }
+
         add_filter('bkntc_localization', function ($localization) {
             $localization['link_copied'] = bkntc__('Link copied!');
             return $localization;
