@@ -47,75 +47,77 @@ $apiKey = Helper::getOption('google_maps_api_key', '', false);
     </div>
 </div>
 
-<div class="bkc-search-container">
-    <div class="bkc-search-wrap-full">
-        <?php echo $svgSearch ?>
-        <input class="bkc-search-input-full" type="text" id="bkc_location_search" placeholder="<?php echo bkntc__('Quick search') ?>">
+<div class="bkc-page-container">
+    <div class="bkc-search-container">
+        <div class="bkc-search-wrap-full">
+            <?php echo $svgSearch ?>
+            <input class="bkc-search-input-full" type="text" id="bkc_location_search" placeholder="<?php echo bkntc__('Quick search') ?>">
+        </div>
     </div>
-</div>
 
-<div class="bkc-divider"></div>
+    <div class="bkc-divider"></div>
 
-<div class="bkc-card-grid" id="bkc_locations_grid">
-<?php if (empty($locations)): ?>
-    <div class="bkc-empty-state">
-        <?php echo $svgPin ?>
-        <h3><?php echo bkntc__('No locations yet') ?></h3>
-        <p><?php echo bkntc__('Add your first location to get started.') ?></p>
-    </div>
-<?php else: ?>
-    <?php foreach ($locations as $loc):
-        $isActive  = (int)($loc['is_active'] ?? 1);
-        $catName   = htmlspecialchars($loc['category_name'] ?? '');
-        $name      = htmlspecialchars($loc['name'] ?? '');
-        $phone     = htmlspecialchars($loc['phone_number'] ?? '');
-        $address   = htmlspecialchars($loc['address'] ?? '');
-        $id        = (int)$loc['id'];
-        $initials  = mb_strtoupper(mb_substr($name, 0, 2));
-        $pillClass = $isActive ? 'bkc-pill--active' : 'bkc-pill--hidden';
-        $pillLabel = $isActive ? bkntc__('Active') : bkntc__('Hidden');
-        $cardClass = $isActive ? '' : ' bkc-card--hidden';
-        $imgSrc    = Helper::profileImage($loc['image'] ?? '', 'Locations');
-    ?>
-    <div class="bkc-card<?php echo $cardClass ?>" 
-         data-id="<?php echo $id ?>" 
-         data-name="<?php echo $name ?>" 
-         data-cat="<?php echo (int)($loc['category_id'] ?? 0) ?>" 
-         data-active="<?php echo $isActive ?>">
-        <div class="bkc-card__body">
-            <div class="bkc-card__identity">
-                <?php if ($imgSrc): ?>
-                    <img src="<?php echo $imgSrc ?>" class="bkc-avatar" alt="<?php echo $name ?>">
-                <?php else: ?>
-                    <div class="bkc-avatar-placeholder<?php echo $isActive ? '' : ' bkc-avatar-placeholder--muted' ?>"><?php echo $initials ?></div>
-                <?php endif; ?>
-                <div class="bkc-card__name-wrap">
-                    <div class="bkc-card__name"><?php echo $name ?></div>
-                    <?php if ($catName): ?>
-                        <span class="bkc-cat-badge"><?php echo $catName ?></span>
+    <div class="bkc-card-grid" id="bkc_locations_grid">
+    <?php if (empty($locations)): ?>
+        <div class="bkc-empty-state">
+            <?php echo $svgPin ?>
+            <h3><?php echo bkntc__('No locations yet') ?></h3>
+            <p><?php echo bkntc__('Add your first location to get started.') ?></p>
+        </div>
+    <?php else: ?>
+        <?php foreach ($locations as $loc):
+            $isActive  = (int)($loc['is_active'] ?? 1);
+            $catName   = htmlspecialchars($loc['category_name'] ?? '');
+            $name      = htmlspecialchars($loc['name'] ?? '');
+            $phone     = htmlspecialchars($loc['phone_number'] ?? '');
+            $address   = htmlspecialchars($loc['address'] ?? '');
+            $id        = (int)$loc['id'];
+            $initials  = mb_strtoupper(mb_substr($name, 0, 2));
+            $pillClass = $isActive ? 'bkc-pill--active' : 'bkc-pill--hidden';
+            $pillLabel = $isActive ? bkntc__('Active') : bkntc__('Hidden');
+            $cardClass = $isActive ? '' : ' bkc-card--hidden';
+            $imgSrc    = Helper::profileImage($loc['image'] ?? '', 'Locations');
+        ?>
+        <div class="bkc-card<?php echo $cardClass ?>" 
+             data-id="<?php echo $id ?>" 
+             data-name="<?php echo $name ?>" 
+             data-cat="<?php echo (int)($loc['category_id'] ?? 0) ?>" 
+             data-active="<?php echo $isActive ?>">
+            <div class="bkc-card__body">
+                <div class="bkc-card__identity">
+                    <?php if ($imgSrc): ?>
+                        <img src="<?php echo $imgSrc ?>" class="bkc-avatar" alt="<?php echo $name ?>">
+                    <?php else: ?>
+                        <div class="bkc-avatar-placeholder<?php echo $isActive ? '' : ' bkc-avatar-placeholder--muted' ?>"><?php echo $initials ?></div>
+                    <?php endif; ?>
+                    <div class="bkc-card__name-wrap">
+                        <div class="bkc-card__name"><?php echo $name ?></div>
+                        <?php if ($catName): ?>
+                            <span class="bkc-cat-badge"><?php echo $catName ?></span>
+                        <?php endif; ?>
+                    </div>
+                    <span class="bkc-pill <?php echo $pillClass ?>"><span class="bkc-pill__dot"></span><?php echo $pillLabel ?></span>
+                </div>
+                <div class="bkc-card__meta">
+                    <?php if ($phone): ?>
+                        <div class="bkc-meta-row"><?php echo $svgPhone ?><span><?php echo $phone ?></span></div>
+                    <?php endif; ?>
+                    <?php if ($address): ?>
+                        <div class="bkc-meta-row"><?php echo $svgPin ?><span><?php echo $address ?></span></div>
                     <?php endif; ?>
                 </div>
-                <span class="bkc-pill <?php echo $pillClass ?>"><span class="bkc-pill__dot"></span><?php echo $pillLabel ?></span>
             </div>
-            <div class="bkc-card__meta">
-                <?php if ($phone): ?>
-                    <div class="bkc-meta-row"><?php echo $svgPhone ?><span><?php echo $phone ?></span></div>
-                <?php endif; ?>
-                <?php if ($address): ?>
-                    <div class="bkc-meta-row"><?php echo $svgPin ?><span><?php echo $address ?></span></div>
-                <?php endif; ?>
+            <div class="bkc-card__footer">
+                <button class="bkc-action-btn edit_location_btn" data-id="<?php echo $id ?>" title="<?php echo bkntc__('Edit') ?>"><?php echo $svgEdit ?></button>
+                <button class="bkc-action-btn duplicate_location_btn" data-id="<?php echo $id ?>" title="<?php echo bkntc__('Duplicate') ?>"><?php echo $svgDupe ?></button>
+                <button class="bkc-action-btn share_location_btn" data-id="<?php echo $id ?>" title="<?php echo bkntc__('Share') ?>"><?php echo $svgShare ?></button>
+                <span class="bkc-action-spacer"></span>
+                <button class="bkc-action-btn bkc-action-btn--danger delete_location_btn" data-id="<?php echo $id ?>" title="<?php echo bkntc__('Delete') ?>"><?php echo $svgTrash ?></button>
             </div>
         </div>
-        <div class="bkc-card__footer">
-            <button class="bkc-action-btn edit_location_btn" data-id="<?php echo $id ?>" title="<?php echo bkntc__('Edit') ?>"><?php echo $svgEdit ?></button>
-            <button class="bkc-action-btn duplicate_location_btn" data-id="<?php echo $id ?>" title="<?php echo bkntc__('Duplicate') ?>"><?php echo $svgDupe ?></button>
-            <button class="bkc-action-btn share_location_btn" data-id="<?php echo $id ?>" title="<?php echo bkntc__('Share') ?>"><?php echo $svgShare ?></button>
-            <span class="bkc-action-spacer"></span>
-            <button class="bkc-action-btn bkc-action-btn--danger delete_location_btn" data-id="<?php echo $id ?>" title="<?php echo bkntc__('Delete') ?>"><?php echo $svgTrash ?></button>
-        </div>
+        <?php endforeach; ?>
+    <?php endif; ?>
     </div>
-    <?php endforeach; ?>
-<?php endif; ?>
 </div>
 
 <script>

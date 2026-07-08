@@ -52,77 +52,79 @@ $svgSearch  = '<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="
     </div>
 </div>
 
-<div class="bkc-search-container">
-    <div class="bkc-search-wrap-full">
-        <?php echo $svgSearch ?>
-        <input class="bkc-search-input-full" type="text" id="bkc_staff_search" placeholder="<?php echo bkntc__('Quick search') ?>">
+<div class="bkc-page-container">
+    <div class="bkc-search-container">
+        <div class="bkc-search-wrap-full">
+            <?php echo $svgSearch ?>
+            <input class="bkc-search-input-full" type="text" id="bkc_staff_search" placeholder="<?php echo bkntc__('Quick search') ?>">
+        </div>
     </div>
-</div>
 
-<div class="bkc-divider"></div>
+    <div class="bkc-divider"></div>
 
-<div class="bkc-card-grid" id="bkc_staff_grid">
-<?php if (empty($staffList)): ?>
-    <div class="bkc-empty-state">
-        <?php echo $svgUser ?>
-        <h3><?php echo bkntc__('No staff members yet') ?></h3>
-        <p><?php echo bkntc__('Add your first staff member to get started.') ?></p>
-    </div>
-<?php else: ?>
-    <?php foreach ($staffList as $s):
-        $isActive  = (int)($s['is_active'] ?? 1);
-        $id        = (int)$s['id'];
-        $name      = htmlspecialchars($s['name'] ?? '');
-        $email     = htmlspecialchars($s['email'] ?? '');
-        $phone     = htmlspecialchars($s['phone_number'] ?? '');
-        $initials  = mb_strtoupper(mb_substr($name, 0, 2));
-        $pillClass = $isActive ? 'bkc-pill--active' : 'bkc-pill--hidden';
-        $pillLabel = $isActive ? bkntc__('Active') : bkntc__('Hidden');
-        $cardClass = $isActive ? '' : ' bkc-card--hidden';
-        $imgSrc    = Helper::profileImage($s['profile_image'] ?? '', 'Staff');
-    ?>
-    <div class="bkc-card<?php echo $cardClass ?>"
-         data-id="<?php echo $id ?>"
-         data-name="<?php echo $name ?>"
-         data-email="<?php echo strtolower($email) ?>"
-         data-phone="<?php echo $phone ?>"
-         data-active="<?php echo $isActive ?>">
-        <div class="bkc-card__body">
-            <div class="bkc-card__identity">
-                <?php if ($imgSrc): ?>
-                    <img src="<?php echo $imgSrc ?>" class="bkc-avatar" alt="<?php echo $name ?>">
-                <?php else: ?>
-                    <div class="bkc-avatar-placeholder<?php echo $isActive ? '' : ' bkc-avatar-placeholder--muted' ?>"><?php echo $initials ?></div>
-                <?php endif; ?>
-                <div class="bkc-card__name-wrap">
-                    <div class="bkc-card__name"><?php echo $name ?></div>
+    <div class="bkc-card-grid" id="bkc_staff_grid">
+    <?php if (empty($staffList)): ?>
+        <div class="bkc-empty-state">
+            <?php echo $svgUser ?>
+            <h3><?php echo bkntc__('No staff members yet') ?></h3>
+            <p><?php echo bkntc__('Add your first staff member to get started.') ?></p>
+        </div>
+    <?php else: ?>
+        <?php foreach ($staffList as $s):
+            $isActive  = (int)($s['is_active'] ?? 1);
+            $id        = (int)$s['id'];
+            $name      = htmlspecialchars($s['name'] ?? '');
+            $email     = htmlspecialchars($s['email'] ?? '');
+            $phone     = htmlspecialchars($s['phone_number'] ?? '');
+            $initials  = mb_strtoupper(mb_substr($name, 0, 2));
+            $pillClass = $isActive ? 'bkc-pill--active' : 'bkc-pill--hidden';
+            $pillLabel = $isActive ? bkntc__('Active') : bkntc__('Hidden');
+            $cardClass = $isActive ? '' : ' bkc-card--hidden';
+            $imgSrc    = Helper::profileImage($s['profile_image'] ?? '', 'Staff');
+        ?>
+        <div class="bkc-card<?php echo $cardClass ?>"
+             data-id="<?php echo $id ?>"
+             data-name="<?php echo $name ?>"
+             data-email="<?php echo strtolower($email) ?>"
+             data-phone="<?php echo $phone ?>"
+             data-active="<?php echo $isActive ?>">
+            <div class="bkc-card__body">
+                <div class="bkc-card__identity">
+                    <?php if ($imgSrc): ?>
+                        <img src="<?php echo $imgSrc ?>" class="bkc-avatar" alt="<?php echo $name ?>">
+                    <?php else: ?>
+                        <div class="bkc-avatar-placeholder<?php echo $isActive ? '' : ' bkc-avatar-placeholder--muted' ?>"><?php echo $initials ?></div>
+                    <?php endif; ?>
+                    <div class="bkc-card__name-wrap">
+                        <div class="bkc-card__name"><?php echo $name ?></div>
+                        <?php if ($email): ?>
+                            <div class="bkc-card__sub"><?php echo $email ?></div>
+                        <?php endif; ?>
+                    </div>
+                    <span class="bkc-pill <?php echo $pillClass ?>"><span class="bkc-pill__dot"></span><?php echo $pillLabel ?></span>
+                </div>
+                <div class="bkc-card__meta">
                     <?php if ($email): ?>
-                        <div class="bkc-card__sub"><?php echo $email ?></div>
+                        <div class="bkc-meta-row"><?php echo $svgMail ?><span><?php echo $email ?></span></div>
+                    <?php endif; ?>
+                    <?php if ($phone): ?>
+                        <div class="bkc-meta-row"><?php echo $svgPhone ?><span><?php echo $phone ?></span></div>
                     <?php endif; ?>
                 </div>
-                <span class="bkc-pill <?php echo $pillClass ?>"><span class="bkc-pill__dot"></span><?php echo $pillLabel ?></span>
             </div>
-            <div class="bkc-card__meta">
-                <?php if ($email): ?>
-                    <div class="bkc-meta-row"><?php echo $svgMail ?><span><?php echo $email ?></span></div>
-                <?php endif; ?>
-                <?php if ($phone): ?>
-                    <div class="bkc-meta-row"><?php echo $svgPhone ?><span><?php echo $phone ?></span></div>
+            <div class="bkc-card__footer">
+                <button class="bkc-action-btn edit_staff_btn" data-id="<?php echo $id ?>" title="<?php echo bkntc__('Edit') ?>"><?php echo $svgEdit ?></button>
+                <button class="bkc-action-btn duplicate_staff_btn" data-id="<?php echo $id ?>" title="<?php echo bkntc__('Duplicate') ?>"><?php echo $svgDupe ?></button>
+                <button class="bkc-action-btn share_staff_btn" data-id="<?php echo $id ?>" title="<?php echo bkntc__('Share') ?>"><?php echo $svgShare ?></button>
+                <span class="bkc-action-spacer"></span>
+                <?php if ($canDelete): ?>
+                    <button class="bkc-action-btn bkc-action-btn--danger delete_staff_btn" data-id="<?php echo $id ?>" title="<?php echo bkntc__('Delete') ?>"><?php echo $svgTrash ?></button>
                 <?php endif; ?>
             </div>
         </div>
-        <div class="bkc-card__footer">
-            <button class="bkc-action-btn edit_staff_btn" data-id="<?php echo $id ?>" title="<?php echo bkntc__('Edit') ?>"><?php echo $svgEdit ?></button>
-            <button class="bkc-action-btn duplicate_staff_btn" data-id="<?php echo $id ?>" title="<?php echo bkntc__('Duplicate') ?>"><?php echo $svgDupe ?></button>
-            <button class="bkc-action-btn share_staff_btn" data-id="<?php echo $id ?>" title="<?php echo bkntc__('Share') ?>"><?php echo $svgShare ?></button>
-            <span class="bkc-action-spacer"></span>
-            <?php if ($canDelete): ?>
-                <button class="bkc-action-btn bkc-action-btn--danger delete_staff_btn" data-id="<?php echo $id ?>" title="<?php echo bkntc__('Delete') ?>"><?php echo $svgTrash ?></button>
-            <?php endif; ?>
-        </div>
+        <?php endforeach; ?>
+    <?php endif; ?>
     </div>
-    <?php endforeach; ?>
-<?php endif; ?>
 </div>
 
 <script>

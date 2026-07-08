@@ -51,94 +51,96 @@ $svgHist   = '<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0
     </div>
 </div>
 
-<div class="bkc-search-container">
-    <div class="bkc-search-wrap-full">
-        <?php echo $svgSearch ?>
-        <input class="bkc-search-input-full" type="text" id="bkc_coupon_search" placeholder="<?php echo bkntc__('Quick search') ?>">
-    </div>
-</div>
-
-<div class="bkc-divider"></div>
-
-<div class="bkc-card-grid" id="bkc_coupons_grid">
-<?php if (empty($coupons)): ?>
-    <div class="bkc-empty-state">
-        <?php echo $svgTag ?>
-        <h3><?php echo bkntc__('No coupons yet') ?></h3>
-        <p><?php echo bkntc__('Create your first discount coupon to get started.') ?></p>
-    </div>
-<?php else: ?>
-    <?php foreach ($coupons as $coupon):
-        $now       = Date::epoch();
-        $id        = (int)$coupon['id'];
-        $code      = htmlspecialchars($coupon['code'] ?? '');
-        $type      = $coupon['discount_type'] ?? 'percent';
-        $discount  = $coupon['discount'] ?? 0;
-        $usageLimit= $coupon['usage_limit'] ?? null;
-        $startDate = $coupon['start_date'] ?? null;
-        $endDate   = $coupon['end_date'] ?? null;
-        $usedTimes = (int)Coupon::numberOfUses($coupon);
-
-        // Determine status
-        if (!is_null($startDate) && $now < Date::epoch($startDate)) {
-            $status = 'inactive';
-        } elseif (!is_null($endDate) && $now > Date::epoch($endDate)) {
-            $status = 'expired';
-        } elseif (is_null($usageLimit) || ((int)$usageLimit - $usedTimes > 0)) {
-            $status = 'active';
-        } else {
-            $status = 'expired';
-        }
-
-        $pillClass  = 'bkc-pill--' . $status;
-        $pillLabel  = bkntc__(ucfirst($status));
-        $cardClass  = ($status === 'expired' || $status === 'inactive') ? ' bkc-card--hidden' : '';
-        $codeClass  = ($status === 'expired') ? ' bkc-coupon-code--expired' : (($status === 'inactive') ? ' bkc-coupon-code--inactive' : '');
-
-        $discountStr = ($type === 'percent')
-            ? Math::floor($discount, 2) . '%'
-            : Helper::price($discount);
-
-        $typeLabel = ($type === 'percent')
-            ? bkntc__('Percentage discount')
-            : bkntc__('Fixed amount discount');
-
-        $expiryStr = $endDate
-            ? bkntc__('Expires') . ': ' . Date::format($endDate)
-            : bkntc__('No expiry');
-
-        $usageStr = $usageLimit
-            ? bkntc__('Used') . ' ' . $usedTimes . ' / ' . $usageLimit
-            : bkntc__('Used') . ' ' . $usedTimes . ' / ' . bkntc__('unlimited');
-    ?>
-    <div class="bkc-card<?php echo $cardClass ?>"
-         data-id="<?php echo $id ?>"
-         data-code="<?php echo strtolower($code) ?>"
-         data-status="<?php echo $status ?>"
-         data-type="<?php echo $type ?>">
-        <div class="bkc-card__body">
-            <div class="bkc-coupon-header">
-                <span class="bkc-coupon-code<?php echo $codeClass ?>"><?php echo $code ?></span>
-                <span class="bkc-pill <?php echo $pillClass ?>"><span class="bkc-pill__dot"></span><?php echo $pillLabel ?></span>
-            </div>
-            <div class="bkc-coupon-discount"><?php echo $discountStr ?></div>
-            <div class="bkc-coupon-type"><?php echo $typeLabel ?></div>
-            <div class="bkc-card__meta">
-                <div class="bkc-meta-row"><?php echo $svgCal ?><span><?php echo $expiryStr ?></span></div>
-                <div class="bkc-meta-row"><?php echo $svgUsers ?><span><?php echo $usageStr ?></span></div>
-            </div>
-        </div>
-        <div class="bkc-card__footer">
-            <button class="bkc-action-btn edit_coupon_btn" data-id="<?php echo $id ?>" title="<?php echo bkntc__('Edit') ?>"><?php echo $svgEdit ?></button>
-            <button class="bkc-action-btn view_coupon_history_btn" data-id="<?php echo $id ?>" title="<?php echo bkntc__('Usage History') ?>"><?php echo $svgHist ?></button>
-            <span class="bkc-action-spacer"></span>
-            <?php if ($canDelete): ?>
-                <button class="bkc-action-btn bkc-action-btn--danger delete_coupon_btn" data-id="<?php echo $id ?>" title="<?php echo bkntc__('Delete') ?>"><?php echo $svgTrash ?></button>
-            <?php endif; ?>
+<div class="bkc-page-container">
+    <div class="bkc-search-container">
+        <div class="bkc-search-wrap-full">
+            <?php echo $svgSearch ?>
+            <input class="bkc-search-input-full" type="text" id="bkc_coupon_search" placeholder="<?php echo bkntc__('Quick search') ?>">
         </div>
     </div>
-    <?php endforeach; ?>
-<?php endif; ?>
+
+    <div class="bkc-divider"></div>
+
+    <div class="bkc-card-grid" id="bkc_coupons_grid">
+    <?php if (empty($coupons)): ?>
+        <div class="bkc-empty-state">
+            <?php echo $svgTag ?>
+            <h3><?php echo bkntc__('No coupons yet') ?></h3>
+            <p><?php echo bkntc__('Create your first discount coupon to get started.') ?></p>
+        </div>
+    <?php else: ?>
+        <?php foreach ($coupons as $coupon):
+            $now       = Date::epoch();
+            $id        = (int)$coupon['id'];
+            $code      = htmlspecialchars($coupon['code'] ?? '');
+            $type      = $coupon['discount_type'] ?? 'percent';
+            $discount  = $coupon['discount'] ?? 0;
+            $usageLimit= $coupon['usage_limit'] ?? null;
+            $startDate = $coupon['start_date'] ?? null;
+            $endDate   = $coupon['end_date'] ?? null;
+            $usedTimes = (int)Coupon::numberOfUses($coupon);
+
+            // Determine status
+            if (!is_null($startDate) && $now < Date::epoch($startDate)) {
+                $status = 'inactive';
+            } elseif (!is_null($endDate) && $now > Date::epoch($endDate)) {
+                $status = 'expired';
+            } elseif (is_null($usageLimit) || ((int)$usageLimit - $usedTimes > 0)) {
+                $status = 'active';
+            } else {
+                $status = 'expired';
+            }
+
+            $pillClass  = 'bkc-pill--' . $status;
+            $pillLabel  = bkntc__(ucfirst($status));
+            $cardClass  = ($status === 'expired' || $status === 'inactive') ? ' bkc-card--hidden' : '';
+            $codeClass  = ($status === 'expired') ? ' bkc-coupon-code--expired' : (($status === 'inactive') ? ' bkc-coupon-code--inactive' : '');
+
+            $discountStr = ($type === 'percent')
+                ? Math::floor($discount, 2) . '%'
+                : Helper::price($discount);
+
+            $typeLabel = ($type === 'percent')
+                ? bkntc__('Percentage discount')
+                : bkntc__('Fixed amount discount');
+
+            $expiryStr = $endDate
+                ? bkntc__('Expires') . ': ' . Date::format($endDate)
+                : bkntc__('No expiry');
+
+            $usageStr = $usageLimit
+                ? bkntc__('Used') . ' ' . $usedTimes . ' / ' . $usageLimit
+                : bkntc__('Used') . ' ' . $usedTimes . ' / ' . bkntc__('unlimited');
+        ?>
+        <div class="bkc-card<?php echo $cardClass ?>"
+             data-id="<?php echo $id ?>"
+             data-code="<?php echo strtolower($code) ?>"
+             data-status="<?php echo $status ?>"
+             data-type="<?php echo $type ?>">
+            <div class="bkc-card__body">
+                <div class="bkc-coupon-header">
+                    <span class="bkc-coupon-code<?php echo $codeClass ?>"><?php echo $code ?></span>
+                    <span class="bkc-pill <?php echo $pillClass ?>"><span class="bkc-pill__dot"></span><?php echo $pillLabel ?></span>
+                </div>
+                <div class="bkc-coupon-discount"><?php echo $discountStr ?></div>
+                <div class="bkc-coupon-type"><?php echo $typeLabel ?></div>
+                <div class="bkc-card__meta">
+                    <div class="bkc-meta-row"><?php echo $svgCal ?><span><?php echo $expiryStr ?></span></div>
+                    <div class="bkc-meta-row"><?php echo $svgUsers ?><span><?php echo $usageStr ?></span></div>
+                </div>
+            </div>
+            <div class="bkc-card__footer">
+                <button class="bkc-action-btn edit_coupon_btn" data-id="<?php echo $id ?>" title="<?php echo bkntc__('Edit') ?>"><?php echo $svgEdit ?></button>
+                <button class="bkc-action-btn view_coupon_history_btn" data-id="<?php echo $id ?>" title="<?php echo bkntc__('Usage History') ?>"><?php echo $svgHist ?></button>
+                <span class="bkc-action-spacer"></span>
+                <?php if ($canDelete): ?>
+                    <button class="bkc-action-btn bkc-action-btn--danger delete_coupon_btn" data-id="<?php echo $id ?>" title="<?php echo bkntc__('Delete') ?>"><?php echo $svgTrash ?></button>
+                <?php endif; ?>
+            </div>
+        </div>
+        <?php endforeach; ?>
+    <?php endif; ?>
+    </div>
 </div>
 
 <script>
