@@ -194,12 +194,21 @@
     margin-bottom: 24px !important;
 }
 
+.m_header {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+}
+
 .m_head_actions {
     display: flex !important;
     align-items: center !important;
     gap: 12px !important;
     flex-direction: row !important;
     flex-wrap: nowrap !important;
+    margin-left: auto !important;
 }
 
 .bkc-empty-state { grid-column: 1 / -1; text-align: center; padding: 64px 24px; color: var(--bkc-muted); }
