@@ -1,0 +1,124 @@
+/* ================================================================
+   Booknetic Card View – Shared Design System
+   Used by: Locations, Staff, Coupons
+   ================================================================ */
+
+:root {
+    --bkc-primary:        #6C70DC;
+    --bkc-primary-light:  #eeeffe;
+    --bkc-primary-hover:  #575bca;
+    --bkc-success:        #12a05c;
+    --bkc-success-light:  #e6f7f0;
+    --bkc-danger:         #e74c3c;
+    --bkc-danger-light:   #fef0ee;
+    --bkc-warning:        #f59e0b;
+    --bkc-warning-light:  #fffbeb;
+    --bkc-muted:          #828f9a;
+    --bkc-border:         #e4ebf4;
+    --bkc-bg:             #f5f7fa;
+    --bkc-surface:        #ffffff;
+    --bkc-text:           #292d32;
+    --bkc-text-sm:        #5a6170;
+    --bkc-radius:         14px;
+    --bkc-shadow:         0 2px 12px rgba(0,0,0,0.07);
+    --bkc-shadow-hover:   0 8px 28px rgba(108,112,220,0.14);
+    --bkc-transition:     0.22s cubic-bezier(.4,0,.2,1);
+}
+
+.bkc-card-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 20px;
+}
+@media (min-width: 640px)  { .bkc-card-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .bkc-card-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 1440px) { .bkc-card-grid { grid-template-columns: repeat(4, 1fr); } }
+
+.bkc-card {
+    background: var(--bkc-surface);
+    border-radius: var(--bkc-radius);
+    box-shadow: var(--bkc-shadow);
+    border: 1px solid var(--bkc-border);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: box-shadow var(--bkc-transition), transform var(--bkc-transition);
+    position: relative;
+}
+.bkc-card:hover { box-shadow: var(--bkc-shadow-hover); transform: translateY(-2px); }
+.bkc-card::before {
+    content: '';
+    display: block;
+    height: 3px;
+    background: linear-gradient(90deg, var(--bkc-primary), #a78bfa);
+    flex-shrink: 0;
+}
+.bkc-card.bkc-card--hidden::before { background: var(--bkc-border); }
+
+.bkc-card__body   { padding: 18px 18px 14px; flex: 1; }
+.bkc-card__footer { padding: 12px 18px; border-top: 1px solid var(--bkc-border); display: flex; align-items: center; gap: 6px; }
+
+.bkc-avatar { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; border: 2.5px solid var(--bkc-primary-light); flex-shrink: 0; }
+.bkc-avatar-placeholder {
+    width: 52px; height: 52px; border-radius: 50%;
+    background: linear-gradient(135deg, #6C70DC 0%, #a78bfa 100%);
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 18px; font-weight: 800; color: #fff; flex-shrink: 0;
+    border: 2.5px solid var(--bkc-primary-light); text-transform: uppercase;
+}
+.bkc-avatar-placeholder--muted { background: linear-gradient(135deg, #94a3b8, #cbd5e1); }
+
+.bkc-card__identity { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.bkc-card__name-wrap { flex: 1; min-width: 0; }
+.bkc-card__name { font-size: 15px; font-weight: 700; color: var(--bkc-text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-bottom: 4px; }
+.bkc-card__sub  { font-size: 12px; color: var(--bkc-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.bkc-card__meta { display: flex; flex-direction: column; gap: 7px; }
+.bkc-meta-row { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--bkc-text-sm); min-width: 0; }
+.bkc-meta-row svg { width: 14px; height: 14px; color: var(--bkc-muted); flex-shrink: 0; }
+.bkc-meta-row span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.bkc-pill { display: inline-flex; align-items: center; gap: 5px; padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 700; letter-spacing: 0.04em; white-space: nowrap; flex-shrink: 0; }
+.bkc-pill__dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+.bkc-pill--active   { background: var(--bkc-success-light); color: var(--bkc-success); }
+.bkc-pill--active   .bkc-pill__dot { background: var(--bkc-success); }
+.bkc-pill--hidden   { background: #f1f3f5; color: var(--bkc-muted); }
+.bkc-pill--hidden   .bkc-pill__dot { background: var(--bkc-muted); }
+.bkc-pill--expired  { background: var(--bkc-danger-light); color: var(--bkc-danger); }
+.bkc-pill--expired  .bkc-pill__dot { background: var(--bkc-danger); }
+.bkc-pill--inactive { background: var(--bkc-warning-light); color: var(--bkc-warning); }
+.bkc-pill--inactive .bkc-pill__dot { background: var(--bkc-warning); }
+
+.bkc-cat-badge { display: inline-block; padding: 2px 8px; background: var(--bkc-primary-light); color: var(--bkc-primary); border-radius: 6px; font-size: 11px; font-weight: 600; }
+
+.bkc-coupon-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; gap: 8px; flex-wrap: wrap; }
+.bkc-coupon-code { font-family: 'Courier New', Courier, monospace; font-size: 16px; font-weight: 800; letter-spacing: 0.08em; color: var(--bkc-primary); background: var(--bkc-primary-light); padding: 5px 12px; border-radius: 8px; display: inline-block; }
+.bkc-coupon-code--expired  { color: var(--bkc-danger); background: var(--bkc-danger-light); }
+.bkc-coupon-code--inactive { color: var(--bkc-warning); background: var(--bkc-warning-light); }
+.bkc-coupon-discount { font-size: 26px; font-weight: 800; color: var(--bkc-success); margin: 10px 0 2px; line-height: 1; }
+.bkc-coupon-type { font-size: 12px; color: var(--bkc-muted); margin-bottom: 12px; }
+
+.bkc-action-btn { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border: 1.5px solid var(--bkc-border); border-radius: 8px; background: var(--bkc-surface); color: var(--bkc-muted); cursor: pointer; transition: all var(--bkc-transition); flex-shrink: 0; padding: 0; outline: none; }
+.bkc-action-btn:hover { border-color: var(--bkc-primary); color: var(--bkc-primary); background: var(--bkc-primary-light); }
+.bkc-action-btn--danger:hover { border-color: var(--bkc-danger); color: var(--bkc-danger); background: var(--bkc-danger-light); }
+.bkc-action-btn svg { width: 14px; height: 14px; pointer-events: none; }
+.bkc-action-spacer { flex: 1; }
+
+.bkc-toolbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 6px; }
+.bkc-search-wrap { position: relative; flex: 1; min-width: 200px; max-width: 360px; }
+.bkc-search-wrap svg { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); width: 15px; height: 15px; color: var(--bkc-muted); pointer-events: none; }
+.bkc-search-input { width: 100%; padding: 9px 14px 9px 36px; border: 1.5px solid var(--bkc-border); border-radius: 8px; font-size: 13px; color: var(--bkc-text); background: var(--bkc-surface); outline: none; transition: border-color var(--bkc-transition); }
+.bkc-search-input:focus { border-color: var(--bkc-primary); }
+.bkc-filter-select { padding: 9px 14px; border: 1.5px solid var(--bkc-border); border-radius: 8px; font-size: 13px; color: var(--bkc-text); background: var(--bkc-surface); outline: none; cursor: pointer; }
+
+.bkc-empty-state { grid-column: 1 / -1; text-align: center; padding: 64px 24px; color: var(--bkc-muted); }
+.bkc-empty-state svg { width: 52px; height: 52px; opacity: 0.25; display: block; margin: 0 auto 16px; }
+.bkc-empty-state h3 { font-size: 17px; font-weight: 700; color: var(--bkc-text); margin-bottom: 8px; }
+.bkc-empty-state p { font-size: 13px; }
+
+@media (max-width: 639px) {
+    .bkc-search-wrap { max-width: 100%; }
+    .bkc-toolbar { flex-direction: column; align-items: stretch; }
+    .bkc-filter-select { width: 100%; }
+}
