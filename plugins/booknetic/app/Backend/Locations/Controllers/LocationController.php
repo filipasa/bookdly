@@ -37,9 +37,9 @@ class LocationController extends Controller
         Capabilities::must('locations');
 
         // Intercept DataTable actions manually since we bypass DataTableUI
-        if (Post::has('fs-data-table-action')) {
+        if (isset($_POST['fs-data-table-action'])) {
             $action = Post::string('fs-data-table-action');
-            $ids = Post::array('ids', 'int');
+            $ids = Post::array('ids');
             if ($action === 'delete') {
                 $this->_delete($ids);
                 return $this->response(true);

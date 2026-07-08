@@ -19,9 +19,9 @@ class Controller extends \BookneticApp\Providers\Core\Controller
     public function index()
     {
         // Intercept DataTable actions manually since we bypass DataTableUI
-        if (Post::has('fs-data-table-action')) {
+        if (isset($_POST['fs-data-table-action'])) {
             $action = Post::string('fs-data-table-action');
-            $ids = Post::array('ids', 'int');
+            $ids = Post::array('ids');
             if ($action === 'delete' && Capabilities::userCan('coupons_delete')) {
                 Coupon::where('id', $ids)->delete();
                 return $this->response(true);
