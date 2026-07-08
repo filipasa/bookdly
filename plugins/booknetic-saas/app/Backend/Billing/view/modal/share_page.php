@@ -32,6 +32,17 @@ use BookneticApp\Providers\Helpers\Helper;
 			</div>
 		</div>
 
+		<?php
+		$isLandingPageApproved = false;
+		if ( class_exists('BookneticAddon\Tenantdirectory\Model\TenantDirectory') ) {
+			$directory = \BookneticAddon\Tenantdirectory\Model\TenantDirectory::noTenant()->where('tenant_id', Permission::tenantId())->fetch();
+			if ( $directory && $directory->status === 'approved' ) {
+				$isLandingPageApproved = true;
+			}
+		}
+		?>
+
+		<?php if ($isLandingPageApproved): ?>
 		<div class="form-row">
 			<div class="form-group col-md-12">
 				<label for="input_directory_page_url"><?php echo bkntcsaas__('Your directory profile URL')?>:</label>
@@ -43,6 +54,7 @@ use BookneticApp\Providers\Helpers\Helper;
 				?>">
 			</div>
 		</div>
+		<?php endif; ?>
 
 		<div class="form-row">
 			<div class="form-group col-md-12">
