@@ -104,55 +104,61 @@
 .bkc-action-btn svg { width: 14px; height: 14px; pointer-events: none; }
 .bkc-action-spacer { flex: 1; }
 
-.m_header .m_head_actions {
+.bkc-toolbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.bkc-search-wrap { position: relative; flex: 1; min-width: 200px; max-width: 360px; }
+.bkc-search-wrap svg { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); width: 15px; height: 15px; color: var(--bkc-muted); pointer-events: none; }
+.bkc-search-input { width: 100%; padding: 9px 14px 9px 36px; border: 1.5px solid var(--bkc-border); border-radius: 8px; font-size: 13px; color: var(--bkc-text); background: var(--bkc-surface); outline: none; transition: border-color var(--bkc-transition); }
+.bkc-search-input:focus { border-color: var(--bkc-primary); }
+.bkc-filter-select { padding: 9px 14px; border: 1.5px solid var(--bkc-border); border-radius: 8px; font-size: 13px; color: var(--bkc-text); background: var(--bkc-surface); outline: none; cursor: pointer; min-width: 140px; }
+
+/* Full-width Search Bar Styles */
+.bkc-search-container {
+    width: 100% !important;
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+}
+.bkc-search-wrap-full {
+    position: relative !important;
+    width: 100% !important;
+}
+.bkc-search-wrap-full svg {
+    position: absolute !important;
+    left: 16px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    width: 18px !important;
+    height: 18px !important;
+    color: var(--bkc-muted) !important;
+    pointer-events: none !important;
+}
+.bkc-search-input-full {
+    width: 100% !important;
+    height: 48px !important;
+    padding: 0 16px 0 48px !important;
+    border: 1px solid var(--bkc-border) !important;
+    border-radius: 8px !important;
+    font-size: 14px !important;
+    color: var(--bkc-text) !important;
+    background: var(--bkc-surface) !important;
+    outline: none !important;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.02) !important;
+    transition: border-color var(--bkc-transition) !important;
+}
+.bkc-search-input-full:focus {
+    border-color: var(--bkc-primary) !important;
+}
+.bkc-divider {
+    width: 100% !important;
+    border-bottom: 1px solid var(--bkc-border) !important;
+    margin-bottom: 24px !important;
+}
+
+.m_head_actions {
     display: flex !important;
     align-items: center !important;
-    gap: 10px !important;
-    flex-wrap: wrap !important;
-    float: right !important;
-    margin-top: 0 !important;
-}
-.bkc-toolbar {
-    display: inline-flex !important;
-    align-items: center !important;
-    gap: 10px !important;
-    margin: 0 !important;
-}
-.bkc-search-wrap {
-    position: relative;
-    width: 250px !important;
-}
-.bkc-search-wrap svg {
-    position: absolute;
-    left: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 15px;
-    height: 15px;
-    color: var(--bkc-muted);
-    pointer-events: none;
-}
-.bkc-search-input {
-    width: 100%;
-    padding: 9px 14px 9px 36px;
-    border: 1.5px solid var(--bkc-border);
-    border-radius: 8px;
-    font-size: 13px;
-    color: var(--bkc-text);
-    background: var(--bkc-surface);
-    outline: none;
-    transition: border-color var(--bkc-transition);
-}
-.bkc-search-input:focus { border-color: var(--bkc-primary); }
-.bkc-filter-select {
-    padding: 9px 14px;
-    border: 1.5px solid var(--bkc-border);
-    border-radius: 8px;
-    font-size: 13px;
-    color: var(--bkc-text);
-    background: var(--bkc-surface);
-    outline: none;
-    cursor: pointer;
+    gap: 12px !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
 }
 
 .bkc-empty-state { grid-column: 1 / -1; text-align: center; padding: 64px 24px; color: var(--bkc-muted); }
@@ -164,4 +170,9 @@
     .bkc-search-wrap { max-width: 100%; }
     .bkc-toolbar { flex-direction: column; align-items: stretch; }
     .bkc-filter-select { width: 100%; }
+    .m_head_actions {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        width: 100% !important;
+    }
 }
