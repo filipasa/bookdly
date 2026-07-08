@@ -539,22 +539,6 @@ class ShortcodesListener
 
             require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
             dbDelta($sql);
-
-            // Insert initial default reviews as seed data
-            $wpdb->insert($table_name, [
-                'tenant_id' => $dir->tenant_id,
-                'author_name' => 'Nelly Chi',
-                'rating' => 5,
-                'review_text' => 'Mila is absolutely fantastic! She is exceptionally skilled with acrylic work and really listens to what kind of design you want. I highly recommend visiting this salon.',
-                'created_at' => date('Y-m-d H:i:s', strtotime('-1 day'))
-            ]);
-            $wpdb->insert($table_name, [
-                'tenant_id' => $dir->tenant_id,
-                'author_name' => 'Sumer Victoria',
-                'rating' => 5,
-                'review_text' => 'Stunning salon, super friendly environment, and snacks are a wonderful touch. My nails look absolutely beautiful. Will definitely be returning!',
-                'created_at' => date('Y-m-d H:i:s', strtotime('-2 days'))
-            ]);
         }
 
         $reviews = $wpdb->get_results($wpdb->prepare(
@@ -563,7 +547,7 @@ class ShortcodesListener
         ));
 
         $reviews_count = count($reviews);
-        $avg_rating = 5.0;
+        $avg_rating = 0.0;
         if ($reviews_count > 0) {
             $total_rating = 0;
             foreach ($reviews as $rev) {
@@ -571,7 +555,8 @@ class ShortcodesListener
             }
             $avg_rating = round($total_rating / $reviews_count, 1);
         } else {
-            $reviews_count = 12; // fallback count
+            $reviews_count = 0;
+            $avg_rating = 0.0;
         }
 
         $gallery = json_decode($dir->gallery, true) ?: [];
