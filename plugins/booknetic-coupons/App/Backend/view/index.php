@@ -53,7 +53,7 @@ $svgHist   = '<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0
                 <option value="fixed"><?php echo bkntc__('Fixed Amount') ?></option>
             </select>
         </div>
-        <button type="button" class="btn btn-primary mt-2 add_new_coupon_btn">+ <?php echo bkntc__('ADD COUPON') ?></button>
+        <button type="button" class="btn btn-primary mt-2" id="addBtn">+ <?php echo bkntc__('ADD COUPON') ?></button>
     </div>
 </div>
 
@@ -139,26 +139,68 @@ $svgHist   = '<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0
 </div>
 
 <script>
-(function(){
-    var searchEl = document.getElementById('bkc_coupon_search');
-    var statusEl = document.getElementById('bkc_coupon_status_filter');
-    var typeEl   = document.getElementById('bkc_coupon_type_filter');
-    function filter(){
-        var q      = searchEl.value.toLowerCase();
-        var status = statusEl.value;
-        var type   = typeEl.value;
-        document.querySelectorAll('#bkc_coupons_grid .bkc-card').forEach(function(card){
-            var code    = (card.dataset.code || '').toLowerCase();
-            var cStatus = card.dataset.status;
-            var cType   = card.dataset.type;
-            var show    = (!q || code.includes(q))
-                       && (!status || cStatus === status)
-                       && (!type   || cType   === type);
-            card.style.display = show ? '' : 'none';
+(function($){
+    $(document).ready(function(){
+        // Mock dataTable reload for refresh
+        booknetic.dataTable.reload = function() {
+            location.reload();
+        };
+
+        // Initialize select2 on dropdowns
+        $('.bkc-filter-select').select2({
+            theme: 'bootstrap',
+            placeholder: booknetic.__('Select'),
+            allowClear: true
         });
-    }
-    searchEl.addEventListener('input', filter);
-    statusEl.addEventListener('change', filter);
-    typeEl.addEventListener('change', filter);
-})();
+
+        // Click actions
+        $(document).on('click', '.edit_coupon_btn', function() {
+            var id = $(this).data('id');
+            booknetic.dataTable.actionCallbacks['edit']([id]);
+        });
+
+        $(document).on('click', '.view_coupon_history_btn', function() {
+            var id = $(this).data('id');
+            booknetic.loadModal('Coupons.coupons_usage_history', { id: id } , {'width': "800px"} );
+        });
+
+        $(document).on('click', '.delete_coupon_btn', function() {
+            var id = $(this).data('id');
+            booknetic.confirm(booknetic.__('are_you_sure_want_to_delete'), 'danger', 'trash', function() {
+                booknetic.dataTable.doAction('delete', [id], {}, function() {
+                    booknetic.toast(booknetic.__('Deleted'), 'success', 2000);
+                });
+            });
+        });
+
+        // Filtering
+        var searchEl = $('#bkc_coupon_search');
+        var statusEl = $('#bkc_coupon_status_filter');
+        var typeEl   = $('#bkc_coupon_type_filter');
+
+        function filter(){
+            var q = searchEl.val().toLowerCase();
+            var status = statusEl.val();
+            var type = typeEl.val();
+            $('#bkc_coupons_grid .bkc-card').each(function(){
+                var card = $(this);
+                var code    = (card.data('code') || '').toLowerCase();
+                var cStatus = card.data('status');
+                var cType   = card.data('type');
+                var show    = (!q || code.indexOf(q) > -1)
+                           && (!status || cStatus === status)
+                           && (!type   || cType   === type);
+                if (show) {
+                    card.show();
+                } else {
+                    card.hide();
+                }
+            });
+        }
+
+        searchEl.on('input', filter);
+        statusEl.on('change', filter);
+        typeEl.on('change', filter);
+    });
+})(jQuery);
 </script>

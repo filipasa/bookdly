@@ -53,7 +53,7 @@ $svgSearch  = '<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="
             </select>
         </div>
         <?php if ($canAdd): ?>
-            <button type="button" class="btn btn-primary mt-2 add_new_staff_btn">+ <?php echo bkntc__('ADD STAFF') ?></button>
+            <button type="button" class="btn btn-primary mt-2" id="addBtn">+ <?php echo bkntc__('ADD STAFF') ?></button>
         <?php endif; ?>
     </div>
 </div>
@@ -123,23 +123,68 @@ $svgSearch  = '<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="
 </div>
 
 <script>
-(function(){
-    var searchEl  = document.getElementById('bkc_staff_search');
-    var statusEl  = document.getElementById('bkc_staff_status_filter');
-    function filter(){
-        var q      = searchEl.value.toLowerCase();
-        var status = statusEl.value;
-        document.querySelectorAll('#bkc_staff_grid .bkc-card').forEach(function(card){
-            var name   = (card.dataset.name  || '').toLowerCase();
-            var email  = (card.dataset.email || '').toLowerCase();
-            var phone  = (card.dataset.phone || '').toLowerCase();
-            var active = card.dataset.active;
-            var show   = (!q || name.includes(q) || email.includes(q) || phone.includes(q))
-                      && (status === '' || active === status);
-            card.style.display = show ? '' : 'none';
+(function($){
+    $(document).ready(function(){
+        // Mock dataTable reload for refresh
+        booknetic.dataTable.reload = function() {
+            location.reload();
+        };
+
+        // Initialize select2 on dropdowns
+        $('.bkc-filter-select').select2({
+            theme: 'bootstrap',
+            placeholder: booknetic.__('Select'),
+            allowClear: true
         });
-    }
-    searchEl.addEventListener('input', filter);
-    statusEl.addEventListener('change', filter);
-})();
+
+        // Click actions
+        $(document).on('click', '.edit_staff_btn', function() {
+            var id = $(this).data('id');
+            booknetic.dataTable.actionCallbacks['edit']([id]);
+        });
+
+        $(document).on('click', '.duplicate_staff_btn', function() {
+            var id = $(this).data('id');
+            booknetic.dataTable.doAction('duplicate', [id], {}, function() {
+                booknetic.toast(booknetic.__('Duplicated'), 'success', 2000);
+            });
+        });
+
+        $(document).on('click', '.share_staff_btn', function() {
+            var id = $(this).data('id');
+            booknetic.dataTable.actionCallbacks['share']([id]);
+        });
+
+        $(document).on('click', '.delete_staff_btn', function() {
+            var id = $(this).data('id');
+            booknetic.dataTable.actionCallbacks['delete']([id]);
+        });
+
+        // Filtering
+        var searchEl  = $('#bkc_staff_search');
+        var statusEl  = $('#bkc_staff_status_filter');
+
+        function filter(){
+            var q = searchEl.val().toLowerCase();
+            var status = statusEl.val();
+            $('#bkc_staff_grid .bkc-card').each(function(){
+                var card   = $(this);
+                var name   = (card.data('name') || '').toLowerCase();
+                var email  = (card.data('email') || '').toLowerCase();
+                var phone  = (card.data('phone') || '').toLowerCase();
+                var active = card.data('active');
+                var show   = (!q || name.indexOf(q) > -1 || email.indexOf(q) > -1 || phone.indexOf(q) > -1)
+                          && (status === '' || String(active) === String(status));
+                if (show) {
+                    card.show();
+                } else {
+                    card.hide();
+                }
+            });
+        }
+
+        searchEl.on('input', filter);
+        statusEl.on('change', filter);
+    });
+})(jQuery);
 </script>

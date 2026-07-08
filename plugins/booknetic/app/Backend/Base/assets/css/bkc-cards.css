@@ -26,14 +26,13 @@
 }
 
 .bkc-card-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 16px;
-    margin-top: 20px;
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(285px, 1fr)) !important;
+    gap: 20px !important;
+    margin-top: 20px !important;
+    width: 100% !important;
+    align-items: stretch !important;
 }
-@media (min-width: 640px)  { .bkc-card-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 1024px) { .bkc-card-grid { grid-template-columns: repeat(3, 1fr); } }
-@media (min-width: 1440px) { .bkc-card-grid { grid-template-columns: repeat(4, 1fr); } }
 
 .bkc-card {
     background: var(--bkc-surface);

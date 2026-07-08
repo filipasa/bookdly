@@ -49,7 +49,7 @@ $apiKey = Helper::getOption('google_maps_api_key', '', false);
                 <option value="0"><?php echo bkntc__('Hidden') ?></option>
             </select>
         </div>
-        <button type="button" class="btn btn-primary mt-2 add_new_location_btn">+ <?php echo bkntc__('ADD LOCATION') ?></button>
+        <button type="button" class="btn btn-primary mt-2" id="addBtn">+ <?php echo bkntc__('ADD LOCATION') ?></button>
     </div>
 </div>
 
@@ -116,26 +116,75 @@ $apiKey = Helper::getOption('google_maps_api_key', '', false);
 </div>
 
 <script>
-(function(){
-    var searchEl  = document.getElementById('bkc_location_search');
-    var catEl     = document.getElementById('bkc_location_cat_filter');
-    var statusEl  = document.getElementById('bkc_location_status_filter');
-    function filter(){
-        var q = searchEl.value.toLowerCase();
-        var cat = catEl.value;
-        var status = statusEl.value;
-        document.querySelectorAll('#bkc_locations_grid .bkc-card').forEach(function(card){
-            var name   = (card.dataset.name || '').toLowerCase();
-            var cardCat= card.dataset.cat;
-            var active = card.dataset.active;
-            var show   = (!q || name.includes(q))
-                      && (!cat || cardCat === cat)
-                      && (status === '' || active === status);
-            card.style.display = show ? '' : 'none';
+(function($){
+    $(document).ready(function(){
+        // Mock dataTable functions if needed
+        booknetic.dataTable.reload = function() {
+            location.reload();
+        };
+
+        // Initialize select2 on dropdowns
+        $('.bkc-filter-select').select2({
+            theme: 'bootstrap',
+            placeholder: booknetic.__('Select'),
+            allowClear: true
         });
-    }
-    searchEl.addEventListener('input', filter);
-    catEl.addEventListener('change', filter);
-    statusEl.addEventListener('change', filter);
-})();
+
+        // Click actions
+        $(document).on('click', '.edit_location_btn', function() {
+            var id = $(this).data('id');
+            booknetic.dataTable.actionCallbacks['edit']([id]);
+        });
+
+        $(document).on('click', '.duplicate_location_btn', function() {
+            var id = $(this).data('id');
+            booknetic.dataTable.doAction('duplicate', [id], {}, function() {
+                booknetic.toast(booknetic.__('Duplicated'), 'success', 2000);
+            });
+        });
+
+        $(document).on('click', '.share_location_btn', function() {
+            var id = $(this).data('id');
+            booknetic.dataTable.actionCallbacks['share']([id]);
+        });
+
+        $(document).on('click', '.delete_location_btn', function() {
+            var id = $(this).data('id');
+            booknetic.confirm(booknetic.__('are_you_sure_want_to_delete'), 'danger', 'trash', function() {
+                booknetic.dataTable.doAction('delete', [id], {}, function() {
+                    booknetic.toast(booknetic.__('Deleted'), 'success', 2000);
+                });
+            });
+        });
+
+        // Filtering
+        var searchEl  = $('#bkc_location_search');
+        var catEl     = $('#bkc_location_cat_filter');
+        var statusEl  = $('#bkc_location_status_filter');
+
+        function filter(){
+            var q = searchEl.val().toLowerCase();
+            var cat = catEl.val();
+            var status = statusEl.val();
+            $('#bkc_locations_grid .bkc-card').each(function(){
+                var card = $(this);
+                var name   = (card.data('name') || '').toLowerCase();
+                var cardCat= card.data('cat');
+                var active = card.data('active');
+                var show   = (!q || name.indexOf(q) > -1)
+                          && (!cat || String(cardCat) === String(cat))
+                          && (status === '' || String(active) === String(status));
+                if (show) {
+                    card.show();
+                } else {
+                    card.hide();
+                }
+            });
+        }
+
+        searchEl.on('input', filter);
+        catEl.on('change', filter);
+        statusEl.on('change', filter);
+    });
+})(jQuery);
 </script>
