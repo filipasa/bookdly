@@ -216,13 +216,37 @@
 .bkc-empty-state h3 { font-size: 17px; font-weight: 700; color: var(--bkc-text); margin-bottom: 8px; }
 .bkc-empty-state p { font-size: 13px; }
 
-@media (max-width: 639px) {
-    .bkc-search-wrap { max-width: 100%; }
-    .bkc-toolbar { flex-direction: column; align-items: stretch; }
-    .bkc-filter-select { width: 100%; }
+@media (max-width: 767px) {
+    .m_header {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 12px !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
     .m_head_actions {
+        width: 100% !important;
+        margin-left: 0 !important;
+    }
+    .m_head_actions .btn {
+        width: 100% !important;
+    }
+    .bkc-page-container {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+    .bkc-search-container {
         flex-direction: column !important;
         align-items: stretch !important;
+        gap: 10px !important;
+    }
+    .bkc-search-wrap-full {
         width: 100% !important;
+    }
+    .bkc-search-container .select2-container {
+        width: 100% !important;
+    }
+    .bkc-card-grid {
+        gap: 16px !important;
     }
 }
