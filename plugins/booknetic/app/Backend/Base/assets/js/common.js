@@ -112,7 +112,7 @@
       .on("click", ".close_menu_s", function () {
         $(this).remove();
         $(".left_side_menu")
-          .removeClass("slideInLeft")
+          .removeClass("slideInLeft is_hovered")
           .addClass("slideOutLeft")
           .fadeOut(500, function () {
             $(this).removeClass("slideOutLeft animated faster");
@@ -121,7 +121,7 @@
       })
       .on("click", "#open_menu_bar", function () {
         $(".left_side_menu")
-          .addClass("animated faster slideInLeft")
+          .addClass("animated faster slideInLeft is_hovered")
           .fadeIn(500);
         $("body").append(
           '<div class="close_menu_s animated faster fadeIn"></div>'
