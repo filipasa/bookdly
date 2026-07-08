@@ -116,12 +116,6 @@
 .bkc-empty-state h3 { font-size: 17px; font-weight: 700; color: var(--bkc-text); margin-bottom: 8px; }
 .bkc-empty-state p { font-size: 13px; }
 
-.bkc-toolbar-container {
-    margin-top: 15px !important;
-    margin-bottom: 25px !important;
-    width: 100% !important;
-}
-
 @media (max-width: 639px) {
     .bkc-search-wrap { max-width: 100%; }
     .bkc-toolbar { flex-direction: column; align-items: stretch; }

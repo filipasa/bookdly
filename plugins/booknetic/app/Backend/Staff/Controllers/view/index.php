@@ -41,23 +41,20 @@ $svgSearch  = '<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="
 <div class="m_header">
     <div class="m_head_title"><?php echo bkntc__('Staff') ?> <span class="badge badge-secondary"><?php echo count($staffList) ?></span></div>
     <div class="m_head_actions">
-        <?php if ($canAdd): ?>
-            <button type="button" class="btn btn-primary" id="addBtn">+ <?php echo bkntc__('ADD STAFF') ?></button>
-        <?php endif; ?>
-    </div>
-</div>
-
-<div class="bkc-toolbar-container">
-    <div class="bkc-toolbar">
-        <div class="bkc-search-wrap">
-            <?php echo $svgSearch ?>
-            <input class="bkc-search-input" type="text" id="bkc_staff_search" placeholder="<?php echo bkntc__('Search by name, email, phone…') ?>">
+        <div class="bkc-toolbar">
+            <div class="bkc-search-wrap">
+                <?php echo $svgSearch ?>
+                <input class="bkc-search-input" type="text" id="bkc_staff_search" placeholder="<?php echo bkntc__('Search by name, email, phone…') ?>">
+            </div>
+            <select class="bkc-filter-select" id="bkc_staff_status_filter">
+                <option value=""><?php echo bkntc__('All Statuses') ?></option>
+                <option value="1"><?php echo bkntc__('Active') ?></option>
+                <option value="0"><?php echo bkntc__('Hidden') ?></option>
+            </select>
         </div>
-        <select class="bkc-filter-select" id="bkc_staff_status_filter">
-            <option value=""><?php echo bkntc__('All Statuses') ?></option>
-            <option value="1"><?php echo bkntc__('Active') ?></option>
-            <option value="0"><?php echo bkntc__('Hidden') ?></option>
-        </select>
+        <?php if ($canAdd): ?>
+            <button type="button" class="btn btn-primary mt-2" id="addBtn">+ <?php echo bkntc__('ADD STAFF') ?></button>
+        <?php endif; ?>
     </div>
 </div>
 
