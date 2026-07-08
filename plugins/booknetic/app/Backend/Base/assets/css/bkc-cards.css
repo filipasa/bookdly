@@ -127,13 +127,14 @@
     margin-bottom: 16px !important;
     display: flex !important;
     flex-direction: row !important;
+    flex-wrap: nowrap !important;
     align-items: center !important;
     gap: 12px !important;
 }
 .bkc-search-wrap-full {
     position: relative !important;
     flex: 1 !important;
-    min-width: 200px !important;
+    min-width: 150px !important;
 }
 .bkc-search-wrap-full svg {
     position: absolute !important;
@@ -163,9 +164,11 @@
 }
 
 /* Select2 / Filter alignment next to search bar */
-.bkc-search-container .select2-container--default {
-    width: auto !important;
-    min-width: 160px !important;
+.bkc-search-container .select2-container {
+    display: inline-block !important;
+    vertical-align: middle !important;
+    flex-shrink: 0 !important;
+    width: 160px !important;
 }
 .bkc-search-container .select2-container--default .select2-selection--single {
     height: 38px !important;
