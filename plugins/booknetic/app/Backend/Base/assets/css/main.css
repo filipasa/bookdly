@@ -4374,33 +4374,6 @@ body:not(.rtl) .right-addon input { padding-right: 40px; }
         display: flex !important;
         flex-direction: column !important;
     }
-    /* Reset and disable collapsed sidebar overrides on mobile/tablet devices */
-    .left_side_menu.sidebar_collapsed {
-        width: 260px !important;
-    }
-    .left_side_menu.sidebar_collapsed:not(:hover):not(.is_hovered) .l_m_nav_item_text,
-    .left_side_menu.sidebar_collapsed:not(:hover):not(.is_hovered) .boostore-button-text,
-    .left_side_menu.sidebar_collapsed:not(:hover):not(.is_hovered) .collapse_menu_text,
-    .left_side_menu.sidebar_collapsed:not(:hover):not(.is_hovered) .is_collapse_icon,
-    .left_side_menu.sidebar_collapsed:not(:hover):not(.is_hovered) .is_sub,
-    .left_side_menu.sidebar_collapsed:not(:hover):not(.is_hovered) .head_logo_xl {
-        display: block !important;
-    }
-    .left_side_menu.sidebar_collapsed:not(:hover):not(.is_hovered) .l_m_nav_item_text,
-    .left_side_menu.sidebar_collapsed:not(:hover):not(.is_hovered) .boostore-button-text,
-    .left_side_menu.sidebar_collapsed:not(:hover):not(.is_hovered) .collapse_menu_text {
-        display: inline-block !important;
-    }
-    .left_side_menu.sidebar_collapsed:not(:hover):not(.is_hovered) .head_logo_sm {
-        display: none !important;
-    }
-    .left_side_menu.sidebar_collapsed .boostore-button-body {
-        padding: 16px !important;
-        justify-content: space-between !important;
-    }
-    .left_side_menu.sidebar_collapsed .left_side_menu_footer {
-        display: none !important;
-    }
     .close_menu_s {
         z-index: 9999 !important;
     }
@@ -4584,6 +4557,51 @@ body:not(.rtl) .right-addon input { padding-right: 40px; }
 
 .left_side_menu.sidebar_collapsed:not(:hover):not(.is_hovered) .head_logo_sm {
     display: block !important;
+}
+
+
+/* Mobile & Tablet Specific Reset for Collapsed Sidebar States */
+@media (max-width: 992px) {
+    .left_side_menu.sidebar_collapsed {
+        width: 260px !important;
+    }
+    .left_side_menu.sidebar_collapsed:not(:hover):not(.is_hovered) .l_m_nav_item_text,
+    .left_side_menu.sidebar_collapsed:not(:hover):not(.is_hovered) .boostore-button-text,
+    .left_side_menu.sidebar_collapsed:not(:hover):not(.is_hovered) .collapse_menu_text,
+    .left_side_menu.sidebar_collapsed:not(:hover):not(.is_hovered) .is_collapse_icon,
+    .left_side_menu.sidebar_collapsed:not(:hover):not(.is_hovered) .is_sub,
+    .left_side_menu.sidebar_collapsed:not(:hover):not(.is_hovered) .head_logo_xl {
+        display: block !important;
+    }
+    .left_side_menu.sidebar_collapsed:not(:hover):not(.is_hovered) .l_m_nav_item_text,
+    .left_side_menu.sidebar_collapsed:not(:hover):not(.is_hovered) .boostore-button-text,
+    .left_side_menu.sidebar_collapsed:not(:hover):not(.is_hovered) .collapse_menu_text {
+        display: inline-block !important;
+    }
+    .left_side_menu.sidebar_collapsed:not(:hover):not(.is_hovered) .head_logo_sm {
+        display: none !important;
+    }
+    .left_side_menu.sidebar_collapsed .boostore-button-body {
+        padding: 16px !important;
+        justify-content: space-between !important;
+    }
+    .left_side_menu.sidebar_collapsed .left_side_menu_footer {
+        display: none !important;
+    }
+    
+    /* Neutralize hover/active transform transitions to prevent reflow lags on mobile touch */
+    .left_side_menu:hover,
+    .left_side_menu.is_hovered,
+    .left_side_menu.sidebar_collapsed:hover,
+    .left_side_menu.sidebar_collapsed.is_hovered {
+        width: 260px !important;
+    }
+    .left_side_menu:hover .l_m_nav_item_text,
+    .left_side_menu.is_hovered .l_m_nav_item_text,
+    .left_side_menu.sidebar_collapsed:hover .l_m_nav_item_text,
+    .left_side_menu.sidebar_collapsed.is_hovered .l_m_nav_item_text {
+        display: inline-block !important;
+    }
 }
 
 
