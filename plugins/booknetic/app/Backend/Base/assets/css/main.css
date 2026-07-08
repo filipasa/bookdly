@@ -4588,6 +4588,9 @@ body:not(.rtl) .right-addon input { padding-right: 40px; }
     .left_side_menu.sidebar_collapsed .left_side_menu_footer {
         display: none !important;
     }
+    .left_side_menu.sidebar_collapsed > .l_m_nav > .l_m_nav_item > .l_m_nav_item_link > .l_m_nav_item_icon {
+        margin-right: 12px !important;
+    }
     
     /* Neutralize hover/active transform transitions to prevent reflow lags on mobile touch */
     .left_side_menu:hover,
