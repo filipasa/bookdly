@@ -104,12 +104,56 @@
 .bkc-action-btn svg { width: 14px; height: 14px; pointer-events: none; }
 .bkc-action-spacer { flex: 1; }
 
-.bkc-toolbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 6px; }
-.bkc-search-wrap { position: relative; flex: 1; min-width: 200px; max-width: 360px; }
-.bkc-search-wrap svg { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); width: 15px; height: 15px; color: var(--bkc-muted); pointer-events: none; }
-.bkc-search-input { width: 100%; padding: 9px 14px 9px 36px; border: 1.5px solid var(--bkc-border); border-radius: 8px; font-size: 13px; color: var(--bkc-text); background: var(--bkc-surface); outline: none; transition: border-color var(--bkc-transition); }
+.m_header .m_head_actions {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    flex-wrap: wrap !important;
+    float: right !important;
+    margin-top: 0 !important;
+}
+.bkc-toolbar {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    margin: 0 !important;
+}
+.bkc-search-wrap {
+    position: relative;
+    width: 250px !important;
+}
+.bkc-search-wrap svg {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 15px;
+    color: var(--bkc-muted);
+    pointer-events: none;
+}
+.bkc-search-input {
+    width: 100%;
+    padding: 9px 14px 9px 36px;
+    border: 1.5px solid var(--bkc-border);
+    border-radius: 8px;
+    font-size: 13px;
+    color: var(--bkc-text);
+    background: var(--bkc-surface);
+    outline: none;
+    transition: border-color var(--bkc-transition);
+}
 .bkc-search-input:focus { border-color: var(--bkc-primary); }
-.bkc-filter-select { padding: 9px 14px; border: 1.5px solid var(--bkc-border); border-radius: 8px; font-size: 13px; color: var(--bkc-text); background: var(--bkc-surface); outline: none; cursor: pointer; }
+.bkc-filter-select {
+    padding: 9px 14px;
+    border: 1.5px solid var(--bkc-border);
+    border-radius: 8px;
+    font-size: 13px;
+    color: var(--bkc-text);
+    background: var(--bkc-surface);
+    outline: none;
+    cursor: pointer;
+}
 
 .bkc-empty-state { grid-column: 1 / -1; text-align: center; padding: 64px 24px; color: var(--bkc-muted); }
 .bkc-empty-state svg { width: 52px; height: 52px; opacity: 0.25; display: block; margin: 0 auto 16px; }
