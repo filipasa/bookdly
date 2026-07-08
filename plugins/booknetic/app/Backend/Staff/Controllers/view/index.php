@@ -130,66 +130,72 @@ $svgSearch  = '<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="
 <script>
 (function($){
     $(document).ready(function(){
-        // Mock dataTable reload for refresh
-        booknetic.dataTable.reload = function() {
-            location.reload();
-        };
+        try {
+            // Mock dataTable reload for refresh
+            booknetic.dataTable.reload = function() {
+                location.reload();
+            };
 
-        // Initialize select2 on dropdowns
-        $('.bkc-filter-select').select2({
-            theme: 'bootstrap',
-            placeholder: booknetic.__('Select'),
-            allowClear: true
-        });
+            // Initialize select2 on dropdowns with a short timeout to prevent race conditions
+            setTimeout(function() {
+                $('.bkc-filter-select').select2({
+                    theme: 'bootstrap',
+                    placeholder: booknetic.__('Select'),
+                    allowClear: true
+                });
+            }, 50);
 
-        // Click actions
-        $(document).on('click', '.edit_staff_btn', function() {
-            var id = $(this).data('id');
-            booknetic.dataTable.actionCallbacks['edit']([id]);
-        });
-
-        $(document).on('click', '.duplicate_staff_btn', function() {
-            var id = $(this).data('id');
-            booknetic.dataTable.doAction('duplicate', [id], {}, function() {
-                booknetic.toast(booknetic.__('Duplicated'), 'success', 2000);
+            // Click actions
+            $(document).on('click', '.edit_staff_btn', function() {
+                var id = $(this).data('id');
+                booknetic.dataTable.actionCallbacks['edit']([id]);
             });
-        });
 
-        $(document).on('click', '.share_staff_btn', function() {
-            var id = $(this).data('id');
-            booknetic.dataTable.actionCallbacks['share']([id]);
-        });
-
-        $(document).on('click', '.delete_staff_btn', function() {
-            var id = $(this).data('id');
-            booknetic.dataTable.actionCallbacks['delete']([id]);
-        });
-
-        // Filtering
-        var searchEl  = $('#bkc_staff_search');
-        var statusEl  = $('#bkc_staff_status_filter');
-
-        function filter(){
-            var q = searchEl.val().toLowerCase();
-            var status = statusEl.val();
-            $('#bkc_staff_grid .bkc-card').each(function(){
-                var card   = $(this);
-                var name   = (card.data('name') || '').toLowerCase();
-                var email  = (card.data('email') || '').toLowerCase();
-                var phone  = (card.data('phone') || '').toLowerCase();
-                var active = card.data('active');
-                var show   = (!q || name.indexOf(q) > -1 || email.indexOf(q) > -1 || phone.indexOf(q) > -1)
-                          && (status === '' || String(active) === String(status));
-                if (show) {
-                    card.show();
-                } else {
-                    card.hide();
-                }
+            $(document).on('click', '.duplicate_staff_btn', function() {
+                var id = $(this).data('id');
+                booknetic.dataTable.doAction('duplicate', [id], {}, function() {
+                    booknetic.toast(booknetic.__('Duplicated'), 'success', 2000);
+                });
             });
+
+            $(document).on('click', '.share_staff_btn', function() {
+                var id = $(this).data('id');
+                booknetic.dataTable.actionCallbacks['share']([id]);
+            });
+
+            $(document).on('click', '.delete_staff_btn', function() {
+                var id = $(this).data('id');
+                booknetic.dataTable.actionCallbacks['delete']([id]);
+            });
+
+            // Filtering
+            var searchEl  = $('#bkc_staff_search');
+            var statusEl  = $('#bkc_staff_status_filter');
+
+            function filter(){
+                var q = searchEl.val().toLowerCase();
+                var status = statusEl.val();
+                $('#bkc_staff_grid .bkc-card').each(function(){
+                    var card   = $(this);
+                    var name   = (card.data('name') || '').toLowerCase();
+                    var email  = (card.data('email') || '').toLowerCase();
+                    var phone  = (card.data('phone') || '').toLowerCase();
+                    var active = card.data('active');
+                    var show   = (!q || name.indexOf(q) > -1 || email.indexOf(q) > -1 || phone.indexOf(q) > -1)
+                              && (status === '' || String(active) === String(status));
+                    if (show) {
+                        card.show();
+                    } else {
+                        card.hide();
+                    }
+                });
+            }
+
+            searchEl.on('input', filter);
+            statusEl.on('change', filter);
+        } catch (err) {
+            console.error("Staff layout JS error:", err);
         }
-
-        searchEl.on('input', filter);
-        statusEl.on('change', filter);
     });
 })(jQuery);
 </script>
