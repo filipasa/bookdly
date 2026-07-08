@@ -17,6 +17,7 @@ use BookneticApp\Providers\Helpers\Helper;
 use BookneticApp\Providers\IoC\Attributes\Component;
 use BookneticApp\Providers\UI\Abstracts\AbstractDataTableUI;
 use BookneticApp\Providers\UI\DataTableUI;
+use BookneticApp\Providers\Request\Post;
 
 #[Component]
 class LocationController extends Controller
