@@ -34,7 +34,7 @@ $svgHist   = '<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0
 <script type="text/javascript" src="<?php echo CouponsAddon::loadAsset('assets/backend/js/info.js') ?>"></script>
 
 <div class="m_header">
-    <div class="m_head_title"><?php echo bkntc__('Coupons') ?> <span class="badge badge-secondary"><?php echo count($coupons) ?></span></div>
+    <div class="m_head_title"><?php echo bkntc__('Coupons') ?> <span class="badge badge-warning row_count"><?php echo count($coupons) ?></span></div>
     <div class="m_head_actions">
         <select class="bkc-filter-select" id="bkc_coupon_status_filter">
             <option value=""><?php echo bkntc__('All Statuses') ?></option>

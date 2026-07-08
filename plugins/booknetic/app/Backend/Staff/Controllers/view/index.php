@@ -39,7 +39,7 @@ $svgSearch  = '<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="
 <script type="application/javascript" src="<?php echo Helper::assets('js/staff.js', 'Staff')?>" id="staff-js12394610" data-edit="<?php echo $parameters['edit']?>"></script>
 
 <div class="m_header">
-    <div class="m_head_title"><?php echo bkntc__('Staff') ?> <span class="badge badge-secondary"><?php echo count($staffList) ?></span></div>
+    <div class="m_head_title"><?php echo bkntc__('Staff') ?> <span class="badge badge-warning row_count"><?php echo count($staffList) ?></span></div>
     <div class="m_head_actions">
         <select class="bkc-filter-select" id="bkc_staff_status_filter">
             <option value=""><?php echo bkntc__('All Statuses') ?></option>

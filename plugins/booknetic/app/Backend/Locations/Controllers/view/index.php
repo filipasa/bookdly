@@ -30,7 +30,7 @@ $apiKey = Helper::getOption('google_maps_api_key', '', false);
 <script type="text/javascript" src="<?php echo Helper::assets('js/locations.js', 'Locations')?>"></script>
 
 <div class="m_header">
-    <div class="m_head_title"><?php echo bkntc__('Locations') ?> <span class="badge badge-secondary"><?php echo count($locations) ?></span></div>
+    <div class="m_head_title"><?php echo bkntc__('Locations') ?> <span class="badge badge-warning row_count"><?php echo count($locations) ?></span></div>
     <div class="m_head_actions">
         <select class="bkc-filter-select" id="bkc_location_cat_filter">
             <option value=""><?php echo bkntc__('All Categories') ?></option>
