@@ -32,24 +32,27 @@ $apiKey = Helper::getOption('google_maps_api_key', '', false);
 <div class="m_header">
     <div class="m_head_title"><?php echo bkntc__('Locations') ?> <span class="badge badge-secondary"><?php echo count($locations) ?></span></div>
     <div class="m_head_actions">
-        <div class="bkc-toolbar">
-            <div class="bkc-search-wrap">
-                <?php echo $svgSearch ?>
-                <input class="bkc-search-input" type="text" id="bkc_location_search" placeholder="<?php echo bkntc__('Search by name, address, phone…') ?>">
-            </div>
-            <select class="bkc-filter-select" id="bkc_location_cat_filter">
-                <option value=""><?php echo bkntc__('All Categories') ?></option>
-                <?php foreach ($categories as $id => $name): ?>
-                    <option value="<?php echo (int)$id ?>"><?php echo htmlspecialchars($name) ?></option>
-                <?php endforeach; ?>
-            </select>
-            <select class="bkc-filter-select" id="bkc_location_status_filter">
-                <option value=""><?php echo bkntc__('All Statuses') ?></option>
-                <option value="1"><?php echo bkntc__('Active') ?></option>
-                <option value="0"><?php echo bkntc__('Hidden') ?></option>
-            </select>
+        <button type="button" class="btn btn-primary" id="addBtn">+ <?php echo bkntc__('ADD LOCATION') ?></button>
+    </div>
+</div>
+
+<div class="bkc-toolbar-container">
+    <div class="bkc-toolbar">
+        <div class="bkc-search-wrap">
+            <?php echo $svgSearch ?>
+            <input class="bkc-search-input" type="text" id="bkc_location_search" placeholder="<?php echo bkntc__('Search by name, address, phone…') ?>">
         </div>
-        <button type="button" class="btn btn-primary mt-2" id="addBtn">+ <?php echo bkntc__('ADD LOCATION') ?></button>
+        <select class="bkc-filter-select" id="bkc_location_cat_filter">
+            <option value=""><?php echo bkntc__('All Categories') ?></option>
+            <?php foreach ($categories as $id => $name): ?>
+                <option value="<?php echo (int)$id ?>"><?php echo htmlspecialchars($name) ?></option>
+            <?php endforeach; ?>
+        </select>
+        <select class="bkc-filter-select" id="bkc_location_status_filter">
+            <option value=""><?php echo bkntc__('All Statuses') ?></option>
+            <option value="1"><?php echo bkntc__('Active') ?></option>
+            <option value="0"><?php echo bkntc__('Hidden') ?></option>
+        </select>
     </div>
 </div>
 

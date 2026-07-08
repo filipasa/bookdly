@@ -36,24 +36,27 @@ $svgHist   = '<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0
 <div class="m_header">
     <div class="m_head_title"><?php echo bkntc__('Coupons') ?> <span class="badge badge-secondary"><?php echo count($coupons) ?></span></div>
     <div class="m_head_actions">
-        <div class="bkc-toolbar">
-            <div class="bkc-search-wrap">
-                <?php echo $svgSearch ?>
-                <input class="bkc-search-input" type="text" id="bkc_coupon_search" placeholder="<?php echo bkntc__('Search by code…') ?>">
-            </div>
-            <select class="bkc-filter-select" id="bkc_coupon_status_filter">
-                <option value=""><?php echo bkntc__('All Statuses') ?></option>
-                <option value="active"><?php echo bkntc__('Active') ?></option>
-                <option value="inactive"><?php echo bkntc__('Inactive') ?></option>
-                <option value="expired"><?php echo bkntc__('Expired') ?></option>
-            </select>
-            <select class="bkc-filter-select" id="bkc_coupon_type_filter">
-                <option value=""><?php echo bkntc__('All Types') ?></option>
-                <option value="percent"><?php echo bkntc__('Percentage') ?></option>
-                <option value="fixed"><?php echo bkntc__('Fixed Amount') ?></option>
-            </select>
+        <button type="button" class="btn btn-primary" id="addBtn">+ <?php echo bkntc__('ADD COUPON') ?></button>
+    </div>
+</div>
+
+<div class="bkc-toolbar-container">
+    <div class="bkc-toolbar">
+        <div class="bkc-search-wrap">
+            <?php echo $svgSearch ?>
+            <input class="bkc-search-input" type="text" id="bkc_coupon_search" placeholder="<?php echo bkntc__('Search by code…') ?>">
         </div>
-        <button type="button" class="btn btn-primary mt-2" id="addBtn">+ <?php echo bkntc__('ADD COUPON') ?></button>
+        <select class="bkc-filter-select" id="bkc_coupon_status_filter">
+            <option value=""><?php echo bkntc__('All Statuses') ?></option>
+            <option value="active"><?php echo bkntc__('Active') ?></option>
+            <option value="inactive"><?php echo bkntc__('Inactive') ?></option>
+            <option value="expired"><?php echo bkntc__('Expired') ?></option>
+        </select>
+        <select class="bkc-filter-select" id="bkc_coupon_type_filter">
+            <option value=""><?php echo bkntc__('All Types') ?></option>
+            <option value="percent"><?php echo bkntc__('Percentage') ?></option>
+            <option value="fixed"><?php echo bkntc__('Fixed Amount') ?></option>
+        </select>
     </div>
 </div>
 
