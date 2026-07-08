@@ -32,6 +32,16 @@ $apiKey = Helper::getOption('google_maps_api_key', '', false);
 <div class="m_header">
     <div class="m_head_title"><?php echo bkntc__('Locations') ?> <span class="badge badge-warning row_count"><?php echo count($locations) ?></span></div>
     <div class="m_head_actions">
+        <button type="button" class="btn btn-primary" id="addBtn">+ <?php echo bkntc__('ADD LOCATION') ?></button>
+    </div>
+</div>
+
+<div class="bkc-page-container">
+    <div class="bkc-search-container">
+        <div class="bkc-search-wrap-full">
+            <?php echo $svgSearch ?>
+            <input class="bkc-search-input-full" type="text" id="bkc_location_search" placeholder="<?php echo bkntc__('Quick search') ?>">
+        </div>
         <select class="bkc-filter-select" id="bkc_location_cat_filter">
             <option value=""><?php echo bkntc__('All Categories') ?></option>
             <?php foreach ($categories as $id => $name): ?>
@@ -43,16 +53,6 @@ $apiKey = Helper::getOption('google_maps_api_key', '', false);
             <option value="1"><?php echo bkntc__('Active') ?></option>
             <option value="0"><?php echo bkntc__('Hidden') ?></option>
         </select>
-        <button type="button" class="btn btn-primary" id="addBtn">+ <?php echo bkntc__('ADD LOCATION') ?></button>
-    </div>
-</div>
-
-<div class="bkc-page-container">
-    <div class="bkc-search-container">
-        <div class="bkc-search-wrap-full">
-            <?php echo $svgSearch ?>
-            <input class="bkc-search-input-full" type="text" id="bkc_location_search" placeholder="<?php echo bkntc__('Quick search') ?>">
-        </div>
     </div>
 
     <div class="bkc-divider"></div>

@@ -36,6 +36,16 @@ $svgHist   = '<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0
 <div class="m_header">
     <div class="m_head_title"><?php echo bkntc__('Coupons') ?> <span class="badge badge-warning row_count"><?php echo count($coupons) ?></span></div>
     <div class="m_head_actions">
+        <button type="button" class="btn btn-primary" id="addBtn">+ <?php echo bkntc__('ADD COUPON') ?></button>
+    </div>
+</div>
+
+<div class="bkc-page-container">
+    <div class="bkc-search-container">
+        <div class="bkc-search-wrap-full">
+            <?php echo $svgSearch ?>
+            <input class="bkc-search-input-full" type="text" id="bkc_coupon_search" placeholder="<?php echo bkntc__('Quick search') ?>">
+        </div>
         <select class="bkc-filter-select" id="bkc_coupon_status_filter">
             <option value=""><?php echo bkntc__('All Statuses') ?></option>
             <option value="active"><?php echo bkntc__('Active') ?></option>
@@ -47,16 +57,6 @@ $svgHist   = '<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0
             <option value="percent"><?php echo bkntc__('Percentage') ?></option>
             <option value="fixed"><?php echo bkntc__('Fixed Amount') ?></option>
         </select>
-        <button type="button" class="btn btn-primary" id="addBtn">+ <?php echo bkntc__('ADD COUPON') ?></button>
-    </div>
-</div>
-
-<div class="bkc-page-container">
-    <div class="bkc-search-container">
-        <div class="bkc-search-wrap-full">
-            <?php echo $svgSearch ?>
-            <input class="bkc-search-input-full" type="text" id="bkc_coupon_search" placeholder="<?php echo bkntc__('Quick search') ?>">
-        </div>
     </div>
 
     <div class="bkc-divider"></div>

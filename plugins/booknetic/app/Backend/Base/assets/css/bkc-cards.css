@@ -123,30 +123,35 @@
 /* Full-width Search Bar Styles */
 .bkc-search-container {
     width: 100% !important;
-    margin-top: 20px !important;
-    margin-bottom: 20px !important;
+    margin-top: 16px !important;
+    margin-bottom: 16px !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 12px !important;
 }
 .bkc-search-wrap-full {
     position: relative !important;
-    width: 100% !important;
+    flex: 1 !important;
+    min-width: 200px !important;
 }
 .bkc-search-wrap-full svg {
     position: absolute !important;
-    left: 16px !important;
+    left: 14px !important;
     top: 50% !important;
     transform: translateY(-50%) !important;
-    width: 18px !important;
-    height: 18px !important;
+    width: 16px !important;
+    height: 16px !important;
     color: var(--bkc-muted) !important;
     pointer-events: none !important;
 }
 .bkc-search-input-full {
     width: 100% !important;
-    height: 48px !important;
-    padding: 0 16px 0 48px !important;
+    height: 38px !important;
+    padding: 0 16px 0 40px !important;
     border: 1px solid var(--bkc-border) !important;
     border-radius: 8px !important;
-    font-size: 14px !important;
+    font-size: 13px !important;
     color: var(--bkc-text) !important;
     background: var(--bkc-surface) !important;
     outline: none !important;
@@ -156,6 +161,30 @@
 .bkc-search-input-full:focus {
     border-color: var(--bkc-primary) !important;
 }
+
+/* Select2 / Filter alignment next to search bar */
+.bkc-search-container .select2-container--default {
+    width: auto !important;
+    min-width: 160px !important;
+}
+.bkc-search-container .select2-container--default .select2-selection--single {
+    height: 38px !important;
+    border: 1.5px solid var(--bkc-border) !important;
+    border-radius: 8px !important;
+    display: flex !important;
+    align-items: center !important;
+    background-color: var(--bkc-surface) !important;
+}
+.bkc-search-container .select2-container--default .select2-selection--single .select2-selection__rendered {
+    line-height: 38px !important;
+    padding-left: 12px !important;
+    color: var(--bkc-text) !important;
+    font-size: 13px !important;
+}
+.bkc-search-container .select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 36px !important;
+}
+
 .bkc-divider {
     width: 100% !important;
     border-bottom: 1px solid var(--bkc-border) !important;
