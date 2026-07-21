@@ -2438,90 +2438,6 @@ body:not(.rtl) .right-addon input { padding-right: 40px; }
 	border-bottom-left-radius: 0 !important;
 }
 
-/* Add spaces between time input fields across Weekly Schedule, Breaks, and Special Days, and restore full borders and border-radius */
-#set_specific_timesheet .input-group,
-.break_line .input-group,
-.special-day-row .input-group,
-#tab_special_days .input-group,
-#business-hours-settings .input-group,
-.sd_times_col .input-group {
-	display: flex !important;
-	flex-wrap: nowrap !important;
-	gap: 12px !important;
-	width: 100% !important;
-}
-
-#set_specific_timesheet .input-group > div:not(.delete-break-btn),
-.break_line .input-group > div:not(.delete-break-btn),
-.special-day-row .input-group > div:not(.delete-break-btn),
-#tab_special_days .input-group > div:not(.delete-break-btn),
-#business-hours-settings .input-group > div:not(.delete-break-btn),
-.sd_times_col .input-group > div:not(.delete-break-btn) {
-	flex: 1 1 0% !important;
-	width: auto !important;
-	min-width: 0 !important;
-	max-width: none !important;
-	margin: 0 !important;
-}
-
-#set_specific_timesheet .input-group > :first-child .select2-selection,
-#set_specific_timesheet .input-group > :last-child .select2-selection,
-#set_specific_timesheet .input-group > :nth-child(2) .select2-selection,
-.break_line .input-group > :first-child .select2-selection,
-.break_line .input-group > :last-child .select2-selection,
-.break_line .input-group > :nth-child(2) .select2-selection,
-.special-day-row .input-group > :first-child .select2-selection,
-.special-day-row .input-group > :last-child .select2-selection,
-.special-day-row .input-group > :nth-child(2) .select2-selection,
-#tab_special_days .input-group > :first-child .select2-selection,
-#tab_special_days .input-group > :last-child .select2-selection,
-#tab_special_days .input-group > :nth-child(2) .select2-selection,
-#business-hours-settings .input-group > :first-child .select2-selection,
-#business-hours-settings .input-group > :last-child .select2-selection,
-#business-hours-settings .input-group > :nth-child(2) .select2-selection,
-.sd_times_col .input-group > :first-child .select2-selection,
-.sd_times_col .input-group > :last-child .select2-selection,
-.sd_times_col .input-group > :nth-child(2) .select2-selection {
-	border-radius: 6px !important;
-	border: 1px solid #cbd5e1 !important;
-}
-
-/* Ensure time select2 fields in Weekly Schedule / breaks / special days never have overlapping loading spinners or icons on input text */
-#set_specific_timesheet .select2-selection--single .select2-selection__rendered,
-.break_line .select2-selection--single .select2-selection__rendered,
-.special-day-row .select2-selection--single .select2-selection__rendered,
-#tab_special_days .select2-selection--single .select2-selection__rendered,
-#business-hours-settings .select2-selection--single .select2-selection__rendered,
-.sd_times_col .select2-selection--single .select2-selection__rendered {
-	padding-left: 12px !important;
-	padding-right: 36px !important;
-	position: relative;
-	z-index: 2;
-}
-
-@media (max-width: 767.98px) {
-	#set_specific_timesheet .input-group,
-	.break_line .input-group,
-	.special-day-row .input-group,
-	#tab_special_days .input-group,
-	#business-hours-settings .input-group,
-	.sd_times_col .input-group {
-		flex-wrap: wrap !important;
-		gap: 10px !important;
-	}
-	#set_specific_timesheet .input-group > div:not(.delete-break-btn),
-	.break_line .input-group > div:not(.delete-break-btn),
-	.special-day-row .input-group > div:not(.delete-break-btn),
-	#tab_special_days .input-group > div:not(.delete-break-btn),
-	#business-hours-settings .input-group > div:not(.delete-break-btn),
-	.sd_times_col .input-group > div:not(.delete-break-btn) {
-		flex: 0 0 100% !important;
-		width: 100% !important;
-		max-width: 100% !important;
-	}
-}
-
-
 
 .data_table_search_panel > div > :not(:last-child) input, .data_table_search_panel > div > :not(:last-child) .select2-selection
 {
@@ -2797,45 +2713,87 @@ body:not(.rtl) .right-addon input { padding-right: 40px; }
 }
 
 
-.confirm_modal_icon_div
-{
-	padding-top: 40px;
+.modal-content:has(.delete-modal-container) {
+	background: transparent !important;
+	border: none !important;
+	box-shadow: none !important;
+}
+
+.delete-modal-container {
+	background: #fff;
+	border-radius: 14px;
 	width: 100%;
+	max-width: 440px;
+	padding: 28px;
+	box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+	text-align: center;
+	box-sizing: border-box;
 }
-.confirm_modal_icon_div > div
-{
-	margin: auto;
-	width: 80px;
-	height: 80px;
-	border: 1px solid #E4EBF4;
-	background: #F7F8FB;
+
+.delete-modal-icon {
+	width: 56px;
+	height: 56px;
+	border-radius: 50%;
+	background: #fee2e2;
+	color: #ef4444;
 	display: flex;
-	justify-content: center;
 	align-items: center;
+	justify-content: center;
+	margin: 0 auto 20px;
 }
-.confirm_modal_title
-{
-	text-align: center;
+
+.delete-modal-title {
 	font-size: 16px;
-	padding-top: 30px;
-	font-weight: 500;
-	line-height: 24px;
-}
-.confirm_modal_desc
-{
+	font-weight: 700;
+	color: #0f172a;
+	margin-bottom: 8px;
 	text-align: center;
-	font-size: 14px;
-	padding-bottom: 30px;
-	color: #828F9A;
 }
-.confirm_modal_actions
-{
+
+.delete-modal-desc {
+	font-size: 13px;
+	color: #94a3b8;
+	line-height: 1.5;
+	margin-bottom: 24px;
 	text-align: center;
-	margin-bottom: 30px;
 }
-.confirm_modal_actions > button
-{
-	width: 150px;
+
+.delete-modal-actions {
+	display: flex;
+	gap: 12px;
+	justify-content: center;
+}
+
+.delete-modal-actions .btn {
+	flex: 1;
+	max-width: 150px;
+	height: 44px;
+	border-radius: 10px;
+	font-weight: 600;
+	font-size: 13px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.delete-modal-actions .btn-ghost {
+	background: #f1f5f9;
+	border: none;
+	color: #475569;
+}
+
+.delete-modal-actions .btn-ghost:hover {
+	background: #e2e8f0;
+}
+
+.delete-modal-actions .btn-danger {
+	background: #ef4444 !important;
+	color: #fff !important;
+	border: none !important;
+}
+
+.delete-modal-actions .btn-danger:hover {
+	background: #dc2626 !important;
 }
 
 .fs-modal-content > .confirmV2-container {
@@ -4666,22 +4624,596 @@ body:not(.rtl) .right-addon input { padding-right: 40px; }
     }
 }
 
-/* Hide multilang globe icons for Staff fields (Full Name, Profession, Note) */
-#input_name ~ .multilang_globe_icon,
-#input_profession ~ .multilang_globe_icon,
-#input_note ~ .multilang_globe_icon,
-.form-group:has(#input_name) .multilang_globe_icon,
-.form-group:has(#input_profession) .multilang_globe_icon,
-.form-group:has(#input_note) .multilang_globe_icon,
-#addStaffForm .multilang_globe_icon,
-#booknetic_staff_fullpage_container .multilang_globe_icon {
-    display: none !important;
-    opacity: 0 !important;
-    visibility: hidden !important;
-    pointer-events: none !important;
-    width: 0 !important;
-    height: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
+
+/* --- WIREFRAME STYLING OVERRIDES --- */
+:root {
+  --wf-primary: #6366f1;
+  --wf-primary-hover: #4f46e5;
+  --wf-primary-light: #818cf8;
+  --wf-primary-dim: #eef2ff;
+  --wf-success: #22c55e;
+  --wf-success-dim: #dcfce7;
+  --wf-warning: #f59e0b;
+  --wf-warning-dim: #fef3c7;
+  --wf-danger:  #ef4444;
+  --wf-danger-dim:  #fee2e2;
+  --wf-border: #e2e8f0;
+  --wf-text: #0f172a;
+  --wf-text-2: #475569;
+  --wf-text-3: #94a3b8;
+  --wf-radius: 12px;
+  --wf-radius-sm: 8px;
+  --wf-shadow: 0 1px 3px rgba(0,0,0,.06), 0 4px 12px rgba(0,0,0,.04);
+  --wf-shadow-md: 0 4px 16px rgba(0,0,0,.10);
+  --wf-transition: .18s ease;
 }
+
+/* 1. BUTTON DESIGN OVERRIDES */
+.btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  border-radius: var(--wf-radius-sm) !important;
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  border: none !important;
+  height: 38px !important;
+  padding: 8px 16px !important;
+  transition: var(--wf-transition) !important;
+}
+.btn-primary, .btn-success, .btn-danger, .btn-default, .btn-outline-secondary {
+  box-shadow: none !important;
+}
+
+/* Primary Button Styling */
+.btn-primary {
+  background-color: var(--wf-primary) !important;
+  color: #fff !important;
+  border: none !important;
+}
+.btn-primary:hover {
+  background-color: var(--wf-primary-hover) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.35) !important;
+}
+
+/* Default / Ghost Button Styling */
+.btn-default, .btn-outline-secondary {
+  background-color: transparent !important;
+  color: var(--wf-text-2) !important;
+  border: 1.5px solid var(--wf-border) !important;
+}
+.btn-default:hover, .btn-outline-secondary:hover {
+  background-color: #f1f5f9 !important; /* surface-2 */
+  border-color: var(--wf-border) !important;
+  color: var(--wf-text-2) !important;
+}
+
+/* Danger Button Styling */
+.btn-danger {
+  background-color: var(--wf-danger) !important;
+  color: #fff !important;
+  border: none !important;
+}
+.btn-danger:hover {
+  background-color: #dc2626 !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Small Button */
+.btn-sm, .btn-xs {
+  padding: 6px 12px !important;
+  font-size: 12px !important;
+  height: 28px !important;
+}
+
+/* 2. SEARCH BAR & FILTERS OVERRIDES */
+.data_table_search_panel {
+  padding: 20px 32px 0 !important;
+  background: transparent !important;
+}
+.data_table_search_panel > div {
+  display: flex !important;
+  align-items: center !important;
+  flex-wrap: nowrap !important;
+  gap: 12px !important;
+  box-shadow: none !important;
+  border: none !important;
+  background: transparent !important;
+}
+.data_table_search_panel > div > div {
+  flex: 1 1 auto !important;
+  max-width: none !important;
+  width: auto !important;
+}
+.data_table_search_panel > div > div:first-child {
+  flex: 2 1 200px !important;
+}
+@media (max-width: 768px) {
+  .data_table_search_panel > div {
+    flex-wrap: wrap !important;
+  }
+  .data_table_search_panel > div > div {
+    flex: 1 1 100% !important;
+  }
+}
+.data_table_search_panel .search_input,
+.data_table_search_panel .form-control,
+.data_table_search_panel .select2-selection,
+.data_table_search_panel .select2-container--bootstrap .select2-selection {
+  height: 38px !important;
+  border: 1.5px solid var(--wf-border) !important;
+  border-radius: var(--wf-radius-sm) !important;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 13px !important;
+  background-color: #ffffff !important;
+  box-shadow: none !important;
+  transition: var(--wf-transition) !important;
+}
+.data_table_search_panel .select2 {
+  height: 38px !important;
+  border: none !important;
+  background: transparent !important;
+}
+.data_table_search_panel .search_input {
+  width: 100% !important;
+  padding: 0 14px 0 38px !important;
+}
+.data_table_search_panel .search_input:focus {
+  border-color: var(--wf-primary) !important;
+  outline: none !important;
+}
+.data_table_search_panel .form-control:focus,
+.data_table_search_panel .select2-selection:focus {
+  border-color: var(--wf-primary) !important;
+  outline: none !important;
+}
+.data_table_search_panel .select2-selection {
+  display: flex !important;
+  align-items: center !important;
+  height: 38px !important;
+  padding: 0 12px !important;
+}
+.data_table_search_panel .select2-selection__rendered {
+  padding: 0 !important;
+  line-height: 38px !important;
+  height: 38px !important;
+  display: flex !important;
+  align-items: center !important;
+  font-size: 13px !important;
+}
+.data_table_search_panel .select2-selection__arrow {
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  height: 38px !important;
+}
+
+
+/* Fix input borders spacing inside search panel */
+.data_table_search_panel > div > :not(:last-child) input,
+.data_table_search_panel > div > :not(:last-child) .select2-selection,
+.data_table_search_panel > div > :not(:first-child) input,
+.data_table_search_panel > div > :not(:first-child) .select2-selection {
+  border-radius: var(--wf-radius-sm) !important;
+}
+
+/* 3. FORM / INPUT STYLING OVERRIDES */
+.form-control, select.form-control, textarea.form-control {
+  border: 1.5px solid var(--wf-border) !important;
+  border-radius: var(--wf-radius-sm) !important;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 13px !important;
+  height: 38px !important;
+  background-color: #ffffff !important;
+  color: var(--wf-text) !important;
+  box-shadow: none !important;
+  transition: var(--wf-transition) !important;
+  padding: 8px 14px !important;
+}
+textarea.form-control {
+  height: auto !important;
+  min-height: 80px !important;
+}
+.form-control:focus {
+  border-color: var(--wf-primary) !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Checkboxes */
+input[type="checkbox"].cb, input[type="checkbox"].form-control-checkbox {
+  width: 16px !important;
+  height: 16px !important;
+  accent-color: var(--wf-primary) !important;
+  cursor: pointer !important;
+}
+
+.fs_data_table_wrapper {
+  background: #ffffff !important;
+  border: 1.5px solid var(--wf-border) !important;
+  border-radius: var(--wf-radius) !important;
+  overflow: hidden !important;
+  box-shadow: var(--wf-shadow) !important;
+  margin: 20px 0 0 0 !important;
+  padding: 0 !important;
+}
+.table-gray, .table-gray-2, .elegant_table {
+  width: 100% !important;
+  border-collapse: collapse !important;
+  border: none !important;
+  margin: 0 !important;
+}
+.table-gray thead, .table-gray-2 thead, .elegant_table thead,
+.table-gray thead tr, .table-gray-2 thead tr, .elegant_table thead tr {
+  background-color: #f1f5f9 !important; /* surface-2 */
+}
+.table-gray thead th, .table-gray-2 thead th, .elegant_table thead th {
+  padding: 13px 16px !important;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  color: var(--wf-text-3) !important;
+  text-transform: uppercase !important;
+  letter-spacing: .05em !important;
+  background-color: #f1f5f9 !important; /* surface-2 */
+  border-bottom: 1.5px solid var(--wf-border) !important;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+}
+.table-gray tbody tr,
+.table-gray-2 tbody tr,
+.elegant_table tbody tr,
+.fs_data_table tbody tr,
+.data-table tbody tr {
+  border-bottom: 1px solid var(--wf-border, #e2e8f0) !important;
+  transition: background-color var(--wf-transition, 0.18s ease) !important;
+  background-color: #ffffff !important;
+}
+
+.table-gray tbody tr > td,
+.table-gray-2 tbody tr > td,
+.elegant_table tbody tr > td,
+.fs_data_table tbody tr > td,
+.data-table tbody tr > td {
+  background-color: transparent !important;
+  transition: background-color var(--wf-transition, 0.18s ease) !important;
+}
+
+.table-gray tbody tr:hover,
+.table-gray tbody tr:hover > td,
+.table-gray-2 tbody tr:hover,
+.table-gray-2 tbody tr:hover > td,
+.elegant_table tbody tr:hover,
+.elegant_table tbody tr:hover > td,
+.fs_data_table tbody tr:hover,
+.fs_data_table tbody tr:hover > td,
+.data-table tbody tr:hover,
+.data-table tbody tr:hover > td {
+  background-color: var(--wf-primary-dim, #eef2ff) !important;
+}
+
+.table-gray tbody tr:has(.select_data_checkbox:checked),
+.table-gray tbody tr:has(.select_data_checkbox:checked) > td,
+.table-gray-2 tbody tr:has(.select_data_checkbox:checked),
+.table-gray-2 tbody tr:has(.select_data_checkbox:checked) > td,
+.elegant_table tbody tr:has(.select_data_checkbox:checked),
+.elegant_table tbody tr:has(.select_data_checkbox:checked) > td,
+.fs_data_table tbody tr:has(.select_data_checkbox:checked),
+.fs_data_table tbody tr:has(.select_data_checkbox:checked) > td,
+.data-table tbody tr:has(.select_data_checkbox:checked),
+.data-table tbody tr:has(.select_data_checkbox:checked) > td {
+  background-color: #ede9fe !important; /* Selected row color from wireframe */
+}
+.table-gray tbody td, .table-gray-2 tbody td, .elegant_table tbody td {
+  padding: 13px 16px !important;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 13px !important;
+  color: var(--wf-text) !important;
+  vertical-align: middle !important;
+  border-bottom: 1px solid var(--wf-border) !important;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+}
+.table-gray tbody tr:last-child td, .table-gray-2 tbody tr:last-child td, .elegant_table tbody tr:last-child td {
+  border-bottom: none !important;
+}
+
+/* 5. PAGINATION & TABLE WRAPPER DESIGN OVERRIDES (Matching Wireframe v4) */
+.fs_data_table_wrapper, .table-wrap {
+  background: #ffffff !important;
+  border: 1.5px solid var(--wf-border, #e5e7eb) !important;
+  border-radius: var(--wf-radius, 12px) !important;
+  overflow: hidden !important;
+  box-shadow: var(--wf-shadow, 0 1px 3px rgba(0,0,0,0.05)) !important;
+  margin: 20px 0 0 0 !important;
+  padding: 0 !important;
+}
+
+.fs_data_table_wrapper .pagination, .table-wrap .pagination, .pagination {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 14px 20px !important;
+  border-top: 1.5px solid var(--wf-border, #e5e7eb) !important;
+  font-size: 13px !important;
+  background: #ffffff !important;
+  margin: 0 !important;
+  width: 100% !important;
+}
+
+.fs_data_table_wrapper .pagination .pagination-info, .pagination .pagination-info {
+  color: var(--wf-text-3, #64748b) !important;
+  font-size: 13px !important;
+  font-family: 'Inter', sans-serif !important;
+}
+
+.fs_data_table_wrapper .pagination .page-btns, .pagination .page-btns {
+  display: flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+}
+
+.fs_data_table_wrapper .pagination .pg-btn,
+.fs_data_table_wrapper .pagination .page_class,
+.pagination .pg-btn,
+.pagination .page_class {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 7px !important;
+  border: 1.5px solid var(--wf-border, #e5e7eb) !important;
+  background: none !important;
+  color: var(--wf-text-2, #475569) !important;
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 500 !important;
+  font-size: 13px !important;
+  cursor: pointer !important;
+  transition: var(--wf-transition, all 0.2s) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: normal !important;
+}
+
+.fs_data_table_wrapper .pagination .pg-btn.active,
+.fs_data_table_wrapper .pagination .page_class.active_page,
+.pagination .pg-btn.active,
+.pagination .page_class.active_page {
+  background-color: var(--wf-primary, #6366f1) !important;
+  color: #fff !important;
+  border-color: var(--wf-primary, #6366f1) !important;
+}
+
+.fs_data_table_wrapper .pagination .pg-btn:hover:not(.active):not([disabled]),
+.fs_data_table_wrapper .pagination .page_class:hover:not(.active_page),
+.pagination .pg-btn:hover:not(.active):not([disabled]),
+.pagination .page_class:hover:not(.active_page) {
+  background-color: var(--wf-surface-2, #f8fafc) !important;
+  border-color: var(--wf-border, #e5e7eb) !important;
+}
+
+.fs_data_table_wrapper .pagination .pg-btn[disabled],
+.pagination .pg-btn[disabled] {
+  opacity: 0.4 !important;
+  cursor: not-allowed !important;
+}
+
+/* 6. SEARCH LOOP ICON CENTERING */
+.data_table_search_panel > div > div:first-child {
+  position: relative !important;
+}
+.data_table_search_panel i {
+  position: absolute !important;
+  left: 12px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  z-index: 2 !important;
+  height: 16px !important;
+  display: flex !important;
+  align-items: center !important;
+  pointer-events: none !important;
+}
+.data_table_search_panel i img {
+  width: 16px !important;
+  height: 16px !important;
+}
+.data_table_search_panel .search_input {
+  padding-left: 38px !important;
+}
+
+/* 7. CALENDAR PAGE DESIGN OVERRIDES */
+.m_head_actions .create_new_appointment_btn.action_btn,
+.m_head_actions .create_new_busy_slot_btn.action_btn {
+  background-color: var(--wf-primary) !important;
+  border: none !important;
+  border-radius: var(--wf-radius-sm) !important;
+  height: 38px !important;
+  padding: 8px 16px !important;
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 600 !important;
+  box-shadow: none !important;
+  transition: var(--wf-transition) !important;
+}
+.m_head_actions .create_new_appointment_btn.action_btn svg,
+.m_head_actions .create_new_busy_slot_btn.action_btn svg {
+  display: none !important;
+}
+.m_head_actions .create_new_appointment_btn.action_btn span::before,
+.m_head_actions .create_new_busy_slot_btn.action_btn span::before {
+  content: "+ " !important;
+}
+.m_head_actions .create_new_appointment_btn.action_btn span,
+.m_head_actions .create_new_busy_slot_btn.action_btn span {
+  text-transform: uppercase !important;
+  font-size: 13px !important;
+  letter-spacing: 0.02em !important;
+  color: #ffffff !important;
+}
+.m_head_actions .create_new_appointment_btn.action_btn:hover,
+.m_head_actions .create_new_busy_slot_btn.action_btn:hover {
+  background-color: var(--wf-primary-hover) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.35) !important;
+}
+.m_head_actions .advanced_filters_btn.action_btn,
+.m_head_actions .google_calendar.action_btn {
+  background-color: transparent !important;
+  border: 1.5px solid var(--wf-border) !important;
+  border-radius: var(--wf-radius-sm) !important;
+  height: 38px !important;
+  padding: 8px 16px !important;
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 600 !important;
+  transition: var(--wf-transition) !important;
+  box-shadow: none !important;
+}
+.m_head_actions .advanced_filters_btn.action_btn:hover,
+.m_head_actions .google_calendar.action_btn:hover {
+  background-color: #f1f5f9 !important; /* surface-2 */
+  border-color: var(--wf-border) !important;
+}
+.m_head_actions .advanced_filters_btn.action_btn span,
+.m_head_actions .google_calendar.action_btn span {
+  color: var(--wf-text-2) !important;
+  font-weight: 600 !important;
+}
+.m_head_actions .create_new_busy_slot_btn.action_btn {
+  background-color: var(--wf-danger) !important;
+}
+.m_head_actions .create_new_busy_slot_btn.action_btn:hover {
+  background-color: #dc2626 !important;
+}
+.advanced_filters_popover_body .select2-container--bootstrap .select2-selection--multiple {
+  height: 38px !important;
+  border: 1.5px solid var(--wf-border) !important;
+  border-radius: var(--wf-radius-sm) !important;
+  padding: 0 12px !important;
+  display: flex !important;
+  align-items: center !important;
+}
+.advanced_filters_popover_body .select2-container--bootstrap .select2-selection--multiple .select2-selection__rendered {
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* Bulletproof Red Busy Slots Styling */
+.fc-busy-slot-event,
+.fc-busy-slot-event .calendar_cart {
+  background-color: #ef4444 !important;
+  border-color: #ef4444 !important;
+  color: #ffffff !important;
+}
+.fc-busy-slot-event a,
+.fc-busy-slot-event div,
+.fc-busy-slot-event p,
+.fc-busy-slot-event span {
+  color: #ffffff !important;
+}
+
+/* Bulk Actions Bar Wireframe Match (.bulk-bar / .m_bottom_fixed) */
+.fs_data_table_wrapper .m_bottom_fixed.hidden,
+.table-wrap .m_bottom_fixed.hidden,
+.m_bottom_fixed.bulk-bar.hidden,
+.m_bottom_fixed.hidden,
+.fs_data_table_wrapper .m_bottom_fixed[style*="display: none"],
+.table-wrap .m_bottom_fixed[style*="display: none"],
+.m_bottom_fixed.bulk-bar[style*="display: none"],
+.m_bottom_fixed[style*="display: none"],
+.m_bottom_fixed[style*="display:none"] {
+  display: none !important;
+}
+
+.fs_data_table_wrapper .m_bottom_fixed:not(.hidden):not([style*="display: none"]):not([style*="display:none"]),
+.table-wrap .m_bottom_fixed:not(.hidden):not([style*="display: none"]):not([style*="display:none"]),
+.m_bottom_fixed.bulk-bar:not(.hidden):not([style*="display: none"]):not([style*="display:none"]),
+.m_bottom_fixed:not(.hidden):not([style*="display: none"]):not([style*="display:none"]) {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 16px !important;
+  background-color: var(--wf-primary-dim, #eef2ff) !important;
+  border-bottom: 1.5px solid #818cf8 !important;
+  border-top: none !important;
+  box-shadow: none !important;
+  height: auto !important;
+  min-height: 48px !important;
+  padding: 10px 20px !important;
+  font-family: 'Inter', sans-serif !important;
+  color: var(--wf-primary, #6366f1) !important;
+  font-weight: 600 !important;
+  font-size: 13px !important;
+  border-radius: var(--wf-radius, 12px) var(--wf-radius, 12px) 0 0 !important;
+  position: static !important;
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+.m_bottom_fixed .selected_count {
+  background-color: transparent !important;
+  color: var(--wf-primary, #6366f1) !important;
+  font-weight: 700 !important;
+  font-size: 13px !important;
+  padding: 0 !important;
+  margin: 0 4px 0 0 !important;
+}
+
+.m_bottom_fixed .bulk-action-btns {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.m_bottom_fixed button,
+.m_bottom_fixed .btn,
+.m_bottom_fixed .bulk_action_btn {
+  background: none !important;
+  border: 1.5px solid #818cf8 !important;
+  border-radius: 6px !important;
+  padding: 5px 14px !important;
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 12px !important;
+  cursor: pointer !important;
+  color: var(--wf-primary, #6366f1) !important;
+  height: auto !important;
+  line-height: normal !important;
+  transition: var(--wf-transition, 0.18s ease) !important;
+  box-shadow: none !important;
+}
+
+.m_bottom_fixed button:hover,
+.m_bottom_fixed .btn:hover,
+.m_bottom_fixed .bulk_action_btn:hover {
+  background-color: var(--wf-primary, #6366f1) !important;
+  color: #ffffff !important;
+  border-color: var(--wf-primary, #6366f1) !important;
+}
+
+.m_bottom_fixed button.del,
+.m_bottom_fixed button[data-action="delete"],
+.m_bottom_fixed .bulk_action_btn.del {
+  border-color: #fca5a5 !important;
+  color: var(--wf-danger, #ef4444) !important;
+}
+
+.m_bottom_fixed button.del:hover,
+.m_bottom_fixed button[data-action="delete"]:hover,
+.m_bottom_fixed .bulk_action_btn.del:hover {
+  background-color: var(--wf-danger, #ef4444) !important;
+  color: #ffffff !important;
+  border-color: var(--wf-danger, #ef4444) !important;
+}
+
+
+
+
+
+
+
 
