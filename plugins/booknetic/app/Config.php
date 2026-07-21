@@ -1696,8 +1696,7 @@ class Config
             $endEpoch = $startEpoch + ($slot->duration * 60);
 
             $notesShort = !empty($slot->notes) ? (mb_strlen($slot->notes, 'UTF-8') > 30 ? mb_substr($slot->notes, 0, 30, 'UTF-8') . '...' : $slot->notes) : bkntc__('Busy Slot');
-
-            $event_content = '<div class="calendar_cart" style="color: #ffffff; background-color: #808080 !important; border-color: #808080 !important;">';
+            $event_content = '<div class="calendar_cart" style="color: #ffffff; background-color: #ef4444 !important; border-color: #ef4444 !important;">';
             $event_content .= '<p>' . \BookneticApp\Providers\Helpers\Date::time($startEpoch) . ' - ' . \BookneticApp\Providers\Helpers\Date::time($endEpoch) . '</p>';
             $event_content .= '<p>' . bkntc__('Busy Slot') . '</p>';
             $event_content .= '<div class="flex"><p>' . htmlspecialchars($notesShort) . '</p></div>';
@@ -1705,12 +1704,13 @@ class Config
             $event_content .= '<div class="circle_image"><img src="' . Helper::profileImage($slot->staff_profile_image, 'Staff') . '" alt=""></div>';
             $event_content .= '<p>' . htmlspecialchars($slot->staff_name) . '</p>';
             $event_content .= '</div></div>';
-
+ 
             $events[] = [
                 'id' => 'busy_' . $slot->id,
                 'appointment_id' => 0,
                 'busy_slot_id' => (int)$slot->id,
-                'color' => '#808080',
+                'className' => 'fc-busy-slot-event',
+                'color' => '#ef4444',
                 'text_color' => '#ffffff',
                 'staff_id' => $slot->staff_id,
                 'resourceId' => $slot->staff_id,

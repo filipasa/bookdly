@@ -168,9 +168,6 @@ class AppointmentAjaxController extends Controller
         Config::getWorkflowEventsManager()->setEnabled($runWorkflows === 1);
 
         $appointmentRequests = AppointmentRequests::load(true);
-        try {
-            file_put_contents(WP_CONTENT_DIR . '/debug_post.txt', print_r($_POST, true) . PHP_EOL . print_r($_FILES, true) . PHP_EOL . print_r($appointmentRequests->appointments[0]->getData('custom_fields'), true));
-        } catch (Exception $e) {}
 
         if (! $appointmentRequests->validate()) {
             return $this->response(false, $appointmentRequests->getFirstError());
@@ -259,190 +256,31 @@ class AppointmentAjaxController extends Controller
         $id = Post::int('id');
         $mode = Post::string('mode', 'view');
 
-        global $wpdb;
+        $appointmentInfo = Appointment::query()
+            ->leftJoin('customer', ['first_name', 'last_name', 'phone_number', 'email', 'profile_image'])
+            ->leftJoin('location', ['name'])
+            ->leftJoin('service', ['name'])
+            ->leftJoin('staff', ['name', 'profile_image', 'email', 'phone_number'])
+            ->where(Appointment::getField('id'), $id)->fetch();
 
-        if ($mode === 'add' || $id === 0) {
-            $appointmentInfo = [
-                'id' => 0,
-                'location_id' => '',
-                'location_name' => bkntc__('- Select location -'),
-                'service_category_id' => 0,
-                'service_id' => '',
-                'service_name' => bkntc__('- Select service -'),
-                'staff_id' => '',
-                'staff_name' => bkntc__('- Select staff -'),
-                'customer_id' => '',
-                'customer_first_name' => '',
-                'customer_last_name' => '',
-                'customer_email' => '',
-                'customer_phone_number' => '',
-                'customer_profile_image' => '',
-                'staff_profile_image' => '',
-                'staff_email' => '',
-                'staff_phone_number' => '',
-                'starts_at' => time(),
-                'ends_at' => time() + 1800,
-                'created_at' => time(),
-                'status' => \BookneticApp\Providers\Helpers\Helper::getDefaultAppointmentStatus(),
-                'payment_id' => '',
-                'recurring_id' => '',
-                'payment_method' => 'local',
-                'payment_status' => 'not_paid',
-                'paid_amount' => 0.00,
-                'note' => '',
-                'weight' => 1,
-                'tenant_id' => null
-            ];
-            $extrasArr = [];
-            $prices = [];
-            $customForms = [];
-            $serviceCategoryId = 0;
-            $categoryName = '';
-        } else {
-            $appointmentInfo = Appointment::query()
-                ->leftJoin('customer', ['first_name', 'last_name', 'phone_number', 'email', 'profile_image'])
-                ->leftJoin('location', ['name'])
-                ->leftJoin('service', ['name', 'category_id'])
-                ->leftJoin('staff', ['name', 'profile_image', 'email', 'phone_number'])
-                ->where(Appointment::getField('id'), $id)->fetch();
-
-            if (!$appointmentInfo) {
-                return $this->response(false, bkntc__('Appointment not found!'));
-            }
-
-            $serviceCategoryId = (int)($appointmentInfo['service_category_id'] ?? 0);
-            $categoryName = '';
-            if ($serviceCategoryId > 0) {
-                try {
-                    $categoryName = $wpdb->get_var($wpdb->prepare("SELECT name FROM " . $wpdb->prefix . "bkntc_service_categories WHERE id = %d", $serviceCategoryId));
-                } catch (Exception $e) {}
-            }
-
-            $extrasArr = AppointmentExtra::query()
-                ->where('appointment_id', $id)
-                ->leftJoin(ServiceExtra::class, ['name', 'image'], ServiceExtra::getField('id'), AppointmentExtra::getField('extra_id'))
-                ->fetchAll();
-
-            $prices = AppointmentPrice::query()
-                ->where('appointment_id', $id)
-                ->fetchAll();
-
-            $customFields = [];
-            try {
-                $customFields = $wpdb->get_results($wpdb->prepare("
-                    SELECT c.*, f.label AS form_input_label, f.type AS form_input_type, f.form_id AS form_input_form_id
-                    FROM " . $wpdb->prefix . "bkntc_appointment_custom_data c
-                    LEFT JOIN " . $wpdb->prefix . "bkntc_form_inputs f ON f.id = c.form_input_id
-                    WHERE c.appointment_id = %d
-                ", $id), ARRAY_A);
-            } catch (Exception $e) {}
-
-            $customForms = [];
-            if (is_array($customFields)) {
-                foreach ($customFields as $field) {
-                    $formId = $field['form_input_form_id'];
-                    if (!isset($customForms[$formId])) {
-                        $formName = $wpdb->get_var($wpdb->prepare("SELECT name FROM " . $wpdb->prefix . "bkntc_forms WHERE id = %d", $formId));
-                        $customForms[$formId] = [
-                            'name' => $formName,
-                            'inputs' => []
-                        ];
-                    }
-                    $customForms[$formId]['inputs'][] = $field;
-                }
-            }
+        if (!$appointmentInfo) {
+            return $this->response(false, bkntc__('Appointment not found!'));
         }
 
-        $couponId = Appointment::getData($id, 'coupon_id');
-        $couponAmount = Appointment::getData($id, 'coupon_amount');
-        $couponCode = '';
-        $couponDiscount = 0;
-        $couponDiscountType = '';
-        if ($couponId) {
-            try {
-                $couponRow = $wpdb->get_row($wpdb->prepare("SELECT code, discount, discount_type FROM " . $wpdb->prefix . "bkntc_coupons WHERE id = %d", $couponId), ARRAY_A);
-                if ($couponRow) {
-                    $couponCode = $couponRow['code'];
-                    $couponDiscount = (float)$couponRow['discount'];
-                    $couponDiscountType = $couponRow['discount_type'];
-                }
-            } catch (Exception $e) {}
-        }
+        $extrasArr = AppointmentExtra::query()
+            ->where('appointment_id', $id)
+            ->leftJoin(ServiceExtra::class, ['name', 'image'], ServiceExtra::getField('id'), AppointmentExtra::getField('extra_id'))
+            ->fetchAll();
 
-        // Fetch status history logs
-        $statusHistoryJson = Appointment::getData($id, 'status_history');
-        $statusHistory = [];
-        if (!empty($statusHistoryJson)) {
-            $statusHistory = json_decode($statusHistoryJson, true);
-        }
-        if (!is_array($statusHistory) || empty($statusHistory)) {
-            $statusHistory = [
-                [
-                    'status' => $appointmentInfo['status'],
-                    'time' => !empty($appointmentInfo['created_at']) ? (int)$appointmentInfo['created_at'] : (int)$appointmentInfo['starts_at']
-                ]
-            ];
-        }
+        $prices = AppointmentPrice::query()
+            ->where('appointment_id', $id)
+            ->fetchAll();
 
         return $this->modalView('fullpage_view', [
-            'info'               => $appointmentInfo,
-            'mode'               => $mode,
-            'extras'             => $extrasArr,
-            'prices'             => $prices,
-            'customForms'        => $customForms,
-            'couponCode'         => $couponCode,
-            'couponAmount'       => $couponAmount,
-            'couponDiscount'     => $couponDiscount,
-            'couponDiscountType' => $couponDiscountType,
-            'statusHistory'      => $statusHistory,
-            'serviceCategoryId'  => $serviceCategoryId,
-            'categoryName'       => $categoryName
-        ]);
-    }
-    public function get_change_status_fullpage_view()
-    {
-        Capabilities::must('appointments_change_status');
-
-        $ids = Post::array('ids');
-        $statuses = \BookneticApp\Providers\Helpers\Helper::getAppointmentStatuses();
-        $selectedStatus = '';
-
-        if (count($ids) === 1) {
-            $appointmentInf = Appointment::query()->get($ids[0]);
-            if ($appointmentInf) {
-                $appointmentStatus = $appointmentInf->status;
-                if (array_key_exists($appointmentStatus, $statuses)) {
-                    $selectedStatus = $appointmentStatus;
-                }
-            }
-        }
-
-        // Fetch small details for each appointment to display in context chips
-        $appointmentsList = [];
-        if (!empty($ids)) {
-            foreach ($ids as $id) {
-                $appt = Appointment::query()
-                    ->leftJoin('customer', ['first_name', 'last_name'])
-                    ->leftJoin('service', ['name'])
-                    ->where(Appointment::getField('id'), $id)
-                    ->fetch();
-                if ($appt) {
-                    $appointmentsList[] = [
-                        'id' => $id,
-                        'customer_name' => trim($appt['customer_first_name'] . ' ' . $appt['customer_last_name']),
-                        'service_name' => $appt['service_name'],
-                        'starts_at' => $appt['starts_at'],
-                        'status' => $appt['status']
-                    ];
-                }
-            }
-        }
-
-        return $this->modalView('fullpage_change_status', [
-            'ids'               => $ids,
-            'statuses'          => $statuses,
-            'selectedStatus'    => $selectedStatus,
-            'appointmentsList'  => $appointmentsList
+            'info'   => $appointmentInfo,
+            'mode'   => $mode,
+            'extras' => $extrasArr,
+            'prices' => $prices
         ]);
     }
 

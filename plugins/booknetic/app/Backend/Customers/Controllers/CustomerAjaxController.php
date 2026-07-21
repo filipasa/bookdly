@@ -25,6 +25,7 @@ use BookneticApp\Backend\Customers\Services\CustomerService;
 use BookneticApp\Config;
 use BookneticApp\Models\Customer;
 use BookneticApp\Models\CustomerCategory;
+use BookneticApp\Models\Appointment;
 use BookneticApp\Providers\Core\Capabilities;
 use BookneticApp\Providers\Core\CapabilitiesException;
 use BookneticApp\Providers\Core\Controller;
@@ -135,6 +136,130 @@ class CustomerAjaxController extends Controller
         return $this->modalView('info', [
             'customer' => $customer,
         ]);
+    }
+
+    public function get_fullpage_info_view()
+    {
+        try {
+            Capabilities::must('customers');
+
+            $id = Post::int('id');
+            $customer = Customer::query()
+                ->leftJoin('category', ['name'])
+                ->where(Customer::getField('id'), '=', $id)
+                ->fetch();
+
+            if (!$customer) {
+                return $this->response(false, bkntc__('Customer not found!'));
+            }
+
+            // Fetch appointments
+            $appointments = Appointment::query()
+                ->leftJoin('service', ['name'])
+                ->leftJoin('staff', ['name', 'profile_image'])
+                ->leftJoin('location', ['name'])
+                ->where(Appointment::getField('customer_id'), '=', $id)
+                ->orderBy('starts_at desc')
+                ->fetchAll();
+
+            // Calculate stats
+            $totalBookings = count($appointments);
+            $totalSpent = 0.0;
+            $noShows = 0;
+
+            foreach ($appointments as $appt) {
+                $totalSpent += (float)$appt['paid_amount'];
+                if ($appt['status'] === 'noshow') {
+                    $noShows++;
+                }
+            }
+
+            // Get status history for Activity Log
+            global $wpdb;
+            $statusHistory = [];
+            $apptIds = [];
+            foreach ($appointments as $appt) {
+                $apptIds[] = (int)$appt['id'];
+            }
+
+            if (!empty($apptIds)) {
+                $idsStr = implode(',', $apptIds);
+                $logs = $wpdb->get_results("SELECT row_id, data_key, data_value FROM " . $wpdb->prefix . "bkntc_data WHERE table_name = 'appointments' AND row_id IN ($idsStr) AND data_key = 'status_history'", ARRAY_A);
+                if (!empty($logs)) {
+                    foreach ($logs as $log) {
+                        $history = json_decode($log['data_value'], true);
+                        if (is_array($history)) {
+                            foreach ($history as $h) {
+                                $h['appointment_id'] = $log['row_id'];
+                                $statusHistory[] = $h;
+                            }
+                        }
+                    }
+                }
+            }
+
+            // Sort status history chronologically descending
+            usort($statusHistory, function($a, $b) {
+                return $b['time'] <=> $a['time'];
+            });
+
+            $statuses = \BookneticApp\Providers\Helpers\Helper::getAppointmentStatuses();
+
+            return $this->modalView('fullpage_customer_info', [
+                'customer'      => $customer,
+                'appointments'  => $appointments,
+                'totalBookings' => $totalBookings,
+                'totalSpent'    => $totalSpent,
+                'noShows'       => $noShows,
+                'statusHistory' => $statusHistory,
+                'statuses'      => $statuses
+            ]);
+        } catch (\Exception $e) {
+            return $this->response(false, $e->getMessage() . "\n" . $e->getTraceAsString());
+        }
+    }
+
+    public function get_fullpage_edit_view()
+    {
+        try {
+            $id = Post::int('id');
+
+            if ($id > 0) {
+                Capabilities::must('customers_edit');
+                $customer = $this->service->get($id);
+            } else {
+                Capabilities::must('customers_add');
+                $customer = CustomerResponse::createEmpty();
+            }
+
+            $hasWpUser = true;
+            if (!empty($customer->getEmail()) && Helper::isSaaSVersion()) {
+                $hasWpUser = !($this->service->getCustomerCountByEmail($customer->getEmail()) > 1);
+            }
+
+            $isEmailRequired = Helper::getOption('set_email_as_required', 'on') === 'on';
+            $isPhoneRequired = Helper::getOption('set_phone_as_required', 'off') === 'on';
+
+            $users = array_map(static fn ($user) => new SelectOptionResponse($user->ID, (string) $user->display_name, ), get_users([
+                'fields' => ['ID', 'display_name'],
+                'role__not_in' => ['booknetic_staff']
+            ]));
+
+            $categories = CustomerCategory::query()->select(['id', 'name'])->fetchAll();
+
+            $viewResponse = new CustomerViewResponse();
+            $viewResponse->setCustomer($customer);
+            $viewResponse->setIsEmailRequired($isEmailRequired);
+            $viewResponse->setIsPhoneRequired($isPhoneRequired);
+            $viewResponse->setUsers($users);
+            $viewResponse->setHasWpUser($hasWpUser);
+            $viewResponse->setCategories($categories);
+            $viewResponse->setIsFullNameEnabled(Helper::getOption('separate_first_and_last_name', 'on') === 'off');
+
+            return $this->modalView('fullpage_customer_edit', $viewResponse);
+        } catch (\Exception $e) {
+            return $this->response(false, $e->getMessage() . "\n" . $e->getTraceAsString());
+        }
     }
 
     public function import()
@@ -382,7 +507,7 @@ class CustomerAjaxController extends Controller
                     ]);
 
                     if (is_wp_error($wpUser)) {
-                        throw new CustomException($wpUser->get_error_message());
+                        return $this->response(false, $wpUser->get_error_message());
                     }
                 }
             }
@@ -439,5 +564,17 @@ class CustomerAjaxController extends Controller
         }
 
         return $request;
+    }
+
+    public function save_customer_notes()
+    {
+        Capabilities::must('customers_edit');
+
+        $id = Post::int('id');
+        $notes = Post::string('notes');
+
+        Customer::where('id', $id)->update(['notes' => $notes]);
+
+        return $this->response(true, bkntc__('Notes updated successfully!'));
     }
 }

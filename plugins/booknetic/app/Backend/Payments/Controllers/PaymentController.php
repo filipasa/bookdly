@@ -63,12 +63,30 @@ class PaymentController extends Controller
 
         $dataTable->addColumns(bkntc__('ID'), 'id');
         $dataTable->addColumns(bkntc__('APPOINTMENT DATE'), function ($row) {
-            if (($row->ends_at - $row->starts_at) >= 24 * 60 * 60) {
-                return Date::datee($row['starts_at']);
+            $dateStr = Date::datee($row['starts_at']);
+            $timeStr = Date::time($row['starts_at']);
+            $durationSeconds = (int)$row['ends_at'] - (int)$row['starts_at'];
+
+            if ($durationSeconds >= 24 * 3600) {
+                $days = (int)round($durationSeconds / (24 * 3600));
+                $durationStr = $days . ' ' . ($days > 1 ? bkntc__('days') : bkntc__('day'));
+            } elseif ($durationSeconds > 0) {
+                $minutes = (int)round($durationSeconds / 60);
+                if ($minutes >= 60 && $minutes % 60 === 0) {
+                    $durationStr = ($minutes / 60) . ' h';
+                } elseif ($minutes > 60) {
+                    $durationStr = floor($minutes / 60) . ' h ' . ($minutes % 60) . ' min';
+                } else {
+                    $durationStr = $minutes . ' min';
+                }
+            } else {
+                $durationStr = '';
             }
 
-            return Date::dateTime($row['starts_at']);
-        }, ['order_by_field' => 'starts_at']);
+            $metaStr = $timeStr . ($durationStr ? ' · ' . $durationStr : '');
+
+            return '<strong>' . htmlspecialchars($dateStr) . '</strong><div class="text-muted" style="font-size:12px;color:var(--wf-text-3,#64748b);margin-top:2px;">' . htmlspecialchars($metaStr) . '</div>';
+        }, ['order_by_field' => 'starts_at', 'is_html' => true]);
         $dataTable->addColumns(bkntc__('CUSTOMER'), fn ($appointment) => Helper::profileCard($appointment['customer_first_name'] . ' ' . $appointment['customer_last_name'], $appointment['customer_profile_image'], $appointment['customer_email'], 'Customers'), [
             'is_html' => true,
             'order_by_field' => 'customer_first_name, customer_last_name'

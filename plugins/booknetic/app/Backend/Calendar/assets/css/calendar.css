@@ -592,12 +592,17 @@ calendar_cart
 }
 .m_head_actions .google_calendar
 {
-    border-radius: 2px;
-    border: 1px solid #E3EAF3;
+    border-radius: 8px !important;
+    border: 1.5px solid #e2e8f0 !important;
+    height: 38px !important;
+    padding: 8px 16px !important;
+    background: transparent !important;
+    transition: .18s ease !important;
 }
 .m_head_actions .google_calendar span
 {
-    color: #828F9A;
+    color: #475569 !important;
+    font-weight: 600 !important;
 }
 .m_head_actions .google_calendar label
 {
@@ -605,10 +610,13 @@ calendar_cart
 }
 .m_head_actions .advanced_filters_btn
 {
-	border-radius: 2px;
-	border: 1px solid #E3EAF3;
-	background: #FFF;
+	border-radius: 8px !important;
+	border: 1.5px solid #e2e8f0 !important;
+	background: transparent !important;
 	position: relative;
+    height: 38px !important;
+    padding: 8px 16px !important;
+    transition: .18s ease !important;
 }
 .m_head_actions .advanced_filters_btn .filter_status
 {
@@ -619,29 +627,38 @@ calendar_cart
 }
 .m_head_actions .advanced_filters_btn span
 {
-	color: #828F9A;
+	color: #475569 !important;
+    font-weight: 600 !important;
 }
 .m_head_actions .create_new_appointment_btn
 {
-	border-radius: 2px;
-	border: 1px solid #6C70DC;
-	background: #6C70DC;
-	box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+	border-radius: 8px !important;
+	border: none !important;
+	background: #6366f1 !important;
+	box-shadow: none !important;
+    height: 38px !important;
+    padding: 8px 16px !important;
+    transition: .18s ease !important;
 }
 .m_head_actions .create_new_appointment_btn span
 {
-	color: #FFF;
+	color: #FFF !important;
+    font-weight: 600 !important;
 }
 .m_head_actions .create_new_busy_slot_btn
 {
-	border-radius: 2px;
-	border: 1px solid #808080;
-	background: #808080;
-	box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+	border-radius: 8px !important;
+	border: none !important;
+	background: #ef4444 !important;
+	box-shadow: none !important;
+    height: 38px !important;
+    padding: 8px 16px !important;
+    transition: .18s ease !important;
 }
 .m_head_actions .create_new_busy_slot_btn span
 {
-	color: #FFF;
+	color: #FFF !important;
+    font-weight: 600 !important;
 }
 .m_head_actions .advanced_filters
 {

@@ -756,4 +756,142 @@ class Ajax extends \BookneticApp\Providers\Core\Controller
 
         return $this->response(true);
     }
+
+    public function get_fullpage_view()
+    {
+        $sid        = Post::int('id');
+        $categoryId = Post::int('category_id');
+
+        $serviceStuff = [];
+
+        $extras = [];
+        $serviceExtraLimitations = ['min' => 0, 'max' => 0];
+        $serviceExtraMinLimitEnabled = false;
+        $serviceExtraMaxLimitEnabled = false;
+        $customPaymentMethodsEnabled = false;
+
+        if ($sid > 0) {
+            Capabilities::must('services_edit');
+
+            $serviceInfo = Service::query()->get($sid);
+
+            if (! $serviceInfo) {
+                return $this->response(false, 'Selected Service not found!');
+            }
+
+            $categoryId = $serviceInfo[ 'category_id' ];
+
+            $getServiceStuff = ServiceStaff::query()->where('service_id', $sid)->fetchAll();
+            foreach ($getServiceStuff as $staffInf) {
+                $serviceStuff[ (string) $staffInf[ 'staff_id' ] ] = $staffInf;
+            }
+
+            $specialDays = SpecialDay::query()->where('service_id', $sid)->fetchAll();
+            $extras      = ServiceExtra::query()->where('service_id', $sid)->fetchAll();
+
+            $customPaymentMethods        = (string)$serviceInfo->getData('custom_payment_methods');
+            $customPaymentMethods        = json_decode($customPaymentMethods);
+            $customPaymentMethodsEnabled = true;
+
+            $onlyVisibleToStaff          = $serviceInfo->getData('only_visible_to_staff');
+
+            $serviceExtraLimitationsData = $serviceInfo->getData('service_extra_limitations', '');
+
+            if (!empty($serviceExtraLimitationsData)) {
+                $serviceExtraLimitations = json_decode($serviceExtraLimitationsData, true);
+            }
+
+            $serviceExtraMinLimitEnabled = !empty($serviceExtraLimitations['min']);
+            $serviceExtraMaxLimitEnabled = !empty($serviceExtraLimitations['max']);
+        } else {
+            Capabilities::must('services_add');
+            $allowedLimit = Capabilities::getLimit('services_allowed_max_number');
+
+            if ($allowedLimit > - 1 && Service::query()->count() >= $allowedLimit) {
+                $view = Helper::renderView('Base.view.modal.permission_denied', [
+                    'text' => bkntc__('You can\'t add more than %d Service. Please upgrade your plan to add more Service.', [ $allowedLimit ])
+                ]);
+
+                return $this->response(true, [ 'html' => $view ]);
+            }
+
+            $serviceInfo        = new Collection();
+            $specialDays        = [];
+            $onlyVisibleToStaff = 0;
+        }
+
+        $categories = ServiceCategory::query()->orderBy('parent_id')->orderBy('id')->fetchAll();
+        $staff      = Staff::query()->fetchAll();
+        $services   = Service::query()->where('id', '<>', $sid)->fetchAll();
+
+        $extraCategories = ExtraCategory::query()->fetchAll();
+        $timesheet = \BookneticApp\Models\Timesheet::query()->where('service_id', $sid)->fetch();
+
+        $timeS = ! $timesheet ? [
+            [ "day_off" => 0, "start" => "00:00", "end" => "24:00", "breaks" => [] ],
+            [ "day_off" => 0, "start" => "00:00", "end" => "24:00", "breaks" => [] ],
+            [ "day_off" => 0, "start" => "00:00", "end" => "24:00", "breaks" => [] ],
+            [ "day_off" => 0, "start" => "00:00", "end" => "24:00", "breaks" => [] ],
+            [ "day_off" => 0, "start" => "00:00", "end" => "24:00", "breaks" => [] ],
+            [ "day_off" => 0, "start" => "00:00", "end" => "24:00", "breaks" => [] ],
+            [ "day_off" => 0, "start" => "00:00", "end" => "24:00", "breaks" => [] ]
+        ] : json_decode($timesheet[ 'timesheet' ], true);
+
+        if (empty($customPaymentMethods)) {
+            $customPaymentMethods        = PaymentGatewayService::getEnabledGatewayNames();
+            $customPaymentMethodsEnabled = false;
+        }
+
+        TabUI::get('services_add')
+             ->item('details')
+             ->setTitle(bkntc__('SERVICE DETAILS'))
+             ->addView(__DIR__ . '/view/tab/add_new_service_details.php', [], 1)
+             ->setPriority(1);
+
+        TabUI::get('services_add')
+             ->item('staff')
+             ->setTitle(bkntc__('STAFF'))
+             ->addView(__DIR__ . '/view/tab/add_new_staff.php')
+             ->setPriority(2);
+
+        TabUI::get('services_add')
+             ->item('timesheet')
+             ->setTitle(bkntc__('TIME SHEET'))
+             ->addView(__DIR__ . '/view/tab/add_new_timesheet.php')
+             ->setPriority(3);
+
+        TabUI::get('services_add')
+             ->item('extras')
+             ->setTitle(bkntc__('EXTRAS'))
+             ->addView(__DIR__ . '/view/tab/add_new_extras.php')
+             ->setPriority(4);
+
+        TabUI::get('services_add')
+             ->item('settings')
+             ->setTitle(bkntc__('SETTINGS'))
+             ->addView(__DIR__ . '/view/tab/add_new_settings.php')
+             ->setPriority(5);
+
+        return $this->modalView('fullpage_service_edit', [
+            'id'                             => $sid,
+            'only_visible_to_staff'          => $onlyVisibleToStaff,
+            'custom_payment_methods_enabled' => $customPaymentMethodsEnabled,
+            'custom_payment_methods'         => $customPaymentMethods,
+            'service_extra_min_limit_enabled' => $serviceExtraMinLimitEnabled,
+            'service_extra_max_limit_enabled' => $serviceExtraMaxLimitEnabled,
+            'service_extra_limitations'      => $serviceExtraLimitations,
+            'service'                        => $serviceInfo,
+            'categories'                     => $categories,
+            'staff'                          => $staff,
+            'service_staff'                  => $serviceStuff,
+            'services'                       => $services,
+            'category'                       => $categoryId,
+            'extra_categories'               => $extraCategories,
+            'special_days'                   => $specialDays,
+            'extras'                         => $extras,
+            'timesheet'                      => $timeS,
+            'has_specific_timesheet'         => isset($timesheet[ 'timesheet' ]) && $timesheet[ 'service_id' ] > 0,
+            'bring_people'                   => Service::getData($sid, "bring_people", 1)
+        ]);
+    }
 }

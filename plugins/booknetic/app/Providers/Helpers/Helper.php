@@ -576,8 +576,25 @@ class Helper
             $name = htmlspecialchars($name);
         }
 
+        $avatarHtml = '<div class="circle_image"><img src="' . Helper::profileImage($image, $module) . '" alt=""></div>';
+        if (empty($image)) {
+            $initials = '';
+            if (!empty($name)) {
+                $plainName = html_entity_decode(strip_tags($name), ENT_QUOTES | ENT_HTML5, 'UTF-8');
+                $words = explode(' ', $plainName);
+                foreach ($words as $w) {
+                    $initials .= mb_substr($w, 0, 1, 'UTF-8');
+                }
+                $initials = mb_substr($initials, 0, 2, 'UTF-8');
+            }
+            $colors = ['#ef4444', '#f97316', '#f59e0b', '#10b981', '#06b6d4', '#3b82f6', '#6366f1', '#8b5cf6', '#ec4899', '#14b8a6'];
+            $colorIndex = abs(crc32($email ?: $name)) % count($colors);
+            $avatarBg = $colors[$colorIndex];
+            $avatarHtml = '<div class="circle_image" style="background: ' . $avatarBg . '; color: #fff; font-weight: 700; font-size: 11px; align-items: center; justify-content: center; text-transform: uppercase; display: flex;">' . htmlspecialchars($initials ?: 'CU') . '</div>';
+        }
+
         return '<div class="user_visit_card">
-					<div class="circle_image"><img src="' . Helper::profileImage($image, $module) . '" alt=""></div>
+					' . $avatarHtml . '
 					<div class="user_visit_details">
 						<span>' . $name . '</span>
 						<span>' . htmlspecialchars($email) . '</span>

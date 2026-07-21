@@ -144,15 +144,35 @@ class AppointmentDataTableService
 
     private function setColumns(): void
     {
-        $this->dataTable->addColumns(bkntc__('ID'), 'id');
+        // $this->dataTable->addColumns(bkntc__('ID'), 'id');
 
         $this->dataTable->addColumns(bkntc__('START DATE'), function ($row) {
-            if ($row[ 'ends_at' ] - $row[ 'starts_at' ] >= 24 * 60 * 60) {
-                return Date::datee($row[ 'starts_at' ]);
+            $dateStr = Date::datee($row['starts_at']);
+            $timeStr = Date::time($row['starts_at']);
+            $durationSeconds = (int)$row['ends_at'] - (int)$row['starts_at'];
+
+            if ($durationSeconds >= 24 * 3600) {
+                $days = (int)round($durationSeconds / (24 * 3600));
+                $durationStr = $days . ' ' . ($days > 1 ? bkntc__('days') : bkntc__('day'));
+            } elseif ($durationSeconds > 0) {
+                $minutes = (int)round($durationSeconds / 60);
+                if ($minutes >= 60 && $minutes % 60 === 0) {
+                    $durationStr = ($minutes / 60) . ' h';
+                } elseif ($minutes > 60) {
+                    $durationStr = floor($minutes / 60) . ' h ' . ($minutes % 60) . ' min';
+                } else {
+                    $durationStr = $minutes . ' min';
+                }
+            } else {
+                $durationStr = '';
             }
 
-            return Date::dateTime($row[ 'starts_at' ]);
-        }, [ 'order_by_field' => 'starts_at' ]);
+            $metaStr = $timeStr . ($durationStr ? ' · ' . $durationStr : '');
+
+            return '<strong>' . htmlspecialchars($dateStr) . '</strong><div class="text-muted" style="font-size:12px;color:var(--wf-text-3,#64748b);margin-top:2px;">' . htmlspecialchars($metaStr) . '</div>';
+        }, [ 'is_html' => true, 'order_by_field' => 'starts_at' ]);
+
+        $this->dataTable->addColumnsForExport(bkntc__('START DATE'), fn ($row) => Date::dateTime($row['starts_at']));
 
         $this->dataTable->addColumns(bkntc__('CUSTOMER'), function ($row) {
             if (array_key_exists($row[ 'status' ], $this->appointmentStatuses)) {
@@ -164,7 +184,36 @@ class AppointmentDataTableService
                 $badge = '<span class="badge badge-dark">' . $row[ 'status' ] . '</span>';
             }
 
-            $customerHtml = Helper::profileCard($row[ 'customer_first_name' ] . ' ' . $row[ 'customer_last_name' ], $row[ 'customer_profile_image' ], $row[ 'customer_email' ], 'Customers') . $badge;
+            $customerFullName = trim($row[ 'customer_first_name' ] . ' ' . $row[ 'customer_last_name' ]);
+            if (empty($customerFullName)) {
+                $customerFullName = 'Customer #' . $row[ 'customer_id' ];
+            }
+            $initials = '';
+            $parts = explode(' ', $customerFullName);
+            foreach ($parts as $part) {
+                if (!empty($part)) {
+                    $initials .= mb_strtoupper(mb_substr($part, 0, 1));
+                }
+            }
+            $initials = substr($initials, 0, 2);
+
+            if (!empty($row['customer_profile_image'])) {
+                $avatarHtml = '<div class="circle_image"><img src="' . Helper::profileImage($row['customer_profile_image'], 'Customers') . '" alt=""></div>';
+            } else {
+                $colors = ['#ef4444', '#f97316', '#f59e0b', '#10b981', '#06b6d4', '#3b82f6', '#6366f1', '#8b5cf6', '#ec4899', '#14b8a6'];
+                $colorIndex = abs(crc32($row['customer_email'] ?: $customerFullName)) % count($colors);
+                $avatarBg = $colors[$colorIndex];
+                $avatarHtml = '<div class="circle_image" style="background: ' . $avatarBg . '; color: #fff; font-weight: 700; font-size: 11px; align-items: center; justify-content: center; text-transform: uppercase;">' . htmlspecialchars($initials ?: 'CU') . '</div>';
+            }
+
+            $customerCardHtml = '<div class="user_visit_card">' . $avatarHtml . '
+					<div class="user_visit_details">
+						<span>' . htmlspecialchars($customerFullName) . '</span>
+						<span>' . htmlspecialchars($row[ 'customer_email' ]) . '</span>
+					</div>
+				</div>';
+
+            $customerHtml = $customerCardHtml . $badge;
 
             return '<div class="d-flex align-items-center justify-content-between">' . $customerHtml . '</div>';
         }, [ 'is_html' => true, 'order_by_field' => 'customer_first_name' ], true);
@@ -210,7 +259,32 @@ class AppointmentDataTableService
         $this->dataTable->addColumnsForExport(bkntc__('Customer Email'), 'customer_email');
         $this->dataTable->addColumnsForExport(bkntc__('Customer Phone Number'), 'customer_phone_number');
 
-        $this->dataTable->addColumns(bkntc__('STAFF'), fn ($appointment) => Helper::profileCard($appointment[ 'staff_name' ], $appointment[ 'staff_profile_image' ], '', 'staff'), [ 'is_html' => true, 'order_by_field' => 'staff_name' ]);
+        $this->dataTable->addColumns(bkntc__('STAFF'), function ($appointment) {
+            $staffFullName = trim($appointment[ 'staff_name' ]);
+            $sparts = explode(' ', $staffFullName);
+            $staffInitials = '';
+            foreach ($sparts as $part) {
+                if (!empty($part)) {
+                    $staffInitials .= mb_strtoupper(mb_substr($part, 0, 1));
+                }
+            }
+            $staffInitials = substr($staffInitials, 0, 2);
+
+            if (!empty($appointment['staff_profile_image'])) {
+                $avatarHtml = '<div class="circle_image"><img src="' . Helper::profileImage($appointment['staff_profile_image'], 'staff') . '" alt=""></div>';
+            } else {
+                $colors = ['#6366f1', '#8b5cf6', '#06b6d4', '#10b981', '#f59e0b', '#ec4899', '#22c55e', '#14b8a6', '#ef4444', '#f97316'];
+                $colorIndex = (int)$appointment['staff_id'] % count($colors);
+                $avatarBg = $colors[$colorIndex];
+                $avatarHtml = '<div class="circle_image" style="background: ' . $avatarBg . '; color: #fff; font-weight: 700; font-size: 11px; align-items: center; justify-content: center; text-transform: uppercase;">' . htmlspecialchars($staffInitials ?: 'ST') . '</div>';
+            }
+
+            return '<div class="user_visit_card">' . $avatarHtml . '
+					<div class="user_visit_details">
+						<span>' . htmlspecialchars($staffFullName) . '</span>
+					</div>
+				</div>';
+        }, [ 'is_html' => true, 'order_by_field' => 'staff_name' ]);
 
         $this->dataTable->addColumns(bkntc__('SERVICE'), 'service_name');
         $this->dataTable->addColumns(bkntc__('PAYMENT'), function ($row) {
@@ -220,8 +294,8 @@ class AppointmentDataTableService
             return '<div class="invoice-cell">' . Helper::price($row[ 'total_price' ]) . $badge . '</div>';
         }, [ 'is_html' => true ]);
 
-        $this->dataTable->addColumns(bkntc__('DURATION'), fn ($row) => Helper::secFormat(((int) $row[ 'ends_at' ] - (int) $row[ 'starts_at' ])), [ 'is_html' => true, 'order_by_field' => '( ends_at - starts_at )' ]);
+        // $this->dataTable->addColumns(bkntc__('DURATION'), fn ($row) => Helper::secFormat(((int) $row[ 'ends_at' ] - (int) $row[ 'starts_at' ])), [ 'is_html' => true, 'order_by_field' => '( ends_at - starts_at )' ]);
 
-        $this->dataTable->addColumns(bkntc__('CREATED AT'), fn ($row) => Date::dateTime($row[ 'created_at' ]), ['order_by_field' => 'created_at']);
+        // $this->dataTable->addColumns(bkntc__('CREATED AT'), fn ($row) => Date::dateTime($row[ 'created_at' ]), ['order_by_field' => 'created_at']);
     }
 }

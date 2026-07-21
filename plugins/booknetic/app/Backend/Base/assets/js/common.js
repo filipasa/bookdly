@@ -364,25 +364,25 @@ var booknetic = {
     afterClose = typeof afterClose != "undefined" ? afterClose : true;
 
     const modalNumber = booknetic.modal(
-        `<div class="confirm_modal_icon_div">
-                <div>
-                  <img src="${assetsUrl}icons/${icon}.svg">
-                </div>
-               </div>
-              <div class="confirm_modal_title">
-                ${text}
-              </div>
-              <div class="confirm_modal_desc">
-                ${description}
-              </div>
-              <div class="confirm_modal_actions">
-                <button class="btn btn-lg btn-outline-secondary cancel_btn" type="button" data-dismiss="modal">
-                  ${cancelButtonTxt}
-                </button>
-                <button class="btn btn-lg btn-${bg} yes_btn ml-3" type="button">
-                  ${okButtonTxt}
-                </button>
-              </div>`,
+        `<div class="delete-modal-container">
+            <div class="delete-modal-icon">
+              <svg width="28" height="28" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M3 4h10M6 4V2h4v2M5 4v8h6V4H5z"/>
+              </svg>
+            </div>
+            <div class="delete-modal-title">${text}</div>
+            <div class="delete-modal-desc">
+              ${description}
+            </div>
+            <div class="delete-modal-actions">
+              <button class="btn btn-ghost cancel_btn" style="flex:1;" type="button" data-dismiss="modal">
+                ${cancelButtonTxt}
+              </button>
+              <button class="btn btn-danger yes_btn" style="flex:1;" type="button">
+                ${okButtonTxt}
+              </button>
+            </div>
+         </div>`,
         { type: "center", ...options }
     );
 
@@ -971,7 +971,7 @@ var booknetic = {
     params = booknetic.doFilter("ajax_" + module + "." + action, params);
 
     const ajaxObject = {
-      url: ajaxurl,
+      url: ajaxurl + (ajaxurl.indexOf("?") === -1 ? "?" : "&") + "_t=" + Date.now(),
       method: "POST",
       data: params,
       success: function (result) {
@@ -1133,50 +1133,118 @@ var booknetic = {
   toastTimer: 0,
 
   toast: function (title, type, duration) {
-    $("#fs-toaster").remove();
-
     if (this.toastTimer) clearTimeout(this.toastTimer);
 
-    $("body").append(this.options.templates.toast);
-
-    $("#fs-toaster").hide().fadeIn(300);
-
-    type = type === "unsuccess" ? "unsuccess" : "success";
-
-    $("#fs-toaster .toast-img > img").attr(
-      "src",
-      assetsUrl + "icons/" + type + ".svg"
-    );
-
-    if (typeof title === "string") {
-      var description = title;
-      title = booknetic.__("dear_user");
-    } else {
-      var description = title[1];
-      title = title[0];
+    if (title === false) {
+      document.querySelectorAll('.wf-toast').forEach(t => {
+        t.classList.remove('active');
+        setTimeout(() => t.remove(), 300);
+      });
+      return;
     }
 
-    $("#fs-toaster .toast-title").text(
-      booknetic.htmlspecialchars_decode(title, "ENT_QUOTES")
-    );
-    $("#fs-toaster .toast-description").text(
-      booknetic.htmlspecialchars_decode(description, "ENT_QUOTES")
-    );
+    try {
+      if (!document.getElementById('wf-toast-styles')) {
+        const style = document.createElement('style');
+        style.id = 'wf-toast-styles';
+        style.innerHTML = `
+          .wf-toast-container {
+            position: fixed;
+            top: 24px;
+            right: 24px;
+            z-index: 9999999 !important;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+          }
+          .wf-toast {
+            display: flex !important;
+            align-items: flex-start !important;
+            gap: 12px !important;
+            background: #fff !important;
+            border: 1.5px solid #cbd5e1 !important;
+            border-left: 5px solid transparent !important;
+            border-radius: 12px !important;
+            padding: 16px !important;
+            width: 320px !important;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1) !important;
+            transform: translateX(120%) !important;
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+          }
+          .wf-toast.active {
+            transform: translateX(0) !important;
+          }
+          .wf-toast-success { border-left-color: #10b981 !important; }
+          .wf-toast-error { border-left-color: #ef4444 !important; }
+          .wf-toast-info { border-left-color: #3b82f6 !important; }
+          .wf-toast-warning { border-left-color: #f59e0b !important; }
+          .wf-toast-close:hover { color: #0f172a !important; }
+        `;
+        document.head.appendChild(style);
+      }
 
-    duration =
-      typeof duration != "undefined"
-        ? duration
-        : 1000 *
-          (description.length > 48 ? parseInt(description.length / 12) : 4);
+      type = (type === "unsuccess" || type === "error") ? "error" : (type === "warning" ? "warning" : (type === "info" ? "info" : "success"));
 
-    this.toastTimer = setTimeout(
-      function () {
-        $("#fs-toaster").fadeOut(200, function () {
-          $(this).remove();
-        });
-      },
-      typeof duration != "undefined" ? duration : 4000
-    );
+      var description = '';
+      var toastTitle = '';
+
+      if (typeof title === "string") {
+        description = title;
+        toastTitle = type.charAt(0).toUpperCase() + type.slice(1);
+      } else if (title && Array.isArray(title)) {
+        toastTitle = title[0] || '';
+        description = title[1] || '';
+      } else if (title && typeof title === "object") {
+        toastTitle = title.title || type.charAt(0).toUpperCase() + type.slice(1);
+        description = title.message || title.desc || JSON.stringify(title);
+      } else {
+        description = String(title);
+        toastTitle = type.charAt(0).toUpperCase() + type.slice(1);
+      }
+
+      let container = document.querySelector('.wf-toast-container');
+      if (!container) {
+        container = document.createElement('div');
+        container.className = 'wf-toast-container';
+        document.body.appendChild(container);
+      }
+
+      const toast = document.createElement('div');
+      toast.className = `wf-toast wf-toast-${type}`;
+      
+      let iconSvg = '';
+      if (type === 'success') {
+        iconSvg = `<svg class="toast-icon toast-icon-success" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" style="width:18px;height:18px;color:#10b981;flex-shrink:0;"><path d="M3 8l4 4 6-6"/></svg>`;
+      } else if (type === 'error') {
+        iconSvg = `<svg class="toast-icon toast-icon-error" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" style="width:18px;height:18px;color:#ef4444;flex-shrink:0;"><path d="M4 4l8 8M12 4l-8 8"/></svg>`;
+      } else if (type === 'warning') {
+        iconSvg = `<svg class="toast-icon toast-icon-warning" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" style="width:18px;height:18px;color:#f59e0b;flex-shrink:0;"><circle cx="8" cy="8" r="6"/><path d="M8 5v4M8 12h.01"/></svg>`;
+      } else {
+        iconSvg = `<svg class="toast-icon toast-icon-info" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" style="width:18px;height:18px;color:#3b82f6;flex-shrink:0;"><circle cx="8" cy="8" r="6"/><path d="M8 8H8.01M8 11V11.01M8 5v2"/></svg>`;
+      }
+
+      toast.innerHTML = `
+        ${iconSvg}
+        <div class="wf-toast-content" style="flex:1;">
+          <div class="wf-toast-title" style="font-weight:700;font-size:13px;color:#0f172a;margin-bottom:2px;">${toastTitle}</div>
+          <div class="wf-toast-desc" style="font-size:11px;color:#64748b;">${description}</div>
+        </div>
+        <button type="button" class="wf-toast-close" onclick="this.parentElement.remove()" style="background:none;border:none;color:#94a3b8;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;padding:0;">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M4 4l8 8M12 4l-8 8"/></svg>
+        </button>
+      `;
+
+      container.appendChild(toast);
+      setTimeout(() => toast.classList.add('active'), 10);
+
+      duration = typeof duration != "undefined" ? duration : 4000;
+      this.toastTimer = setTimeout(() => {
+        toast.classList.remove('active');
+        setTimeout(() => toast.remove(), 300);
+      }, duration);
+    } catch (e) {
+      console.error("Custom Toast Error: ", e);
+    }
   },
 
   serialize: function (data) {

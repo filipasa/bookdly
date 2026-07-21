@@ -112,6 +112,13 @@ class CustomerCategoryAjaxController extends Controller
         ]);
     }
 
+    public function get_categories()
+    {
+        Capabilities::must('customers');
+        $categories = \BookneticApp\Models\CustomerCategory::query()->select(['id', 'name'])->fetchAll();
+        return $this->response(true, ['categories' => $categories]);
+    }
+
     /**
      * @throws InvalidCustomerCategoryDataException
      * @throws InvalidCustomerDataException

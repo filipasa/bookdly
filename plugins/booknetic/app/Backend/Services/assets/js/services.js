@@ -192,7 +192,7 @@
 
 			if( type == 'service' )
 			{
-				booknetic.loadModal('add_new', {'id': id});
+				openServiceFullPage(id);
 			}
 			else
 			{
@@ -230,7 +230,7 @@
 			var li	= $(this).closest('li'),
 				id	= li.data('id');
 
-			booknetic.loadModal('add_new', {'type': 'simple', 'category_id': 0});
+			openServiceFullPage(0, 0);
 		}).on('mouseup', '#categories_tree .add_new_node', function( e )
 		{
 			if (e.which != 1) return false;
@@ -240,7 +240,7 @@
 
 			if( childType == 'service' )
 			{
-				booknetic.loadModal('add_new', {'type': 'simple', 'category_id': id});
+				openServiceFullPage(0, id);
 			}
 			else if( childType == 'category' || li.data('type') == 'root' )
 			{
@@ -261,7 +261,7 @@
 
 			if( type == 'service' )
 			{
-				booknetic.loadModal('add_new', {'type': 'simple', 'category_id': id});
+				openServiceFullPage(0, id);
 			}
 			else
 			{

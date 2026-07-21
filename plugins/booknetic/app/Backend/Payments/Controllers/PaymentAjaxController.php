@@ -35,6 +35,16 @@ class PaymentAjaxController extends Controller
         return $this->modalView('info', ['info' => $info]);
     }
 
+    public function get_fullpage_info_view()
+    {
+        Capabilities::must('payments');
+
+        $appointmentId = Post::int('id');
+        $info = $this->service->getAppointmentInfo($appointmentId);
+
+        return $this->modalView('fullpage_payment_info', ['info' => $info]);
+    }
+
     /**
      * @throws CapabilitiesException
      * @throws AppointmentNotFoundForPaymentException
@@ -47,6 +57,15 @@ class PaymentAjaxController extends Controller
         $info = $this->service->getAppointmentInfo($appointmentId);
 
         return $this->modalView('edit_payment', ['payment' => $info, 'mn2' => $mn2]);
+    }
+
+    public function get_fullpage_edit_view()
+    {
+        Capabilities::must('payments_edit');
+        $appointmentId = Post::int('id');
+        $info = $this->service->getAppointmentInfo($appointmentId);
+
+        return $this->modalView('fullpage_payment_edit', ['payment' => $info]);
     }
 
     /**

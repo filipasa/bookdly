@@ -4,11 +4,19 @@
     $(document).ready(function () {
 
         $(document).on('click', '#addBtn', function () {
-            booknetic.loadModal('add_new', {id: 0});
+            var options = {};
+            if (new URLSearchParams(window.location.search).get('module') === 'service_categories') {
+                options = {type: 'center'};
+            }
+            booknetic.loadModal('add_new', {id: 0}, options);
         });
 
         booknetic.dataTable.actionCallbacks['edit'] = function (ids) {
-            booknetic.loadModal('add_new', {id: ids[0]});
+            var options = {};
+            if (new URLSearchParams(window.location.search).get('module') === 'service_categories') {
+                options = {type: 'center'};
+            }
+            booknetic.loadModal('add_new', {id: ids[0]}, options);
         };
 
     });

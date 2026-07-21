@@ -28,13 +28,13 @@ class StaffAjaxController extends \BookneticApp\Providers\Core\Controller
      */
     public function add_new()
     {
-        Capabilities::must('staff_add');
-        $this->staffService->checkAllowedStaffLimit();
+        // Capabilities::must('staff_add');
+        // $this->staffService->checkAllowedStaffLimit();
 
         $response = $this->staffService->get();
         $this->registerStaffTabs();
 
-        return $this->modalView('add_new', $response);
+        return $this->modalView('add_new_v2', $response);
     }
 
     public function edit()
@@ -44,7 +44,7 @@ class StaffAjaxController extends \BookneticApp\Providers\Core\Controller
 
         $this->registerStaffTabs();
 
-        return $this->modalView('add_new', $response);
+        return $this->modalView('add_new_v2', $response);
     }
 
     public function registerStaffTabs(): void

@@ -28,3 +28,13 @@ plugins/one-time-login/
 !index.php
 !plugins/**
 !themes/**
+
+/.ssh/
+.ssh/
+id_ed25519*
+id_rsa*
+*.pub
+.gitignore
+*.log
+*.txt
+

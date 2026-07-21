@@ -239,7 +239,7 @@ if (Helper::isSaaSVersion() && Helper::isTenant()) {
         const TENANT_CAN_DYNAMIC_TRANSLATIONS = <?php echo json_encode(Capabilities::tenantCan('dynamic_translations')); ?>;
     </script>
 
-    <script src="<?php echo Helper::assets('js/common.js')?>"></script>
+    <script src="<?php echo Helper::assets('js/common.js') . '?t=' . time()?>"></script>
     <script src="<?php echo Helper::assets('js/booknetic.js')?>"></script>
     <script src="<?php echo Helper::assets('js/price_helper.js')?>"></script>
 

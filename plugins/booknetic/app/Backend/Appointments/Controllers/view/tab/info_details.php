@@ -11,53 +11,60 @@ use BookneticApp\Providers\Helpers\Date;
  */
 ?>
 
-<div class="form-row">
-    <div class="form-group col-md-4">
-        <label><?php echo bkntc__('Location')?></label>
-        <div class="form-control-plaintext"><?php echo htmlspecialchars($parameters['info']['location_name'])?></div>
+<div class="wf-info-card mb-4">
+    <div class="wf-card-title">
+        <i class="fa fa-calendar-alt text-primary mr-2"></i>
+        <?php echo bkntc__('Booking Info')?>
     </div>
-    <div class="form-group col-md-4">
-        <label><?php echo bkntc__('Service')?></label>
-        <div class="form-control-plaintext"><?php echo htmlspecialchars($parameters['info']['service_name'])?></div>
+    <div class="wf-info-grid">
+        <div class="wf-info-cell">
+            <div class="wf-lbl"><?php echo bkntc__('Location')?></div>
+            <div class="wf-val"><?php echo htmlspecialchars($parameters['info']['location_name'])?></div>
+        </div>
+        <div class="wf-info-cell">
+            <div class="wf-lbl"><?php echo bkntc__('Service')?></div>
+            <div class="wf-val"><?php echo htmlspecialchars($parameters['info']['service_name'])?></div>
+        </div>
+        <div class="wf-info-cell">
+            <div class="wf-lbl"><?php echo bkntc__('Date, time')?></div>
+            <div class="wf-val"><?php echo ($parameters['info']['ends_at'] - $parameters['info']['starts_at']) >= 24 * 60 * 60 ? Date::datee($parameters['info']['starts_at']) : (Date::dateTime($parameters['info']['starts_at']) . ' - ' . Date::time($parameters['info']['ends_at']))?></div>
+        </div>
     </div>
-    <div class="form-group col-md-4">
-        <label><?php echo bkntc__('Date, time')?></label>
-        <div class="form-control-plaintext"><?php echo ($parameters['info']['ends_at'] - $parameters['info']['starts_at']) >= 24 * 60 * 60 ? Date::datee($parameters['info']['starts_at']) : (Date::dateTime($parameters['info']['starts_at']) . ' - ' . Date::time($parameters['info']['ends_at']))?></div>
+    <?php if (!empty($parameters['info']->note)): ?>
+    <div class="wf-info-note pt-3 mt-3 border-top">
+        <div class="wf-lbl"><?php echo bkntc__('Note')?></div>
+        <div class="wf-val text-muted"><pre id="pre-note-text" class="m-0"><?php echo htmlspecialchars($parameters['info']->note)?></pre></div>
     </div>
+    <?php endif; ?>
 </div>
-<div class="form-row">
-	<div class="form-group col-md-12">
-		<label><?php echo bkntc__('Note')?> </label>
-		<div class="form-control-plaintext">
-            <pre id="pre-note-text"><?php echo empty($parameters['info']->note) ? '-' : htmlspecialchars($parameters['info']->note)?></pre>
-		</div>
-	</div>
-</div>
 
-<hr/>
-
-<div class="form-row">
-    <div class="form-group col-md-6">
-        <label class="text-primary"><?php echo bkntc__('Staff')?></label>
-        <div class="form-control-plaintext"><?php echo Helper::profileCard($parameters['info']['staff_name'], $parameters['info']['staff_profile_image'], $parameters['info']['staff_email'], 'Staff')?></div>
+<div class="wf-info-card mb-4">
+    <div class="wf-card-title">
+        <i class="fa fa-users text-primary mr-2"></i>
+        <?php echo bkntc__('Participants')?>
     </div>
-
-    <div class="form-group col-md-6">
-        <label class="text-success"><?php echo bkntc__('Customer')?></label>
-        <div class="form-control-plaintext">
+    <div class="row m-0">
+        <div class="col-md-6 p-3 wf-participant-cell border-right">
+            <div class="wf-lbl mb-2"><?php echo bkntc__('Staff')?></div>
+            <div><?php echo Helper::profileCard($parameters['info']['staff_name'], $parameters['info']['staff_profile_image'], $parameters['info']['staff_email'], 'Staff')?></div>
+        </div>
+        <div class="col-md-6 p-3 wf-participant-cell">
+            <div class="wf-lbl mb-2"><?php echo bkntc__('Customer')?></div>
             <div class="fs_data_table_wrapper">
                 <?php
                 $statuses = Helper::getAppointmentStatuses();
-$info = $parameters['info'];
-$status = $statuses[$info['status']];
-echo '<div class="per-customer-div cursor-pointer" data-load-modal="customers.info" data-parameter-id="'.(int)$info['customer_id'].'">';
-echo Helper::profileCard($info['customer_first_name'] . ' ' . $info['customer_last_name'], $info['customer_profile_image'], $info['customer_email'], 'Customers');
-echo '<div class="appointment-status-icon ml-3" style="background-color: ' . htmlspecialchars($status[ 'color' ]) . '2b">
-                        <i style="color: ' . htmlspecialchars($status[ 'color' ]) . '" class="' . htmlspecialchars($status[ 'icon' ]) .  '"></i>
-                    </div>';
-echo '<span class="num_of_customers_span"><i class="fa fa-user"></i> ' . (int)$info['weight'] . '</span>';
-echo '</div>';
-?>
+                $info = $parameters['info'];
+                $status = $statuses[$info['status']];
+                echo '<div class="per-customer-div cursor-pointer d-flex align-items-center justify-content-between" data-load-modal="customers.info" data-parameter-id="'.(int)$info['customer_id'].'">';
+                echo Helper::profileCard($info['customer_first_name'] . ' ' . $info['customer_last_name'], $info['customer_profile_image'], $info['customer_email'], 'Customers');
+                echo '<div class="d-flex align-items-center">';
+                echo '<div class="appointment-status-badge ml-3 px-3 py-1 rounded-pill font-size-12 font-weight-600" style="background-color: ' . htmlspecialchars($status[ 'color' ]) . '2b; color: ' . htmlspecialchars($status[ 'color' ]) . ';">
+                        <i class="' . htmlspecialchars($status[ 'icon' ]) .  ' mr-1"></i> ' . htmlspecialchars($status['title']) . '
+                      </div>';
+                echo '<span class="num_of_customers_span ml-3 badge badge-light border py-1 px-2"><i class="fa fa-user"></i> ' . (int)$info['weight'] . '</span>';
+                echo '</div>';
+                echo '</div>';
+                ?>
             </div>
         </div>
     </div>

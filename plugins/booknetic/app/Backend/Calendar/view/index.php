@@ -12,20 +12,7 @@ use BookneticApp\Providers\Helpers\Helper;
 <link rel="stylesheet" href="<?php echo Helper::assets('css/introjs.min.css') ?>" type="text/css">
 <link rel="stylesheet" href="<?php echo Helper::assets('css/introjs-custom.css') ?>" type="text/css">
 <link href="<?php echo Helper::assets('css/calendar.css', 'Calendar')?>" rel="stylesheet" />
-<style>
-    .m_head_actions .create_new_busy_slot_btn {
-        border-radius: 2px !important;
-        border: 1px solid #6C70DC !important;
-        background: #6C70DC !important;
-        box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05) !important;
-    }
-    .m_head_actions .create_new_busy_slot_btn span {
-        color: #FFF !important;
-    }
-    .m_head_actions .create_new_busy_slot_btn:hover {
-        opacity: 0.9;
-    }
-</style>
+
 <link href="<?php echo Helper::assets('plugins/fullcalendar/packages/core/main.css', 'Calendar')?>" rel="stylesheet" />
 <link href="<?php echo Helper::assets('plugins/fullcalendar/packages/daygrid/main.css', 'Calendar')?>" rel="stylesheet" />
 <link href="<?php echo Helper::assets('plugins/fullcalendar/packages/timegrid/main.css', 'Calendar')?>" rel="stylesheet" />

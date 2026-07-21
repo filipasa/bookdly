@@ -140,3 +140,5 @@ function printTree($parentId, &$categories, &$staff, $canDoDynamicTranslations, 
 	</div>
 
 </div>
+
+<div id="booknetic_service_fullpage_container" style="display: none;"></div>

@@ -36,7 +36,7 @@ $svgSearch  = '<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="
     var telInputAssetUrl = "<?php echo Helper::assets('js/utilsIntlTelInput.js', 'front-end')?>";
     booknetic.can_delete_associated_account = <?php echo (Permission::isAdministrator() || Capabilities::userCan('staff_delete_wordpress_account')) ? 1 : 0 ?>;
 </script>
-<script type="application/javascript" src="<?php echo Helper::assets('js/staff.js', 'Staff')?>" id="staff-js12394610" data-edit="<?php echo $parameters['edit']?>"></script>
+<script type="application/javascript" src="<?php echo Helper::assets('js/staff.js', 'Staff') . '?t=' . time()?>" id="staff-js12394610" data-edit="<?php echo $parameters['edit']?>"></script>
 
 <div class="m_header">
     <div class="m_head_title"><?php echo bkntc__('Staff') ?> <span class="badge badge-warning row_count"><?php echo count($staffList) ?></span></div>

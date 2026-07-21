@@ -88,8 +88,29 @@ if (!$dataTable['hide_search']) {
 	<?php
 }
 ?>
-	<div class="fs_data_table_wrapper">
-		<table class="fs_data_table elegant_table">
+	<div class="fs_data_table_wrapper table-wrap">
+		<div class="m_bottom_fixed bulk-bar hidden" style="display: none;">
+			<div class="d-flex align-items-center">
+				<input type="checkbox" class="cb mr-3" id="checkbox_select_all_bulk">
+				<span><span class="selected_count">0</span> <?php echo bkntc__('selected')?></span>
+			</div>
+			<div class="bulk-action-btns">
+				<?php foreach ($dataTable['actions'] as $key => $action): ?>
+					<?php if ($action['flags'] & \BookneticApp\Providers\UI\Abstracts\AbstractDataTableUI::ACTION_FLAG_BULK): ?>
+						<button type="button" class="bulk_action_btn <?php echo ($key === 'delete' ? 'del' : '') ?>" data-action="<?php echo htmlspecialchars($key) ?>"><?php echo htmlspecialchars($action['title']) ?></button>
+					<?php endif; ?>
+				<?php endforeach; ?>
+				<select name="" class="bulk_action hidden" style="display:none !important;">
+					<?php foreach ($dataTable['actions'] as $key => $action): ?>
+					<?php if ($action['flags'] & \BookneticApp\Providers\UI\Abstracts\AbstractDataTableUI::ACTION_FLAG_BULK): ?>
+						<option value="<?php echo htmlspecialchars($key) ?>"><?php echo htmlspecialchars($action['title']) ?></option>
+					<?php endif; ?>
+					<?php endforeach; ?>
+				</select>
+				<button type="button" class="datatable_apply_btn hidden" style="display:none !important;"></button>
+			</div>
+		</div>
+		<table class="fs_data_table elegant_table data-table">
 			<thead>
 			<tr>
 				<th>
@@ -116,10 +137,7 @@ if (!$dataTable['hide_search']) {
             }
 
 ?>
-				<th class="text-right">
-					<button type="button" class="btn btn-xs btn-light prev_page"><i class="fa fa-caret-left"></i></button>
-					<button type="button" class="btn btn-xs btn-light next_page"><i class="fa fa-caret-right"></i></button>
-				</th>
+				<th class="text-right"><?php echo !empty($dataTable['actions']) ? bkntc__('Actions') : '' ?></th>
 			</tr>
 			</thead>
 			<tbody>
@@ -168,13 +186,12 @@ if (empty($dataTable['tbody'])) {
 ?>
 			</tbody>
 		</table>
-	</div>
 
-	<div class="pagination row mt-4">
-		<div class="col-md-12 d-flex flex-sm-row flex-column align-items-center justify-content-between">
-            <div class="d-flex align-items-center mb-sm-0 mb-3">
-                <span class="text-secondary mr-2 font-size-14"><?php echo bkntc__('Showing %d of %d total', [ count($dataTable['tbody']) , $dataTable['row_count'] ])?></span>
-                <?php
+		<div class="pagination">
+			<span class="pagination-info"><?php echo bkntc__('Showing %d of %d total', [ count($dataTable['tbody']) , $dataTable['row_count'] ])?></span>
+			<div class="page-btns">
+				<button type="button" class="pg-btn prev_page" <?php echo ($dataTable['current_page'] <= 1 ? 'disabled' : '') ?>>‹</button>
+				<?php
 
     if ($dataTable['pagination'] !== false) {
         if ($dataTable['max_page'] <= 7) {
@@ -195,20 +212,20 @@ if (empty($dataTable['tbody'])) {
             }
         }
 
-        echo '<span class="page_class badge' . (1 == $dataTable['current_page'] ? ' active_page badge-default' : '') . '">1</span>' . ($startPage > 2 ? ' ... ' : '');
+        echo '<span class="page_class badge' . (1 == $dataTable['current_page'] ? ' active_page badge-default' : '') . '">1</span>' . ($startPage > 2 ? ' <span class="page-ellipsis">…</span> ' : '');
 
         for ($page = $startPage; $page <= $endPage; $page++) {
             echo '<span class="page_class badge' . ($page == $dataTable['current_page'] ? ' active_page badge-default' : '') . '">' . $page . '</span>';
         }
 
         if ($dataTable['max_page'] >= 2) {
-            echo ($dataTable['max_page'] - 1 > $endPage ? ' ... ' : '') . '<span class="page_class badge' . ($dataTable['max_page'] == $dataTable['current_page'] ? ' active_page badge-default' : '') . '">' . $dataTable['max_page'] . '</span>';
+            echo ($dataTable['max_page'] - 1 > $endPage ? ' <span class="page-ellipsis">…</span> ' : '') . '<span class="page_class badge' . ($dataTable['max_page'] == $dataTable['current_page'] ? ' active_page badge-default' : '') . '">' . $dataTable['max_page'] . '</span>';
         }
     }
 
 ?>
-            </div>
-
+				<button type="button" class="pg-btn next_page" <?php echo ($dataTable['current_page'] >= $dataTable['max_page'] ? 'disabled' : '') ?>>›</button>
+			</div>
 		</div>
 	</div>
 	<?php
@@ -216,30 +233,18 @@ if (empty($dataTable['tbody'])) {
         ?>
 </div>
 
-<div class="m_bottom_fixed justify-content-between hidden px-3  ">
-	<div ><?php echo bkntc__('Selected')?> <span class="badge badge-success ml-2 selected_count">2</span></div>
-
-    <div class="d-flex align-items-center " style="min-width: 200px">
-
-        <select name="" class="bulk_action form-control " >
-            <?php foreach ($dataTable['actions'] as $key => $action): ?>
-            <?php if ($action['flags'] & \BookneticApp\Providers\UI\Abstracts\AbstractDataTableUI::ACTION_FLAG_BULK): ?>
-                <option value="<?php echo $key ?>"><?php echo $action['title'] ?></option>
-            <?php endif; ?>
-            <?php endforeach; ?>
-        </select>
-
-        <button type="button" class="btn btn-primary btn-lg btn-info ml-2 datatable_apply_btn"><?php echo bkntc__('Apply') ?></button>
-    </div>
-
-    <script>
-        $(".bulk_action").select2({
-            theme:'bootstrap',
-            minimumResultsForSearch: -1
-        });
-    </script>
-
-</div>
+<script>
+    $(document).off('click', '.m_bottom_fixed .bulk_action_btn').on('click', '.m_bottom_fixed .bulk_action_btn', function(e) {
+        e.preventDefault();
+        var action = $(this).data('action');
+        var wrapper = $(this).closest('.m_bottom_fixed');
+        wrapper.find('.bulk_action').val(action);
+        wrapper.find('.datatable_apply_btn').trigger('click');
+    });
+    $(document).off('change', '#checkbox_select_all_bulk').on('change', '#checkbox_select_all_bulk', function() {
+        $(this).closest('.fs_data_table_wrapper').find('#checkbox_select_all').prop('checked', $(this).is(':checked')).trigger('change');
+    });
+</script>
 <?php
     }
 ?>

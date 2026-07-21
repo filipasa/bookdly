@@ -14,3 +14,5 @@ echo $parameters['table'];
 
 <link rel="stylesheet" type="text/css" href="<?php echo Helper::assets('css/service-list.css', 'Services')?>" />
 <script type="text/javascript" src="<?php echo Helper::assets('js/services-list.js', 'Services')?>"></script>
+
+<div id="booknetic_service_fullpage_container" style="display: none;"></div>
