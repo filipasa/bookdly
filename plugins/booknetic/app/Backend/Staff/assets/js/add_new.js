@@ -8,9 +8,10 @@
 
 		booknetic.select2Ajax( $('#input_timesheet_1_start, #input_timesheet_2_start, #input_timesheet_3_start, #input_timesheet_4_start, #input_timesheet_5_start, #input_timesheet_6_start, #input_timesheet_7_start, #input_timesheet_1_end, #input_timesheet_2_end, #input_timesheet_3_end, #input_timesheet_4_end, #input_timesheet_5_end, #input_timesheet_6_end, #input_timesheet_7_end'), 'get_available_times_all');
 
-		booknetic.initMultilangInput( $( '#input_name' ), 'staff', 'name' );
-		booknetic.initMultilangInput( $( '#input_profession' ), 'staff', 'profession' );
-		booknetic.initMultilangInput( $( '#input_note' ), 'staff', 'about' );
+		// multilang disabled for staff fields
+		// booknetic.initMultilangInput( $( '#input_name' ), 'staff', 'name' );
+		// booknetic.initMultilangInput( $( '#input_profession' ), 'staff', 'profession' );
+		// booknetic.initMultilangInput( $( '#input_note' ), 'staff', 'about' );
 
         const $phoneInput = $('#input_phone');
         $phoneInput.data('iti', window.bookneticIntlTelInput($phoneInput[0], {
